@@ -1,0 +1,19 @@
+name: "Set project of action and discussion items"
+on:
+  issues:
+    types: [opened, labeled]
+
+jobs:
+  assign-project:
+    name: Set project to Action board
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: srggrs/assign-one-project-github-action@1.2.0
+        if: |
+          contains(github.event.issue.labels.*.name, 'todo') ||
+          contains(github.event.issue.labels.*.name, 'discussion')
+        with:
+          project: 'https://github.com/stefanocoretta/lombard-vitality/projects/1'
+          column_name: 'To do'
