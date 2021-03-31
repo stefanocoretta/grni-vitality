@@ -11,7 +11,7 @@ jobs:
       - uses: Naturalclar/issue-action@v2.0.2
         with:
           title-or-body: "title"
-          parameters: '[ {"keywords": ["Minutes"], "labels": ["meetings"]}]'
+          parameters: '[ {"keywords": ["Meeting"], "labels": ["meetings"]}]'
           github-token: "${{ secrets.GITHUB_TOKEN }}"
   assign-project:
     name: Set project to meetings
@@ -22,7 +22,7 @@ jobs:
     - name: Assign issues with `notebook` label to Notebook
       uses: srggrs/assign-one-project-github-action@1.2.0
       if: |
-        contains(github.event.issue.title, 'Minutes')
+        contains(github.event.issue.title, 'Meeting')
       with:
         project: 'https://github.com/stefanocoretta/lombard-vitality/projects/2'
         column_name: 'Current'
