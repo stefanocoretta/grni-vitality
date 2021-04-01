@@ -1,4 +1,4 @@
-name: "Set project of action and discussion items"
+name: "Set todo's and discussions to Action board"
 on:
   issues:
     types: [labeled]
@@ -16,4 +16,4 @@ jobs:
           contains(github.event.issue.labels.*.name, 'discussion')
         with:
           project: 'https://github.com/stefanocoretta/lombard-vitality/projects/1'
-          column_name: 'To do'
+          column_name: 'Assigned'
