@@ -1,3 +1,3 @@
-# Assessing the vitality of Lombard [lomb1257]
+# Assessing the vitality of Gallo-Italian (Romance)
 
 Welcome!
