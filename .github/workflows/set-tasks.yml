@@ -1,11 +1,11 @@
-name: "Set todo's and discussions to Action board"
+name: "Set todo's and discussions to Task board"
 on:
   issues:
     types: [labeled]
 
 jobs:
   assign-project:
-    name: Set project to Action board
+    name: Set project to Task board
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     runs-on: ubuntu-latest
