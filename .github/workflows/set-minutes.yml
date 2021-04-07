@@ -23,5 +23,5 @@ jobs:
         if: |
           contains(github.event.issue.title, 'Meeting')
         with:
-          project: 'https://github.com/stefanocoretta/gallo-Italian-vitality/projects/2'
+          project: 'https://github.com/stefanocoretta/gallo-italian-vitality/projects/2'
           column_name: 'Next'
