@@ -11,7 +11,7 @@ jobs:
       - uses: Naturalclar/issue-action@v2.0.2
         with:
           title-or-body: "title"
-          parameters: '[ {"keywords": ["Meeting"], "labels": ["meeting"]}]'
+          parameters: '[ {"keywords": ["Meeting"], "labels": ["meetings"]}]'
           github-token: "${{ secrets.GITHUB_TOKEN }}"
   assign-project:
     name: Set project to Meetings
