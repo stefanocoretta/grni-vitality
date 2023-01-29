@@ -1,0 +1,33 @@
+---
+title: "01 - Process data"
+author: "Stefano Coretta"
+format: html
+---
+
+```{r}
+#| label: packages
+#| message: false
+
+source("code/scripts/packages.R")
+
+```
+
+## Read data
+
+We can read the data from SosciSurvey using the SosciSurvey API, which has been enabled for this project. No credentials are necessary.
+
+```{r}
+#| label: read-data
+#| message: false
+
+source("code/scripts/import_galloitalico_2023-01-28_11-52.R")
+write_csv(gi_vital, "data/gi_vital.csv")
+```
+
+```{r}
+#| label: cases
+
+range(gi_vital$CASE)
+length(unique(gi_vital$CASE))
+
+```

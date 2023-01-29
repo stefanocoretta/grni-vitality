@@ -1,5 +1,6 @@
 project:
   title: "gallo-italian-vitality"
+  execute-dir: project
 
 editor: visual
 
