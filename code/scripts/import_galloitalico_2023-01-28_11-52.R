@@ -191,6 +191,22 @@ attr(gi_vital, "server") = "https://www.soscisurvey.de"
 
 rm(ds_file)
 
+comuni_LO02 <- read_fwf(
+  "data/comuni.txt",
+  fwf_cols(LO02 = 4, LO02_com = 20),
+  col_types = "dc"
+)
+
+comuni_LO07 <- read_fwf(
+  "data/comuni.txt",
+  fwf_cols(LO07 = 4, LO07_com = 20),
+  col_types = "dc"
+)
+
+gi_vital <- gi_vital %>%
+  left_join(y = comuni_LO02) %>%
+  left_join(y = comuni_LO07)
+
 # Factorise columns ----
 
 gi_vital$DE02 = factor(
