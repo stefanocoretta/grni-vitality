@@ -1,3467 +1,4592 @@
-0001 Abbadia Cerreto
-0002 Abbadia Lariana
-0003 Abbiategrasso
-0004 Acceglio
-0005 Acquafredda
-0006 Acquanegra Cremonese
-0007 Acquanegra sul Chiese
-0008 Acquarossa
-0009 Acquaviva
-0010 Acqui Terme
-0011 Adrara San Martino
-0012 Adrara San Rocco
-0013 Adro
-0014 Agazzano
-0015 Agliano Terme
-0016 Agliè
-0017 Agnadello
-0018 Agno
-0019 Agnosine
-0020 Agra
-0021 Agrate Brianza
-0022 Agrate Conturbia
-0023 Aicurzio
-0024 Ailoche
-0025 Airasca
-0026 Airole
-0027 Airolo
-0028 Airuno
-0029 Aisone
-0030 Ala di Stura
-0031 Alagna
-0032 Alagna Valsesia
-0033 Alassio
-0034 Alba
-0035 Albairate
-0036 Albano Sant'Alessandro
-0037 Albano Vercellese
-0038 Albaredo Arnaboldi
-0039 Albaredo per San Marco
-0040 Albareto
-0041 Albaretto della Torre
-0042 Albavilla
-0043 Albenga
-0044 Albera Ligure
-0045 Albese con Cassano
-0046 Albiano d'Ivrea
-0047 Albiate
-0048 Albinea
-0049 Albino
-0050 Albiolo
-0051 Albisola Superiore
-0052 Albissola Marina
-0053 Albizzate
-0054 Albonese
-0055 Albosaggia
-0056 Albugnano
-0057 Albula/Alvra
-0058 Albuzzano
-0059 Alessandria
-0060 Alfianello
-0061 Alfiano Natta
-0062 Alfonsine
-0063 Algua
-0064 Alice Bel Colle
-0065 Alice Castello
-0066 Alluvioni Piovera
-0067 Almenno San Bartolomeo
-0068 Almenno San Salvatore
-0069 Almese
-0070 Almè
-0071 Alpette
-0072 Alpignano
-0073 Alseno
-0074 Alserio
-0075 Alta Val Tidone
-0076 Alta Valle Intelvi
-0077 Altare
-0078 Altavilla Monferrato
-0079 Alto
-0080 Alto Malcantone
-0081 Alto Reno Terme
-0082 Alto Sermenza
-0083 Alzano Lombardo
-0084 Alzano Scrivia
-0085 Alzate Brianza
-0086 Ambivere
-0087 Ameglia
-0088 Ameno
-0089 Andalo Valtellino
-0090 Andeer
-0091 Andezeno
-0092 Andora
-0093 Andorno Micca
-0094 Andrate
-0095 Anfo
-0096 Angera
-0097 Angolo Terme
-0098 Angrogna
-0099 Annicco
-0100 Annone di Brianza
-0101 Antegnate
-0102 Antignano
-0103 Antrona Schieranco
-0104 Anzano del Parco
-0105 Anzola d'Ossola
-0106 Anzola dell'Emilia
-0107 Appiano Gentile
-0108 Aprica
-0109 Apricale
-0110 Aquila d'Arroscia
-0111 Aramengo
-0112 Aranno
-0113 Arbedo-Castione
-0114 Arborio
-0115 Arcene
-0116 Arcisate
-0117 Arcola
-0118 Arconate
-0119 Arcore
-0120 Ardenno
-0121 Ardesio
-0122 Arena Po
-0123 Arenzano
-0124 Arese
-0125 Argegno
-0126 Argelato
-0127 Argenta
-0128 Argentera
-0129 Arguello
-0130 Arignano
-0131 Arizzano
-0132 Arluno
-0133 Armeno
-0134 Armo
-0135 Arnasco
-0136 Arogno
-0137 Arola
-0138 Arona
-0139 Arosa
-0140 Arosio
-0141 Arquata Scrivia
-0142 Arsago Seprio
-0143 Artogne
-0144 Arzago d'Adda
-0145 Ascona
-0146 Asigliano Vercellese
-0147 Asola
-0148 Assago
-0149 Asso
-0150 Astano
-0151 Asti
-0152 Aurano
-0153 Aurigo
-0154 Avegno
-0155 Avegno Gordevio
-0156 Averara
-0157 Avers
-0158 Aviatico
-0159 Avigliana
-0160 Avolasca
-0161 Azeglio
-0162 Azzanello
-0163 Azzano Mella
-0164 Azzano San Paolo
-0165 Azzano d'Asti
-0166 Azzate
-0167 Azzio
-0168 Azzone
-0169 Baceno
-0170 Badalucco
-0171 Badia Pavese
-0172 Bagnacavallo
-0173 Bagnara di Romagna
-0174 Bagnaria
-0175 Bagnasco
-0176 Bagnatica
-0177 Bagno di Romagna
-0178 Bagnolo Cremasco
-0179 Bagnolo Mella
-0180 Bagnolo Piemonte
-0181 Bagnolo San Vito
-0182 Bagnolo in Piano
-0183 Bagolino
-0184 Bairo
-0185 Baiso
-0186 Bajardo
-0187 Balangero
-0188 Baldichieri d'Asti
-0189 Baldissero Canavese
-0190 Baldissero Torinese
-0191 Baldissero d'Alba
-0192 Balerna
-0193 Balestrino
-0194 Ballabio
-0195 Balme
-0196 Balmuccia
-0197 Balocco
-0198 Balzola
-0199 Banchette
-0200 Bannio Anzino
-0201 Baranzate
-0202 Barasso
-0203 Barbania
-0204 Barbaresco
-0205 Barbariga
-0206 Barbata
-0207 Barbianello
-0208 Bardello
-0209 Bardi
-0210 Bardineto
-0211 Bardonecchia
-0212 Bareggio
-0213 Barengo
-0214 Bargagli
-0215 Barge
-0216 Barghe
-0217 Bariano
-0218 Baricella
-0219 Barlassina
-0220 Barni
-0221 Barolo
-0222 Barone Canavese
-0223 Barzago
-0224 Barzana
-0225 Barzanò
-0226 Barzio
-0227 Basaluzzo
-0228 Bascapè
-0229 Basiano
-0230 Basiglio
-0231 Bassano Bresciano
-0232 Bassignana
-0233 Bastia Mondovì
-0234 Bastida Pancarana
-0235 Bastiglia
-0236 Battifollo
-0237 Battuda
-0238 Baveno
-0239 Bedano
-0240 Bedero Valcuvia
-0241 Bedigliora
-0242 Bedizzole
-0243 Bedonia
-0244 Bedretto
-0245 Bedulita
-0246 Bee
-0247 Beinasco
-0248 Beinette
-0249 Belforte Monferrato
-0250 Belgioioso
-0251 Belgirate
-0252 Bellagio
-0253 Bellano
-0254 Bellaria-Igea Marina
-0255 Bellino
-0256 Bellinzago Lombardo
-0257 Bellinzago Novarese
-0258 Bellinzona
-0259 Bellusco
-0260 Belvedere Langhe
-0261 Belveglio
-0262 Bema
-0263 Bene Lario
-0264 Bene Vagienna
-0265 Benevello
-0266 Benna
-0267 Bentivoglio
-0268 Berbenno
-0269 Berbenno di Valtellina
-0270 Berceto
-0271 Beregazzo con Figliaro
-0272 Bereguardo
-0273 Bergamasco
-0274 Bergamo
-0275 Bergeggi
-0276 Bergolo
-0277 Bergün Filisur
-0278 Berlingo
-0279 Bernareggio
-0280 Bernate Ticino
-0281 Bernezzo
-0282 Bertinoro
-0283 Bertonico
-0284 Berzano di San Pietro
-0285 Berzano di Tortona
-0286 Berzo Demo
-0287 Berzo Inferiore
-0288 Berzo San Fermo
-0289 Besana in Brianza
-0290 Besano
-0291 Besate
-0292 Besenzone
-0293 Besnate
-0294 Besozzo
-0295 Bettola
-0296 Beura-Cardezza
-0297 Bever
-0298 Beverino
-0299 Biandrate
-0300 Biandronno
-0301 Bianzano
-0302 Bianzone
-0303 Bianzè
-0304 Biasca
-0305 Biassono
-0306 Bibbiano
-0307 Bibiana
-0308 Biella
-0309 Bienno
-0310 Binago
-0311 Binasco
-0312 Bioggio
-0313 Bioglio
-0314 Bione
-0315 Bissone
-0316 Bistagno
-0317 Bisuschio
-0318 Bizzarone
-0319 Blello
-0320 Blenio
-0321 Blessagno
-0322 Blevio
-0323 Bobbio
-0324 Bobbio Pellice
-0325 Boca
-0326 Boccioleto
-0327 Bodio
-0328 Bodio Lomnago
-0329 Boffalora d'Adda
-0330 Boffalora sopra Ticino
-0331 Bogliasco
-0332 Bognanco
-0333 Bogogno
-0334 Boissano
-0335 Bolano
-0336 Bolgare
-0337 Bollate
-0338 Bollengo
-0339 Bologna
-0340 Boltiere
-0341 Bolzano Novarese
-0342 Bomporto
-0343 Bonaduz
-0344 Bonassola
-0345 Bonate Sopra
-0346 Bonate Sotto
-0347 Bondeno
-0348 Bonemerse
-0349 Bonvicino
-0350 Bordighera
-0351 Bordolano
-0352 Bore
-0353 Boretto
-0354 Borgarello
-0355 Borgaro Torinese
-0356 Borghetto Lodigiano
-0357 Borghetto Santo Spirito
-0358 Borghetto d'Arroscia
-0359 Borghetto di Borbera
-0360 Borghetto di Vara
-0361 Borghi
-0362 Borgiallo
-0363 Borgio Verezzi
-0364 Borgo Maggiore
-0365 Borgo Mantovano
-0366 Borgo Priolo
-0367 Borgo San Dalmazzo
-0368 Borgo San Giacomo
-0369 Borgo San Giovanni
-0370 Borgo San Martino
-0371 Borgo San Siro
-0372 Borgo Ticino
-0373 Borgo Tossignano
-0374 Borgo Val di Taro
-0375 Borgo Vercelli
-0376 Borgo Virgilio
-0377 Borgo d'Ale
-0378 Borgo di Terzo
-0379 Borgocarbonara
-0380 Borgofranco d'Ivrea
-0381 Borgolavezzaro
-0382 Borgomale
-0383 Borgomanero
-0384 Borgomaro
-0385 Borgomasino
-0386 Borgomezzavalle
-0387 Borgone Susa
-0388 Borgonovo Val Tidone
-0389 Borgoratto Alessandrino
-0390 Borgoratto Mormorolo
-0391 Borgosatollo
-0392 Borgosesia
-0393 Bormida
-0394 Bormio
-0395 Bornasco
-0396 Borno
-0397 Borriana
-0398 Borzonasca
-0399 Bosco Gurin
-0400 Bosco Marengo
-0401 Bosconero
-0402 Bosia
-0403 Bosio
-0404 Bosisio Parini
-0405 Bosnasco
-0406 Bossico
-0407 Bossolasco
-0408 Bottanuco
-0409 Botticino
-0410 Bovegno
-0411 Boves
-0412 Bovezzo
-0413 Bovisio-Masciago
-0414 Bozzole
-0415 Bozzolo
-0416 Bra
-0417 Bracca
-0418 Brallo di Pregola
-0419 Brandico
-0420 Brandizzo
-0421 Branzi
-0422 Braone
-0423 Brebbia
-0424 Bregaglia
-0425 Bregano
-0426 Breggia
-0427 Bregnano
-0428 Breil/Brigels
-0429 Brembate
-0430 Brembate di Sopra
-0431 Brembio
-0432 Breme
-0433 Brenna
-0434 Breno
-0435 Brenta
-0436 Brescello
-0437 Brescia
-0438 Bressana Bottarone
-0439 Bresso
-0440 Brezzo di Bedero
-0441 Briaglia
-0442 Bricherasio
-0443 Brienno
-0444 Briga Alta
-0445 Briga Novarese
-0446 Brignano Gera d'Adda
-0447 Brignano-Frascata
-0448 Brinzio
-0449 Briona
-0450 Brione
-0451 Brione sopra Minusio
-0452 Briosco
-0453 Brisighella
-0454 Brissago
-0455 Brissago-Valtravaglia
-0456 Brivio
-0457 Brondello
-0458 Broni
-0459 Brossasco
-0460 Brosso
-0461 Brovello-Carpugnino
-0462 Brozolo
-0463 Brugherio
-0464 Brugnato
-0465 Bruino
-0466 Brumano
-0467 Brunate
-0468 Brunello
-0469 Bruno
-0470 Brusaporto
-0471 Brusasco
-0472 Brusimpiano
-0473 Brusino Arsizio
-0474 Brusio
-0475 Brusnengo
-0476 Bruzolo
-0477 Bubbiano
-0478 Bubbio
-0479 Buccinasco
-0480 Budrio
-0481 Buglio in Monte
-0482 Buguggiate
-0483 Bulciago
-0484 Bulgarograsso
-0485 Burago di Molgora
-0486 Buriasco
-0487 Burolo
-0488 Buronzo
-0489 Busalla
-0490 Busano
-0491 Busca
-0492 Buscate
-0493 Buseno
-0494 Busnago
-0495 Bussero
-0496 Busseto
-0497 Bussoleno
-0498 Busto Arsizio
-0499 Busto Garolfo
-0500 Buttigliera Alta
-0501 Buttigliera d'Asti
-0502 Cabella Ligure
-0503 Cabiate
-0504 Cadegliano-Viconago
-0505 Cadelbosco di Sopra
-0506 Cademario
-0507 Cadempino
-0508 Cadenazzo
-0509 Cadeo
-0510 Cadorago
-0511 Cadrezzate con Osmate
-0512 Cafasse
-0513 Caglio
-0514 Caino
-0515 Caiolo
-0516 Cairate
-0517 Cairo Montenotte
-0518 Calamandrana
-0519 Calanca
-0520 Calasca-Castiglione
-0521 Calcinate
-0522 Calcinato
-0523 Calcio
-0524 Calco
-0525 Calderara di Reno
-0526 Calendasco
-0527 Calestano
-0528 Calice Ligure
-0529 Calice al Cornoviglio
-0530 Calizzano
-0531 Callabiana
-0532 Calliano
-0533 Calolziocorte
-0534 Calosso
-0535 Caltignaga
-0536 Calusco d'Adda
-0537 Caluso
-0538 Calvagese della Riviera
-0539 Calvatone
-0540 Calvenzano
-0541 Calvignano
-0542 Calvignasco
-0543 Calvisano
-0544 Cama
-0545 Camagna Monferrato
-0546 Camandona
-0547 Cambiago
-0548 Cambiano
-0549 Cambiasca
-0550 Camburzano
-0551 Camerana
-0552 Camerano Casasco
-0553 Camerata Cornello
-0554 Cameri
-0555 Camino
-0556 Camisano
-0557 Camogli
-0558 Campagnola Cremasca
-0559 Campagnola Emilia
-0560 Camparada
-0561 Campegine
-0562 Campertogno
-0563 Campiglia Cervo
-0564 Campiglione Fenile
-0565 Campione d'Italia
-0566 Campo (Vallemaggia)
-0567 Campo Ligure
-0568 Campodolcino
-0569 Campogalliano
-0570 Campomorone
-0571 Camporosso
-0572 Camposanto
-0573 Campospinoso
-0574 Camugnano
-0575 Canale
-0576 Candelo
-0577 Candia Canavese
-0578 Candia Lomellina
-0579 Candiolo
-0580 Canegrate
-0581 Canelli
-0582 Canischio
-0583 Cannero Riviera
-0584 Canneto Pavese
-0585 Canneto sull'Oglio
-0586 Cannobio
-0587 Canobbio
-0588 Canonica d'Adda
-0589 Canosio
-0590 Canossa
-0591 Cantalupa
-0592 Cantalupo Ligure
-0593 Cantarana
-0594 Cantello
-0595 Cantoira
-0596 Cantù
-0597 Canzo
-0598 Caorso
-0599 Capergnanica
-0600 Capiago Intimiano
-0601 Capizzone
-0602 Capo di Ponte
-0603 Caponago
-0604 Capovalle
-0605 Cappella Cantone
-0606 Cappella de' Picenardi
-0607 Capralba
-0608 Caprauna
-0609 Caprezzo
-0610 Capriano del Colle
-0611 Capriasca
-0612 Capriata d'Orba
-0613 Capriate San Gervasio
-0614 Caprie
-0615 Capriglio
-0616 Caprile
-0617 Caprino Bergamasco
-0618 Capriolo
-0619 Caraglio
-0620 Caramagna Piemonte
-0621 Carasco
-0622 Carate Brianza
-0623 Carate Urio
-0624 Caravaggio
-0625 Caravate
-0626 Caravino
-0627 Caravonica
-0628 Carbonara Scrivia
-0629 Carbonara al Ticino
-0630 Carbonate
-0631 Carcare
-0632 Carcoforo
-0633 Cardano al Campo
-0634 Cardè
-0635 Carema
-0636 Carenno
-0637 Carentino
-0638 Caresana
-0639 Caresanablot
-0640 Carezzano
-0641 Carignano
-0642 Carimate
-0643 Carisio
-0644 Carlazzo
-0645 Carmagnola
-0646 Carnago
-0647 Carnate
-0648 Carobbio degli Angeli
-0649 Carona
-0650 Caronno Pertusella
-0651 Caronno Varesino
-0652 Carpaneto Piacentino
-0653 Carpenedolo
-0654 Carpeneto
-0655 Carpi
-0656 Carpiano
-0657 Carpignano Sesia
-0658 Carpineti
-0659 Carrega Ligure
-0660 Carro
-0661 Carrodano
-0662 Carrosio
-0663 Carrù
-0664 Cartignano
-0665 Cartosio
-0666 Carugate
-0667 Carugo
-0668 Carvico
-0669 Casal Cermelli
-0670 Casalbeltrame
-0671 Casalborgone
-0672 Casalbuttano ed Uniti
-0673 Casale Corte Cerro
-0674 Casale Cremasco-Vidolasco
-0675 Casale Litta
-0676 Casale Monferrato
-0677 Casalecchio di Reno
-0678 Casaleggio Boiro
-0679 Casaleggio Novara
-0680 Casaletto Ceredano
-0681 Casaletto Lodigiano
-0682 Casaletto Vaprio
-0683 Casaletto di Sopra
-0684 Casalfiumanese
-0685 Casalgrande
-0686 Casalgrasso
-0687 Casalino
-0688 Casalmaggiore
-0689 Casalmaiocco
-0690 Casalmorano
-0691 Casalmoro
-0692 Casalnoceto
-0693 Casaloldo
-0694 Casalpusterlengo
-0695 Casalromano
-0696 Casalvolone
-0697 Casalzuigno
-0698 Casanova Elvo
-0699 Casanova Lerrone
-0700 Casanova Lonati
-0701 Casapinta
-0702 Casargo
-0703 Casarile
-0704 Casarza Ligure
-0705 Casasco
-0706 Casatenovo
-0707 Casatisma
-0708 Casazza
-0709 Casciago
-0710 Cascinette d'Ivrea
-0711 Casei Gerola
-0712 Caselette
-0713 Casella
-0714 Caselle Landi
-0715 Caselle Lurani
-0716 Caselle Torinese
-0717 Casina
-0718 Casirate d'Adda
-0719 Caslano
-0720 Caslino d'Erba
-0721 Casnate con Bernate
-0722 Casnigo
-0723 Casola Valsenio
-0724 Casorate Primo
-0725 Casorate Sempione
-0726 Casorezzo
-0727 Casorzo
-0728 Caspoggio
-0729 Cassago Brianza
-0730 Cassano Magnago
-0731 Cassano Spinola
-0732 Cassano Valcuvia
-0733 Cassano d'Adda
-0734 Cassiglio
-0735 Cassina Rizzardi
-0736 Cassina Valsassina
-0737 Cassina de' Pecchi
-0738 Cassinasco
-0739 Cassine
-0740 Cassinelle
-0741 Cassinetta di Lugagnano
-0742 Cassolnovo
-0743 Castagneto Po
-0744 Castagnito
-0745 Castagnole Monferrato
-0746 Castagnole Piemonte
-0747 Castagnole delle Lanze
-0748 Castana
-0749 Castaneda
-0750 Castano Primo
-0751 Casteggio
-0752 Castegnato
-0753 Castel Boglione
-0754 Castel Bolognese
-0755 Castel Gabbiano
-0756 Castel Goffredo
-0757 Castel Guelfo di Bologna
-0758 Castel Maggiore
-0759 Castel Mella
-0760 Castel Rocchero
-0761 Castel Rozzone
-0762 Castel San Giovanni
-0763 Castel San Pietro
-0764 Castel San Pietro Terme
-0765 Castel Vittorio
-0766 Castel d'Aiano
-0767 Castel d'Ario
-0768 Castel del Rio
-0769 Castel di Casio
-0770 Castelbelforte
-0771 Castelbianco
-0772 Castelcovati
-0773 Casteldelci
-0774 Casteldelfino
-0775 Casteldidone
-0776 Castelfranco Emilia
-0777 Castelgerundo
-0778 Castell'Alfero
-0779 Castell'Arquato
-0780 Castellamonte
-0781 Castellania Coppi
-0782 Castellanza
-0783 Castellar Guidobono
-0784 Castellarano
-0785 Castellaro
-0786 Castellazzo Bormida
-0787 Castellazzo Novarese
-0788 Castelleone
-0789 Castellero
-0790 Castelletto Cervo
-0791 Castelletto Merli
-0792 Castelletto Molina
-0793 Castelletto Monferrato
-0794 Castelletto Stura
-0795 Castelletto Uzzone
-0796 Castelletto d'Erro
-0797 Castelletto d'Orba
-0798 Castelletto di Branduzzo
-0799 Castelletto sopra Ticino
-0800 Castelli Calepio
-0801 Castellinaldo d'Alba
-0802 Castellino Tanaro
-0803 Castello Cabiaglio
-0804 Castello d'Agogna
-0805 Castello d'Argile
-0806 Castello dell'Acqua
-0807 Castello di Annone
-0808 Castello di Brianza
-0809 Castellucchio
-0810 Castelmagno
-0811 Castelmarte
-0812 Castelnovetto
-0813 Castelnovo di Sotto
-0814 Castelnovo ne' Monti
-0815 Castelnuovo Belbo
-0816 Castelnuovo Bocca d'Adda
-0817 Castelnuovo Bormida
-0818 Castelnuovo Bozzente
-0819 Castelnuovo Calcea
-0820 Castelnuovo Don Bosco
-0821 Castelnuovo Magra
-0822 Castelnuovo Nigra
-0823 Castelnuovo Rangone
-0824 Castelnuovo Scrivia
-0825 Castelnuovo di Ceva
-0826 Castelseprio
-0827 Castelspina
-0828 Castelveccana
-0829 Castelvecchio di Rocca Barbena
-0830 Castelverde
-0831 Castelvetro Piacentino
-0832 Castelvetro di Modena
-0833 Castelvisconti
-0834 Castenaso
-0835 Castenedolo
-0836 Castiglione Chiavarese
-0837 Castiglione Falletto
-0838 Castiglione Olona
-0839 Castiglione Tinella
-0840 Castiglione Torinese
-0841 Castiglione d'Adda
-0842 Castiglione dei Pepoli
-0843 Castiglione delle Stiviere
-0844 Castino
-0845 Castione Andevenno
-0846 Castione della Presolana
-0847 Castiraga Vidardo
-0848 Casto
-0849 Castrezzato
-0850 Castro
-0851 Castrocaro Terme e Terra del Sole
-0852 Castronno
-0853 Cattolica
-0854 Cava Manara
-0855 Cavaglietto
-0856 Cavaglio d'Agogna
-0857 Cavaglià
-0858 Cavagnolo
-0859 Cavallerleone
-0860 Cavallermaggiore
-0861 Cavallirio
-0862 Cavargna
-0863 Cavaria con Premezzo
-0864 Cavatore
-0865 Cavenago d'Adda
-0866 Cavenago di Brianza
-0867 Cavernago
-0868 Cavezzo
-0869 Cavour
-0870 Cavriago
-0871 Cavriana
-0872 Cazis
-0873 Cazzago Brabbia
-0874 Cazzago San Martino
-0875 Cazzano Sant'Andrea
-0876 Cecima
-0877 Cedegolo
-0878 Cedrasco
-0879 Celerina/Schlarigna
-0880 Cella Dati
-0881 Cella Monte
-0882 Cellarengo
-0883 Cellatica
-0884 Celle Enomondo
-0885 Celle Ligure
-0886 Celle di Macra
-0887 Cellio con Breia
-0888 Cenate Sopra
-0889 Cenate Sotto
-0890 Cene
-0891 Cengio
-0892 Centallo
-0893 Cento
-0894 Centovalli
-0895 Centro Valle Intelvi
-0896 Ceppo Morelli
-0897 Ceranesi
-0898 Cerano
-0899 Cerano d'Intelvi
-0900 Ceranova
-0901 Cercenasco
-0902 Cercino
-0903 Cerentino
-0904 Ceres
-0905 Ceresara
-0906 Cereseto
-0907 Ceresole Alba
-0908 Ceresole Reale
-0909 Cerete
-0910 Ceretto Lomellina
-0911 Cergnago
-0912 Ceriale
-0913 Ceriana
-0914 Ceriano Laghetto
-0915 Cerignale
-0916 Cermenate
-0917 Cernobbio
-0918 Cernusco Lombardone
-0919 Cernusco sul Naviglio
-0920 Cerreto Grue
-0921 Cerreto d'Asti
-0922 Cerretto Langhe
-0923 Cerrina Monferrato
-0924 Cerrione
-0925 Cerro Maggiore
-0926 Cerro Tanaro
-0927 Cerro al Lambro
-0928 Certosa di Pavia
-0929 Cervasca
-0930 Cervatto
-0931 Cerveno
-0932 Cervere
-0933 Cervesina
-0934 Cervia
-0935 Cervignano d'Adda
-0936 Cervo
-0937 Cesana Brianza
-0938 Cesana Torinese
-0939 Cesano Boscone
-0940 Cesano Maderno
-0941 Cesara
-0942 Cesate
-0943 Cesena
-0944 Cesenatico
-0945 Cesio
-0946 Cessole
-0947 Ceto
-0948 Ceva
-0949 Cevio
-0950 Cevo
-0951 Cherasco
-0952 Chialamberto
-0953 Chianocco
-0954 Chiari
-0955 Chiasso
-0956 Chiavari
-0957 Chiavenna
-0958 Chiaverano
-0959 Chieri
-0960 Chiesa in Valmalenco
-0961 Chiesanuova
-0962 Chiesanuova
-0963 Chieve
-0964 Chignolo Po
-0965 Chignolo d'Isola
-0966 Chiomonte
-0967 Chiuduno
-0968 Chiuro
-0969 Chiusa di Pesio
-0970 Chiusa di San Michele
-0971 Chiusanico
-0972 Chiusano d'Asti
-0973 Chiusavecchia
-0974 Chivasso
-0975 Chur
-0976 Churwalden
-0977 Cicagna
-0978 Cicognolo
-0979 Ciconio
-0980 Cigliano
-0981 Cigliè
-0982 Cigognola
-0983 Cigole
-0984 Cilavegna
-0985 Cimbergo
-0986 Cinaglio
-0987 Cingia de' Botti
-0988 Cinisello Balsamo
-0989 Cino
-0990 Cintano
-0991 Cinzano
-0992 Cipressa
-0993 Cirimido
-0994 Ciriè
-0995 Cisano Bergamasco
-0996 Cisano sul Neva
-0997 Ciserano
-0998 Cislago
-0999 Cisliano
-1000 Cissone
-1001 Cisterna d'Asti
-1002 Cittiglio
-1003 Città di San Marino
-1004 Civate
-1005 Civezza
-1006 Civiasco
-1007 Cividate Camuno
-1008 Cividate al Piano
-1009 Civitella di Romagna
-1010 Civo
-1011 Claino con Osteno
-1012 Clavesana
-1013 Claviere
-1014 Clivio
-1015 Clusone
-1016 Coassolo Torinese
-1017 Coazze
-1018 Coazzolo
-1019 Coccaglio
-1020 Cocconato
-1021 Cocquio-Trevisago
-1022 Codevilla
-1023 Codigoro
-1024 Codogno
-1025 Coggiola
-1026 Cogliate
-1027 Cogoleto
-1028 Cogorno
-1029 Colazza
-1030 Coldrerio
-1031 Colere
-1032 Coli
-1033 Colico
-1034 Colle Brianza
-1035 Collebeato
-1036 Collecchio
-1037 Collegno
-1038 Colleretto Castelnuovo
-1039 Colleretto Giacosa
-1040 Colli Verdi
-1041 Collina D'oro
-1042 Collio
-1043 Collobiano
-1044 Cologne
-1045 Cologno Monzese
-1046 Cologno al Serio
-1047 Colonno
-1048 Colorina
-1049 Colorno
-1050 Colturano
-1051 Colverde
-1052 Colzate
-1053 Comabbio
-1054 Comacchio
-1055 Comano
-1056 Comazzo
-1057 Comerio
-1058 Comezzano-Cizzago
-1059 Comignago
-1060 Commessaggio
-1061 Como
-1062 Compiano
-1063 Comun Nuovo
-1064 Concesio
-1065 Concordia sulla Secchia
-1066 Concorezzo
-1067 Condove
-1068 Confienza
-1069 Coniolo
-1070 Conselice
-1071 Conters im Prättigau
-1072 Conzano
-1073 Copiano
-1074 Copparo
-1075 Corana
-1076 Corbetta
-1077 Coreglia Ligure
-1078 Coriano
-1079 Corio
-1080 Cormano
-1081 Corna Imagna
-1082 Cornalba
-1083 Cornale e Bastida
-1084 Cornaredo
-1085 Cornate d'Adda
-1086 Cornegliano Laudense
-1087 Corneliano d'Alba
-1088 Corniglio
-1089 Corno Giovine
-1090 Cornovecchio
-1091 Correggio
-1092 Correzzana
-1093 Corrido
-1094 Corsico
-1095 Corsione
-1096 Cortandone
-1097 Cortanze
-1098 Cortazzone
-1099 Corte Brugnatella
-1100 Corte Franca
-1101 Corte Palasio
-1102 Corte de' Cortesi con Cignone
-1103 Corte de' Frati
-1104 Cortemaggiore
-1105 Cortemilia
-1106 Corteno Golgi
-1107 Cortenova
-1108 Cortenuova
-1109 Corteolona e Genzone
-1110 Cortiglione
-1111 Corvino San Quirico
-1112 Corzano
-1113 Cosio Valtellino
-1114 Cosio d'Arroscia
-1115 Cossano Belbo
-1116 Cossano Canavese
-1117 Cossato
-1118 Cosseria
-1119 Cossogno
-1120 Cossombrato
-1121 Costa Masnaga
-1122 Costa Serina
-1123 Costa Valle Imagna
-1124 Costa Vescovato
-1125 Costa Volpino
-1126 Costa de' Nobili
-1127 Costa di Mezzate
-1128 Costanzana
-1129 Costarainera
-1130 Costigliole Saluzzo
-1131 Costigliole d'Asti
-1132 Cotignola
-1133 Covo
-1134 Cozzo
-1135 Crandola Valsassina
-1136 Cravagliana
-1137 Cravanzana
-1138 Craveggia
-1139 Credaro
-1140 Credera Rubbiano
-1141 Crema
-1142 Cremella
-1143 Cremenaga
-1144 Cremeno
-1145 Cremia
-1146 Cremolino
-1147 Cremona
-1148 Cremosano
-1149 Crescentino
-1150 Crespiatica
-1151 Cressa
-1152 Crevacuore
-1153 Crevalcore
-1154 Crevoladossola
-1155 Crissolo
-1156 Crocefieschi
-1157 Crodo
-1158 Crosio della Valle
-1159 Crotta d'Adda
-1160 Crova
-1161 Cuasso al Monte
-1162 Cucciago
-1163 Cuceglio
-1164 Cuggiono
-1165 Cugliate-Fabiasco
-1166 Cugnasco-Gerra
-1167 Cumiana
-1168 Cumignano sul Naviglio
-1169 Cunardo
-1170 Cuneo
-1171 Cunico
-1172 Cuorgnè
-1173 Cura Carpignano
-1174 Cureggio
-1175 Cureglia
-1176 Curiglia con Monteviasco
-1177 Curino
-1178 Curio
-1179 Curno
-1180 Curtatone
-1181 Cusago
-1182 Cusano Milanino
-1183 Cusino
-1184 Cusio
-1185 Cuveglio
-1186 Cuvio
-1187 Dairago
-1188 Dalmine
-1189 Dalpe
-1190 Darfo Boario Terme
-1191 Davagna
-1192 Daverio
-1193 Davos
-1194 Dazio
-1195 Dego
-1196 Deiva Marina
-1197 Delebio
-1198 Dello
-1199 Demonte
-1200 Denice
-1201 Dernice
-1202 Derovere
-1203 Dervio
-1204 Desana
-1205 Desenzano del Garda
-1206 Desio
-1207 Diano Arentino
-1208 Diano Castello
-1209 Diano Marina
-1210 Diano San Pietro
-1211 Diano d'Alba
-1212 Disentis/Mustér
-1213 Divignano
-1214 Dizzasco
-1215 Dogliani
-1216 Dolceacqua
-1217 Dolcedo
-1218 Dolzago
-1219 Domagnano
-1220 Domaso
-1221 Domat/Ems
-1222 Domleschg
-1223 Domodossola
-1224 Donato
-1225 Dongo
-1226 Dorio
-1227 Dormelletto
-1228 Dorno
-1229 Dorzano
-1230 Dosolo
-1231 Dossena
-1232 Dosso del Liro
-1233 Dovadola
-1234 Dovera
-1235 Dozza
-1236 Dresano
-1237 Dronero
-1238 Druento
-1239 Druogno
-1240 Dubino
-1241 Dumenza
-1242 Duno
-1243 Dusino San Michele
-1244 Edolo
-1245 Ello
-1246 Elva
-1247 Endine Gaiano
-1248 Entracque
-1249 Entratico
-1250 Envie
-1251 Erba
-1252 Erbusco
-1253 Erli
-1254 Erve
-1255 Esine
-1256 Esino Lario
-1257 Eupilio
-1258 Exilles
-1259 Fabbrica Curone
-1260 Fabbrico
-1261 Faedo Valtellino
-1262 Faenza
-1263 Faetano
-1264 Faggeto Lario
-1265 Fagnano Olona
-1266 Faido
-1267 Falera
-1268 Faloppio
-1269 Fanano
-1270 Fara Gera d'Adda
-1271 Fara Novarese
-1272 Fara Olivana con Sola
-1273 Farigliano
-1274 Farini
-1275 Fascia
-1276 Faule
-1277 Favale di Malvaro
-1278 Favria
-1279 Feisoglio
-1280 Feletto
-1281 Felino
-1282 Felizzano
-1283 Felsberg
-1284 Fenegrò
-1285 Fenestrelle
-1286 Ferno
-1287 Ferrara
-1288 Ferrera
-1289 Ferrera Erbognone
-1290 Ferrera di Varese
-1291 Ferrere
-1292 Ferriere
-1293 Fiano
-1294 Fidenza
-1295 Fideris
-1296 Fiesco
-1297 Fiesse
-1298 Figino Serenza
-1299 Filago
-1300 Filighera
-1301 Finale Emilia
-1302 Finale Ligure
-1303 Fino Mornasco
-1304 Fino del Monte
-1305 Fiorano Canavese
-1306 Fiorano Modenese
-1307 Fiorano al Serio
-1308 Fiorentino
-1309 Fiorenzuola d'Arda
-1310 Fiscaglia
-1311 Fiumalbo
-1312 Flerden
-1313 Flero
-1314 Flims
-1315 Fläsch
-1316 Fobello
-1317 Foglizzo
-1318 Follo
-1319 Fombio
-1320 Fontanelice
-1321 Fontanella
-1322 Fontanellato
-1323 Fontaneto d'Agogna
-1324 Fontanetto Po
-1325 Fontanigorda
-1326 Fontanile
-1327 Fonteno
-1328 Fontevivo
-1329 Foppolo
-1330 Forcola
-1331 Foresto Sparso
-1332 Forlimpopoli
-1333 Forlì
-1334 Formazza
-1335 Formigara
-1336 Formigine
-1337 Formigliana
-1338 Forno Canavese
-1339 Fornovo San Giovanni
-1340 Fornovo di Taro
-1341 Fortunago
-1342 Fossano
-1343 Frabosa Soprana
-1344 Frabosa Sottana
-1345 Fraconalto
-1346 Framura
-1347 Francavilla Bisio
-1348 Frascaro
-1349 Frascarolo
-1350 Frassinello Monferrato
-1351 Frassineto Po
-1352 Frassinetto
-1353 Frassino
-1354 Frassinoro
-1355 Fresonara
-1356 Frinco
-1357 Front
-1358 Frossasco
-1359 Frugarolo
-1360 Fubine Monferrato
-1361 Fuipiano Valle Imagna
-1362 Furna
-1363 Fusignano
-1364 Fusine
-1365 Fürstenau
-1366 Gabbioneta-Binanuova
-1367 Gabiano
-1368 Gadesco-Pieve Delmona
-1369 Gaggiano
-1370 Gaggio Montano
-1371 Gaglianico
-1372 Gaiola
-1373 Galbiate
-1374 Galeata
-1375 Galgagnano
-1376 Gallarate
-1377 Galliate
-1378 Galliate Lombardo
-1379 Galliavola
-1380 Galliera
-1381 Gamalero
-1382 Gambara
-1383 Gambarana
-1384 Gambarogno
-1385 Gambasca
-1386 Gambettola
-1387 Gambolò
-1388 Gandellino
-1389 Gandino
-1390 Gandosso
-1391 Garbagna
-1392 Garbagna Novarese
-1393 Garbagnate Milanese
-1394 Garbagnate Monastero
-1395 Gardone Riviera
-1396 Gardone Val Trompia
-1397 Garessio
-1398 Gargallo
-1399 Gargnano
-1400 Garlasco
-1401 Garlate
-1402 Garlenda
-1403 Garzeno
-1404 Garzigliana
-1405 Gassino Torinese
-1406 Gattatico
-1407 Gatteo
-1408 Gattico-Veruno
-1409 Gattinara
-1410 Gavardo
-1411 Gaverina Terme
-1412 Gavi
-1413 Gavirate
-1414 Gazoldo degli Ippoliti
-1415 Gazzada Schianno
-1416 Gazzaniga
-1417 Gazzola
-1418 Gazzuolo
-1419 Gemmano
-1420 Gemonio
-1421 Genivolta
-1422 Genola
-1423 Genova
-1424 Gera Lario
-1425 Gerenzago
-1426 Gerenzano
-1427 Germagnano
-1428 Germagno
-1429 Germignaga
-1430 Gerola Alta
-1431 Gerre de' Caprioli
-1432 Gessate
-1433 Ghedi
-1434 Ghemme
-1435 Ghiffa
-1436 Ghisalba
-1437 Ghislarengo
-1438 Giaglione
-1439 Gianico
-1440 Giarole
-1441 Giaveno
-1442 Gifflenga
-1443 Gignese
-1444 Giornico
-1445 Giussago
-1446 Giussano
-1447 Giustenice
-1448 Giusvalla
-1449 Givoletto
-1450 Godiasco Salice Terme
-1451 Goito
-1452 Golasecca
-1453 Golferenzo
-1454 Gombito
-1455 Gonzaga
-1456 Gordola
-1457 Gordona
-1458 Gorgonzola
-1459 Gorla Maggiore
-1460 Gorla Minore
-1461 Gorlago
-1462 Gorle
-1463 Gornate Olona
-1464 Gorno
-1465 Goro
-1466 Gorreto
-1467 Gorzegno
-1468 Gossolengo
-1469 Gottasecca
-1470 Gottolengo
-1471 Govone
-1472 Gozzano
-1473 Graffignana
-1474 Graglia
-1475 Gragnano Trebbiense
-1476 Grana
-1477 Granarolo dell'Emilia
-1478 Grancia
-1479 Grandate
-1480 Grandola ed Uniti
-1481 Granozzo con Monticello
-1482 Grantola
-1483 Grassobbio
-1484 Gravedona ed Uniti
-1485 Gravellona Lomellina
-1486 Gravellona Toce
-1487 Gravere
-1488 Gravesano
-1489 Grazzano Badoglio
-1490 Greggio
-1491 Gremiasco
-1492 Grezzago
-1493 Griante
-1494 Grignasco
-1495 Grinzane Cavour
-1496 Grizzana Morandi
-1497 Grognardo
-1498 Gromo
-1499 Grondona
-1500 Grone
-1501 Grono
-1502 Grontardo
-1503 Gropello Cairoli
-1504 Gropparello
-1505 Groscavallo
-1506 Grosio
-1507 Grosotto
-1508 Grosso
-1509 Grugliasco
-1510 Grumello Cremonese ed Uniti
-1511 Grumello del Monte
-1512 Grüsch
-1513 Gualtieri
-1514 Guanzate
-1515 Guardabosone
-1516 Guardamiglio
-1517 Guarene
-1518 Guastalla
-1519 Guazzora
-1520 Gudo Visconti
-1521 Guidizzolo
-1522 Guiglia
-1523 Gurro
-1524 Gussago
-1525 Gussola
-1526 Idro
-1527 Igliano
-1528 Ilanz/Glion
-1529 Imbersago
-1530 Imola
-1531 Imperia
-1532 Inarzo
-1533 Incisa Scapaccino
-1534 Incudine
-1535 Induno Olona
-1536 Ingria
-1537 Intragna
-1538 Introbio
-1539 Inverigo
-1540 Inverno e Monteleone
-1541 Inverso Pinasca
-1542 Inveruno
-1543 Invorio
-1544 Inzago
-1545 Irma
-1546 Isasca
-1547 Iseo
-1548 Isola Dovarese
-1549 Isola Sant'Antonio
-1550 Isola d'Asti
-1551 Isola del Cantone
-1552 Isola di Fondra
-1553 Isolabella
-1554 Isolabona
-1555 Isone
-1556 Isorella
-1557 Ispra
-1558 Issiglio
-1559 Isso
-1560 Ivrea
-1561 Izano
-1562 Jenaz
-1563 Jenins
-1564 Jerago con Orago
-1565 Jolanda di Savoia
-1566 Klosters
-1567 Küblis
-1568 La Cassa
-1569 La Loggia
-1570 La Morra
-1571 La Punt Chamues-ch
-1572 La Spezia
-1573 La Valletta Brianza
-1574 Laax
-1575 Lacchiarella
-1576 Laglio
-1577 Lagnasco
-1578 Lagosanto
-1579 Laigueglia
-1580 Lainate
-1581 Laino
-1582 Lallio
-1583 Lama Mocogno
-1584 Lambrugo
-1585 Lamone
-1586 Lamporo
-1587 Landiona
-1588 Landquart
-1589 Landriano
-1590 Langhirano
-1591 Langosco
-1592 Lantsch/Lenz
-1593 Lanzada
-1594 Lanzo Torinese
-1595 Lardirago
-1596 Lasnigo
-1597 Lauriano
-1598 Lavagna
-1599 Lavena Ponte Tresa
-1600 Laveno-Mombello
-1601 Lavenone
-1602 Lavertezzo
-1603 Lavizzara
-1604 Lazzate
-1605 Lecco
-1606 Leffe
-1607 Leggiuno
-1608 Legnano
-1609 Leini
-1610 Leivi
-1611 Lemie
-1612 Lenna
-1613 Leno
-1614 Lenta
-1615 Lentate sul Seveso
-1616 Lequio Berria
-1617 Lequio Tanaro
-1618 Lerici
-1619 Lerma
-1620 Lesa
-1621 Lesegno
-1622 Lesignano de' Bagni
-1623 Lesmo
-1624 Lessolo
-1625 Lessona
-1626 Levanto
-1627 Levate
-1628 Levice
-1629 Levone
-1630 Lezzeno
-1631 Lierna
-1632 Lignana
-1633 Limbiate
-1634 Limido Comasco
-1635 Limone Piemonte
-1636 Limone sul Garda
-1637 Linarolo
-1638 Linescio
-1639 Lipomo
-1640 Lirio
-1641 Liscate
-1642 Lisio
-1643 Lissone
-1644 Livigno
-1645 Livo
-1646 Livorno Ferraris
-1647 Livraga
-1648 Lizzano in Belvedere
-1649 Loano
-1650 Loazzolo
-1651 Locana
-1652 Locarno
-1653 Locate Varesino
-1654 Locate di Triulzi
-1655 Locatello
-1656 Lodi
-1657 Lodi Vecchio
-1658 Lodrino
-1659 Lograto
-1660 Loiano
-1661 Lomagna
-1662 Lomazzo
-1663 Lombardore
-1664 Lombriasco
-1665 Lomello
-1666 Lonate Ceppino
-1667 Lonate Pozzolo
-1668 Lonato del Garda
-1669 Longhena
-1670 Longiano
-1671 Longone al Segrino
-1672 Loranzè
-1673 Loreglia
-1674 Lorsica
-1675 Losine
-1676 Losone
-1677 Lostallo
-1678 Lovere
-1679 Lovero
-1680 Lozio
-1681 Lozza
-1682 Lozzolo
-1683 Lu e Cuccaro Monferrato
-1684 Lucinasco
-1685 Lugagnano Val d'Arda
-1686 Lugano
-1687 Lugo
-1688 Luino
-1689 Luisago
-1690 Lumarzo
-1691 Lumezzane
-1692 Lumino
-1693 Lumnezia
-1694 Lungavilla
-1695 Luni
-1696 Lurago Marinone
-1697 Lurago d'Erba
-1698 Lurano
-1699 Lurate Caccivio
-1700 Luserna San Giovanni
-1701 Lusernetta
-1702 Lusigliè
-1703 Luvinate
-1704 Luzein
-1705 Luzzana
-1706 Luzzara
-1707 Maccagno con Pino e Veddasca
-1708 Maccastorna
-1709 Macello
-1710 Macherio
-1711 Maclodio
-1712 Macra
-1713 Macugnaga
-1714 Madesimo
-1715 Madignano
-1716 Madone
-1717 Madonna del Sasso
-1718 Madulain
-1719 Magasa
-1720 Magenta
-1721 Maggia
-1722 Maggiora
-1723 Magherno
-1724 Magliano Alfieri
-1725 Magliano Alpi
-1726 Magliaso
-1727 Magliolo
-1728 Maglione
-1729 Magnacavallo
-1730 Magnago
-1731 Magnano
-1732 Magreglio
-1733 Maienfeld
-1734 Maiolo
-1735 Mairago
-1736 Mairano
-1737 Maissana
-1738 Malagnino
-1739 Malalbergo
-1740 Malans
-1741 Malegno
-1742 Maleo
-1743 Malesco
-1744 Malgesso
-1745 Malgrate
-1746 Mallare
-1747 Malnate
-1748 Malonno
-1749 Malvicino
-1750 Mandello Vitta
-1751 Mandello del Lario
-1752 Manerba del Garda
-1753 Manerbio
-1754 Mango
-1755 Manno
-1756 Manta
-1757 Mantello
-1758 Mantova
-1759 Mapello
-1760 Mappano
-1761 Maranello
-1762 Marano Ticino
-1763 Marano sul Panaro
-1764 Maranzana
-1765 Marcallo con Casone
-1766 Marcaria
-1767 Marcheno
-1768 Marchirolo
-1769 Marcignago
-1770 Marene
-1771 Marentino
-1772 Maretto
-1773 Margarita
-1774 Margno
-1775 Mariana Mantovana
-1776 Mariano Comense
-1777 Marmentino
-1778 Marmirolo
-1779 Marmora
-1780 Marnate
-1781 Maroggia
-1782 Marone
-1783 Marsaglia
-1784 Martignana di Po
-1785 Martinengo
-1786 Martiniana Po
-1787 Marudo
-1788 Marzabotto
-1789 Marzano
-1790 Marzio
-1791 Masate
-1792 Masciago Primo
-1793 Masein
-1794 Masera
-1795 Masi Torello
-1796 Masio
-1797 Maslianico
-1798 Masone
-1799 Massa Lombarda
-1800 Massagno
-1801 Massalengo
-1802 Massazza
-1803 Massello
-1804 Masserano
-1805 Massimino
-1806 Massino Visconti
-1807 Massiola
-1808 Mathi
-1809 Mattie
-1810 Mazzano
-1811 Mazzo di Valtellina
-1812 Mazzè
-1813 Meana di Susa
-1814 Meda
-1815 Mede
-1816 Medel (Lucmagn)
-1817 Medesano
-1818 Medicina
-1819 Mediglia
-1820 Medolago
-1821 Medole
-1822 Medolla
-1823 Meina
-1824 Melano
-1825 Melazzo
-1826 Meldola
-1827 Mele
-1828 Melegnano
-1829 Meleti
-1830 Melide
-1831 Melle
-1832 Mello
-1833 Melzo
-1834 Menaggio
-1835 Menconico
-1836 Mendatica
-1837 Mendrisio
-1838 Merana
-1839 Merate
-1840 Mercallo
-1841 Mercato Saraceno
-1842 Mercenasco
-1843 Mergoscia
-1844 Mergozzo
-1845 Merlino
-1846 Merone
-1847 Mese
-1848 Mesenzana
-1849 Mesero
-1850 Mesocco
-1851 Mesola
-1852 Mezzago
-1853 Mezzana Bigli
-1854 Mezzana Mortigliengo
-1855 Mezzana Rabattone
-1856 Mezzanego
-1857 Mezzanino
-1858 Mezzenile
-1859 Mezzoldo
-1860 Mezzomerico
-1861 Mezzovico-Vira
-1862 Miagliano
-1863 Miasino
-1864 Miazzina
-1865 Miglieglia
-1866 Mignanego
-1867 Milano
-1868 Millesimo
-1869 Milzano
-1870 Minerbio
-1871 Minusio
-1872 Mioglia
-1873 Mirabello Monferrato
-1874 Miradolo Terme
-1875 Mirandola
-1876 Misano Adriatico
-1877 Misano di Gera d'Adda
-1878 Misinto
-1879 Missaglia
-1880 Moasca
-1881 Moconesi
-1882 Modena
-1883 Modigliana
-1884 Moggio
-1885 Moglia
-1886 Moio de' Calvi
-1887 Moiola
-1888 Molare
-1889 Molinella
-1890 Molini di Triora
-1891 Molino dei Torti
-1892 Mollia
-1893 Molteno
-1894 Moltrasio
-1895 Mombaldone
-1896 Mombarcaro
-1897 Mombaruzzo
-1898 Mombasiglio
-1899 Mombello Monferrato
-1900 Mombello di Torino
-1901 Mombercelli
-1902 Momo
-1903 Mompantero
-1904 Momperone
-1905 Monale
-1906 Monastero Bormida
-1907 Monastero di Lanzo
-1908 Monastero di Vasco
-1909 Monasterolo Casotto
-1910 Monasterolo del Castello
-1911 Monasterolo di Savigliano
-1912 Moncalieri
-1913 Moncalvo
-1914 Moncenisio
-1915 Moncestino
-1916 Monchiero
-1917 Monchio delle Corti
-1918 Moncrivello
-1919 Moncucco Torinese
-1920 Mondaino
-1921 Mondovì
-1922 Moneglia
-1923 Monesiglio
-1924 Monforte d'Alba
-1925 Mongardino
-1926 Monghidoro
-1927 Mongiardino Ligure
-1928 Mongrando
-1929 Monguzzo
-1930 Moniga del Garda
-1931 Monleale
-1932 Monno
-1933 Montabone
-1934 Montacuto
-1935 Montafia
-1936 Montagna in Valtellina
-1937 Montaldeo
-1938 Montaldo Bormida
-1939 Montaldo Roero
-1940 Montaldo Scarampi
-1941 Montaldo Torinese
-1942 Montaldo di Mondovì
-1943 Montalenghe
-1944 Montalto Carpasio
-1945 Montalto Dora
-1946 Montalto Pavese
-1947 Montanaro
-1948 Montanaso Lombardo
-1949 Montanera
-1950 Montano Lucino
-1951 Monte Cremasco
-1952 Monte Isola
-1953 Monte Marenzo
-1954 Monte San Pietro
-1955 Montebello della Battaglia
-1956 Montebruno
-1957 Montecalvo Versiggia
-1958 Montecastello
-1959 Montecchio Emilia
-1960 Monteceneri
-1961 Montechiaro d'Acqui
-1962 Montechiaro d'Asti
-1963 Montechiarugolo
-1964 Montecrestese
-1965 Montecreto
-1966 Montefiore Conca
-1967 Montefiorino
-1968 Montegiardino
-1969 Montegioco
-1970 Montegridolfo
-1971 Montegrino Valtravaglia
-1972 Montegrosso Pian Latte
-1973 Montegrosso d'Asti
-1974 Montello
-1975 Montelupo Albese
-1976 Montemagno
-1977 Montemale di Cuneo
-1978 Montemarzino
-1979 Montemezzo
-1980 Monterenzio
-1981 Monterosso Grana
-1982 Monterosso al Mare
-1983 Montescano
-1984 Montescheno
-1985 Montescudo-Monte Colombo
-1986 Montese
-1987 Montesegale
-1988 Monteu Roero
-1989 Monteu da Po
-1990 Montevecchia
-1991 Montezemolo
-1992 Montiano
-1993 Monticelli Brusati
-1994 Monticelli Pavese
-1995 Monticelli d'Ongina
-1996 Monticello Brianza
-1997 Monticello d'Alba
-1998 Montichiari
-1999 Montiglio Monferrato
-2000 Montirone
-2001 Montodine
-2002 Montoggio
-2003 Montorfano
-2004 Montà
-2005 Montù Beccaria
-2006 Monvalle
-2007 Monza
-2008 Monzambano
-2009 Monzuno
-2010 Morano sul Po
-2011 Moransengo
-2012 Morazzone
-2013 Morbegno
-2014 Morbello
-2015 Morbio Inferiore
-2016 Morciano di Romagna
-2017 Morcote
-2018 Mordano
-2019 Morengo
-2020 Moretta
-2021 Morfasso
-2022 Morimondo
-2023 Moriondo Torinese
-2024 Mornago
-2025 Mornese
-2026 Mornico Losana
-2027 Mornico al Serio
-2028 Morozzo
-2029 Morsasco
-2030 Mortara
-2031 Morterone
-2032 Moscazzano
-2033 Motta Baluffi
-2034 Motta Visconti
-2035 Motta de' Conti
-2036 Mottalciata
-2037 Motteggiana
-2038 Mozzanica
-2039 Mozzate
-2040 Mozzo
-2041 Muggiò
-2042 Mulazzano
-2043 Muntogna da Schons
-2044 Mura
-2045 Muralto
-2046 Murazzano
-2047 Murello
-2048 Murialdo
-2049 Murisengo
-2050 Muscoline
-2051 Musso
-2052 Muzzano
-2053 Muzzano
-2054 Narzole
-2055 Nasino
-2056 Nave
-2057 Ne
-2058 Nebbiuno
-2059 Neggio
-2060 Neirone
-2061 Neive
-2062 Nembro
-2063 Nerviano
-2064 Nesso
-2065 Netro
-2066 Neviano degli Arduini
-2067 Neviglie
-2068 Niardo
-2069 Nibbiola
-2070 Nibionno
-2071 Nichelino
-2072 Nicorvo
-2073 Niella Belbo
-2074 Niella Tanaro
-2075 Nizza Monferrato
-2076 Noasca
-2077 Noceto
-2078 Nole
-2079 Noli
-2080 Nomaglio
-2081 Nonantola
-2082 None
-2083 Nonio
-2084 Nosate
-2085 Nova Milanese
-2086 Novafeltria
-2087 Novaggio
-2088 Novalesa
-2089 Novara
-2090 Novate Mezzola
-2091 Novate Milanese
-2092 Novazzano
-2093 Novedrate
-2094 Novellara
-2095 Novello
-2096 Novi Ligure
-2097 Novi di Modena
-2098 Noviglio
-2099 Nucetto
-2100 Nuvolento
-2101 Nuvolera
-2102 Obersaxen Mundaun
-2103 Occhieppo Inferiore
-2104 Occhieppo Superiore
-2105 Occimiano
-2106 Odalengo Grande
-2107 Odalengo Piccolo
-2108 Odolo
-2109 Offanengo
-2110 Offlaga
-2111 Oggebbio
-2112 Oggiona con Santo Stefano
-2113 Oggiono
-2114 Oglianico
-2115 Olcenengo
-2116 Oldenico
-2117 Oleggio
-2118 Oleggio Castello
-2119 Olevano di Lomellina
-2120 Olgiate Comasco
-2121 Olgiate Molgora
-2122 Olgiate Olona
-2123 Olginate
-2124 Oliva Gessi
-2125 Oliveto Lario
-2126 Olivetta San Michele
-2127 Olivola
-2128 Olmeneta
-2129 Olmo Gentile
-2130 Olmo al Brembo
-2131 Oltre il Colle
-2132 Oltressenda Alta
-2133 Oltrona di San Mamette
-2134 Ome
-2135 Omegna
-2136 Oncino
-2137 Oneta
-2138 Ono San Pietro
-2139 Onore
-2140 Onsernone
-2141 Onzo
-2142 Opera
-2143 Orbassano
-2144 Orco Feglino
-2145 Orero
-2146 Origgio
-2147 Origlio
-2148 Orino
-2149 Orio Canavese
-2150 Orio Litta
-2151 Orio al Serio
-2152 Ormea
-2153 Ornago
-2154 Ornavasso
-2155 Ornica
-2156 Orsara Bormida
-2157 Orselina
-2158 Orsenigo
-2159 Orta San Giulio
-2160 Ortovero
-2161 Orzinuovi
-2162 Orzivecchi
-2163 Osasco
-2164 Osasio
-2165 Osiglia
-2166 Osio Sopra
-2167 Osio Sotto
-2168 Osnago
-2169 Ospedaletti
-2170 Ospedaletto Lodigiano
-2171 Ospitaletto
-2172 Ossago Lodigiano
-2173 Ossimo
-2174 Ossona
-2175 Ostana
-2176 Ostellato
-2177 Ostiano
-2178 Ostiglia
-2179 Ottiglio
-2180 Ottobiano
-2181 Ottone
-2182 Oulx
-2183 Ovada
-2184 Oviglio
-2185 Ozegna
-2186 Ozzano Monferrato
-2187 Ozzano dell'Emilia
-2188 Ozzero
-2189 Padenghe sul Garda
-2190 Paderna
-2191 Paderno Dugnano
-2192 Paderno Franciacorta
-2193 Paderno Ponchielli
-2194 Paderno d'Adda
-2195 Paesana
-2196 Pagazzano
-2197 Pagno
-2198 Pagnona
-2199 Paisco Loveno
-2200 Paitone
-2201 Paladina
-2202 Palagano
-2203 Palanzano
-2204 Palazzago
-2205 Palazzo Canavese
-2206 Palazzo Pignano
-2207 Palazzolo Vercellese
-2208 Palazzolo sull'Oglio
-2209 Palestro
-2210 Pallanzeno
-2211 Pallare
-2212 Palosco
-2213 Pamparato
-2214 Pancalieri
-2215 Pancarana
-2216 Pandino
-2217 Pantigliate
-2218 Parabiago
-2219 Paradiso
-2220 Paratico
-2221 Parella
-2222 Pareto
-2223 Parlasco
-2224 Parma
-2225 Parodi Ligure
-2226 Paroldo
-2227 Parona
-2228 Parre
-2229 Paruzzaro
-2230 Parzanica
-2231 Paspardo
-2232 Passerano Marmorito
-2233 Passirano
-2234 Pasturana
-2235 Pasturo
-2236 Paullo
-2237 Pavarolo
-2238 Pavia
-2239 Pavone Canavese
-2240 Pavone del Mella
-2241 Pavullo nel Frignano
-2242 Pecetto Torinese
-2243 Pecetto di Valenza
-2244 Pedesina
-2245 Pedrengo
-2246 Peglio
-2247 Pegognaga
-2248 Peia
-2249 Pella
-2250 Pellegrino Parmense
-2251 Penango
-2252 Pennabilli
-2253 Perinaldo
-2254 Perledo
-2255 Perletto
-2256 Perlo
-2257 Pero
-2258 Perosa Argentina
-2259 Perosa Canavese
-2260 Perrero
-2261 Persico Dosimo
-2262 Personico
-2263 Pertengo
-2264 Pertica Alta
-2265 Pertica Bassa
-2266 Pertusio
-2267 Pescarolo ed Uniti
-2268 Pescate
-2269 Peschiera Borromeo
-2270 Pessano con Bornago
-2271 Pessina Cremonese
-2272 Pessinetto
-2273 Pettenasco
-2274 Pettinengo
-2275 Peveragno
-2276 Pezzana
-2277 Pezzaze
-2278 Pezzolo Valle Uzzone
-2279 Piacenza
-2280 Piadena Drizzona
-2281 Pian Camuno
-2282 Piana Crixia
-2283 Piancogno
-2284 Pianello Val Tidone
-2285 Pianello del Lario
-2286 Pianengo
-2287 Pianezza
-2288 Pianfei
-2289 Pianico
-2290 Pianoro
-2291 Piantedo
-2292 Piario
-2293 Piasco
-2294 Piateda
-2295 Piatto
-2296 Piazza Brembana
-2297 Piazzatorre
-2298 Piazzolo
-2299 Piea
-2300 Piedicavallo
-2301 Piedimulera
-2302 Pieranica
-2303 Pietra Ligure
-2304 Pietra Marazzi
-2305 Pietra de' Giorgi
-2306 Pietrabruna
-2307 Pietraporzio
-2308 Pieve Albignola
-2309 Pieve Emanuele
-2310 Pieve Fissiraga
-2311 Pieve Ligure
-2312 Pieve Porto Morone
-2313 Pieve San Giacomo
-2314 Pieve Vergonte
-2315 Pieve d'Olmi
-2316 Pieve del Cairo
-2317 Pieve di Cento
-2318 Pieve di Teco
-2319 Pievepelago
-2320 Pigna
-2321 Pignone
-2322 Pigra
-2323 Pila
-2324 Pinarolo Po
-2325 Pinasca
-2326 Pinerolo
-2327 Pino Torinese
-2328 Pino d'Asti
-2329 Piobesi Torinese
-2330 Piobesi d'Alba
-2331 Piode
-2332 Pioltello
-2333 Piossasco
-2334 Piovà Massaia
-2335 Piozzano
-2336 Piozzo
-2337 Pisano
-2338 Piscina
-2339 Pisogne
-2340 Piubega
-2341 Piuro
-2342 Piverone
-2343 Pizzale
-2344 Pizzighettone
-2345 Plesio
-2346 Plodio
-2347 Pocapaglia
-2348 Podenzano
-2349 Poggio Renatico
-2350 Poggio Rusco
-2351 Poggio Torriana
-2352 Poggiridenti
-2353 Pogliano Milanese
-2354 Pognana Lario
-2355 Pognano
-2356 Pogno
-2357 Poirino
-2358 Polaveno
-2359 Polesine Zibello
-2360 Polinago
-2361 Pollegio
-2362 Pollone
-2363 Polonghera
-2364 Polpenazze del Garda
-2365 Pomaretto
-2366 Pomaro Monferrato
-2367 Pombia
-2368 Pompeiana
-2369 Pompiano
-2370 Pomponesco
-2371 Poncarale
-2372 Ponderano
-2373 Ponna
-2374 Pont Canavese
-2375 Ponte Capriasca
-2376 Ponte Lambro
-2377 Ponte Nizza
-2378 Ponte Nossa
-2379 Ponte San Pietro
-2380 Ponte dell'Olio
-2381 Ponte di Legno
-2382 Ponte in Valtellina
-2383 Pontechianale
-2384 Pontecurone
-2385 Pontedassio
-2386 Pontenure
-2387 Ponteranica
-2388 Pontestura
-2389 Pontevico
-2390 Ponti
-2391 Ponti sul Mincio
-2392 Pontida
-2393 Pontinvrea
-2394 Pontirolo Nuovo
-2395 Pontoglio
-2396 Pontresina
-2397 Ponzano Monferrato
-2398 Ponzone
-2399 Porlezza
-2400 Pornassio
-2401 Portacomaro
-2402 Portalbera
-2403 Porte
-2404 Portico e San Benedetto
-2405 Porto Ceresio
-2406 Porto Mantovano
-2407 Porto Valtravaglia
-2408 Portofino
-2409 Portomaggiore
-2410 Portovenere
-2411 Portula
-2412 Porza
-2413 Poschiavo
-2414 Postalesio
-2415 Postua
-2416 Poviglio
-2417 Pozzaglio ed Uniti
-2418 Pozzo d'Adda
-2419 Pozzol Groppo
-2420 Pozzolengo
-2421 Pozzolo Formigaro
-2422 Pozzuolo Martesana
-2423 Pradalunga
-2424 Pradleves
-2425 Pragelato
-2426 Pralboino
-2427 Prali
-2428 Pralormo
-2429 Pralungo
-2430 Pramollo
-2431 Prarolo
-2432 Prarostino
-2433 Prasco
-2434 Prascorsano
-2435 Prata Camportaccio
-2436 Pratiglione
-2437 Prato Leventina
-2438 Prato Sesia
-2439 Pray
-2440 Prazzo
-2441 Predappio
-2442 Predore
-2443 Predosa
-2444 Pregnana Milanese
-2445 Prelà
-2446 Premana
-2447 Premeno
-2448 Premia
-2449 Premilcuore
-2450 Premolo
-2451 Premosello-Chiovenda
-2452 Preseglie
-2453 Presezzo
-2454 Prevalle
-2455 Priero
-2456 Prignano sulla Secchia
-2457 Primaluna
-2458 Priocca
-2459 Priola
-2460 Propata
-2461 Proserpio
-2462 Provaglio Val Sabbia
-2463 Provaglio d'Iseo
-2464 Prunetto
-2465 Puegnago del Garda
-2466 Pumenengo
-2467 Pura
-2468 Pusiano
-2469 Quagliuzzo
-2470 Quaranti
-2471 Quaregna Cerreto
-2472 Quargnento
-2473 Quarna Sopra
-2474 Quarna Sotto
-2475 Quarona
-2476 Quassolo
-2477 Quattordio
-2478 Quattro Castella
-2479 Quiliano
-2480 Quincinetto
-2481 Quingentole
-2482 Quintano
-2483 Quinto
-2484 Quinto Vercellese
-2485 Quinzano d'Oglio
-2486 Quistello
-2487 Racconigi
-2488 Rancio Valcuvia
-2489 Ranco
-2490 Ranica
-2491 Ranzanico
-2492 Ranzo
-2493 Rapallo
-2494 Rassa
-2495 Rasura
-2496 Ravarino
-2497 Ravenna
-2498 Re
-2499 Rea
-2500 Reano
-2501 Recco
-2502 Recetto
-2503 Redavalle
-2504 Redondesco
-2505 Refrancore
-2506 Reggio nell'Emilia
-2507 Reggiolo
-2508 Remedello
-2509 Renate
-2510 Rescaldina
-2511 Retorbido
-2512 Revello
-2513 Revigliasco d'Asti
-2514 Rezzago
-2515 Rezzato
-2516 Rezzo
-2517 Rezzoaglio
-2518 Rheinwald
-2519 Rho
-2520 Rhäzüns
-2521 Rialto
-2522 Ribordone
-2523 Ricaldone
-2524 Riccione
-2525 Riccò del Golfo di Spezia
-2526 Ricengo
-2527 Rifreddo
-2528 Rimella
-2529 Rimini
-2530 Rio Saliceto
-2531 Riolo Terme
-2532 Riolunato
-2533 Riomaggiore
-2534 Ripalta Arpina
-2535 Ripalta Cremasca
-2536 Ripalta Guerina
-2537 Rittana
-2538 Riva Ligure
-2539 Riva San Vitale
-2540 Riva del Po
-2541 Riva di Solto
-2542 Riva presso Chieri
-2543 Rivalba
-2544 Rivalta Bormida
-2545 Rivalta di Torino
-2546 Rivanazzano Terme
-2547 Rivara
-2548 Rivarolo Canavese
-2549 Rivarolo Mantovano
-2550 Rivarolo del Re ed Uniti
-2551 Rivarone
-2552 Rivarossa
-2553 Rive
-2554 Rivergaro
-2555 Riviera
-2556 Rivoli
-2557 Rivolta d'Adda
-2558 Roaschia
-2559 Roascio
-2560 Roasio
-2561 Roatto
-2562 Robassomero
-2563 Robbiate
-2564 Robbio
-2565 Robecchetto con Induno
-2566 Robecco Pavese
-2567 Robecco d'Oglio
-2568 Robecco sul Naviglio
-2569 Robella
-2570 Robilante
-2571 Roburent
-2572 Rocca Canavese
-2573 Rocca Cigliè
-2574 Rocca Grimalda
-2575 Rocca San Casciano
-2576 Rocca Susella
-2577 Rocca d'Arazzo
-2578 Rocca de' Baldi
-2579 Rocca de' Giorgi
-2580 Roccabianca
-2581 Roccabruna
-2582 Roccaforte Ligure
-2583 Roccaforte Mondovì
-2584 Roccafranca
-2585 Roccasparvera
-2586 Roccaverano
-2587 Roccavignale
-2588 Roccavione
-2589 Rocchetta Belbo
-2590 Rocchetta Ligure
-2591 Rocchetta Nervina
-2592 Rocchetta Palafea
-2593 Rocchetta Tanaro
-2594 Rocchetta di Vara
-2595 Rodano
-2596 Roddi
-2597 Roddino
-2598 Rodello
-2599 Rodengo Saiano
-2600 Rodero
-2601 Rodigo
-2602 Rogeno
-2603 Rognano
-2604 Rogno
-2605 Rogolo
-2606 Roletto
-2607 Rolo
-2608 Romagnano Sesia
-2609 Romagnese
-2610 Romanengo
-2611 Romano Canavese
-2612 Romano di Lombardia
-2613 Romentino
-2614 Ronago
-2615 Roncadelle
-2616 Roncaro
-2617 Roncello
-2618 Ronco Biellese
-2619 Ronco Briantino
-2620 Ronco Canavese
-2621 Ronco Scrivia
-2622 Ronco Sopra Ascona
-2623 Roncobello
-2624 Roncoferraro
-2625 Roncofreddo
-2626 Roncola
-2627 Rondanina
-2628 Rondissone
-2629 Rongellen
-2630 Ronsecco
-2631 Roppolo
-2632 Rorà
-2633 Rosasco
-2634 Rosate
-2635 Rosazza
-2636 Rosignano Monferrato
-2637 Rossa
-2638 Rossa
-2639 Rossana
-2640 Rossiglione
-2641 Rosta
-2642 Rota d'Imagna
-2643 Rothenbrunnen
-2644 Rottofreno
-2645 Roure
-2646 Rovasenda
-2647 Rovato
-2648 Rovegno
-2649 Rovellasca
-2650 Rovello Porro
-2651 Roverbella
-2652 Roveredo (GR)
-2653 Rovescala
-2654 Rovetta
-2655 Rovio
-2656 Rozzano
-2657 Roè Volciano
-2658 Rubiana
-2659 Rubiera
-2660 Rudiano
-2661 Rueglio
-2662 Ruffia
-2663 Russi
-2664 S-chanf
-2665 Sabbio Chiese
-2666 Sabbioneta
-2667 Safiental
-2668 Sagliano Micca
-2669 Sagogn
-2670 Sala Baganza
-2671 Sala Biellese
-2672 Sala Bolognese
-2673 Sala Comacina
-2674 Sala Monferrato
-2675 Salasco
-2676 Salassa
-2677 Salbertrand
-2678 Sale
-2679 Sale Marasino
-2680 Sale San Giovanni
-2681 Sale delle Langhe
-2682 Salerano Canavese
-2683 Salerano sul Lambro
-2684 Sali Vercellese
-2685 Saliceto
-2686 Salmour
-2687 Salsomaggiore Terme
-2688 Saltrio
-2689 Saludecio
-2690 Saluggia
-2691 Salussola
-2692 Saluzzo
-2693 Salvirola
-2694 Salza di Pinerolo
-2695 Salò
-2696 Samarate
-2697 Sambuco
-2698 Samedan
-2699 Samnaun
-2700 Samolaco
-2701 Samone
-2702 Sampeyre
-2703 San Bartolomeo Val Cavargna
-2704 San Bartolomeo al Mare
-2705 San Bassano
-2706 San Benedetto Belbo
-2707 San Benedetto Po
-2708 San Benedetto Val di Sambro
-2709 San Benigno Canavese
-2710 San Bernardino Verbano
-2711 San Biagio della Cima
-2712 San Carlo Canavese
-2713 San Cesario sul Panaro
-2714 San Cipriano Po
-2715 San Clemente
-2716 San Colombano Belmonte
-2717 San Colombano Certenoli
-2718 San Colombano al Lambro
-2719 San Cristoforo
-2720 San Damiano Macra
-2721 San Damiano al Colle
-2722 San Damiano d'Asti
-2723 San Daniele Po
-2724 San Didero
-2725 San Donato Milanese
-2726 San Felice del Benaco
-2727 San Felice sul Panaro
-2728 San Fermo della Battaglia
-2729 San Fiorano
-2730 San Francesco al Campo
-2731 San Genesio ed Uniti
-2732 San Germano Chisone
-2733 San Germano Vercellese
-2734 San Gervasio Bresciano
-2735 San Giacomo Filippo
-2736 San Giacomo Vercellese
-2737 San Giacomo delle Segnate
-2738 San Gillio
-2739 San Giorgio Bigarello
-2740 San Giorgio Canavese
-2741 San Giorgio Monferrato
-2742 San Giorgio Piacentino
-2743 San Giorgio Scarampi
-2744 San Giorgio di Lomellina
-2745 San Giorgio di Piano
-2746 San Giorgio su Legnano
-2747 San Giorio di Susa
-2748 San Giovanni Bianco
-2749 San Giovanni del Dosso
-2750 San Giovanni in Croce
-2751 San Giovanni in Marignano
-2752 San Giovanni in Persiceto
-2753 San Giuliano Milanese
-2754 San Giusto Canavese
-2755 San Lazzaro di Savena
-2756 San Leo
-2757 San Lorenzo al Mare
-2758 San Martino Alfieri
-2759 San Martino Canavese
-2760 San Martino Siccomario
-2761 San Martino dall'Argine
-2762 San Martino del Lago
-2763 San Martino in Rio
-2764 San Martino in Strada
-2765 San Marzano Oliveto
-2766 San Maurizio Canavese
-2767 San Maurizio d'Opaglio
-2768 San Mauro Pascoli
-2769 San Mauro Torinese
-2770 San Michele Mondovì
-2771 San Nazzaro Sesia
-2772 San Nazzaro Val Cavargna
-2773 San Paolo
-2774 San Paolo Solbrito
-2775 San Paolo d'Argon
-2776 San Pellegrino Terme
-2777 San Pietro Mosezzo
-2778 San Pietro Val Lemina
-2779 San Pietro in Casale
-2780 San Pietro in Cerro
-2781 San Polo d'Enza
-2782 San Ponso
-2783 San Possidonio
-2784 San Prospero
-2785 San Raffaele Cimena
-2786 San Rocco al Porto
-2787 San Salvatore Monferrato
-2788 San Sebastiano Curone
-2789 San Sebastiano da Po
-2790 San Secondo Parmense
-2791 San Secondo di Pinerolo
-2792 San Siro
-2793 San Vittore
-2794 San Vittore Olona
-2795 San Zeno Naviglio
-2796 San Zenone al Lambro
-2797 San Zenone al Po
-2798 Sandigliano
-2799 Sanfront
-2800 Sanfrè
-2801 Sangano
-2802 Sangiano
-2803 Sannazzaro de' Burgondi
-2804 Sanremo
-2805 Sant'Agata Bolognese
-2806 Sant'Agata Feltria
-2807 Sant'Agata Fossili
-2808 Sant'Agata sul Santerno
-2809 Sant'Albano Stura
-2810 Sant'Alessio con Vialone
-2811 Sant'Ambrogio di Torino
-2812 Sant'Angelo Lodigiano
-2813 Sant'Angelo Lomellina
-2814 Sant'Antonino di Susa
-2815 Sant'Ilario d'Enza
-2816 Sant'Olcese
-2817 Sant'Omobono Terme
-2818 Sant'antonino
-2819 Santa Brigida
-2820 Santa Cristina e Bissone
-2821 Santa Giuletta
-2822 Santa Margherita Ligure
-2823 Santa Margherita di Staffora
-2824 Santa Maria Hoè
-2825 Santa Maria Maggiore
-2826 Santa Maria della Versa
-2827 Santa Maria in Calanca
-2828 Santa Sofia
-2829 Santa Vittoria d'Alba
-2830 Santarcangelo di Romagna
-2831 Santena
-2832 Santhià
-2833 Santo Stefano Belbo
-2834 Santo Stefano Lodigiano
-2835 Santo Stefano Roero
-2836 Santo Stefano Ticino
-2837 Santo Stefano al Mare
-2838 Santo Stefano d'Aveto
-2839 Santo Stefano di Magra
-2840 Sardigliano
-2841 Sarezzano
-2842 Sarezzo
-2843 Sarmato
-2844 Sarnico
-2845 Saronno
-2846 Sarsina
-2847 Sartirana Lomellina
-2848 Sarzana
-2849 Sassello
-2850 Sasso Marconi
-2851 Sassuolo
-2852 Sauze d'Oulx
-2853 Sauze di Cesana
-2854 Savigliano
-2855 Savignano sul Panaro
-2856 Savignano sul Rubicone
-2857 Savignone
-2858 Saviore dell'Adamello
-2859 Savona
-2860 Savosa
-2861 Scagnello
-2862 Scaldasole
-2863 Scalenghe
-2864 Scandiano
-2865 Scandolara Ravara
-2866 Scandolara Ripa d'Oglio
-2867 Scanzorosciate
-2868 Scarmagno
-2869 Scarnafigi
-2870 Scharans
-2871 Schiers
-2872 Schignano
-2873 Schilpario
-2874 Schivenoglia
-2875 Schluein
-2876 Schmitten (GR)
-2877 Sciolze
-2878 Scopa
-2879 Scopello
-2880 Scuol
-2881 Scurzolengo
-2882 Seborga
-2883 Secugnago
-2884 Sedriano
-2885 Sedrina
-2886 Seewis im Prättigau
-2887 Segrate
-2888 Sellero
-2889 Selvino
-2890 Semiana
-2891 Senago
-2892 Seniga
-2893 Senna Comasco
-2894 Senna Lodigiana
-2895 Seregno
-2896 Sergnano
-2897 Seriate
-2898 Serina
-2899 Serle
-2900 Sermide e Felonica
-2901 Sernio
-2902 Serole
-2903 Serra Riccò
-2904 Serralunga d'Alba
-2905 Serralunga di Crea
-2906 Serramazzoni
-2907 Serravalle
-2908 Serravalle
-2909 Serravalle Langhe
-2910 Serravalle Scrivia
-2911 Serravalle Sesia
-2912 Serravalle a Po
-2913 Sessame
-2914 Sesta Godano
-2915 Sesto Calende
-2916 Sesto San Giovanni
-2917 Sesto ed Uniti
-2918 Sestola
-2919 Sestri Levante
-2920 Sestriere
-2921 Settala
-2922 Settime
-2923 Settimo Milanese
-2924 Settimo Rottaro
-2925 Settimo Torinese
-2926 Settimo Vittone
-2927 Seveso
-2928 Sezzadio
-2929 Sillavengo
-2930 Sils im Domleschg
-2931 Sils im Engadin/Segl
-2932 Silvano Pietra
-2933 Silvano d'Orba
-2934 Silvaplana
-2935 Sinio
-2936 Sirmione
-2937 Sirone
-2938 Sirtori
-2939 Sissa Trecasali
-2940 Siziano
-2941 Sizzano
-2942 Soazza
-2943 Sogliano al Rubicone
-2944 Soglio
-2945 Soiano del Lago
-2946 Solaro
-2947 Solarolo
-2948 Solarolo Rainerio
-2949 Solbiate Arno
-2950 Solbiate Olona
-2951 Solbiate con Cagno
-2952 Soldano
-2953 Solero
-2954 Solferino
-2955 Soliera
-2956 Solignano
-2957 Solonghello
-2958 Solto Collina
-2959 Solza
-2960 Somaglia
-2961 Somano
-2962 Somma Lombardo
-2963 Sommariva Perno
-2964 Sommariva del Bosco
-2965 Sommo
-2966 Soncino
-2967 Sondalo
-2968 Sondrio
-2969 Songavazzo
-2970 Sonico
-2971 Soragna
-2972 Sorbolo Mezzani
-2973 Sordevolo
-2974 Sordio
-2975 Sorengo
-2976 Soresina
-2977 Sori
-2978 Sorico
-2979 Soriso
-2980 Sorisole
-2981 Sormano
-2982 Sospiro
-2983 Sostegno
-2984 Sotto il Monte Giovanni XXIII
-2985 Sovere
-2986 Sovico
-2987 Sozzago
-2988 Sparone
-2989 Spessa
-2990 Spigno Monferrato
-2991 Spilamberto
-2992 Spinadesco
-2993 Spineda
-2994 Spineto Scrivia
-2995 Spino d'Adda
-2996 Spinone al Lago
-2997 Spirano
-2998 Spotorno
-2999 Spriana
-3000 St. Moritz
-3001 Stabio
-3002 Stagno Lombardo
-3003 Stazzano
-3004 Stazzona
-3005 Stella
-3006 Stellanello
-3007 Stezzano
-3008 Stradella
-3009 Strambinello
-3010 Strambino
-3011 Stresa
-3012 Strevi
-3013 Strona
-3014 Stroppiana
-3015 Stroppo
-3016 Strozza
-3017 Suardi
-3018 Sueglio
-3019 Suello
-3020 Sufers
-3021 Suisio
-3022 Sulbiate
-3023 Sulzano
-3024 Sumirago
-3025 Sumvitg
-3026 Suno
-3027 Surses
-3028 Susa
-3029 Sustinente
-3030 Suzzara
-3031 Taceno
-3032 Taggia
-3033 Tagliolo Monferrato
-3034 Taino
-3035 Talamello
-3036 Talamona
-3037 Taleggio
-3038 Tamins
-3039 Tarantasca
-3040 Tartano
-3041 Tassarolo
-3042 Tavagnasco
-3043 Tavazzano con Villavesco
-3044 Tavernerio
-3045 Tavernola Bergamasca
-3046 Tavernole sul Mella
-3047 Tavigliano
-3048 Teglio
-3049 Telgate
-3050 Temù
-3051 Tenero-Contra
-3052 Terdobbiate
-3053 Terenzo
-3054 Ternate
-3055 Ternengo
-3056 Terno d'Isola
-3057 Terranova dei Passerini
-3058 Terre Di Pedemonte
-3059 Terre del Reno
-3060 Terruggia
-3061 Terzo
-3062 Terzorio
-3063 Testico
-3064 Thusis
-3065 Ticengo
-3066 Ticineto
-3067 Tiglieto
-3068 Tigliole
-3069 Tignale
-3070 Tirano
-3071 Tizzano Val Parma
-3072 Toano
-3073 Toceno
-3074 Toirano
-3075 Tollegno
-3076 Tonco
-3077 Tonengo
-3078 Torbole Casaglia
-3079 Torino
-3080 Torlino Vimercati
-3081 Tornaco
-3082 Tornata
-3083 Torno
-3084 Tornolo
-3085 Torrazza Coste
-3086 Torrazza Piemonte
-3087 Torrazzo
-3088 Torre Beretti e Castellaro
-3089 Torre Boldone
-3090 Torre Bormida
-3091 Torre Canavese
-3092 Torre Mondovì
-3093 Torre Pallavicina
-3094 Torre Pellice
-3095 Torre San Giorgio
-3096 Torre d'Arese
-3097 Torre d'Isola
-3098 Torre de' Busi
-3099 Torre de' Negri
-3100 Torre de' Picenardi
-3101 Torre de' Roveri
-3102 Torre di Santa Maria
-3103 Torresina
-3104 Torrevecchia Pia
-3105 Torricella Verzate
-3106 Torricella del Pizzo
-3107 Torricella-Taverne
-3108 Torriglia
-3109 Torrile
-3110 Tortona
-3111 Toscolano-Maderno
-3112 Tovo San Giacomo
-3113 Tovo di Sant'Agata
-3114 Tradate
-3115 Trana
-3116 Traona
-3117 Trarego Viggiona
-3118 Trasquera
-3119 Travacò Siccomario
-3120 Travagliato
-3121 Travedona-Monate
-3122 Traversella
-3123 Traversetolo
-3124 Traves
-3125 Travo
-3126 Trecate
-3127 Tredozio
-3128 Treiso
-3129 Tremezzina
-3130 Tremosine sul Garda
-3131 Trenzano
-3132 Tresa
-3133 Trescore Balneario
-3134 Trescore Cremasco
-3135 Tresignana
-3136 Tresivio
-3137 Treviglio
-3138 Treville
-3139 Treviolo
-3140 Treviso Bresciano
-3141 Trezzano Rosa
-3142 Trezzano sul Naviglio
-3143 Trezzo Tinella
-3144 Trezzo sull'Adda
-3145 Trezzone
-3146 Tribiano
-3147 Tribogna
-3148 Tricerro
-3149 Trigolo
-3150 Trimmis
-3151 Trin
-3152 Trinità
-3153 Trino
-3154 Triora
-3155 Trisobbio
-3156 Triuggio
-3157 Trivolzio
-3158 Trofarello
-3159 Tromello
-3160 Trontano
-3161 Tronzano Lago Maggiore
-3162 Tronzano Vercellese
-3163 Trovo
-3164 Truccazzano
-3165 Trun
-3166 Tschappina
-3167 Tschiertschen-Praden
-3168 Tujetsch
-3169 Turano Lodigiano
-3170 Turate
-3171 Turbigo
-3172 Ubiale Clanezzo
-3173 Uboldo
-3174 Uggiate-Trevano
-3175 Untervaz
-3176 Urago d'Oglio
-3177 Urbe
-3178 Urgnano
-3179 Urmein
-3180 Uscio
-3181 Usmate Velate
-3182 Usseaux
-3183 Usseglio
-3184 Vacallo
-3185 Vado Ligure
-3186 Vaglio Serra
-3187 Vaiano Cremasco
-3188 Vaie
-3189 Vailate
-3190 Val Brembilla
-3191 Val Masino
-3192 Val Müstair
-3193 Val Rezzo
-3194 Val della Torre
-3195 Val di Chy
-3196 Val di Nizza
-3197 Valbondione
-3198 Valbrembo
-3199 Valbrevenna
-3200 Valbrona
-3201 Valchiusa
-3202 Valdengo
-3203 Valdidentro
-3204 Valdieri
-3205 Valdilana
-3206 Valdisotto
-3207 Valduggia
-3208 Valeggio
-3209 Valenza
-3210 Valera Fratta
-3211 Valfenera
-3212 Valfurva
-3213 Valganna
-3214 Valgioie
-3215 Valgoglio
-3216 Valgrana
-3217 Valgreghentino
-3218 Vallanzengo
-3219 Valle Cannobina
-3220 Valle Lomellina
-3221 Valle Salimbene
-3222 Valle San Nicolao
-3223 Vallebona
-3224 Vallecrosia
-3225 Valleve
-3226 Vallio Terme
-3227 Vallo Torinese
-3228 Valloriate
-3229 Valmacca
-3230 Valmadrera
-3231 Valmorea
-3232 Valmozzola
-3233 Valnegra
-3234 Valperga
-3235 Valprato Soana
-3236 Vals
-3237 Valsamoggia
-3238 Valsolda
-3239 Valsot
-3240 Valstrona
-3241 Valtorta
-3242 Valvarrone
-3243 Valvestino
-3244 Vanzaghello
-3245 Vanzago
-3246 Vanzone con San Carlo
-3247 Vaprio d'Adda
-3248 Vaprio d'Agogna
-3249 Varallo
-3250 Varallo Pombia
-3251 Varano Borghi
-3252 Varano de' Melegari
-3253 Varazze
-3254 Varedo
-3255 Varenna
-3256 Varese
-3257 Varese Ligure
-3258 Varisella
-3259 Varsi
-3260 Varzi
-3261 Varzo
-3262 Vasia
-3263 Vauda Canavese
-3264 Vaz/Obervaz
-3265 Vedano Olona
-3266 Vedano al Lambro
-3267 Vedeseta
-3268 Veduggio con Colzano
-3269 Veglio
-3270 Veleso
-3271 Velezzo Lomellina
-3272 Vellezzo Bellini
-3273 Venaria Reale
-3274 Venasca
-3275 Venaus
-3276 Vendone
-3277 Venegono Inferiore
-3278 Venegono Superiore
-3279 Veniano
-3280 Ventasso
-3281 Ventimiglia
-3282 Verano Brianza
-3283 Verbania
-3284 Vercana
-3285 Verceia
-3286 Vercelli
-3287 Vercurago
-3288 Verdellino
-3289 Verdello
-3290 Verderio
-3291 Verduno
-3292 Vergato
-3293 Verghereto
-3294 Vergiate
-3295 Vermezzo con Zelo
-3296 Vernante
-3297 Vernasca
-3298 Vernate
-3299 Vernate
-3300 Vernazza
-3301 Verolanuova
-3302 Verolavecchia
-3303 Verolengo
-3304 Verretto
-3305 Verrone
-3306 Verrua Po
-3307 Verrua Savoia
-3308 Vertemate con Minoprio
-3309 Vertova
-3310 Verucchio
-3311 Vervio
-3312 Verzasca
-3313 Verzuolo
-3314 Vescovato
-3315 Vesime
-3316 Vespolate
-3317 Vessalico
-3318 Vestignè
-3319 Vestone
-3320 Vetto
-3321 Vezia
-3322 Vezza d'Alba
-3323 Vezza d'Oglio
-3324 Vezzano Ligure
-3325 Vezzano sul Crostolo
-3326 Vezzi Portio
-3327 Viadana
-3328 Viadanica
-3329 Viale
-3330 Vialfrè
-3331 Viano
-3332 Viarigi
-3333 Vico Morcote
-3334 Vicoforte
-3335 Vicolungo
-3336 Vidigulfo
-3337 Vidracco
-3338 Vigano San Martino
-3339 Viganò
-3340 Vigarano Mainarda
-3341 Vigevano
-3342 Viggiù
-3343 Vigliano Biellese
-3344 Vigliano d'Asti
-3345 Vignale Monferrato
-3346 Vignate
-3347 Vignola
-3348 Vignole Borbera
-3349 Vignolo
-3350 Vignone
-3351 Vigolo
-3352 Vigolzone
-3353 Vigone
-3354 Viguzzolo
-3355 Villa Biscossi
-3356 Villa Carcina
-3357 Villa Cortese
-3358 Villa Faraldi
-3359 Villa Guardia
-3360 Villa Minozzo
-3361 Villa San Secondo
-3362 Villa d'Adda
-3363 Villa d'Almè
-3364 Villa d'Ogna
-3365 Villa del Bosco
-3366 Villa di Chiavenna
-3367 Villa di Serio
-3368 Villa di Tirano
-3369 Villachiara
-3370 Villadeati
-3371 Villadossola
-3372 Villafalletto
-3373 Villafranca Piemonte
-3374 Villafranca d'Asti
-3375 Villalvernia
-3376 Villamiroglio
-3377 Villanova Biellese
-3378 Villanova Canavese
-3379 Villanova Mondovì
-3380 Villanova Monferrato
-3381 Villanova Solaro
-3382 Villanova d'Albenga
-3383 Villanova d'Ardenghi
-3384 Villanova d'Asti
-3385 Villanova del Sillaro
-3386 Villanova sull'Arda
-3387 Villanterio
-3388 Villanuova sul Clisi
-3389 Villar Dora
-3390 Villar Focchiardo
-3391 Villar Pellice
-3392 Villar Perosa
-3393 Villar San Costanzo
-3394 Villarbasse
-3395 Villarboit
-3396 Villareggia
-3397 Villaromagnano
-3398 Villasanta
-3399 Villastellone
-3400 Villata
-3401 Villette
-3402 Villimpenta
-3403 Villongo
-3404 Vilminore di Scalve
-3405 Vimercate
-3406 Vimodrone
-3407 Vinadio
-3408 Vinchio
-3409 Vinovo
-3410 Vinzaglio
-3411 Viola
-3412 Vione
-3413 Virle Piemonte
-3414 Visano
-3415 Vische
-3416 Visone
-3417 Vistarino
-3418 Vistrorio
-3419 Vittuone
-3420 Viverone
-3421 Vizzola Ticino
-3422 Vizzolo Predabissi
-3423 Viù
-3424 Vobarno
-3425 Vobbia
-3426 Vocca
-3427 Voghera
-3428 Voghiera
-3429 Vogogna
-3430 Volongo
-3431 Volpara
-3432 Volpedo
-3433 Volpeglino
-3434 Volpiano
-3435 Volta Mantovana
-3436 Voltaggio
-3437 Voltido
-3438 Volvera
-3439 Vottignasco
-3440 Zandobbio
-3441 Zanica
-3442 Zavattarello
-3443 Zeccone
-3444 Zelbio
-3445 Zelo Buon Persico
-3446 Zeme
-3447 Zenevredo
-3448 Zerba
-3449 Zerbo
-3450 Zerbolò
-3451 Zernez
-3452 Ziano Piacentino
-3453 Zibido San Giacomo
-3454 Zignago
-3455 Zillis-Reischen
-3456 Zimone
-3457 Zinasco
-3458 Zizers
-3459 Zoagli
-3460 Zocca
-3461 Zogno
-3462 Zola Predosa
-3463 Zone
-3464 Zubiena
-3465 Zuccarello
-3466 Zumaglia
-3467 Zuoz
+Abano Terme
+Abbadia Cerreto
+Abbadia Lariana
+Abbiategrasso
+Acceglio
+Acquafredda
+Acquanegra Cremonese
+Acquanegra sul Chiese
+Acquarossa 
+Acqui Terme
+Adrara San Martino
+Adrara San Rocco
+Adria
+Adro
+Affi
+Agazzano
+Agliano Terme
+Agliè
+Agna
+Agnadello
+Agno
+Agnosine
+Agordo
+Agra
+Agrate Brianza
+Agrate Conturbia
+Agugliaro
+Aicurzio
+Aiello del Friuli
+Ailoche
+Airasca
+Airole
+Airolo
+Airuno
+Aisone
+Ala
+Ala di Stura
+Alagna
+Alagna Valsesia
+Alano di Piave
+Alassio
+Alba
+Albairate
+Albano Sant'Alessandro
+Albano Vercellese
+Albaredo Arnaboldi
+Albaredo d'Adige
+Albaredo per San Marco
+Albareto
+Albaretto della Torre
+Albavilla
+Albenga
+Albera Ligure
+Albese con Cassano
+Albettone
+Albiano
+Albiano d'Ivrea
+Albiate
+Albignasego
+Albinea
+Albino
+Albiolo
+Albisola Superiore
+Albissola Marina
+Albizzate
+Albonese
+Albosaggia
+Albugnano
+Albula/Alvra
+Albuzzano
+Aldeno
+Aldino
+Alessandria
+Alfianello
+Alfiano Natta
+Alfonsine
+Algua
+Alice Bel Colle
+Alice Castello
+Alleghe
+Allein
+Alluvioni Piovera
+Almè
+Almenno San Bartolomeo
+Almenno San Salvatore
+Almese
+Alonte
+Alpago
+Alpette
+Alpignano
+Alseno
+Alserio
+Alta Val Tidone
+Alta Valle Intelvi
+Altare
+Altavalle
+Altavilla Monferrato
+Altavilla Vicentina
+Altissimo
+Altivole
+Alto
+Alto Malcantone
+Alto Reno Terme
+Alto Sermenza
+Altopiano della Vigolana
+Alzano Lombardo
+Alzano Scrivia
+Alzate Brianza
+Amaro
+Ambivere
+Amblar-Don
+Ameglia
+Ameno
+Ampezzo
+Andalo
+Andalo Valtellino
+Andeer
+Andezeno
+Andora
+Andorno Micca
+Andrate
+Andreis
+Andriano
+Anfo
+Angera
+Angiari
+Angolo Terme
+Angrogna
+Anguillara Veneta
+Annicco
+Annone di Brianza
+Annone Veneto
+Antegnate
+Anterivo
+Antey-Saint-André
+Antignano
+Antrona Schieranco
+Anzano del Parco
+Anzola d'Ossola
+Anzola dell'Emilia
+Aosta
+Appiano Gentile
+Appiano sulla strada del vino
+Aprica
+Apricale
+Aquila d'Arroscia
+Aquileia
+Aramengo
+Aranno
+Arba
+Arbedo-Castione
+Arborio
+Arcade
+Arcene
+Arcisate
+Arco
+Arcola
+Arcole
+Arconate
+Arcore
+Arcugnano
+Ardenno
+Ardesio
+Arena Po
+Arenzano
+Arese
+Argegno
+Argelato
+Argenta
+Argentera
+Arguello
+Ariano nel Polesine
+Arignano
+Arizzano
+Arluno
+Armeno
+Armo
+Arnad
+Arnasco
+Arogno
+Arola
+Arona
+Arosa
+Arosio
+Arquà Petrarca
+Arquà Polesine
+Arquata Scrivia
+Arre
+Arsago Seprio
+Arsiè
+Arsiero
+Arta Terme
+Artegna
+Artogne
+Arvier
+Arzago d'Adda
+Arzergrande
+Arzignano
+Ascona
+Asiago
+Asigliano Veneto
+Asigliano Vercellese
+Asola
+Asolo
+Assago
+Asso
+Astano
+Asti
+Attimis
+Aurano
+Aurigo
+Auronzo di Cadore
+Avegno
+Avegno Gordevio
+Avelengo
+Averara
+Avers
+Aviano
+Aviatico
+Avigliana
+Avio
+Avise
+Avolasca
+Ayas
+Aymavilles
+Azeglio
+Azzanello
+Azzano d'Asti
+Azzano Decimo
+Azzano Mella
+Azzano San Paolo
+Azzate
+Azzio
+Azzone
+Baceno
+Badalucco
+Badia
+Badia Calavena
+Badia Pavese
+Badia Polesine
+Bagnacavallo
+Bagnara di Romagna
+Bagnaria
+Bagnaria Arsa
+Bagnasco
+Bagnatica
+Bagno di Romagna
+Bagnoli di Sopra
+Bagnolo Cremasco
+Bagnolo di Po
+Bagnolo in Piano
+Bagnolo Mella
+Bagnolo Piemonte
+Bagnolo San Vito
+Bagolino
+Bairo
+Baiso
+Bajardo
+Balangero
+Baldichieri d'Asti
+Baldissero Canavese
+Baldissero d'Alba
+Baldissero Torinese
+Balerna
+Balestrino
+Ballabio
+Balme
+Balmuccia
+Balocco
+Balzola
+Banchette
+Bannio Anzino
+Baone
+Baranzate
+Barasso
+Barbania
+Barbarano Mossano
+Barbaresco
+Barbariga
+Barbata
+Barbianello
+Barbiano
+Barbona
+Barcis
+Bard
+Bardello con Malgesso e Bregano
+Bardi
+Bardineto
+Bardolino
+Bardonecchia
+Bareggio
+Barengo
+Bargagli
+Barge
+Barghe
+Bariano
+Baricella
+Barlassina
+Barni
+Barolo
+Barone Canavese
+Barzago
+Barzana
+Barzanò
+Barzio
+Basaluzzo
+Bascapè
+Baselga di Pinè
+Basiano
+Basiglio
+Basiliano
+Bassano Bresciano
+Bassano del Grappa
+Bassignana
+Bastia Mondovì
+Bastida Pancarana
+Bastiglia
+Battaglia Terme
+Battifollo
+Battuda
+Baveno
+Bedano
+Bedero Valcuvia
+Bedigliora
+Bedizzole
+Bedollo
+Bedonia
+Bedretto
+Bedulita
+Bee
+Beinasco
+Beinette
+Belfiore
+Belforte Monferrato
+Belgioioso
+Belgirate
+Bellagio
+Bellano
+Bellaria-Igea Marina
+Bellino
+Bellinzago Lombardo
+Bellinzago Novarese
+Bellinzona
+Belluno
+Bellusco
+Belvedere Langhe
+Belveglio
+Bema
+Bene Lario
+Bene Vagienna
+Benevello
+Benna
+Bentivoglio
+Berbenno
+Berbenno di Valtellina
+Berceto
+Beregazzo con Figliaro
+Bereguardo
+Bergamasco
+Bergamo
+Bergantino
+Bergeggi
+Bergolo
+Bergün Filisur
+Berlingo
+Bernareggio
+Bernate Ticino
+Bernezzo
+Bertinoro
+Bertiolo
+Bertonico
+Berzano di San Pietro
+Berzano di Tortona
+Berzo Demo
+Berzo Inferiore
+Berzo San Fermo
+Besana in Brianza
+Besano
+Besate
+Besenello
+Besenzone
+Besnate
+Besozzo
+Bettola
+Beura-Cardezza
+Bever
+Beverino
+Bevilacqua
+Biandrate
+Biandronno
+Bianzano
+Bianzè
+Bianzone
+Biasca
+Biassono
+Bibbiano
+Bibiana
+Bicinicco
+Biella
+Bienno
+Bieno
+Binago
+Binasco
+Bioggio
+Bioglio
+Bionaz
+Bione
+Bissone
+Bistagno
+Bisuschio
+Bizzarone
+Bleggio Superiore
+Blello
+Blenio
+Blessagno
+Blevio
+Boara Pisani
+Bobbio
+Bobbio Pellice
+Boca
+Boccioleto
+Bocenago
+Bodio
+Bodio Lomnago
+Boffalora d'Adda
+Boffalora sopra Ticino
+Bogliasco
+Bognanco
+Bogogno
+Boissano
+Bolano
+Bolgare
+Bollate
+Bollengo
+Bologna
+Boltiere
+Bolzano
+Bolzano Novarese
+Bolzano Vicentino
+Bomporto
+Bonaduz
+Bonassola
+Bonate Sopra
+Bonate Sotto
+Bonavigo
+Bondeno
+Bondone
+Bonemerse
+Bonvicino
+Borca di Cadore
+Bordano
+Bordighera
+Bordolano
+Bore
+Boretto
+Borgarello
+Borgaro Torinese
+Borghetto d'Arroscia
+Borghetto di Borbera
+Borghetto di Vara
+Borghetto Lodigiano
+Borghetto Santo Spirito
+Borghi
+Borgiallo
+Borgio Verezzi
+Borgo Chiese
+Borgo d'Ale
+Borgo d'Anaunia
+Borgo di Terzo
+Borgo Lares
+Borgo Mantovano
+Borgo Priolo
+Borgo San Dalmazzo
+Borgo San Giacomo
+Borgo San Giovanni
+Borgo San Martino
+Borgo San Siro
+Borgo Ticino
+Borgo Tossignano
+Borgo Val di Taro
+Borgo Valbelluna
+Borgo Valsugana
+Borgo Veneto
+Borgo Vercelli
+Borgo Virgilio
+Borgocarbonara
+Borgofranco d'Ivrea
+Borgolavezzaro
+Borgomale
+Borgomanero
+Borgomaro
+Borgomasino
+Borgomezzavalle
+Borgone Susa
+Borgonovo Val Tidone
+Borgoratto Alessandrino
+Borgoratto Mormorolo
+Borgoricco
+Borgosatollo
+Borgosesia
+Bormida
+Bormio
+Bornasco
+Borno
+Borriana
+Borso del Grappa
+Borzonasca
+Bosaro
+Boschi Sant'Anna
+Bosco Chiesanuova
+Bosco Gurin
+Bosco Marengo
+Bosconero
+Bosia
+Bosio
+Bosisio Parini
+Bosnasco
+Bossico
+Bossolasco
+Bottanuco
+Botticino
+Bovegno
+Boves
+Bovezzo
+Bovisio-Masciago
+Bovolenta
+Bovolone
+Bozzole
+Bozzolo
+Bra
+Bracca
+Braies
+Brallo di Pregola
+Brandico
+Brandizzo
+Branzi
+Braone
+Brebbia
+Breda di Piave
+Bregaglia
+Breganze
+Breggia
+Bregnano
+Breil/Brigels
+Brembate
+Brembate di Sopra
+Brembio
+Breme
+Brendola
+Brenna
+Brennero
+Breno
+Brenta
+Brentino Belluno
+Brentonico
+Brenzone sul Garda
+Brescello
+Brescia
+Bresimo
+Bressana Bottarone
+Bressanone
+Bressanvido
+Bresso
+Brezzo di Bedero
+Briaglia
+Bricherasio
+Brienno
+Briga Alta
+Briga Novarese
+Brignano Gera d'Adda
+Brignano-Frascata
+Brinzio
+Briona
+Brione
+Brione sopra Minusio
+Briosco
+Brisighella
+Brissago
+Brissago-Valtravaglia
+Brissogne
+Brivio
+Brogliano
+Brondello
+Broni
+Bronzolo
+Brossasco
+Brosso
+Brovello-Carpugnino
+Brozolo
+Brugherio
+Brugine
+Brugnato
+Brugnera
+Bruino
+Brumano
+Brunate
+Brunello
+Brunico
+Bruno
+Brusaporto
+Brusasco
+Brusimpiano
+Brusino Arsizio
+Brusio
+Brusnengo
+Brusson
+Bruzolo
+Bubbiano
+Bubbio
+Buccinasco
+Budoia
+Budrio
+Buglio in Monte
+Buguggiate
+Buja
+Bulciago
+Bulgarograsso
+Burago di Molgora
+Buriasco
+Burolo
+Buronzo
+Busalla
+Busano
+Busca
+Buscate
+Buseno
+Busnago
+Bussero
+Busseto
+Bussolengo
+Bussoleno
+Busto Arsizio
+Busto Garolfo
+Buttapietra
+Buttigliera Alta
+Buttigliera d'Asti
+Buttrio
+Cabella Ligure
+Cabiate
+Cadegliano-Viconago
+Cadelbosco di Sopra
+Cademario
+Cadempino
+Cadenazzo
+Cadeo
+Caderzone Terme
+Cadoneghe
+Cadorago
+Cadrezzate con Osmate
+Caerano di San Marco
+Cafasse
+Caglio
+Caines
+Caino
+Caiolo
+Cairate
+Cairo Montenotte
+Calalzo di Cadore
+Calamandrana
+Calanca
+Calasca-Castiglione
+Calceranica al Lago
+Calcinate
+Calcinato
+Calcio
+Calco
+Caldaro sulla strada del vino
+Calderara di Reno
+Caldes
+Caldiero
+Caldogno
+Caldonazzo
+Calendasco
+Calestano
+Calice al Cornoviglio
+Calice Ligure
+Calizzano
+Callabiana
+Calliano
+Calliano Monferrato
+Calolziocorte
+Calosso
+Caltignaga
+Calto
+Caltrano
+Calusco d'Adda
+Caluso
+Calvagese della Riviera
+Calvatone
+Calvene
+Calvenzano
+Calvignano
+Calvignasco
+Calvisano
+Cama
+Camagna Monferrato
+Camandona
+Cambiago
+Cambiano
+Cambiasca
+Camburzano
+Camerana
+Camerano Casasco
+Camerata Cornello
+Cameri
+Camino
+Camino al Tagliamento
+Camisano
+Camisano Vicentino
+Camogli
+Campagna Lupia
+Campagnola Cremasca
+Campagnola Emilia
+Camparada
+Campegine
+Campertogno
+Campiglia Cervo
+Campiglia dei Berici
+Campiglione Fenile
+Campione d'Italia
+Campitello di Fassa
+Campo (Vallemaggia)
+Campo di Trens
+Campo Ligure
+Campo San Martino
+Campo Tures
+Campodarsego
+Campodenno
+Campodolcino
+Campodoro
+Campoformido
+Campogalliano
+Campolongo Maggiore
+Campolongo Tapogliano
+Campomorone
+Camponogara
+Camporosso
+Camposampiero
+Camposanto
+Campospinoso
+Camugnano
+Canal San Bovo
+Canale
+Canale d'Agordo
+Canaro
+Canazei
+Canda
+Candelo
+Candia Canavese
+Candia Lomellina
+Candiana
+Candiolo
+Canegrate
+Canelli
+Caneva
+Canischio
+Cannero Riviera
+Canneto Pavese
+Canneto sull'Oglio
+Cannobio
+Canobbio
+Canonica d'Adda
+Canosio
+Canossa
+Cantalupa
+Cantalupo Ligure
+Cantarana
+Cantello
+Cantoira
+Cantù
+Canzo
+Caorle
+Caorso
+Capergnanica
+Capiago Intimiano
+Capizzone
+Capo di Ponte
+Caponago
+Capovalle
+Cappella Cantone
+Cappella de' Picenardi
+Cappella Maggiore
+Capralba
+Caprauna
+Caprezzo
+Capriana
+Capriano del Colle
+Capriasca
+Capriata d'Orba
+Capriate San Gervasio
+Caprie
+Capriglio
+Caprile
+Caprino Bergamasco
+Caprino Veronese
+Capriolo
+Capriva del Friuli
+Caraglio
+Caramagna Piemonte
+Carasco
+Carate Brianza
+Carate Urio
+Caravaggio
+Caravate
+Caravino
+Caravonica
+Carbonara al Ticino
+Carbonara Scrivia
+Carbonate
+Carbonera
+Carcare
+Carceri
+Carcoforo
+Cardano al Campo
+Cardè
+Carema
+Carenno
+Carentino
+Caresana
+Caresanablot
+Carezzano
+Carignano
+Carimate
+Carisio
+Carisolo
+Carlazzo
+Carlino
+Carmagnola
+Carmignano di Brenta
+Carnago
+Carnate
+Carobbio degli Angeli
+Carona
+Caronno Pertusella
+Caronno Varesino
+Carpaneto Piacentino
+Carpenedolo
+Carpeneto
+Carpi
+Carpiano
+Carpignano Sesia
+Carpineti
+Carrè
+Carrega Ligure
+Carro
+Carrodano
+Carrosio
+Carrù
+Cartigliano
+Cartignano
+Cartosio
+Cartura
+Carugate
+Carugo
+Carvico
+Carzano
+Casal Cermelli
+Casalbeltrame
+Casalborgone
+Casalbuttano ed Uniti
+Casale Corte Cerro
+Casale Cremasco-Vidolasco
+Casale di Scodosia
+Casale Litta
+Casale Monferrato
+Casale sul Sile
+Casalecchio di Reno
+Casaleggio Boiro
+Casaleggio Novara
+Casaleone
+Casaletto Ceredano
+Casaletto di Sopra
+Casaletto Lodigiano
+Casaletto Vaprio
+Casalfiumanese
+Casalgrande
+Casalgrasso
+Casalino
+Casalmaggiore
+Casalmaiocco
+Casalmorano
+Casalmoro
+Casalnoceto
+Casaloldo
+Casalpusterlengo
+Casalromano
+Casalserugo
+Casalvolone
+Casalzuigno
+Casanova Elvo
+Casanova Lerrone
+Casanova Lonati
+Casapinta
+Casargo
+Casarile
+Casarsa della Delizia
+Casarza Ligure
+Casasco
+Casatenovo
+Casatisma
+Casazza
+Casciago
+Cascinette d'Ivrea
+Casei Gerola
+Caselette
+Casella
+Caselle Landi
+Caselle Lurani
+Caselle Torinese
+Casier
+Casina
+Casirate d'Adda
+Caslano
+Caslino d'Erba
+Casnate con Bernate
+Casnigo
+Casola Valsenio
+Casorate Primo
+Casorate Sempione
+Casorezzo
+Casorzo Monferrato
+Caspoggio
+Cassacco
+Cassago Brianza
+Cassano d'Adda
+Cassano Magnago
+Cassano Spinola
+Cassano Valcuvia
+Cassiglio
+Cassina de' Pecchi
+Cassina Rizzardi
+Cassina Valsassina
+Cassinasco
+Cassine
+Cassinelle
+Cassinetta di Lugagnano
+Cassola
+Cassolnovo
+Castagnaro
+Castagneto Po
+Castagnito
+Castagnole delle Lanze
+Castagnole Monferrato
+Castagnole Piemonte
+Castana
+Castaneda
+Castano Primo
+Casteggio
+Castegnato
+Castegnero
+Castel Boglione
+Castel Bolognese
+Castel Condino
+Castel d'Aiano
+Castel d'Ario
+Castel d'Azzano
+Castel del Rio
+Castel di Casio
+Castel Gabbiano
+Castel Goffredo
+Castel Guelfo di Bologna
+Castel Ivano
+Castel Maggiore
+Castel Mella
+Castel Rocchero
+Castel Rozzone
+Castel San Giovanni
+Castel San Pietro
+Castel San Pietro Terme
+Castel Vittorio
+Castelbaldo
+Castelbelforte
+Castelbello-Ciardes
+Castelbianco
+Castelcovati
+Castelcucco
+Casteldelci
+Casteldelfino
+Casteldidone
+Castelfranco Emilia
+Castelfranco Veneto
+Castelgerundo
+Castelgomberto
+Castelguglielmo
+Castell'Alfero
+Castell'Arquato
+Castellamonte
+Castellania Coppi
+Castellanza
+Castellar Guidobono
+Castellarano
+Castellaro
+Castellazzo Bormida
+Castellazzo Novarese
+Castelleone
+Castellero
+Castelletto Cervo
+Castelletto d'Erro
+Castelletto d'Orba
+Castelletto di Branduzzo
+Castelletto Merli
+Castelletto Molina
+Castelletto Monferrato
+Castelletto sopra Ticino
+Castelletto Stura
+Castelletto Uzzone
+Castelli Calepio
+Castellinaldo d'Alba
+Castellino Tanaro
+Castello Cabiaglio
+Castello d'Agogna
+Castello d'Argile
+Castello dell'Acqua
+Castello di Annone
+Castello di Brianza
+Castello di Godego
+Castello Tesino
+Castello-Molina di Fiemme
+Castellucchio
+Castelmagno
+Castelmarte
+Castelmassa
+Castelnovetto
+Castelnovo Bariano
+Castelnovo del Friuli
+Castelnovo di Sotto
+Castelnovo ne' Monti
+Castelnuovo
+Castelnuovo Belbo
+Castelnuovo Bocca d'Adda
+Castelnuovo Bormida
+Castelnuovo Bozzente
+Castelnuovo Calcea
+Castelnuovo del Garda
+Castelnuovo di Ceva
+Castelnuovo Don Bosco
+Castelnuovo Magra
+Castelnuovo Nigra
+Castelnuovo Rangone
+Castelnuovo Scrivia
+Castelrotto
+Castelseprio
+Castelspina
+Castelveccana
+Castelvecchio di Rocca Barbena
+Castelverde
+Castelvetro di Modena
+Castelvetro Piacentino
+Castelvisconti
+Castenaso
+Castenedolo
+Castiglione Chiavarese
+Castiglione d'Adda
+Castiglione dei Pepoli
+Castiglione delle Stiviere
+Castiglione Falletto
+Castiglione Olona
+Castiglione Tinella
+Castiglione Torinese
+Castino
+Castione Andevenno
+Castione della Presolana
+Castions di Strada
+Castiraga Vidardo
+Casto
+Castrezzato
+Castro
+Castrocaro Terme e Terra del Sole
+Castronno
+Cattolica
+Cava Manara
+Cavaglià
+Cavaglietto
+Cavaglio d'Agogna
+Cavagnolo
+Cavaion Veronese
+Cavalese
+Cavallerleone
+Cavallermaggiore
+Cavallino-Treporti
+Cavallirio
+Cavareno
+Cavargna
+Cavaria con Premezzo
+Cavarzere
+Cavaso del Tomba
+Cavasso Nuovo
+Cavatore
+Cavazzo Carnico
+Cavedago
+Cavedine
+Cavenago d'Adda
+Cavenago di Brianza
+Cavernago
+Cavezzo
+Cavizzana
+Cavour
+Cavriago
+Cavriana
+Cazis
+Cazzago Brabbia
+Cazzago San Martino
+Cazzano di Tramigna
+Cazzano Sant'Andrea
+Cecima
+Cedegolo
+Cedrasco
+Ceggia
+Celerina/Schlarigna
+Cella Dati
+Cella Monte
+Cellarengo
+Cellatica
+Celle di Macra
+Celle Enomondo
+Celle Ligure
+Cellio con Breia
+Cembra Lisignago
+Cenate Sopra
+Cenate Sotto
+Cencenighe Agordino
+Cene
+Ceneselli
+Cengio
+Centallo
+Cento
+Centovalli
+Centro Valle Intelvi
+Ceppo Morelli
+Ceranesi
+Cerano
+Cerano d'Intelvi
+Ceranova
+Cercenasco
+Cercino
+Cercivento
+Cerea
+Ceregnano
+Cerentino
+Ceres
+Ceresara
+Cereseto
+Ceresole Alba
+Ceresole Reale
+Cerete
+Ceretto Lomellina
+Cergnago
+Ceriale
+Ceriana
+Ceriano Laghetto
+Cerignale
+Cermenate
+Cermes
+Cernobbio
+Cernusco Lombardone
+Cernusco sul Naviglio
+Cerreto d'Asti
+Cerreto Grue
+Cerretto Langhe
+Cerrina Monferrato
+Cerrione
+Cerro al Lambro
+Cerro Maggiore
+Cerro Tanaro
+Cerro Veronese
+Certosa di Pavia
+Cervarese Santa Croce
+Cervasca
+Cervatto
+Cerveno
+Cervere
+Cervesina
+Cervia
+Cervignano d'Adda
+Cervignano del Friuli
+Cervo
+Cesana Brianza
+Cesana Torinese
+Cesano Boscone
+Cesano Maderno
+Cesara
+Cesate
+Cesena
+Cesenatico
+Cesio
+Cesiomaggiore
+Cessalto
+Cessole
+Ceto
+Ceva
+Cevio
+Cevo
+Challand-Saint-Anselme
+Challand-Saint-Victor
+Chambave
+Chamois
+Champdepraz
+Champorcher
+Charvensod
+Châtillon
+Cherasco
+Chialamberto
+Chiampo
+Chianocco
+Chiarano
+Chiari
+Chiasso
+Chiavari
+Chiavenna
+Chiaverano
+Chienes
+Chieri
+Chies d'Alpago
+Chiesa in Valmalenco
+Chiesanuova
+Chieve
+Chignolo d'Isola
+Chignolo Po
+Chioggia
+Chiomonte
+Chions
+Chiopris-Viscone
+Chiuduno
+Chiuppano
+Chiuro
+Chiusa
+Chiusa di Pesio
+Chiusa di San Michele
+Chiusaforte
+Chiusanico
+Chiusano d'Asti
+Chiusavecchia
+Chivasso
+Chur
+Churwalden
+Cibiana di Cadore
+Cicagna
+Cicognolo
+Ciconio
+Cigliano
+Cigliè
+Cigognola
+Cigole
+Cilavegna
+Cimadolmo
+Cimbergo
+Cimolais
+Cimone
+Cinaglio
+Cingia de' Botti
+Cinisello Balsamo
+Cino
+Cintano
+Cinte Tesino
+Cinto Caomaggiore
+Cinto Euganeo
+Cinzano
+Cipressa
+Ciriè
+Cirimido
+Cis
+Cisano Bergamasco
+Cisano sul Neva
+Ciserano
+Cislago
+Cisliano
+Cison di Valmarino
+Cissone
+Cisterna d'Asti
+Città di San Marino
+Cittadella
+Cittiglio
+Civate
+Civezza
+Civezzano
+Civiasco
+Cividale del Friuli
+Cividate al Piano
+Cividate Camuno
+Civitella di Romagna
+Civo
+Claino con Osteno
+Claut
+Clauzetto
+Clavesana
+Claviere
+Cles
+Clivio
+Clusone
+Coassolo Torinese
+Coazze
+Coazzolo
+Coccaglio
+Cocconato
+Cocquio-Trevisago
+Codevigo
+Codevilla
+Codigoro
+Codognè
+Codogno
+Codroipo
+Coggiola
+Cogliate
+Cogne
+Cogoleto
+Cogollo del Cengio
+Cogorno
+Colazza
+Colceresa
+Coldrerio
+Colere
+Coli
+Colico
+Colle Brianza
+Colle Santa Lucia
+Colle Umberto
+Collebeato
+Collecchio
+Collegno
+Colleretto Castelnuovo
+Colleretto Giacosa
+Colli Verdi
+Collina D'oro
+Collio
+Collobiano
+Colloredo di Monte Albano
+Cologna Veneta
+Cologne
+Cologno al Serio
+Cologno Monzese
+Colognola ai Colli
+Colonno
+Colorina
+Colorno
+Colturano
+Colverde
+Colzate
+Comabbio
+Comacchio
+Comano
+Comano Terme
+Comazzo
+Comeglians
+Comelico Superiore
+Comerio
+Comezzano-Cizzago
+Comignago
+Commessaggio
+Commezzadura
+Como
+Compiano
+Comun Nuovo
+Cona
+Concamarise
+Concesio
+Concordia Sagittaria
+Concordia sulla Secchia
+Concorezzo
+Condove
+Conegliano
+Confienza
+Coniolo
+Conselice
+Conselve
+Contà
+Conters im Prättigau
+Conzano
+Copiano
+Copparo
+Corana
+Corbetta
+Corbola
+Cordenons
+Cordignano
+Cordovado
+Coreglia Ligure
+Coriano
+Corio
+Cormano
+Cormons
+Corna Imagna
+Cornalba
+Cornale e Bastida
+Cornaredo
+Cornate d'Adda
+Cornedo all'Isarco
+Cornedo Vicentino
+Cornegliano Laudense
+Corneliano d'Alba
+Corniglio
+Corno di Rosazzo
+Corno Giovine
+Cornovecchio
+Cornuda
+Correggio
+Correzzana
+Correzzola
+Corrido
+Corsico
+Corsione
+Cortaccia sulla strada del vino
+Cortandone
+Cortanze
+Cortazzone
+Corte Brugnatella
+Corte de' Cortesi con Cignone
+Corte de' Frati
+Corte Franca
+Corte Palasio
+Cortemaggiore
+Cortemilia
+Corteno Golgi
+Cortenova
+Cortenuova
+Corteolona e Genzone
+Cortiglione
+Cortina d'Ampezzo
+Cortina sulla strada del vino
+Corvara in Badia
+Corvino San Quirico
+Corzano
+Coseano
+Cosio d'Arroscia
+Cosio Valtellino
+Cossano Belbo
+Cossano Canavese
+Cossato
+Cosseria
+Cossogno
+Cossombrato
+Costa de' Nobili
+Costa di Mezzate
+Costa di Rovigo
+Costa Masnaga
+Costa Serina
+Costa Valle Imagna
+Costa Vescovato
+Costa Volpino
+Costabissara
+Costanzana
+Costarainera
+Costermano sul Garda
+Costigliole d'Asti
+Costigliole Saluzzo
+Cotignola
+Courmayeur
+Covo
+Cozzo
+Crandola Valsassina
+Cravagliana
+Cravanzana
+Craveggia
+Creazzo
+Credaro
+Credera Rubbiano
+Crema
+Cremella
+Cremenaga
+Cremeno
+Cremia
+Cremolino
+Cremona
+Cremosano
+Crescentino
+Crespadoro
+Crespiatica
+Crespino
+Cressa
+Crevacuore
+Crevalcore
+Crevoladossola
+Crissolo
+Crocefieschi
+Crocetta del Montello
+Crodo
+Crosio della Valle
+Crotta d'Adda
+Crova
+Croviana
+Cuasso al Monte
+Cucciago
+Cuceglio
+Cuggiono
+Cugliate-Fabiasco
+Cugnasco-Gerra
+Cumiana
+Cumignano sul Naviglio
+Cunardo
+Cuneo
+Cunico
+Cuorgnè
+Cura Carpignano
+Cureggio
+Cureglia
+Curiglia con Monteviasco
+Curino
+Curio
+Curno
+Curon Venosta
+Curtarolo
+Curtatone
+Cusago
+Cusano Milanino
+Cusino
+Cusio
+Cuveglio
+Cuvio
+Dairago
+Dalmine
+Dalpe
+Dambel
+Danta di Cadore
+Darfo Boario Terme
+Davagna
+Daverio
+Davos
+Dazio
+Dego
+Deiva Marina
+Delebio
+Dello
+Demonte
+Denice
+Denno
+Dernice
+Derovere
+Dervio
+Desana
+Desenzano del Garda
+Desio
+Diano Arentino
+Diano Castello
+Diano d'Alba
+Diano Marina
+Diano San Pietro
+Dignano
+Dimaro Folgarida
+Disentis/Mustér
+Divignano
+Dizzasco
+Dobbiaco
+Doberdò del Lago
+Dogliani
+Dogna
+Dolcè
+Dolceacqua
+Dolcedo
+Dolegna del Collio
+Dolo
+Dolzago
+Domaso
+Domat/Ems
+Domegge di Cadore
+Domleschg
+Domodossola
+Donato
+Dongo
+Donnas
+Dorio
+Dormelletto
+Dorno
+Dorzano
+Dosolo
+Dossena
+Dosso del Liro
+Doues
+Dovadola
+Dovera
+Dozza
+Drena
+Drenchia
+Dresano
+Dro
+Dronero
+Druento
+Druogno
+Dubino
+Due Carrare
+Dueville
+Duino Aurisina
+Dumenza
+Duno
+Dusino San Michele
+Edolo
+Egna
+Ello
+Elva
+Emarèse
+Endine Gaiano
+Enego
+Enemonzo
+Entracque
+Entratico
+Envie
+Eraclea
+Erba
+Erbè
+Erbezzo
+Erbusco
+Erli
+Erto e Casso
+Erve
+Esine
+Esino Lario
+Este
+Etroubles
+Eupilio
+Exilles
+Fabbrica Curone
+Fabbrico
+Faedis
+Faedo Valtellino
+Faenza
+Fagagna
+Faggeto Lario
+Fagnano Olona
+Fai della Paganella
+Faido
+Falcade
+Falera
+Faloppio
+Falzes
+Fanano
+Fanna
+Fara Gera d'Adda
+Fara Novarese
+Fara Olivana con Sola
+Fara Vicentino
+Farigliano
+Farini
+Farra d'Isonzo
+Farra di Soligo
+Fascia
+Faule
+Favale di Malvaro
+Favria
+Feisoglio
+Feletto
+Felino
+Felizzano
+Felsberg
+Feltre
+Fenegrò
+Fenestrelle
+Fénis
+Ferno
+Ferrara
+Ferrara di Monte Baldo
+Ferrera
+Ferrera di Varese
+Ferrera Erbognone
+Ferrere
+Ferriere
+Fiano
+Fiavè
+Ficarolo
+Fidenza
+Fideris
+Fiè allo Sciliar
+Fierozzo
+Fiesco
+Fiesse
+Fiesso d'Artico
+Fiesso Umbertiano
+Figino Serenza
+Filago
+Filighera
+Finale Emilia
+Finale Ligure
+Fino del Monte
+Fino Mornasco
+Fiorano al Serio
+Fiorano Canavese
+Fiorano Modenese
+Fiorenzuola d'Arda
+Fiscaglia
+Fiumalbo
+Fiume Veneto
+Fiumicello Villa Vicentina
+Flaibano
+Fläsch
+Flerden
+Flero
+Flims
+Fobello
+Fogliano Redipuglia
+Foglizzo
+Folgaria
+Follina
+Follo
+Fombio
+Fontainemore
+Fontanafredda
+Fontanelice
+Fontanella
+Fontanellato
+Fontanelle
+Fontaneto d'Agogna
+Fontanetto Po
+Fontanigorda
+Fontanile
+Fontaniva
+Fonte
+Fonteno
+Fontevivo
+Fonzaso
+Foppolo
+Forcola
+Foresto Sparso
+Forgaria nel Friuli
+Forlì
+Forlimpopoli
+Formazza
+Formigara
+Formigine
+Formigliana
+Fornace
+Forni Avoltri
+Forni di Sopra
+Forni di Sotto
+Forno Canavese
+Fornovo di Taro
+Fornovo San Giovanni
+Fortezza
+Fortunago
+Fossalta di Piave
+Fossalta di Portogruaro
+Fossano
+Fossò
+Foza
+Frabosa Soprana
+Frabosa Sottana
+Fraconalto
+Framura
+Francavilla Bisio
+Frascaro
+Frascarolo
+Frassilongo
+Frassinelle Polesine
+Frassinello Monferrato
+Frassineto Po
+Frassinetto
+Frassino
+Frassinoro
+Fratta Polesine
+Fregona
+Fresonara
+Frinco
+Frisanco
+Front
+Frossasco
+Frugarolo
+Fubine Monferrato
+Fuipiano Valle Imagna
+Fumane
+Funes
+Furna
+Fürstenau
+Fusignano
+Fusine
+Gabbioneta-Binanuova
+Gabiano
+Gaby
+Gadesco-Pieve Delmona
+Gaggiano
+Gaggio Montano
+Gaglianico
+Gaiarine
+Gaiba
+Gaiola
+Gais
+Galbiate
+Galeata
+Galgagnano
+Gallarate
+Galliate
+Galliate Lombardo
+Galliavola
+Galliera
+Galliera Veneta
+Gallio
+Galzignano Terme
+Gamalero
+Gambara
+Gambarana
+Gambarogno
+Gambasca
+Gambellara
+Gambettola
+Gambolò
+Gambugliano
+Gandellino
+Gandino
+Gandosso
+Garbagna
+Garbagna Novarese
+Garbagnate Milanese
+Garbagnate Monastero
+Garda
+Gardone Riviera
+Gardone Val Trompia
+Garessio
+Gargallo
+Gargazzone
+Gargnano
+Garlasco
+Garlate
+Garlenda
+Garniga Terme
+Garzeno
+Garzigliana
+Gassino Torinese
+Gattatico
+Gatteo
+Gattico-Veruno
+Gattinara
+Gavardo
+Gavello
+Gaverina Terme
+Gavi
+Gavirate
+Gazoldo degli Ippoliti
+Gazzada Schianno
+Gazzaniga
+Gazzo
+Gazzo Veronese
+Gazzola
+Gazzuolo
+Gemmano
+Gemona del Friuli
+Gemonio
+Genivolta
+Genola
+Genova
+Gera Lario
+Gerenzago
+Gerenzano
+Germagnano
+Germagno
+Germignaga
+Gerola Alta
+Gerre de' Caprioli
+Gessate
+Ghedi
+Ghemme
+Ghiffa
+Ghisalba
+Ghislarengo
+Giacciano con Baruchella
+Giaglione
+Gianico
+Giarole
+Giaveno
+Giavera del Montello
+Gifflenga
+Gignese
+Gignod
+Giornico
+Giovo
+Giussago
+Giussano
+Giustenice
+Giustino
+Giusvalla
+Givoletto
+Glorenza
+Godega di Sant'Urbano
+Godiasco Salice Terme
+Goito
+Golasecca
+Golferenzo
+Gombito
+Gonars
+Gonzaga
+Gordola
+Gordona
+Gorgo al Monticano
+Gorgonzola
+Gorizia
+Gorla Maggiore
+Gorla Minore
+Gorlago
+Gorle
+Gornate Olona
+Gorno
+Goro
+Gorreto
+Gorzegno
+Gosaldo
+Gossolengo
+Gottasecca
+Gottolengo
+Govone
+Gozzano
+Gradisca d'Isonzo
+Grado
+Graffignana
+Graglia
+Gragnano Trebbiense
+Grana Monferrato
+Granarolo dell'Emilia
+Grancia
+Grandate
+Grandola ed Uniti
+Granozzo con Monticello
+Grantola
+Grantorto
+Granze
+Grassobbio
+Gravedona ed Uniti
+Gravellona Lomellina
+Gravellona Toce
+Gravere
+Gravesano
+Grazzano Badoglio
+Greggio
+Gremiasco
+Gressan
+Gressoney-La-Trinité
+Gressoney-Saint-Jean
+Grezzago
+Grezzana
+Griante
+Grignasco
+Grigno
+Grimacco
+Grinzane Cavour
+Grisignano di Zocco
+Grizzana Morandi
+Grognardo
+Gromo
+Grondona
+Grone
+Grono
+Grontardo
+Gropello Cairoli
+Gropparello
+Groscavallo
+Grosio
+Grosotto
+Grosso
+Gruaro
+Grugliasco
+Grumello Cremonese ed Uniti
+Grumello del Monte
+Grumolo delle Abbadesse
+Grüsch
+Gualtieri
+Guanzate
+Guarda Veneta
+Guardabosone
+Guardamiglio
+Guarene
+Guastalla
+Guazzora
+Gudo Visconti
+Guidizzolo
+Guiglia
+Gurro
+Gussago
+Gussola
+Hône
+Idro
+Igliano
+Ilanz/Glion
+Illasi
+Imbersago
+Imer
+Imola
+Imperia
+Inarzo
+Incisa Scapaccino
+Incudine
+Induno Olona
+Ingria
+Intragna
+Introbio
+Introd
+Inverigo
+Inverno e Monteleone
+Inverso Pinasca
+Inveruno
+Invorio
+Inzago
+Irma
+Isasca
+Iseo
+Isera
+Isola d'Asti
+Isola del Cantone
+Isola della Scala
+Isola di Fondra
+Isola Dovarese
+Isola Rizza
+Isola Sant'Antonio
+Isola Vicentina
+Isolabella
+Isolabona
+Isone
+Isorella
+Ispra
+Issiglio
+Issime
+Isso
+Issogne
+Istrana
+Ivrea
+Izano
+Jenaz
+Jenins
+Jerago con Orago
+Jesolo
+Jolanda di Savoia
+Jovençan
+Klosters
+Küblis
+La Cassa
+La Loggia
+La Magdeleine
+La Morra
+La Punt Chamues-ch
+La Salle
+La Spezia
+La Thuile
+La Valle
+La Valle Agordina
+La Valletta Brianza
+Laax
+Lacchiarella
+Laces
+Laghi
+Laglio
+Lagnasco
+Lagosanto
+Lagundo
+Laigueglia
+Lainate
+Laino
+Laion
+Laives
+Lallio
+Lama Mocogno
+Lambrugo
+Lamon
+Lamone
+Lamporo
+Lana
+Landiona
+Landquart
+Landriano
+Langhirano
+Langosco
+Lantsch/Lenz
+Lanzada
+Lanzo Torinese
+Lardirago
+Lasa
+Lasnigo
+Lastebasse
+Latisana
+Lauco
+Lauregno
+Lauriano
+Lavagna
+Lavagno
+Lavarone
+Lavena Ponte Tresa
+Laveno-Mombello
+Lavenone
+Lavertezzo
+Lavis
+Lavizzara
+Lazise
+Lazzate
+Lecco
+Ledro
+Leffe
+Leggiuno
+Legnago
+Legnano
+Legnaro
+Leini
+Leivi
+Lemie
+Lendinara
+Lenna
+Leno
+Lenta
+Lentate sul Seveso
+Lequio Berria
+Lequio Tanaro
+Lerici
+Lerma
+Lesa
+Lesegno
+Lesignano de' Bagni
+Lesmo
+Lessolo
+Lessona
+Lestizza
+Levanto
+Levate
+Levice
+Levico Terme
+Levone
+Lezzeno
+Lierna
+Lignana
+Lignano Sabbiadoro
+Lillianes
+Limana
+Limbiate
+Limena
+Limido Comasco
+Limone Piemonte
+Limone sul Garda
+Linarolo
+Linescio
+Lipomo
+Lirio
+Liscate
+Lisio
+Lissone
+Livigno
+Livinallongo del Col di Lana
+Livo
+Livo
+Livorno Ferraris
+Livraga
+Lizzano in Belvedere
+Loano
+Loazzolo
+Locana
+Locarno
+Locate di Triulzi
+Locate Varesino
+Locatello
+Lodi
+Lodi Vecchio
+Lodrino
+Lograto
+Loiano
+Lomagna
+Lomazzo
+Lombardore
+Lombriasco
+Lomello
+Lona-Lases
+Lonate Ceppino
+Lonate Pozzolo
+Lonato del Garda
+Longare
+Longarone
+Longhena
+Longiano
+Longone al Segrino
+Lonigo
+Loranzè
+Loreggia
+Loreglia
+Lorenzago di Cadore
+Loreo
+Loria
+Lorsica
+Losine
+Losone
+Lostallo
+Lovere
+Lovero
+Lozio
+Lozza
+Lozzo Atestino
+Lozzo di Cadore
+Lozzolo
+Lu e Cuccaro Monferrato
+Lucinasco
+Lugagnano Val d'Arda
+Lugano
+Lugo
+Lugo di Vicenza
+Luino
+Luisago
+Lumarzo
+Lumezzane
+Lumino
+Lumnezia
+Lungavilla
+Luni
+Lurago d'Erba
+Lurago Marinone
+Lurano
+Lurate Caccivio
+Luserna
+Luserna San Giovanni
+Lusernetta
+Lusevera
+Lusia
+Lusiana Conco
+Lusigliè
+Luson
+Luvinate
+Luzein
+Luzzana
+Luzzara
+Maccagno con Pino e Veddasca
+Maccastorna
+Macello
+Macherio
+Maclodio
+Macra
+Macugnaga
+Madesimo
+Madignano
+Madone
+Madonna del Sasso
+Madruzzo
+Madulain
+Magasa
+Magenta
+Maggia
+Maggiora
+Magherno
+Magliano Alfieri
+Magliano Alpi
+Magliaso
+Magliolo
+Maglione
+Magnacavallo
+Magnago
+Magnano
+Magnano in Riviera
+Magrè sulla strada del vino
+Magreglio
+Maienfeld
+Maiolo
+Mairago
+Mairano
+Maissana
+Majano
+Malagnino
+Malalbergo
+Malans
+Malborghetto Valbruna
+Malcesine
+Malé
+Malegno
+Maleo
+Malesco
+Malgrate
+Mallare
+Malles Venosta
+Malnate
+Malo
+Malonno
+Malvicino
+Mandello del Lario
+Mandello Vitta
+Manerba del Garda
+Manerbio
+Mango
+Maniago
+Manno
+Mansuè
+Manta
+Mantello
+Mantova
+Manzano
+Mapello
+Mappano
+Maranello
+Marano di Valpolicella
+Marano Lagunare
+Marano sul Panaro
+Marano Ticino
+Marano Vicentino
+Maranzana
+Marcallo con Casone
+Marcaria
+Marcheno
+Marchirolo
+Marcignago
+Marcon
+Marebbe
+Marene
+Mareno di Piave
+Marentino
+Maretto
+Margarita
+Margno
+Mariana Mantovana
+Mariano Comense
+Mariano del Friuli
+Marlengo
+Marmentino
+Marmirolo
+Marmora
+Marnate
+Maroggia
+Marone
+Marostica
+Marsaglia
+Martellago
+Martello
+Martignacco
+Martignana di Po
+Martinengo
+Martiniana Po
+Marudo
+Marzabotto
+Marzano
+Marzio
+Masate
+Masciago Primo
+Masein
+Maser
+Masera
+Maserà di Padova
+Maserada sul Piave
+Masi
+Masi Torello
+Masio
+Maslianico
+Masone
+Massa Lombarda
+Massagno
+Massalengo
+Massanzago
+Massazza
+Massello
+Masserano
+Massimeno
+Massimino
+Massino Visconti
+Massiola
+Mathi
+Mattie
+Mazzano
+Mazzè
+Mazzin
+Mazzo di Valtellina
+Meana di Susa
+Meda
+Mede
+Medea
+Medel (Lucmagn)
+Medesano
+Medicina
+Mediglia
+Medolago
+Medole
+Medolla
+Meduna di Livenza
+Meduno
+Megliadino San Vitale
+Meina
+Melano
+Melara
+Melazzo
+Meldola
+Mele
+Melegnano
+Meleti
+Melide
+Melle
+Mello
+Meltina
+Melzo
+Menaggio
+Menconico
+Mendatica
+Mendrisio
+Meolo
+Merana
+Merano
+Merate
+Mercallo
+Mercato Saraceno
+Mercenasco
+Mereto di Tomba
+Mergoscia
+Mergozzo
+Merlara
+Merlino
+Merone
+Mese
+Mesenzana
+Mesero
+Mesocco
+Mesola
+Mestrino
+Mezzago
+Mezzana
+Mezzana Bigli
+Mezzana Mortigliengo
+Mezzana Rabattone
+Mezzane di Sotto
+Mezzanego
+Mezzanino
+Mezzano
+Mezzenile
+Mezzocorona
+Mezzoldo
+Mezzolombardo
+Mezzomerico
+Mezzovico-Vira
+Miagliano
+Miane
+Miasino
+Miazzina
+Miglieglia
+Mignanego
+Milano
+Millesimo
+Milzano
+Minerbe
+Minerbio
+Minusio
+Mioglia
+Mira
+Mirabello Monferrato
+Miradolo Terme
+Mirandola
+Mirano
+Misano Adriatico
+Misano di Gera d'Adda
+Misinto
+Missaglia
+Moasca
+Moconesi
+Modena
+Modigliana
+Moena
+Moggio
+Moggio Udinese
+Moglia
+Mogliano Veneto
+Moimacco
+Moio de' Calvi
+Moiola
+Molare
+Molinella
+Molini di Triora
+Molino dei Torti
+Mollia
+Molteno
+Moltrasio
+Molveno
+Mombaldone
+Mombarcaro
+Mombaruzzo
+Mombasiglio
+Mombello di Torino
+Mombello Monferrato
+Mombercelli
+Momo
+Mompantero
+Momperone
+Monale
+Monastero Bormida
+Monastero di Lanzo
+Monastero di Vasco
+Monasterolo Casotto
+Monasterolo del Castello
+Monasterolo di Savigliano
+Monastier di Treviso
+Moncalieri
+Moncalvo
+Moncenisio
+Moncestino
+Monchiero
+Monchio delle Corti
+Moncrivello
+Moncucco Torinese
+Mondaino
+Mondovì
+Moneglia
+Monesiglio
+Monfalcone
+Monforte d'Alba
+Monfumo
+Mongardino
+Monghidoro
+Mongiardino Ligure
+Mongrando
+Monguelfo-Tesido
+Monguzzo
+Moniga del Garda
+Monleale
+Monno
+Monrupino
+Monselice
+Montà
+Montabone
+Montacuto
+Montafia
+Montagna
+Montagna in Valtellina
+Montagnana
+Montaldeo
+Montaldo Bormida
+Montaldo di Mondovì
+Montaldo Roero
+Montaldo Scarampi
+Montaldo Torinese
+Montalenghe
+Montalto Carpasio
+Montalto Dora
+Montalto Pavese
+Montanaro
+Montanaso Lombardo
+Montanera
+Montano Lucino
+Monte Cremasco
+Monte di Malo
+Monte Isola
+Monte Marenzo
+Monte San Pietro
+Montebello della Battaglia
+Montebello Vicentino
+Montebelluna
+Montebruno
+Montecalvo Versiggia
+Montecastello
+Montecchia di Crosara
+Montecchio Emilia
+Montecchio Maggiore
+Montecchio Precalcino
+Monteceneri
+Montechiaro d'Acqui
+Montechiaro d'Asti
+Montechiarugolo
+Montecopiolo
+Montecrestese
+Montecreto
+Montefiore Conca
+Montefiorino
+Monteforte d'Alpone
+Montegalda
+Montegaldella
+Montegioco
+Montegridolfo
+Montegrino Valtravaglia
+Montegrosso d'Asti
+Montegrosso Pian Latte
+Montegrotto Terme
+Montello
+Montelupo Albese
+Montemagno
+Montemale di Cuneo
+Montemarzino
+Montemezzo
+Montenars
+Montereale Valcellina
+Monterenzio
+Monterosso al Mare
+Monterosso Grana
+Montescano
+Montescheno
+Montescudo-Monte Colombo
+Montese
+Montesegale
+Monteu da Po
+Monteu Roero
+Montevecchia
+Monteviale
+Montezemolo
+Montiano
+Monticelli Brusati
+Monticelli d'Ongina
+Monticelli Pavese
+Monticello Brianza
+Monticello Conte Otto
+Monticello d'Alba
+Montichiari
+Montiglio Monferrato
+Montirone
+Montjovet
+Montodine
+Montoggio
+Montorfano
+Montorso Vicentino
+Montù Beccaria
+Monvalle
+Monza
+Monzambano
+Monzuno
+Morano sul Po
+Moransengo-Tonengo
+Moraro
+Morazzone
+Morbegno
+Morbello
+Morbio Inferiore
+Morciano di Romagna
+Morcote
+Mordano
+Morengo
+Moretta
+Morfasso
+Morgano
+Morgex
+Mori
+Moriago della Battaglia
+Morimondo
+Moriondo Torinese
+Mornago
+Mornese
+Mornico al Serio
+Mornico Losana
+Morozzo
+Morsano al Tagliamento
+Morsasco
+Mortara
+Mortegliano
+Morterone
+Moruzzo
+Moscazzano
+Moso in Passiria
+Mossa
+Motta Baluffi
+Motta de' Conti
+Motta di Livenza
+Motta Visconti
+Mottalciata
+Motteggiana
+Mozzanica
+Mozzate
+Mozzecane
+Mozzo
+Muggia
+Muggiò
+Mulazzano
+Muntogna da Schons
+Mura
+Muralto
+Murazzano
+Murello
+Murialdo
+Murisengo
+Muscoline
+Musile di Piave
+Musso
+Mussolente
+Muzzana del Turgnano
+Muzzano
+Muzzano
+Nago-Torbole
+Nalles
+Nanto
+Narzole
+Nasino
+Naturno
+Nave
+Naz-Sciaves
+Ne
+Nebbiuno
+Neggio
+Negrar di Valpolicella
+Neirone
+Neive
+Nembro
+Nervesa della Battaglia
+Nerviano
+Nesso
+Netro
+Neviano degli Arduini
+Neviglie
+Niardo
+Nibbiola
+Nibionno
+Nichelino
+Nicorvo
+Niella Belbo
+Niella Tanaro
+Nimis
+Nizza Monferrato
+Noale
+Noasca
+Noceto
+Nogara
+Nogaredo
+Nogarole Rocca
+Nogarole Vicentino
+Nole
+Noli
+Nomaglio
+Nomi
+Nonantola
+None
+Nonio
+Nosate
+Nova Levante
+Nova Milanese
+Nova Ponente
+Novafeltria
+Novaggio
+Novaledo
+Novalesa
+Novara
+Novate Mezzola
+Novate Milanese
+Novazzano
+Nove
+Novedrate
+Novella
+Novellara
+Novello
+Noventa di Piave
+Noventa Padovana
+Noventa Vicentina
+Novi di Modena
+Novi Ligure
+Noviglio
+Nucetto
+Nus
+Nuvolento
+Nuvolera
+Obersaxen Mundaun
+Occhieppo Inferiore
+Occhieppo Superiore
+Occhiobello
+Occimiano
+Odalengo Grande
+Odalengo Piccolo
+Oderzo
+Odolo
+Offanengo
+Offlaga
+Oggebbio
+Oggiona con Santo Stefano
+Oggiono
+Oglianico
+Olcenengo
+Oldenico
+Oleggio
+Oleggio Castello
+Olevano di Lomellina
+Olgiate Comasco
+Olgiate Molgora
+Olgiate Olona
+Olginate
+Oliva Gessi
+Oliveto Lario
+Olivetta San Michele
+Olivola
+Ollomont
+Olmeneta
+Olmo al Brembo
+Olmo Gentile
+Oltre il Colle
+Oltressenda Alta
+Oltrona di San Mamette
+Ome
+Omegna
+Oncino
+Oneta
+Ono San Pietro
+Onore
+Onsernone
+Onzo
+Opera
+Oppeano
+Ora
+Orbassano
+Orco Feglino
+Orero
+Orgiano
+Origgio
+Origlio
+Orino
+Orio al Serio
+Orio Canavese
+Orio Litta
+Ormea
+Ormelle
+Ornago
+Ornavasso
+Ornica
+Orsago
+Orsara Bormida
+Orselina
+Orsenigo
+Orta San Giulio
+Ortisei
+Ortovero
+Orzinuovi
+Orzivecchi
+Osasco
+Osasio
+Osiglia
+Osio Sopra
+Osio Sotto
+Osnago
+Osoppo
+Ospedaletti
+Ospedaletto
+Ospedaletto Euganeo
+Ospedaletto Lodigiano
+Ospitale di Cadore
+Ospitaletto
+Ossago Lodigiano
+Ossana
+Ossimo
+Ossona
+Ostana
+Ostellato
+Ostiano
+Ostiglia
+Ottiglio
+Ottobiano
+Ottone
+Oulx
+Ovada
+Ovaro
+Oviglio
+Oyace
+Ozegna
+Ozzano dell'Emilia
+Ozzano Monferrato
+Ozzero
+Padenghe sul Garda
+Paderna
+Paderno d'Adda
+Paderno Dugnano
+Paderno Franciacorta
+Paderno Ponchielli
+Padova
+Paesana
+Paese
+Pagazzano
+Pagnacco
+Pagno
+Pagnona
+Paisco Loveno
+Paitone
+Paladina
+Palagano
+Palanzano
+Palazzago
+Palazzo Canavese
+Palazzo Pignano
+Palazzolo dello Stella
+Palazzolo sull'Oglio
+Palazzolo Vercellese
+Palestro
+Pallanzeno
+Pallare
+Palmanova
+Palosco
+Palù
+Palù del Fersina
+Paluzza
+Pamparato
+Pancalieri
+Pancarana
+Panchià
+Pandino
+Pantigliate
+Papozze
+Parabiago
+Paradiso
+Paratico
+Parcines
+Parella
+Pareto
+Parlasco
+Parma
+Parodi Ligure
+Paroldo
+Parona
+Parre
+Paruzzaro
+Parzanica
+Pasian di Prato
+Pasiano di Pordenone
+Paspardo
+Passerano Marmorito
+Passirano
+Pastrengo
+Pasturana
+Pasturo
+Paularo
+Paullo
+Pavarolo
+Pavia
+Pavia di Udine
+Pavone Canavese
+Pavone del Mella
+Pavullo nel Frignano
+Pecetto di Valenza
+Pecetto Torinese
+Pedavena
+Pedemonte
+Pederobba
+Pedesina
+Pedrengo
+Peglio
+Pegognaga
+Peia
+Peio
+Pella
+Pellegrino Parmense
+Pellizzano
+Pelugo
+Penango
+Pennabilli
+Perarolo di Cadore
+Perca
+Pergine Valsugana
+Perinaldo
+Perledo
+Perletto
+Perlo
+Perloz
+Pernumia
+Pero
+Perosa Argentina
+Perosa Canavese
+Perrero
+Persico Dosimo
+Personico
+Pertengo
+Pertica Alta
+Pertica Bassa
+Pertusio
+Pescantina
+Pescarolo ed Uniti
+Pescate
+Peschiera Borromeo
+Peschiera del Garda
+Pessano con Bornago
+Pessina Cremonese
+Pessinetto
+Pettenasco
+Pettinengo
+Pettorazza Grimani
+Peveragno
+Pezzana
+Pezzaze
+Pezzolo Valle Uzzone
+Piacenza
+Piacenza d'Adige
+Piadena Drizzona
+Pian Camuno
+Piana Crixia
+Piancogno
+Pianello del Lario
+Pianello Val Tidone
+Pianengo
+Pianezza
+Pianezze
+Pianfei
+Pianico
+Pianiga
+Pianoro
+Piantedo
+Piario
+Piasco
+Piateda
+Piatto
+Piazza Brembana
+Piazzatorre
+Piazzola sul Brenta
+Piazzolo
+Piea
+Piedicavallo
+Piedimulera
+Pieranica
+Pietra de' Giorgi
+Pietra Ligure
+Pietra Marazzi
+Pietrabruna
+Pietraporzio
+Pieve Albignola
+Pieve d'Olmi
+Pieve del Cairo
+Pieve del Grappa
+Pieve di Bono-Prezzo
+Pieve di Cadore
+Pieve di Cento
+Pieve di Soligo
+Pieve di Teco
+Pieve Emanuele
+Pieve Fissiraga
+Pieve Ligure
+Pieve Porto Morone
+Pieve San Giacomo
+Pieve Tesino
+Pieve Vergonte
+Pievepelago
+Pigna
+Pignone
+Pigra
+Pila
+Pinarolo Po
+Pinasca
+Pincara
+Pinerolo
+Pino d'Asti
+Pino Torinese
+Pinzano al Tagliamento
+Pinzolo
+Piobesi d'Alba
+Piobesi Torinese
+Piode
+Pioltello
+Piombino Dese
+Piossasco
+Piovà Massaia
+Piove di Sacco
+Piovene Rocchette
+Piozzano
+Piozzo
+Pisano
+Piscina
+Pisogne
+Piubega
+Piuro
+Piverone
+Pizzale
+Pizzighettone
+Plaus
+Plesio
+Plodio
+Pocapaglia
+Pocenia
+Podenzano
+Poggio Renatico
+Poggio Rusco
+Poggio Torriana
+Poggiridenti
+Pogliano Milanese
+Pognana Lario
+Pognano
+Pogno
+Poirino
+Pojana Maggiore
+Polaveno
+Polcenigo
+Polesella
+Polesine Zibello
+Polinago
+Pollegio
+Pollein
+Pollone
+Polonghera
+Polpenazze del Garda
+Polverara
+Pomaretto
+Pomaro Monferrato
+Pomarolo
+Pombia
+Pompeiana
+Pompiano
+Pomponesco
+Poncarale
+Ponderano
+Ponna
+Ponso
+Pont Canavese
+Pont-Saint-Martin
+Pontboset
+Ponte Capriasca
+Ponte dell'Olio
+Ponte di Legno
+Ponte di Piave
+Ponte Gardena
+Ponte in Valtellina
+Ponte Lambro
+Ponte nelle Alpi
+Ponte Nizza
+Ponte Nossa
+Ponte San Nicolò
+Ponte San Pietro
+Pontebba
+Pontecchio Polesine
+Pontechianale
+Pontecurone
+Pontedassio
+Pontelongo
+Pontenure
+Ponteranica
+Pontestura
+Pontevico
+Pontey
+Ponti
+Ponti sul Mincio
+Pontida
+Pontinvrea
+Pontirolo Nuovo
+Pontoglio
+Pontresina
+Ponzano Monferrato
+Ponzano Veneto
+Ponzone
+Porcia
+Pordenone
+Porlezza
+Pornassio
+Porpetto
+Portacomaro
+Portalbera
+Porte
+Porte di Rendena
+Portico e San Benedetto
+Porto Ceresio
+Porto Mantovano
+Porto Tolle
+Porto Valtravaglia
+Porto Viro
+Portobuffolè
+Portofino
+Portogruaro
+Portomaggiore
+Portovenere
+Portula
+Porza
+Poschiavo
+Posina
+Possagno
+Postal
+Postalesio
+Postua
+Pove del Grappa
+Povegliano
+Povegliano Veronese
+Poviglio
+Povoletto
+Pozzaglio ed Uniti
+Pozzo d'Adda
+Pozzol Groppo
+Pozzolengo
+Pozzoleone
+Pozzolo Formigaro
+Pozzonovo
+Pozzuolo del Friuli
+Pozzuolo Martesana
+Pradalunga
+Pradamano
+Pradleves
+Pragelato
+Pralboino
+Prali
+Pralormo
+Pralungo
+Pramaggiore
+Pramollo
+Prarolo
+Prarostino
+Prasco
+Prascorsano
+Prata Camportaccio
+Prata di Pordenone
+Pratiglione
+Prato allo Stelvio
+Prato Carnico
+Prato Leventina
+Prato Sesia
+Pravisdomini
+Pray
+Prazzo
+Pré-Saint-Didier
+Precenicco
+Predaia
+Predappio
+Predazzo
+Predoi
+Predore
+Predosa
+Preganziol
+Pregnana Milanese
+Prelà
+Premana
+Premariacco
+Premeno
+Premia
+Premilcuore
+Premolo
+Premosello-Chiovenda
+Preone
+Prepotto
+Preseglie
+Presezzo
+Pressana
+Prevalle
+Priero
+Prignano sulla Secchia
+Primaluna
+Primiero San Martino di Castrozza
+Priocca
+Priola
+Propata
+Proserpio
+Provaglio d'Iseo
+Provaglio Val Sabbia
+Proves
+Prunetto
+Puegnago del Garda
+Pulfero
+Pumenengo
+Pura
+Pusiano
+Quagliuzzo
+Quaranti
+Quaregna Cerreto
+Quargnento
+Quarna Sopra
+Quarna Sotto
+Quarona
+Quart
+Quarto d'Altino
+Quassolo
+Quattordio
+Quattro Castella
+Quero Vas
+Quiliano
+Quincinetto
+Quingentole
+Quintano
+Quinto
+Quinto di Treviso
+Quinto Vercellese
+Quinto Vicentino
+Quinzano d'Oglio
+Quistello
+Rabbi
+Racconigi
+Racines
+Ragogna
+Rancio Valcuvia
+Ranco
+Ranica
+Ranzanico
+Ranzo
+Rapallo
+Rassa
+Rasun-Anterselva
+Rasura
+Ravarino
+Ravascletto
+Ravenna
+Raveo
+Re
+Rea
+Reana del Rojale
+Reano
+Recco
+Recetto
+Recoaro Terme
+Redavalle
+Redondesco
+Refrancore
+Refrontolo
+Reggio nell'Emilia
+Reggiolo
+Remanzacco
+Remedello
+Renate
+Renon
+Resana
+Rescaldina
+Resia
+Resiutta
+Retorbido
+Revello
+Revigliasco d'Asti
+Revine Lago
+Rezzago
+Rezzato
+Rezzo
+Rezzoaglio
+Rhäzüns
+Rheinwald
+Rhêmes-Notre-Dame
+Rhêmes-Saint-Georges
+Rho
+Rialto
+Ribordone
+Ricaldone
+Riccione
+Riccò del Golfo di Spezia
+Ricengo
+Riese Pio X
+Rifiano
+Rifreddo
+Rigolato
+Rimella
+Rimini
+Rio di Pusteria
+Rio Saliceto
+Riolo Terme
+Riolunato
+Riomaggiore
+Ripalta Arpina
+Ripalta Cremasca
+Ripalta Guerina
+Rittana
+Riva del Garda
+Riva del Po
+Riva di Solto
+Riva Ligure
+Riva presso Chieri
+Riva San Vitale
+Rivalba
+Rivalta Bormida
+Rivalta di Torino
+Rivamonte Agordino
+Rivanazzano Terme
+Rivara
+Rivarolo Canavese
+Rivarolo del Re ed Uniti
+Rivarolo Mantovano
+Rivarone
+Rivarossa
+Rive
+Rive d'Arcano
+Rivergaro
+Riviera
+Rivignano Teor
+Rivoli
+Rivoli Veronese
+Rivolta d'Adda
+Roana
+Roaschia
+Roascio
+Roasio
+Roatto
+Robassomero
+Robbiate
+Robbio
+Robecchetto con Induno
+Robecco d'Oglio
+Robecco Pavese
+Robecco sul Naviglio
+Robella
+Robilante
+Roburent
+Rocca Canavese
+Rocca Cigliè
+Rocca d'Arazzo
+Rocca de' Baldi
+Rocca de' Giorgi
+Rocca Grimalda
+Rocca Pietore
+Rocca San Casciano
+Rocca Susella
+Roccabianca
+Roccabruna
+Roccaforte Ligure
+Roccaforte Mondovì
+Roccafranca
+Roccasparvera
+Roccaverano
+Roccavignale
+Roccavione
+Rocchetta Belbo
+Rocchetta di Vara
+Rocchetta Ligure
+Rocchetta Nervina
+Rocchetta Palafea
+Rocchetta Tanaro
+Rodano
+Roddi
+Roddino
+Rodello
+Rodengo
+Rodengo Saiano
+Rodero
+Rodigo
+Roè Volciano
+Rogeno
+Rognano
+Rogno
+Rogolo
+Roisan
+Roletto
+Rolo
+Romagnano Sesia
+Romagnese
+Romanengo
+Romano Canavese
+Romano d'Ezzelino
+Romano di Lombardia
+Romans d'Isonzo
+Romeno
+Romentino
+Ronago
+Roncà
+Roncade
+Roncadelle
+Roncaro
+Roncegno Terme
+Roncello
+Ronchi dei Legionari
+Ronchi Valsugana
+Ronchis
+Ronco all'Adige
+Ronco Biellese
+Ronco Briantino
+Ronco Canavese
+Ronco Scrivia
+Ronco Sopra Ascona
+Roncobello
+Roncoferraro
+Roncofreddo
+Roncola
+Rondanina
+Rondissone
+Rongellen
+Ronsecco
+Ronzo-Chienis
+Ronzone
+Roppolo
+Rorà
+Rosà
+Rosasco
+Rosate
+Rosazza
+Rosignano Monferrato
+Rosolina
+Rossa
+Rossa
+Rossana
+Rossano Veneto
+Rossiglione
+Rosta
+Rota d'Imagna
+Rothenbrunnen
+Rottofreno
+Rotzo
+Roure
+Rovasenda
+Rovato
+Rovegno
+Rovellasca
+Rovello Porro
+Roverbella
+Roverchiara
+Roverè della Luna
+Roverè Veronese
+Roveredo (GR)
+Roveredo di Guà
+Roveredo in Piano
+Rovereto
+Rovescala
+Rovetta
+Rovigo
+Rovio
+Rovolon
+Rozzano
+Rubano
+Rubiana
+Rubiera
+Ruda
+Rudiano
+Rueglio
+Ruffia
+Ruffrè-Mendola
+Rumo
+Russi
+S-chanf
+Sabbio Chiese
+Sabbioneta
+Saccolongo
+Sacile
+Safiental
+Sagliano Micca
+Sagogn
+Sagrado
+Sagron Mis
+Saint-Christophe
+Saint-Denis
+Saint-Marcel
+Saint-Nicolas
+Saint-Oyen
+Saint-Pierre
+Saint-Rhémy-en-Bosses
+Saint-Vincent
+Sala Baganza
+Sala Biellese
+Sala Bolognese
+Sala Comacina
+Sala Monferrato
+Salara
+Salasco
+Salassa
+Salbertrand
+Salcedo
+Sale
+Sale delle Langhe
+Sale Marasino
+Sale San Giovanni
+Salerano Canavese
+Salerano sul Lambro
+Salgareda
+Sali Vercellese
+Saliceto
+Salizzole
+Salmour
+Salò
+Salorno sulla strada del vino
+Salsomaggiore Terme
+Saltrio
+Saludecio
+Saluggia
+Salussola
+Saluzzo
+Salvirola
+Salza di Pinerolo
+Salzano
+Samarate
+Sambuco
+Samedan
+Samnaun
+Samolaco
+Samone
+Samone
+Sampeyre
+San Bartolomeo al Mare
+San Bartolomeo Val Cavargna
+San Bassano
+San Bellino
+San Benedetto Belbo
+San Benedetto Po
+San Benedetto Val di Sambro
+San Benigno Canavese
+San Bernardino Verbano
+San Biagio della Cima
+San Biagio di Callalta
+San Bonifacio
+San Candido
+San Canzian d'Isonzo
+San Carlo Canavese
+San Cesario sul Panaro
+San Cipriano Po
+San Clemente
+San Colombano al Lambro
+San Colombano Belmonte
+San Colombano Certenoli
+San Cristoforo
+San Damiano al Colle
+San Damiano d'Asti
+San Damiano Macra
+San Daniele del Friuli
+San Daniele Po
+San Didero
+San Donà di Piave
+San Donato Milanese
+San Dorligo della Valle
+San Felice del Benaco
+San Felice sul Panaro
+San Fermo della Battaglia
+San Fior
+San Fiorano
+San Floriano del Collio
+San Francesco al Campo
+San Genesio Atesino
+San Genesio ed Uniti
+San Germano Chisone
+San Germano Vercellese
+San Gervasio Bresciano
+San Giacomo delle Segnate
+San Giacomo Filippo
+San Giacomo Vercellese
+San Gillio
+San Giorgio Bigarello
+San Giorgio Canavese
+San Giorgio della Richinvelda
+San Giorgio delle Pertiche
+San Giorgio di Lomellina
+San Giorgio di Nogaro
+San Giorgio di Piano
+San Giorgio in Bosco
+San Giorgio Monferrato
+San Giorgio Piacentino
+San Giorgio Scarampi
+San Giorgio su Legnano
+San Giorio di Susa
+San Giovanni al Natisone
+San Giovanni Bianco
+San Giovanni del Dosso
+San Giovanni di Fassa
+San Giovanni Ilarione
+San Giovanni in Croce
+San Giovanni in Marignano
+San Giovanni in Persiceto
+San Giovanni Lupatoto
+San Giuliano Milanese
+San Giusto Canavese
+San Gregorio nelle Alpi
+San Lazzaro di Savena
+San Leo
+San Leonardo
+San Leonardo in Passiria
+San Lorenzo al Mare
+San Lorenzo di Sebato
+San Lorenzo Dorsino
+San Lorenzo Isontino
+San Martino al Tagliamento
+San Martino Alfieri
+San Martino Buon Albergo
+San Martino Canavese
+San Martino dall'Argine
+San Martino del Lago
+San Martino di Lupari
+San Martino di Venezze
+San Martino in Badia
+San Martino in Passiria
+San Martino in Rio
+San Martino in Strada
+San Martino Siccomario
+San Marzano Oliveto
+San Maurizio Canavese
+San Maurizio d'Opaglio
+San Mauro di Saline
+San Mauro Pascoli
+San Mauro Torinese
+San Michele al Tagliamento
+San Michele all'Adige
+San Michele Mondovì
+San Nazzaro Sesia
+San Nazzaro Val Cavargna
+San Nicolò di Comelico
+San Pancrazio
+San Paolo
+San Paolo d'Argon
+San Paolo Solbrito
+San Pellegrino Terme
+San Pier d'Isonzo
+San Pietro al Natisone
+San Pietro di Cadore
+San Pietro di Feletto
+San Pietro di Morubio
+San Pietro in Cariano
+San Pietro in Casale
+San Pietro in Cerro
+San Pietro in Gu
+San Pietro Mosezzo
+San Pietro Mussolino
+San Pietro Val Lemina
+San Pietro Viminario
+San Polo d'Enza
+San Polo di Piave
+San Ponso
+San Possidonio
+San Prospero
+San Quirino
+San Raffaele Cimena
+San Rocco al Porto
+San Salvatore Monferrato
+San Sebastiano Curone
+San Sebastiano da Po
+San Secondo di Pinerolo
+San Secondo Parmense
+San Siro
+San Stino di Livenza
+San Tomaso Agordino
+San Vendemiano
+San Vito al Tagliamento
+San Vito al Torre
+San Vito di Cadore
+San Vito di Fagagna
+San Vito di Leguzzano
+San Vittore
+San Vittore Olona
+San Zeno di Montagna
+San Zeno Naviglio
+San Zenone al Lambro
+San Zenone al Po
+San Zenone degli Ezzelini
+Sandigliano
+Sandrigo
+Sanfrè
+Sanfront
+Sangano
+Sangiano
+Sanguinetto
+Sannazzaro de' Burgondi
+Sanremo
+Sant'Agata Bolognese
+Sant'Agata Feltria
+Sant'Agata Fossili
+Sant'Agata sul Santerno
+Sant'Albano Stura
+Sant'Alessio con Vialone
+Sant'Ambrogio di Torino
+Sant'Ambrogio di Valpolicella
+Sant'Angelo di Piove di Sacco
+Sant'Angelo Lodigiano
+Sant'Angelo Lomellina
+Sant'Anna d'Alfaedo
+Sant'antonino
+Sant'Antonino di Susa
+Sant'Elena
+Sant'Ilario d'Enza
+Sant'Olcese
+Sant'Omobono Terme
+Sant'Orsola Terme
+Sant'Urbano
+Santa Brigida
+Santa Cristina e Bissone
+Santa Cristina Valgardena
+Santa Giuletta
+Santa Giustina
+Santa Giustina in Colle
+Santa Lucia di Piave
+Santa Margherita di Staffora
+Santa Margherita Ligure
+Santa Maria della Versa
+Santa Maria di Sala
+Santa Maria Hoè
+Santa Maria in Calanca
+Santa Maria la Longa
+Santa Maria Maggiore
+Santa Sofia
+Santa Vittoria d'Alba
+Santarcangelo di Romagna
+Santena
+Santhià
+Santo Stefano al Mare
+Santo Stefano Belbo
+Santo Stefano d'Aveto
+Santo Stefano di Cadore
+Santo Stefano di Magra
+Santo Stefano Lodigiano
+Santo Stefano Roero
+Santo Stefano Ticino
+Santorso
+Sanzeno
+Saonara
+Sappada
+Sarcedo
+Sardigliano
+Sarego
+Sarentino
+Sarezzano
+Sarezzo
+Sarmato
+Sarmede
+Sarnico
+Sarnonico
+Saronno
+Sarre
+Sarsina
+Sartirana Lomellina
+Sarzana
+Sassello
+Sasso Marconi
+Sassofeltrio
+Sassuolo
+Sauris
+Sauze d'Oulx
+Sauze di Cesana
+Savigliano
+Savignano sul Panaro
+Savignano sul Rubicone
+Savignone
+Saviore dell'Adamello
+Savogna
+Savogna d'Isonzo
+Savona
+Savosa
+Scagnello
+Scaldasole
+Scalenghe
+Scandiano
+Scandolara Ravara
+Scandolara Ripa d'Oglio
+Scanzorosciate
+Scarmagno
+Scarnafigi
+Scena
+Scharans
+Schiavon
+Schiers
+Schignano
+Schilpario
+Schio
+Schivenoglia
+Schluein
+Schmitten (GR)
+Sciolze
+Scopa
+Scopello
+Scorzè
+Scuol
+Scurelle
+Scurzolengo
+Seborga
+Secugnago
+Sedegliano
+Sedico
+Sedriano
+Sedrina
+Seewis im Prättigau
+Segonzano
+Segrate
+Segusino
+Sella Giudicarie
+Sellero
+Selva dei Molini
+Selva di Cadore
+Selva di Progno
+Selva di Val Gardena
+Selvazzano Dentro
+Selvino
+Semiana
+Senago
+Senale-San Felice
+Senales
+Seniga
+Senna Comasco
+Senna Lodigiana
+Sequals
+Seregno
+Seren del Grappa
+Sergnano
+Seriate
+Serina
+Serle
+Sermide e Felonica
+Sernaglia della Battaglia
+Sernio
+Serole
+Serra Riccò
+Serralunga d'Alba
+Serralunga di Crea
+Serramazzoni
+Serravalle
+Serravalle a Po
+Serravalle Langhe
+Serravalle Scrivia
+Serravalle Sesia
+Sessame
+Sesta Godano
+Sesto
+Sesto al Reghena
+Sesto Calende
+Sesto ed Uniti
+Sesto San Giovanni
+Sestola
+Sestri Levante
+Sestriere
+Settala
+Settime
+Settimo Milanese
+Settimo Rottaro
+Settimo Torinese
+Settimo Vittone
+Seveso
+Sezzadio
+Sfruz
+Sgonico
+Silandro
+Silea
+Sillavengo
+Sils im Domleschg
+Sils im Engadin/Segl
+Silvano d'Orba
+Silvano Pietra
+Silvaplana
+Sinio
+Sirmione
+Sirone
+Sirtori
+Sissa Trecasali
+Siziano
+Sizzano
+Sluderno
+Soave
+Soazza
+Socchieve
+Sogliano al Rubicone
+Soglio
+Soiano del Lago
+Solagna
+Solaro
+Solarolo
+Solarolo Rainerio
+Solbiate Arno
+Solbiate con Cagno
+Solbiate Olona
+Soldano
+Solero
+Solesino
+Solferino
+Soliera
+Solignano
+Solonghello
+Solto Collina
+Solza
+Somaglia
+Somano
+Somma Lombardo
+Sommacampagna
+Sommariva del Bosco
+Sommariva Perno
+Sommo
+Sona
+Soncino
+Sondalo
+Sondrio
+Songavazzo
+Sonico
+Soraga di Fassa
+Soragna
+Sorbolo Mezzani
+Sordevolo
+Sordio
+Sorengo
+Soresina
+Sorgà
+Sori
+Sorico
+Soriso
+Sorisole
+Sormano
+Sospiro
+Sospirolo
+Sossano
+Sostegno
+Sotto il Monte Giovanni XXIII
+Sover
+Sovere
+Soverzene
+Sovico
+Sovizzo
+Sovramonte
+Sozzago
+Sparone
+Spessa
+Spiazzo
+Spigno Monferrato
+Spilamberto
+Spilimbergo
+Spinadesco
+Spinea
+Spineda
+Spineto Scrivia
+Spino d'Adda
+Spinone al Lago
+Spirano
+Spormaggiore
+Sporminore
+Spotorno
+Spresiano
+Spriana
+St. Moritz
+Stabio
+Stagno Lombardo
+Stanghella
+Staranzano
+Stazzano
+Stazzona
+Stella
+Stellanello
+Stelvio
+Stenico
+Stezzano
+Stienta
+Storo
+Stra
+Stradella
+Strambinello
+Strambino
+Stregna
+Strembo
+Stresa
+Strevi
+Strona
+Stroppiana
+Stroppo
+Strozza
+Suardi
+Sueglio
+Suello
+Sufers
+Suisio
+Sulbiate
+Sulzano
+Sumirago
+Sumvitg
+Suno
+Surses
+Susa
+Susegana
+Sustinente
+Sutrio
+Suzzara
+Taceno
+Taggia
+Taglio di Po
+Tagliolo Monferrato
+Taibon Agordino
+Taino
+Taipana
+Talamello
+Talamona
+Taleggio
+Talmassons
+Tambre
+Tamins
+Tarantasca
+Tarcento
+Tartano
+Tarvisio
+Tarzo
+Tassarolo
+Tavagnacco
+Tavagnasco
+Tavazzano con Villavesco
+Tavernerio
+Tavernola Bergamasca
+Tavernole sul Mella
+Tavigliano
+Teglio
+Teglio Veneto
+Telgate
+Telve
+Telve di Sopra
+Temù
+Tenero-Contra
+Tenna
+Tenno
+Teolo
+Terdobbiate
+Terento
+Terenzo
+Terlano
+Termeno sulla strada del vino
+Ternate
+Ternengo
+Terno d'Isola
+Terragnolo
+Terranova dei Passerini
+Terrassa Padovana
+Terrazzo
+Terre d'Adige
+Terre del Reno
+Terre Di Pedemonte
+Terruggia
+Terzo
+Terzo d'Aquileia
+Terzolas
+Terzorio
+Tesero
+Tesimo
+Testico
+Tezze sul Brenta
+Thiene
+Thusis
+Ticengo
+Ticineto
+Tiglieto
+Tigliole
+Tignale
+Tione di Trento
+Tirano
+Tires
+Tirolo
+Tizzano Val Parma
+Toano
+Toceno
+Toirano
+Tollegno
+Tolmezzo
+Tombolo
+Ton
+Tonco
+Tonezza del Cimone
+Torbole Casaglia
+Torcegno
+Torgnon
+Torino
+Torlino Vimercati
+Tornaco
+Tornata
+Torno
+Tornolo
+Torrazza Coste
+Torrazza Piemonte
+Torrazzo
+Torre Beretti e Castellaro
+Torre Boldone
+Torre Bormida
+Torre Canavese
+Torre d'Arese
+Torre d'Isola
+Torre de' Busi
+Torre de' Negri
+Torre de' Picenardi
+Torre de' Roveri
+Torre di Mosto
+Torre di Santa Maria
+Torre Mondovì
+Torre Pallavicina
+Torre Pellice
+Torre San Giorgio
+Torreano
+Torrebelvicino
+Torreglia
+Torresina
+Torrevecchia Pia
+Torri del Benaco
+Torri di Quartesolo
+Torricella del Pizzo
+Torricella Verzate
+Torricella-Taverne
+Torriglia
+Torrile
+Tortona
+Torviscosa
+Toscolano-Maderno
+Tovo di Sant'Agata
+Tovo San Giacomo
+Tradate
+Trambileno
+Tramonti di Sopra
+Tramonti di Sotto
+Trana
+Traona
+Trarego Viggiona
+Trasaghis
+Trasquera
+Travacò Siccomario
+Travagliato
+Travedona-Monate
+Traversella
+Traversetolo
+Traves
+Travesio
+Travo
+Tre Ville
+Trebaseleghe
+Trecate
+Trecenta
+Tredozio
+Tregnago
+Treiso
+Tremezzina
+Tremosine sul Garda
+Trento
+Trenzano
+Treppo Grande
+Treppo Ligosullo
+Tresa
+Trescore Balneario
+Trescore Cremasco
+Tresignana
+Tresivio
+Trevenzuolo
+Treviglio
+Trevignano
+Treville
+Treviolo
+Treviso
+Treviso Bresciano
+Trezzano Rosa
+Trezzano sul Naviglio
+Trezzo sull'Adda
+Trezzo Tinella
+Trezzone
+Tribano
+Tribiano
+Tribogna
+Tricerro
+Tricesimo
+Trieste
+Trigolo
+Trimmis
+Trin
+Trinità
+Trino
+Triora
+Trisobbio
+Trissino
+Triuggio
+Trivignano Udinese
+Trivolzio
+Trodena nel parco naturale
+Trofarello
+Tromello
+Trontano
+Tronzano Lago Maggiore
+Tronzano Vercellese
+Trovo
+Truccazzano
+Trun
+Tschappina
+Tschiertschen-Praden
+Tubre
+Tujetsch
+Turano Lodigiano
+Turate
+Turbigo
+Turriaco
+Ubiale Clanezzo
+Uboldo
+Udine
+Uggiate-Trevano
+Ultimo
+Untervaz
+Urago d'Oglio
+Urbana
+Urbe
+Urgnano
+Urmein
+Uscio
+Usmate Velate
+Usseaux
+Usseglio
+Vacallo
+Vadena
+Vado Ligure
+Vaglio Serra
+Vaiano Cremasco
+Vaie
+Vailate
+Vajont
+Val Brembilla
+Val della Torre
+Val di Chy
+Val di Nizza
+Val di Vizze
+Val di Zoldo
+Val Liona
+Val Masino
+Val Müstair
+Val Rezzo
+Valbondione
+Valbrembo
+Valbrenta
+Valbrevenna
+Valbrona
+Valchiusa
+Valdagno
+Valdaone
+Valdaora
+Valdastico
+Valdengo
+Valdidentro
+Valdieri
+Valdilana
+Valdisotto
+Valdobbiadene
+Valduggia
+Valeggio
+Valeggio sul Mincio
+Valenza
+Valera Fratta
+Valfenera
+Valfloriana
+Valfurva
+Valganna
+Valgioie
+Valgoglio
+Valgrana
+Valgreghentino
+Valgrisenche
+Vallada Agordina
+Vallanzengo
+Vallarsa
+Valle Aurina
+Valle Cannobina
+Valle di Cadore
+Valle di Casies
+Valle Lomellina
+Valle Salimbene
+Valle San Nicolao
+Vallebona
+Vallecrosia
+Vallelaghi
+Valleve
+Valli del Pasubio
+Vallio Terme
+Vallo Torinese
+Valloriate
+Valmacca
+Valmadrera
+Valmorea
+Valmozzola
+Valnegra
+Valpelline
+Valperga
+Valprato Soana
+Vals
+Valsamoggia
+Valsavarenche
+Valsolda
+Valsot
+Valstrona
+Valtorta
+Valtournenche
+Valvarrone
+Valvasone Arzene
+Valvestino
+Vandoies
+Vanzaghello
+Vanzago
+Vanzone con San Carlo
+Vaprio d'Adda
+Vaprio d'Agogna
+Varallo
+Varallo Pombia
+Varano Borghi
+Varano de' Melegari
+Varazze
+Varedo
+Varenna
+Varese
+Varese Ligure
+Varisella
+Varmo
+Varna
+Varsi
+Varzi
+Varzo
+Vasia
+Vauda Canavese
+Vaz/Obervaz
+Vazzola
+Vedano al Lambro
+Vedano Olona
+Vedelago
+Vedeseta
+Veduggio con Colzano
+Veggiano
+Veglio
+Veleso
+Velezzo Lomellina
+Vellezzo Bellini
+Velo d'Astico
+Velo Veronese
+Velturno
+Venaria Reale
+Venasca
+Venaus
+Vendone
+Venegono Inferiore
+Venegono Superiore
+Venezia
+Veniano
+Ventasso
+Ventimiglia
+Venzone
+Verano
+Verano Brianza
+Verbania
+Vercana
+Verceia
+Vercelli
+Vercurago
+Verdellino
+Verdello
+Verderio
+Verduno
+Vergato
+Verghereto
+Vergiate
+Vermezzo con Zelo
+Vermiglio
+Vernante
+Vernasca
+Vernate
+Vernate
+Vernazza
+Verolanuova
+Verolavecchia
+Verolengo
+Verona
+Veronella
+Verrayes
+Verrès
+Verretto
+Verrone
+Verrua Po
+Verrua Savoia
+Vertemate con Minoprio
+Vertova
+Verucchio
+Vervio
+Verzasca
+Verzegnis
+Verzuolo
+Vescovana
+Vescovato
+Vesime
+Vespolate
+Vessalico
+Vestenanova
+Vestignè
+Vestone
+Vetto
+Vezia
+Vezza d'Alba
+Vezza d'Oglio
+Vezzano Ligure
+Vezzano sul Crostolo
+Vezzi Portio
+Viadana
+Viadanica
+Viale
+Vialfrè
+Viano
+Viarigi
+Vicenza
+Vico Morcote
+Vicoforte
+Vicolungo
+Vidigulfo
+Vidor
+Vidracco
+Viganò
+Vigano San Martino
+Vigarano Mainarda
+Vigasio
+Vigevano
+Viggiù
+Vighizzolo d'Este
+Vigliano Biellese
+Vigliano d'Asti
+Vignale Monferrato
+Vignate
+Vignola
+Vignola-Falesina
+Vignole Borbera
+Vignolo
+Vignone
+Vigo di Cadore
+Vigodarzere
+Vigolo
+Vigolzone
+Vigone
+Vigonovo
+Vigonza
+Viguzzolo
+Villa Bartolomea
+Villa Biscossi
+Villa Carcina
+Villa Cortese
+Villa d'Adda
+Villa d'Almè
+Villa d'Ogna
+Villa del Bosco
+Villa del Conte
+Villa di Chiavenna
+Villa di Serio
+Villa di Tirano
+Villa Estense
+Villa Faraldi
+Villa Guardia
+Villa Lagarina
+Villa Minozzo
+Villa San Secondo
+Villa Santina
+Villabassa
+Villachiara
+Villadeati
+Villadose
+Villadossola
+Villafalletto
+Villafranca d'Asti
+Villafranca di Verona
+Villafranca Padovana
+Villafranca Piemonte
+Villaga
+Villalvernia
+Villamarzana
+Villamiroglio
+Villandro
+Villanova Biellese
+Villanova Canavese
+Villanova d'Albenga
+Villanova d'Ardenghi
+Villanova d'Asti
+Villanova del Ghebbo
+Villanova del Sillaro
+Villanova di Camposampiero
+Villanova Marchesana
+Villanova Mondovì
+Villanova Monferrato
+Villanova Solaro
+Villanova sull'Arda
+Villanterio
+Villanuova sul Clisi
+Villar Dora
+Villar Focchiardo
+Villar Pellice
+Villar Perosa
+Villar San Costanzo
+Villarbasse
+Villarboit
+Villareggia
+Villaromagnano
+Villasanta
+Villastellone
+Villata
+Villaverla
+Ville d'Anaunia
+Ville di Fiemme
+Villeneuve
+Villesse
+Villette
+Villimpenta
+Villongo
+Villorba
+Vilminore di Scalve
+Vimercate
+Vimodrone
+Vinadio
+Vinchio
+Vinovo
+Vinzaglio
+Viola
+Vione
+Vipiteno
+Virle Piemonte
+Visano
+Vische
+Visco
+Visone
+Vistarino
+Vistrorio
+Vito d'Asio
+Vittorio Veneto
+Vittuone
+Viù
+Vivaro
+Viverone
+Vizzola Ticino
+Vizzolo Predabissi
+Vo'
+Vobarno
+Vobbia
+Vocca
+Vodo Cadore
+Voghera
+Voghiera
+Vogogna
+Volano
+Volongo
+Volpago del Montello
+Volpara
+Volpedo
+Volpeglino
+Volpiano
+Volta Mantovana
+Voltaggio
+Voltago Agordino
+Voltido
+Volvera
+Vottignasco
+Zandobbio
+Zanè
+Zanica
+Zavattarello
+Zeccone
+Zelbio
+Zelo Buon Persico
+Zeme
+Zenevredo
+Zenson di Piave
+Zerba
+Zerbo
+Zerbolò
+Zermeghedo
+Zernez
+Zero Branco
+Zevio
+Ziano di Fiemme
+Ziano Piacentino
+Zibido San Giacomo
+Zignago
+Zillis-Reischen
+Zimella
+Zimone
+Zinasco
+Zizers
+Zoagli
+Zocca
+Zogno
+Zola Predosa
+Zone
+Zoppè di Cadore
+Zoppola
+Zovencedo
+Zubiena
+Zuccarello
+Zugliano
+Zuglio
+Zumaglia
+Zuoz
