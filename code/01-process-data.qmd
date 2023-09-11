@@ -28,6 +28,9 @@ comuni_svizzera <- read_lines("data/comuni-svizzera.txt")
 comuni_all <- sort(c(comuni_include$`Denominazione in italiano`, comuni_svizzera))
 
 write_lines(comuni_all, "data/comuni.txt")
+
+comuni_codes <- read_fwf("data/comuni-codes.txt")
+colnames(comuni_codes) <- c("LO02", "Denominazione in italiano")
 ```
 
 ## Read data
@@ -48,4 +51,22 @@ write_csv(gi_vital, "data/gi_vital.csv")
 range(gi_vital$CASE)
 length(unique(gi_vital$CASE))
 
+```
+
+```{r}
+#| label: read-polentometro
+
+eval(parse("https://www.soscisurvey.de/polentometro/?act=PeporZZ30N9exMBH054dTnXc&vQuality&rScript", encoding="UTF-8"))
+
+polentometro <- ds %>%
+  mutate(LO02 = as.character(LO02)) %>%
+  left_join(y = comuni_codes) %>%
+  left_join(y = comuni_include)
+```
+
+```{r}
+geo_counts <- polentometro %>%
+  group_by(`Denominazione Regione`, `Denominazione provincia`) %>%
+  count() %>%
+  arrange(n)
 ```
