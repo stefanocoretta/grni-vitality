@@ -29,7 +29,7 @@ comuni_all <- sort(c(comuni_include$`Denominazione in italiano`, comuni_svizzera
 
 write_lines(comuni_all, "data/comuni.txt")
 
-comuni_codes <- read_fwf("data/comuni-codes.txt")
+comuni_codes <- read_fwf("data/comuni-codes.txt", col_types = "nc")
 colnames(comuni_codes) <- c("LO02", "Denominazione in italiano")
 ```
 
@@ -40,6 +40,7 @@ We can read the data from SosciSurvey using the SosciSurvey API, which has been 
 ```{r}
 #| label: read-data
 #| message: false
+#| warning: false
 
 source("code/scripts/import_galloitalico_2023-01-28_11-52.R")
 write_csv(gi_vital, "data/gi_vital.csv")
@@ -59,13 +60,17 @@ length(unique(gi_vital$CASE))
 eval(parse("https://www.soscisurvey.de/polentometro/?act=PeporZZ30N9exMBH054dTnXc&vQuality&rScript", encoding="UTF-8"))
 
 polentometro <- ds %>%
-  mutate(LO02 = as.character(LO02)) %>%
+  mutate(
+    LO02 = as.numeric(LO02),
+    LO02 = ifelse(is.na(LO02), LO07, LO02)
+  ) %>%
   left_join(y = comuni_codes) %>%
   left_join(y = comuni_include)
 ```
 
 ```{r}
 geo_counts <- polentometro %>%
+  filter(MAXPAGE > 7) %>%
   group_by(`Denominazione Regione`, `Denominazione provincia`) %>%
   count() %>%
   arrange(n)
