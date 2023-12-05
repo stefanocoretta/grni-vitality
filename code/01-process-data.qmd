@@ -111,7 +111,6 @@ italy_adm1 <- st_read("data/italy-adm1/bb489fv3314.shp")
 italy_adm2 <- st_read("data/italy-adm2/mn871sp9778.shp")
 ```
 
-
 ```{r}
 #| label: comuni-counts
 #| warning: false
@@ -119,11 +118,16 @@ italy_adm2 <- st_read("data/italy-adm2/mn871sp9778.shp")
 polentometro_count <- polentometro %>%
   count(`Denominazione in italiano`, long, lat)
 
+regions <- c("Val d'Aosta", "Piemonte", "Liguria", "Lombardia", "Emilia-Romagna", "Veneto", "Friuli-Venezia Giulia", "Trentino", "San Marino")
+
 ggplot() +
   geom_sf(data = italy) +
-  geom_sf(data = italy_adm2, alpha = 0.5) +
-  coord_sf(c(6, 14), c(43, 47)) +
-  geom_point(data = polentometro_count, aes(long, lat, size = n), alpha = 0.5)
+  geom_sf(data = italy_adm1 %>% filter(name_1 %in% regions), aes(fill = name_1), alpha = 0.3) +
+  geom_sf(data = italy_adm2 %>% filter(name_1 %in% regions), fill = NA) +
+  coord_sf(c(6.5, 14), c(43.5, 47)) +
+  geom_point(data = polentometro_count, aes(long, lat, size = n), alpha = 0.5) +
+  theme_void() +
+  theme(legend.position = "none")
 
 ggsave("img/comuni-counts.png", width = 7, height = 5)
 ```
