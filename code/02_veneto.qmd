@@ -1,0 +1,50 @@
+---
+title: "Veneto"
+format: html
+---
+
+```{r}
+#| label: setup
+#| message: false
+
+source("code/scripts/packages.R")
+polentometro <- readRDS("data/derived/polentometro.rds")
+```
+
+```{r}
+veneto <- polentometro %>%
+  filter(`Denominazione Regione` == "Veneto")
+
+comuni_veneto_path <- "data/derived/comuni-veneto.csv"
+
+if (file.exists(comuni_veneto_path)) {
+  veneto_comuni <- read_csv(comuni_veneto_path)
+} else {
+  veneto_comuni <- veneto %>%
+    distinct(`Denominazione in italiano`) %>%
+    geocode(city = `Denominazione in italiano`, method = "osm", verbose = TRUE)
+  write_csv(veneto_comuni, comuni_veneto_path)
+}
+
+veneto <- left_join(veneto, veneto_comuni)
+
+writeRDS(veneto, "data/derived/veneto.rds")
+```
+
+```{r}
+italy <- ne_countries(continent = "Europe", scale = "large", returnclass = "sf")
+
+italy_adm1 <- st_read("data/italy-adm1/bb489fv3314.shp")
+italy_adm2 <- st_read("data/italy-adm2/mn871sp9778.shp")
+```
+
+```{r}
+veneto_count <- veneto %>%
+  count(`Denominazione in italiano`, long, lat)
+
+ggplot() +
+  geom_sf(data = italy) +
+  geom_sf(data = italy_adm2 %>% filter(name_1 == "Veneto"), aes(fill = name_2), alpha = 0.5) +
+  coord_sf(c(10.5, 13.2), c(44.7, 46.7)) +
+  geom_point(data = veneto_count, aes(long, lat, size = n), alpha = 0.5)
+```

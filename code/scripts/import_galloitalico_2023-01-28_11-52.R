@@ -192,13 +192,13 @@ attr(gi_vital, "server") = "https://www.soscisurvey.de"
 rm(ds_file)
 
 comuni_LO02 <- read_fwf(
-  "data/comuni.txt",
+  "data/raw/comuni.txt",
   fwf_cols(LO02 = 4, LO02_com = 20),
   col_types = "dc"
 )
 
 comuni_LO07 <- read_fwf(
-  "data/comuni.txt",
+  "data/raw/comuni.txt",
   fwf_cols(LO07 = 4, LO07_com = 20),
   col_types = "dc"
 )

@@ -5,7 +5,7 @@ format: html
 ---
 
 ```{r}
-#| label: packages
+#| label: setup
 #| message: false
 
 source("code/scripts/packages.R")
@@ -16,24 +16,26 @@ source("code/scripts/packages.R")
 
 ```{r comuni}
 library(readxl)
-comuni <- read_excel("data/Elenco-comuni-italiani.xls")
+comuni <- read_excel("data/raw/Elenco-comuni-italiani.xls", guess_max = 5000)
 
 comuni_include <- comuni %>%
   filter(
     `Denominazione Regione` %in% c("Piemonte", "Valle d'Aosta/Vallée d'Aoste", "Lombardia", "Trentino-Alto Adige/Südtirol", "Veneto", "Friuli-Venezia Giulia", "Liguria", "Emilia-Romagna")
   )
 
-comuni_svizzera <- read_lines("data/comuni-svizzera.txt")
+comuni_svizzera <- read_lines("data/raw/comuni-svizzera.txt")
 
 comuni_all <- sort(c(comuni_include$`Denominazione in italiano`, comuni_svizzera))
 
-write_lines(comuni_all, "data/comuni.txt")
+write_lines(comuni_all, "data/raw/comuni.txt")
 
-comuni_codes <- read_fwf("data/comuni-codes.txt", col_types = "nc")
+comuni_codes <- read_fwf("data/raw/comuni-codes.txt", col_types = "nc")
 colnames(comuni_codes) <- c("LO02", "Denominazione in italiano")
 ```
 
 ## Read data
+
+### GI questionnaire
 
 We can read the data from SosciSurvey using the SosciSurvey API, which has been enabled for this project. No credentials are necessary.
 
@@ -43,7 +45,7 @@ We can read the data from SosciSurvey using the SosciSurvey API, which has been 
 #| warning: false
 
 source("code/scripts/import_galloitalico_2023-01-28_11-52.R")
-write_csv(gi_vital, "data/gi_vital.csv")
+write_csv(gi_vital, "data/raw/gi_vital.csv")
 ```
 
 ```{r}
@@ -53,6 +55,8 @@ range(gi_vital$CASE)
 length(unique(gi_vital$CASE))
 
 ```
+
+### Polentometro
 
 ```{r}
 #| label: read-polentometro
@@ -69,9 +73,57 @@ polentometro <- ds %>%
 ```
 
 ```{r}
+#| label: geo
+
+comuni_geo_path <- "data/derived/comuni.csv"
+
+if (file.exists(comuni_geo_path)) {
+  comuni_geo <- read_csv(comuni_geo_path)
+} else {
+  comuni_geo <- polentometro %>%
+    distinct(`Denominazione in italiano`) %>%
+    arrange(`Denominazione in italiano`) %>%
+    geocode(city = `Denominazione in italiano`, method = "osm", verbose = TRUE)
+  write_csv(comuni_geo, comuni_geo_path)
+}
+
+polentometro <- left_join(polentometro, comuni_geo)
+
+saveRDS(polentometro, "data/derived/polentometro.rds")
+```
+
+```{r}
+#| label: geo-counts
+
 geo_counts <- polentometro %>%
   filter(MAXPAGE > 7) %>%
   group_by(`Denominazione Regione`, `Denominazione provincia`) %>%
   count() %>%
   arrange(n)
+```
+
+```{r}
+#| label: italy-gis
+
+italy <- ne_countries(continent = "Europe", scale = "large", returnclass = "sf")
+
+italy_adm1 <- st_read("data/italy-adm1/bb489fv3314.shp")
+italy_adm2 <- st_read("data/italy-adm2/mn871sp9778.shp")
+```
+
+
+```{r}
+#| label: comuni-counts
+#| warning: false
+
+polentometro_count <- polentometro %>%
+  count(`Denominazione in italiano`, long, lat)
+
+ggplot() +
+  geom_sf(data = italy) +
+  geom_sf(data = italy_adm2, alpha = 0.5) +
+  coord_sf(c(6, 14), c(43, 47)) +
+  geom_point(data = polentometro_count, aes(long, lat, size = n), alpha = 0.5)
+
+ggsave("img/comuni-counts.png", width = 7, height = 5)
 ```
