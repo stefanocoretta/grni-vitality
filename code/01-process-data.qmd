@@ -43,6 +43,7 @@ We can read the data from SosciSurvey using the SosciSurvey API, which has been 
 #| label: read-data
 #| message: false
 #| warning: false
+#| eval: false
 
 source("code/scripts/import_galloitalico_2023-01-28_11-52.R")
 write_csv(gi_vital, "data/raw/gi_vital.csv")
@@ -50,6 +51,7 @@ write_csv(gi_vital, "data/raw/gi_vital.csv")
 
 ```{r}
 #| label: cases
+#| eval: false
 
 range(gi_vital$CASE)
 length(unique(gi_vital$CASE))
@@ -100,6 +102,12 @@ geo_counts <- polentometro %>%
   group_by(`Denominazione Regione`, `Denominazione provincia`) %>%
   count() %>%
   arrange(n)
+
+geo_counts_region <- polentometro %>%
+  filter(MAXPAGE > 7) %>%
+  group_by(`Denominazione Regione`) %>%
+  count() %>%
+  arrange(n)
 ```
 
 ```{r}
@@ -118,7 +126,7 @@ italy_adm2 <- st_read("data/italy-adm2/mn871sp9778.shp")
 polentometro_count <- polentometro %>%
   count(`Denominazione in italiano`, long, lat)
 
-regions <- c("Val d'Aosta", "Piemonte", "Liguria", "Lombardia", "Emilia-Romagna", "Veneto", "Friuli-Venezia Giulia", "Trentino", "San Marino")
+regions <- c("Valle d'Aosta", "Piemonte", "Liguria", "Lombardia", "Emilia-Romagna", "Veneto", "Friuli-Venezia Giulia", "Trentino-Alto Adige", "San Marino")
 
 ggplot() +
   geom_sf(data = italy) +
@@ -126,7 +134,8 @@ ggplot() +
   geom_sf(data = italy_adm2 %>% filter(name_1 %in% regions), fill = NA) +
   coord_sf(c(6.5, 14), c(43.5, 47)) +
   geom_point(data = polentometro_count, aes(long, lat, size = n), alpha = 0.5) +
-  theme_void() +
+  labs(x = element_blank(), y = element_blank()) +
+  theme_light() +
   theme(legend.position = "none")
 
 ggsave("img/comuni-counts.png", width = 7, height = 5)
