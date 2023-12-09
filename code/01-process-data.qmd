@@ -41,21 +41,18 @@ We can read the data from SosciSurvey using the SosciSurvey API, which has been 
 
 ```{r}
 #| label: read-data
-#| message: false
-#| warning: false
-#| eval: false
 
-source("code/scripts/import_galloitalico_2023-01-28_11-52.R")
+eval(parse("https://www.soscisurvey.de/galloitalico/?act=CWa8cZWJTeDgnkrqoOUwLKfL&vQuality&rScript", encoding="UTF-8"))
+
+gi_vital <- ds %>%
+  mutate(
+    LO02 = as.numeric(LO02),
+    LO02 = ifelse(is.na(LO02), LO07, LO02)
+  ) %>%
+  left_join(y = comuni_codes) %>%
+  left_join(y = comuni_include)
+
 write_csv(gi_vital, "data/raw/gi_vital.csv")
-```
-
-```{r}
-#| label: cases
-#| eval: false
-
-range(gi_vital$CASE)
-length(unique(gi_vital$CASE))
-
 ```
 
 ### Polentometro
@@ -112,6 +109,7 @@ geo_counts_region <- polentometro %>%
 
 ```{r}
 #| label: italy-gis
+#| message: false
 
 italy <- ne_countries(continent = "Europe", scale = "large", returnclass = "sf")
 
@@ -140,3 +138,4 @@ ggplot() +
 
 ggsave("img/comuni-counts.png", width = 7, height = 5)
 ```
+
