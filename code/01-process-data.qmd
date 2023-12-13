@@ -138,4 +138,3 @@ ggplot() +
 
 ggsave("img/comuni-counts.png", width = 7, height = 5)
 ```
-
