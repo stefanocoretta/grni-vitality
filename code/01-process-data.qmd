@@ -68,7 +68,21 @@ polentometro <- ds %>%
     LO02 = ifelse(is.na(LO02), LO07, LO02)
   ) %>%
   left_join(y = comuni_codes) %>%
-  left_join(y = comuni_include)
+  left_join(y = comuni_include) %>%
+  mutate(
+    birth_year = year(as_date(STARTED)) - DE01_01,
+    generation = case_when(
+      birth_year >= 2013 ~ "Alpha",
+      birth_year >= 1997 ~ "Z",
+      birth_year >= 1981 ~ "Millennials",
+      birth_year >= 1965 ~ "X",
+      birth_year >= 1946 ~ "Boomers",
+      birth_year >= 1928 ~ "Silent"
+    ),
+    generation = factor(generation, levels = c("Silent", "Boomers", "X", "Millennials", "Z", "Alpha"))
+  )
+
+table(polentometro$generation)
 ```
 
 ```{r}

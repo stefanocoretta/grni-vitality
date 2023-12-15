@@ -3,6 +3,8 @@ title: "Veneto"
 format: html
 ---
 
+## Attach packages
+
 ```{r}
 #| label: setup
 #| message: false
@@ -11,7 +13,11 @@ source("code/scripts/packages.R")
 polentometro <- readRDS("data/derived/polentometro.rds")
 ```
 
+## Prep Veneto data
+
 ```{r}
+#| label: veneto
+
 veneto <- polentometro %>%
   filter(`Denominazione Regione` == "Veneto")
 
@@ -31,7 +37,11 @@ veneto <- left_join(veneto, veneto_comuni)
 saveRDS(veneto, "data/derived/veneto.rds")
 ```
 
+## Plot map
+
 ```{r}
+#| label: italy-sf
+
 italy <- ne_countries(continent = "Europe", scale = "large", returnclass = "sf")
 
 italy_adm1 <- st_read("data/italy-adm1/bb489fv3314.shp")
@@ -39,6 +49,8 @@ italy_adm2 <- st_read("data/italy-adm2/mn871sp9778.shp")
 ```
 
 ```{r}
+#| label: veneto-count
+
 veneto_count <- veneto %>%
   count(`Denominazione in italiano`, long, lat)
 
@@ -49,7 +61,11 @@ ggplot() +
   geom_point(data = veneto_count, aes(long, lat, size = n), alpha = 0.5)
 ```
 
+## Attitude plots
+
 ```{r}
+#| label: veneto-lik
+
 veneto_lik <- veneto %>%
   dplyr::select(LA02_01:LA02_08) %>%
   mutate(across(everything(), as.numeric)) %>%
@@ -66,6 +82,38 @@ png("./img/likert.png", width = 7, height = 5, units = "in", res = 600)
 likert(
   quality ~ . ,
   veneto_lik,
+  as.percent = TRUE,
+  main = ""
+)
+dev.off()
+
+veneto_lik_gen <- veneto %>%
+  dplyr::select(LA02_01:LA02_08, generation) %>%
+  mutate(across(LA02_01:LA02_08, as.numeric)) %>%
+  pivot_longer(LA02_01:LA02_08, names_to = "quality", values_to = "score") %>%
+  drop_na() %>%
+  count(quality, generation, score) %>%
+  pivot_wider(names_from = "score", values_from = n) %>%
+  dplyr::select(generation, quality, `1`, `2`, `3`, `4`, `5`, `6`, `7`) %>%
+  mutate(across(`1`:`7`, ~ifelse(is.na(.x), 0, .x))) %>%
+  arrange(generation) %>%
+  mutate(
+    quality = rep(c("istruita", "raffinata", "amichevole", "gentile", "alla moda", "divertente", "ricca", "cittadina"), 4)
+  )
+
+png("./img/likert-gen.png", width = 7, height = 5, units = "in", res = 600)
+likert(
+  quality ~ . | generation ,
+  veneto_lik_gen,
+  as.percent = TRUE,
+  main = ""
+)
+dev.off()
+
+png("./img/likert-gen-2.png", width = 7, height = 4, units = "in", res = 600)
+likert(
+  generation ~ . | quality ,
+  veneto_lik_gen,
   as.percent = TRUE,
   main = ""
 )
