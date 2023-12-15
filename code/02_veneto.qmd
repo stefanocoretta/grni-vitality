@@ -28,7 +28,7 @@ if (file.exists(comuni_veneto_path)) {
 
 veneto <- left_join(veneto, veneto_comuni)
 
-writeRDS(veneto, "data/derived/veneto.rds")
+saveRDS(veneto, "data/derived/veneto.rds")
 ```
 
 ```{r}
@@ -57,8 +57,10 @@ veneto_lik <- veneto %>%
   count(quality, score) %>%
   pivot_wider(names_from = "score", values_from = n) %>%
   mutate(`1` = ifelse(is.na(`1`), 0, `1`)) %>%
-  dplyr::select(-`NA`)
-  # rename("strong disagree" = `1`, "disagree" = `2`, "neither" = `3`, "agree" = `4`, "strong agree" = `5`)
+  dplyr::select(-`NA`) %>%
+  mutate(
+    quality = c("istruita", "raffinata", "amichevole", "gentile", "alla moda", "divertente", "ricca", "cittadina")
+  )
 
 png("./img/likert.png", width = 7, height = 5, units = "in", res = 600)
 likert(
