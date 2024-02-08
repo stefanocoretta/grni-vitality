@@ -6,7 +6,7 @@ format: html
 ## Attach packages
 
 ```{r}
-#| label: setup
+#| label: data
 #| message: false
 
 source("code/scripts/packages.R")
@@ -73,7 +73,7 @@ veneto_lik <- veneto %>%
   count(quality, score) %>%
   pivot_wider(names_from = "score", values_from = n) %>%
   mutate(`1` = ifelse(is.na(`1`), 0, `1`)) %>%
-  dplyr::select(-`NA`) %>%
+  dplyr::select(-`NA`, -`-9`) %>%
   mutate(
     quality = c("istruita", "raffinata", "amichevole", "gentile", "alla moda", "divertente", "ricca", "cittadina")
   )
