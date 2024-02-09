@@ -141,16 +141,14 @@ veneto_attitudes_27 <- veneto %>%
   rename(c("istruita" = 1, "raffinata" = 2, "amichevole" = 3, "gentile" = 4, "allamoda" = 5, "divertente" = 6, "ricca" = 7, "cittadina" = 8))
 ```
 
-# Multiple Correspondence Analysis
+## Multiple Correspondence Analysis
 
-This section runs the Multiple Correspondence Analysis.
-The aim is to reduce the 8 qualities to a couple dimensions to simplify subsequent analyses.
+This section runs the Multiple Correspondence Analysis. The aim is to reduce the 8 qualities to a couple dimensions to simplify subsequent analyses.
 
 ```{r}
 veneto_attitudes_mca <- MCA(veneto_attitudes, graph = FALSE)
 fviz_mca_var(veneto_attitudes_mca, col.var = "black", shape.var = 15, repel = TRUE)
 ```
-
 
 ```{r attitudes-mca}
 veneto_attitudes_mca <- MCA(veneto_attitudes_27, graph = FALSE)
@@ -189,5 +187,58 @@ veneto_mca_dim1 %>%
   )
 
 ggsave("img/dim1.png", width = 7, height = 5)
+```
+
+```{r}
+veneto_attitudes_27 <- veneto %>%
+  dplyr::filter(!(if_any(LA02_01:LA02_08, ~ . %in% c(-9, 1)))) %>%
+  drop_na(LA02_01:LA02_08) %>%
+  mutate(dim_1 = veneto_attitudes_dims[, 1])
+```
+
+## Modelling
+
+### comprehend
+
+```{r comprehend-bm-prior}
+get_prior(
+  comprehend ~
+    dim_1 * spaces_prop,
+  data = emilianto_attitude,
+  family = cumulative()
+)
+
+comprehend_priors <- c(
+  prior(normal(0, 3), class = Intercept),
+  prior(normal(0, 1), class = b)
+)
+
+comprehend_pcheck <- brm(
+  comprehend ~
+    dim_1 * spaces_prop,
+  data = emilianto_attitude,
+  family = cumulative(),
+  prior = comprehend_priors,
+  sample_prior = "only",
+  backend = "cmdstanr",
+  cores = 4,
+  file = "./data/cache/comprehend_pcheck"
+)
+
+conditional_effects(comprehend_pcheck, "spaces_prop", conditions = make_conditions(emilianto_attitude, "language", "dim_1"), categorical = TRUE)
+```
+
+```{r}
+comprehend_bm <- brm(
+  comprehend ~
+    dim_1 * spaces_prop,
+  data = emilianto_attitude,
+  family = cumulative(),
+  prior = comprehend_priors,
+  backend = "cmdstanr",
+  cores = 4,
+  threads = threading(2),
+  file = "./data/cache/comprehend_bm"
+)
 ```
 
