@@ -21,7 +21,8 @@ comuni <- read_excel("data/raw/Elenco-comuni-italiani.xls", guess_max = 5000)
 comuni_include <- comuni %>%
   filter(
     `Denominazione Regione` %in% c("Piemonte", "Valle d'Aosta/Vallée d'Aoste", "Lombardia", "Trentino-Alto Adige/Südtirol", "Veneto", "Friuli-Venezia Giulia", "Liguria", "Emilia-Romagna")
-  )
+  ) %>%
+  select(`Denominazione in italiano`, `Ripartizione geografica`:`Denominazione provincia`)
 
 comuni_svizzera <- read_lines("data/raw/comuni-svizzera.txt")
 
@@ -60,7 +61,7 @@ write_csv(gi_vital, "data/raw/gi_vital.csv")
 ```{r}
 #| label: read-polentometro
 
-eval(parse("https://www.soscisurvey.de/polentometro/?act=PeporZZ30N9exMBH054dTnXc&vQuality&rScript", encoding="UTF-8"))
+source("code/scripts/import_polentometro.R")
 
 polentometro <- ds %>%
   mutate(
@@ -79,8 +80,22 @@ polentometro <- ds %>%
       birth_year >= 1946 ~ "Boomers",
       birth_year >= 1928 ~ "Silent"
     ),
-    generation = factor(generation, levels = c("Silent", "Boomers", "X", "Millennials", "Z", "Alpha"))
+    generation = factor(generation, levels = c("Silent", "Boomers", "X", "Millennials", "Z", "Alpha")),
+    # Need this because the script adds classes to some columns and when they have different classes they can't be combined
+    across(c(LU01, LU02, LU03, RW01:RW03, RW04), as.numeric),
+    # RW01 and 2 have 1 = yes and 2 = no
+    RW01 = abs(RW01 - 2),
+    RW02 = abs(RW02 - 2)
+  ) %>%
+  rowwise() %>%
+  mutate(
+    spaces_n = sum(c_across(c(LU01, LU02, LU03, RW01:RW02, RW04)), na.rm = TRUE),
+  ) %>%
+  ungroup() %>%
+  mutate(
+    spaces_prop = spaces_n / (15 + 10 + 20 + 6)
   )
+  
 
 table(polentometro$generation)
 ```
@@ -104,6 +119,63 @@ polentometro <- left_join(polentometro, comuni_geo)
 
 saveRDS(polentometro, "data/derived/polentometro.rds")
 ```
+
+### Multiple correspondence analysis (MCA)
+
+```{r}
+#| label: polentometro-attitudes
+
+#### Attitudes data for MCA ####
+polentometro_attitudes <- polentometro %>%
+  select(LA02_01:LA02_08) %>%
+  drop_na() %>%
+  # Make sure cols are odered factors! If numeric, MCA does not work
+  mutate(across(everything(), as.ordered)) %>%
+  rename(c("istruita" = 1, "raffinata" = 2, "amichevole" = 3, "gentile" = 4, "allamoda" = 5, "divertente" = 6, "ricca" = 7, "cittadina" = 8))
+
+polentometro_attitudes_cases <- polentometro %>%
+  select(CASE, LA02_01:LA02_08) %>%
+  drop_na(LA02_01:LA02_08) %>%
+  pull(CASE)
+
+polentometro_attitudes_27 <- polentometro %>%
+  select(LA02_01:LA02_08) %>%
+  filter(!(if_any(everything(), ~ . %in% c(1)))) %>%
+  drop_na() %>%
+  # Make sure cols are odered factors! If numeric, MCA does not work
+  mutate(across(everything(), as.ordered)) %>%
+  rename(c("istruita" = 1, "raffinata" = 2, "amichevole" = 3, "gentile" = 4, "allamoda" = 5, "divertente" = 6, "ricca" = 7, "cittadina" = 8))
+
+polentometro_attitudes_cases_27 <- polentometro %>%
+  select(CASE, LA02_01:LA02_08) %>%
+    filter(!(if_any(LA02_01:LA02_08, ~ . %in% c(1)))) %>%
+  drop_na(LA02_01:LA02_08) %>%
+  pull(CASE)
+```
+
+```{r}
+#| label: attitudes-mca
+
+attitudes_mca <- MCA(polentometro_attitudes, graph = FALSE)
+attitudes_dims <- attitudes_mca[["ind"]][["coord"]]
+fviz_mca_var(attitudes_mca, col.var = "black", shape.var = 15, repel = TRUE)
+
+attitudes_mca_27 <- MCA(polentometro_attitudes_27, graph = FALSE)
+attitudes_dims_27 <- attitudes_mca_27[["ind"]][["coord"]]
+fviz_mca_var(attitudes_mca_27, col.var = "black", shape.var = 15, repel = TRUE)
+```
+
+```{r}
+#| label: polentometro-dim
+
+polentometro_dim <- polentometro %>%
+  left_join(y = bind_cols(CASE = polentometro_attitudes_cases, dim_1 = attitudes_dims[, 1], dim_2 = attitudes_dims[, 3])) %>%
+  left_join(y = bind_cols(CASE = polentometro_attitudes_cases_27, dim_1_27 = attitudes_dims_27[, 1], dim_2_27 = attitudes_dims_27[, 3]))
+
+saveRDS(polentometro_dim, "data/derived/polentometro_dim.rds")
+```
+
+## Geo
 
 ```{r}
 #| label: geo-counts
