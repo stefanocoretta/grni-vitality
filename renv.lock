@@ -1,6 +1,6 @@
 {
   "R": {
-    "Version": "4.3.2",
+    "Version": "4.4.0",
     "Repositories": [
       {
         "Name": "CRAN",
@@ -2222,6 +2222,17 @@
         "utils"
       ],
       "Hash": "741166cab0fe76d8a5670d3ee459a2a4"
+    },
+    "rnaturalearthhires": {
+      "Package": "rnaturalearthhires",
+      "Version": "1.0.0.9000",
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteUsername": "ropensci",
+      "RemoteRepo": "rnaturalearthhires",
+      "RemoteRef": "master",
+      "RemoteSha": "dd1e210c0ac797535d18b9eb8ca4ad40b4b91eda"
     },
     "rpart": {
       "Package": "rpart",

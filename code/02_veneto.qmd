@@ -66,6 +66,9 @@ ggplot() +
 ```{r}
 #| label: veneto-lik
 
+labs_it <- c("istruita", "raffinata", "amichevole", "gentile", "alla moda", "divertente", "ricca", "cittadina")
+labs_en <- c("educated", "refined", "friendly", "kind", "fashionable", "fun", "rich", "urban")
+
 veneto_lik <- veneto %>%
   dplyr::select(LA02_01:LA02_08) %>%
   mutate(across(everything(), as.numeric)) %>%
@@ -73,12 +76,12 @@ veneto_lik <- veneto %>%
   count(quality, score) %>%
   pivot_wider(names_from = "score", values_from = n) %>%
   mutate(`1` = ifelse(is.na(`1`), 0, `1`)) %>%
-  dplyr::select(-`NA`, -`-9`) %>%
+  dplyr::select(-`NA`) %>%
   mutate(
-    quality = c("istruita", "raffinata", "amichevole", "gentile", "alla moda", "divertente", "ricca", "cittadina")
+    quality = labs_en
   )
 
-png("./img/likert.png", width = 7, height = 5, units = "in", res = 600)
+png("./img/likert-ve.png", width = 7, height = 5, units = "in", res = 600)
 likert(
   quality ~ . ,
   veneto_lik,
@@ -98,10 +101,10 @@ veneto_lik_gen <- veneto %>%
   mutate(across(`1`:`7`, ~ifelse(is.na(.x), 0, .x))) %>%
   arrange(generation) %>%
   mutate(
-    quality = rep(c("istruita", "raffinata", "amichevole", "gentile", "alla moda", "divertente", "ricca", "cittadina"), 4)
+    quality = rep(labs_en, 4)
   )
 
-png("./img/likert-gen.png", width = 7, height = 5, units = "in", res = 600)
+png("./img/likert-ve-gen.png", width = 7, height = 5, units = "in", res = 600)
 likert(
   quality ~ . | generation ,
   veneto_lik_gen,
@@ -110,7 +113,7 @@ likert(
 )
 dev.off()
 
-png("./img/likert-gen-2.png", width = 7, height = 4, units = "in", res = 600)
+png("./img/likert-ve-gen-2.png", width = 8, height = 4, units = "in", res = 600)
 likert(
   generation ~ . | quality ,
   veneto_lik_gen,
@@ -118,6 +121,32 @@ likert(
   main = ""
 )
 dev.off()
+```
+
+## Teaching in school
+
+```{r}
+#| label: teach
+
+veneto |> 
+  drop_na(LA04) |> 
+  mutate(
+    LA04 = case_when(
+      LA04 == "Sì" ~ "Yes",
+      LA04 == "No" ~ "No",
+      LA04 == "Indifferente" ~ "Indifferent",
+    ),
+    LA04 = factor(LA04, levels = c("Yes", "No", "Indifferent"))
+  ) |> 
+  ggplot(aes(LA04, fill = LA04)) +
+  geom_bar() +
+  scale_fill_brewer(type = "qual", palette = "Dark2") +
+  labs(
+    x = "Should it be taught in schools?"
+  ) +
+  theme(legend.position = "none")
+
+ggsave("img/teach-veneto.png", width = 7, height = 5)
 ```
 
 ## Competence, attitudes and spaces

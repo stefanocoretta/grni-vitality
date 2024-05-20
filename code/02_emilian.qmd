@@ -1,0 +1,125 @@
+---
+title: "Emilian"
+format: html
+---
+
+## Attach packages
+
+```{r}
+#| label: data
+#| message: false
+
+source("code/scripts/packages.R")
+emilianto <- readRDS("data/raw/emilianto.rds")
+```
+
+## Prep Emilian data
+
+```{r}
+#| label: emilian
+
+emilian <- emilianto %>%
+  filter(language == "Emilian") |> 
+  mutate(
+    birth_year = 2021 - age,
+    generation = case_when(
+      birth_year >= 2013 ~ "Alpha",
+      birth_year >= 1997 ~ "Z",
+      birth_year >= 1981 ~ "Millennials",
+      birth_year >= 1965 ~ "X",
+      birth_year >= 1946 ~ "Boomers",
+      birth_year >= 1928 ~ "Silent"
+    ),
+    generation = factor(generation, levels = c("Silent", "Boomers", "X", "Millennials", "Z", "Alpha"))
+  )
+
+# comuni_emilian_path <- "data/derived/comuni-emilian.csv"
+# 
+# if (file.exists(comuni_emilian_path)) {
+#   emilian_comuni <- read_csv(comuni_emilian_path)
+# } else {
+#   emilian_comuni <- emilian %>%
+#     distinct(`Denominazione in italiano`) %>%
+#     geocode(city = `Denominazione in italiano`, method = "osm", verbose = TRUE)
+#   write_csv(emilian_comuni, comuni_emilian_path)
+# }
+# 
+# emilian <- left_join(emilian, emilian_comuni)
+# 
+# saveRDS(emilian, "data/derived/emilian.rds")
+```
+
+## Attitude plots
+
+```{r}
+#| label: emilian-lik
+
+emilian_lik <- emilian %>%
+  dplyr::select(educated:familiar) %>%
+  mutate(across(everything(), as.numeric)) %>%
+  pivot_longer(everything(), names_to = "quality", values_to = "score") %>%
+  count(quality, score) %>%
+  pivot_wider(names_from = "score", values_from = n)
+
+png("./img/likert-em.png", width = 7, height = 5, units = "in", res = 600)
+likert(
+  quality ~ . ,
+  emilian_lik,
+  as.percent = TRUE,
+  main = ""
+)
+dev.off()
+
+emilian_lik_gen <- emilian %>%
+  dplyr::select(educated:familiar, generation) %>%
+  mutate(across(educated:familiar, as.numeric)) %>%
+  pivot_longer(educated:familiar, names_to = "quality", values_to = "score") %>%
+  drop_na() %>%
+  count(quality, generation, score) %>%
+  pivot_wider(names_from = "score", values_from = n) %>%
+  dplyr::select(generation, quality, `1`, `2`, `3`, `4`, `5`) %>%
+  mutate(across(`1`:`5`, ~ifelse(is.na(.x), 0, .x))) %>%
+  arrange(generation)
+
+png("./img/likert-em-gen.png", width = 7, height = 5, units = "in", res = 600)
+likert(
+  quality ~ . | generation ,
+  emilian_lik_gen,
+  as.percent = TRUE,
+  main = ""
+)
+dev.off()
+
+png("./img/likert-em-gen-2.png", width = 8, height = 4, units = "in", res = 600)
+likert(
+  generation ~ . | quality ,
+  emilian_lik_gen,
+  as.percent = TRUE,
+  main = ""
+)
+dev.off()
+```
+
+## Teach
+
+```{r}
+emilian |> 
+  drop_na(taught_at_school) |> 
+  mutate(
+    taught_at_school = case_when(
+      taught_at_school == "y" ~ "Yes",
+      taught_at_school == "n" ~ "No",
+      taught_at_school == "i" ~ "Indifferent",
+    ),
+    taught_at_school = factor(taught_at_school, levels = c("Yes", "No", "Indifferent"))
+  ) |> 
+  ggplot(aes(taught_at_school, fill = taught_at_school)) +
+  geom_bar() +
+  scale_fill_brewer(type = "qual", palette = "Dark2") +
+  labs(
+    x = "Should it be taught in schools?"
+  ) +
+  theme(legend.position = "none")
+
+ggsave("img/teach-emilian.png", width = 7, height = 5)
+```

@@ -224,3 +224,34 @@ ggplot() +
 
 ggsave("img/comuni-counts.png", width = 7, height = 5)
 ```
+
+## Polentone attitude
+
+```{r}
+polentometro |> 
+  drop_na(PL01) |> 
+  ggplot(aes(PL01, fill = PL01)) +
+  geom_bar() +
+  scale_fill_brewer(type = "div") +
+  theme_dark()
+
+ggsave("img/likert-polentone.png", width = 7, height = 5)
+
+polentone_lik <- polentometro %>%
+  dplyr::select(PL01, generation) %>%
+  mutate(PL01 = as.numeric(PL01)) %>%
+  count(PL01, generation) %>%
+  pivot_wider(names_from = PL01, values_from = n) %>%
+  mutate(across(`1`:`5`, ~ifelse(is.na(.x), 0, .x))) %>%
+  dplyr::select(-`NA`) |> 
+  drop_na(generation)
+
+png("./img/likert-polentone-gen.png", width = 7, height = 5, units = "in", res = 600)
+likert(
+  generation ~ . ,
+  polentone_lik,
+  as.percent = TRUE,
+  main = ""
+)
+dev.off()
+```
