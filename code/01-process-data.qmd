@@ -34,6 +34,27 @@ comuni_codes <- read_fwf("data/raw/comuni-codes.txt", col_types = "nc")
 colnames(comuni_codes) <- c("LO02", "Denominazione in italiano")
 ```
 
+```{r}
+#| label: geo
+
+comuni_all_tbl <- read_csv("data/raw/comuni.txt", col_names = "city")
+
+comuni_geo_path <- "data/derived/comuni.csv"
+
+if (file.exists(comuni_geo_path)) {
+  comuni_geo <- read_csv(comuni_geo_path)
+} else {
+  comuni_geo <- comuni_all_tbl %>%
+    geocode(city = city, method = "osm", verbose = TRUE)
+  write_csv(comuni_geo, comuni_geo_path)
+}
+
+polentometro <- left_join(polentometro, comuni_geo)
+
+saveRDS(polentometro, "data/derived/polentometro.rds")
+
+```
+
 ## Read data
 
 ### GI questionnaire
@@ -98,26 +119,6 @@ polentometro <- ds %>%
   
 
 table(polentometro$generation)
-```
-
-```{r}
-#| label: geo
-
-comuni_geo_path <- "data/derived/comuni.csv"
-
-if (file.exists(comuni_geo_path)) {
-  comuni_geo <- read_csv(comuni_geo_path)
-} else {
-  comuni_geo <- polentometro %>%
-    distinct(`Denominazione in italiano`) %>%
-    arrange(`Denominazione in italiano`) %>%
-    geocode(city = `Denominazione in italiano`, method = "osm", verbose = TRUE)
-  write_csv(comuni_geo, comuni_geo_path)
-}
-
-polentometro <- left_join(polentometro, comuni_geo)
-
-saveRDS(polentometro, "data/derived/polentometro.rds")
 ```
 
 ### Multiple correspondence analysis (MCA)
