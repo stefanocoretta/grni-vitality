@@ -49,10 +49,6 @@ if (file.exists(comuni_geo_path)) {
   write_csv(comuni_geo, comuni_geo_path)
 }
 
-polentometro <- left_join(polentometro, comuni_geo)
-
-saveRDS(polentometro, "data/derived/polentometro.rds")
-
 ```
 
 ## Read data
@@ -115,8 +111,13 @@ polentometro <- ds %>%
   ungroup() %>%
   mutate(
     spaces_prop = spaces_n / (15 + 10 + 20 + 6)
+  ) |> 
+  left_join(
+    distinct(comuni_geo),
+    by = c("Denominazione in italiano" = "city")
   )
-  
+
+saveRDS(polentometro, "data/derived/polentometro.rds")
 
 table(polentometro$generation)
 ```
@@ -202,6 +203,11 @@ italy <- ne_countries(continent = "Europe", scale = "large", returnclass = "sf")
 
 italy_adm1 <- st_read("data/italy-adm1/bb489fv3314.shp")
 italy_adm2 <- st_read("data/italy-adm2/mn871sp9778.shp")
+
+polentometro_pro_count <- polentometro %>%
+  count(`Denominazione provincia`)
+
+italy_adm2 <- left_join(italy_adm2, polentometro_pro_count, by = c("name_2" = "Denominazione provincia"))
 ```
 
 ```{r}
@@ -224,6 +230,22 @@ ggplot() +
   theme(legend.position = "none")
 
 ggsave("img/comuni-counts.png", width = 7, height = 5)
+```
+
+```{r}
+#| label: provincie-counts
+
+ggplot() +
+  geom_sf(data = italy) +
+  geom_sf(data = italy_adm2 %>% filter(name_1 %in% regions), aes(fill = n)) +
+  geom_sf(data = italy_adm1 %>% filter(name_1 %in% regions), fill = NA, colour = "red") +
+  scale_fill_distiller(palette = "BuGn", direction = 1, limits = c(0, max(polentometro_pro_count$n, na.rm = TRUE))) +
+  coord_sf(c(6.5, 14), c(43.5, 47)) +
+  labs(x = element_blank(), y = element_blank()) +
+  theme_light()
+
+ggsave("img/provincie-counts.png", width = 7, height = 5)
+
 ```
 
 ## Polentone attitude
