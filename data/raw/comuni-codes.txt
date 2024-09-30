@@ -2123,8 +2123,8 @@
 2123 Lissone
 2124 Livigno
 2125 Livinallongo del Col di Lana
-2126 Livo
-2127 Livo
+2126 Livo (Lombardia)
+2127 Livo (Trentino)
 2128 Livorno Ferraris
 2129 Livraga
 2130 Lizzano in Belvedere
@@ -2642,8 +2642,8 @@
 2642 Musso
 2643 Mussolente
 2644 Muzzana del Turgnano
-2645 Muzzano
-2646 Muzzano
+2645 Muzzano (Piemonte)
+2646 Muzzano (Ticino)
 2647 Nago-Torbole
 2648 Nalles
 2649 Nanto
@@ -3418,8 +3418,8 @@
 3418 Rosazza
 3419 Rosignano Monferrato
 3420 Rosolina
-3421 Rossa
-3422 Rossa
+3421 Rossa (Piemonte)
+3422 Rossa (Grigioni)
 3423 Rossana
 3424 Rossano Veneto
 3425 Rossiglione
@@ -3513,8 +3513,8 @@
 3513 Samedan
 3514 Samnaun
 3515 Samolaco
-3516 Samone
-3517 Samone
+3516 Samone (Piemonte)
+3517 Samone (Trentino)
 3518 Sampeyre
 3519 San Bartolomeo al Mare
 3520 San Bartolomeo Val Cavargna
@@ -4361,8 +4361,8 @@
 4361 Vermiglio
 4362 Vernante
 4363 Vernasca
-4364 Vernate
-4365 Vernate
+4364 Vernate (Lombardia)
+4365 Vernate (Ticino)
 4366 Vernazza
 4367 Verolanuova
 4368 Verolavecchia

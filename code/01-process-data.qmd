@@ -9,33 +9,48 @@ format: html
 #| message: false
 
 source("code/scripts/packages.R")
-
+library(readxl)
 ```
 
 ## Get comuni
 
-```{r comuni}
-library(readxl)
-comuni <- read_excel("data/raw/Elenco-comuni-italiani.xls", guess_max = 5000)
+```{r}
+#| label: comuni
+comuni_it <- read_excel("data/raw/Elenco-comuni-italiani.xls", guess_max = 5000)
 
-comuni_include <- comuni %>%
+comuni_it_include <- comuni_it %>%
   filter(
     `Denominazione Regione` %in% c("Piemonte", "Valle d'Aosta/Vallée d'Aoste", "Lombardia", "Trentino-Alto Adige/Südtirol", "Veneto", "Friuli-Venezia Giulia", "Liguria", "Emilia-Romagna")
   ) %>%
-  select(`Denominazione in italiano`, `Ripartizione geografica`:`Denominazione provincia`)
+  select(Comune = `Denominazione in italiano`, Area = `Ripartizione geografica`, Region = `Denominazione Regione`, Province = `Denominazione provincia`)
 
-comuni_svizzera <- read_lines("data/raw/comuni-svizzera.txt")
+comuni_ch <- read_excel("data/raw/Elenco-comuni-svizzeri.xlsx")
 
-comuni_all <- sort(c(comuni_include$`Denominazione in italiano`, comuni_svizzera))
+comuni_ch_include <- comuni_ch |> 
+  filter(Cantone %in% c("TI", "GR")) |> 
+  mutate(Cantone = ifelse(Cantone == "TI", "Ticino", "Grigioni")) |> 
+  select(Comune = `Nome del Comune`, Region = Cantone, Province = `Nome del Distretto`) |> 
+  mutate(Area = "Svizzera")
 
-write_lines(comuni_all, "data/raw/comuni.txt")
-
-comuni_codes <- read_fwf("data/raw/comuni-codes.txt", col_types = "nc")
-colnames(comuni_codes) <- c("LO02", "Denominazione in italiano")
+comuni <- bind_rows(comuni_it_include, comuni_ch_include)
 ```
 
 ```{r}
-#| label: geo
+#| label: comuni-codes
+
+comuni_list <- sort(c(comuni$Comune, "Città di San Marino"))
+
+write_lines(comuni_list, "data/raw/comuni.txt")
+
+# Make sure the file ends in a new line or read_fwf() says it's not a file
+comuni_codes <- read_fwf("data/raw/comuni-codes.txt", col_types = "nc")
+colnames(comuni_codes) <- c("LO02", "Comune")
+```
+
+### Geocode all comuni
+
+```{r}
+#| label: comuni-geo
 
 comuni_all_tbl <- read_csv("data/raw/comuni.txt", col_names = "city")
 
@@ -48,7 +63,12 @@ if (file.exists(comuni_geo_path)) {
     geocode(city = city, method = "osm", verbose = TRUE)
   write_csv(comuni_geo, comuni_geo_path)
 }
+```
 
+```{r}
+comuni_full <- comuni |> 
+  left_join(comuni_codes) |> 
+  left_join(comuni_geo, by = c("Comune" = "city"))
 ```
 
 ## Read data

@@ -6,7 +6,7 @@ Acceglio
 Acquafredda
 Acquanegra Cremonese
 Acquanegra sul Chiese
-Acquarossa 
+Acquarossa
 Acqui Terme
 Adrara San Martino
 Adrara San Rocco
@@ -2123,8 +2123,8 @@ Lisio
 Lissone
 Livigno
 Livinallongo del Col di Lana
-Livo
-Livo
+Livo (Lombardia)
+Livo (Trentino)
 Livorno Ferraris
 Livraga
 Lizzano in Belvedere
@@ -2642,8 +2642,8 @@ Musile di Piave
 Musso
 Mussolente
 Muzzana del Turgnano
-Muzzano
-Muzzano
+Muzzano (Piemonte)
+Muzzano (Ticino)
 Nago-Torbole
 Nalles
 Nanto
@@ -3418,8 +3418,8 @@ Rosate
 Rosazza
 Rosignano Monferrato
 Rosolina
-Rossa
-Rossa
+Rossa (Grigioni)
+Rossa (Piemonte)
 Rossana
 Rossano Veneto
 Rossiglione
@@ -3513,8 +3513,8 @@ Sambuco
 Samedan
 Samnaun
 Samolaco
-Samone
-Samone
+Samone (Piemonte)
+Samone (Trentino)
 Sampeyre
 San Bartolomeo al Mare
 San Bartolomeo Val Cavargna
@@ -4224,6 +4224,7 @@ Val di Nizza
 Val di Vizze
 Val di Zoldo
 Val Liona
+Val Mara
 Val Masino
 Val Müstair
 Val Rezzo
@@ -4361,8 +4362,8 @@ Vermezzo con Zelo
 Vermiglio
 Vernante
 Vernasca
-Vernate
-Vernate
+Vernate (Lombardia)
+Vernate (Ticino)
 Vernazza
 Verolanuova
 Verolavecchia
