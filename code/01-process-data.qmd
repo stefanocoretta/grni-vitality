@@ -87,8 +87,7 @@ gi_vital <- ds %>%
     LO02 = as.numeric(LO02),
     LO02 = ifelse(is.na(LO02), LO07, LO02)
   ) %>%
-  left_join(y = comuni_codes) %>%
-  left_join(y = comuni_include)
+  left_join(y = comuni_full)
 
 write_csv(gi_vital, "data/raw/gi_vital.csv")
 ```
@@ -103,10 +102,14 @@ source("code/scripts/import_polentometro.R")
 polentometro <- ds %>%
   mutate(
     LO02 = as.numeric(LO02),
-    LO02 = ifelse(is.na(LO02), LO07, LO02)
+    LO02 = ifelse(is.na(LO02), LO07, LO02),
+    LO02 = case_when(
+      LO02s == "Sannazzar" ~ 3678,
+      LO02s == "Merano BZ" ~ 2374,
+      TRUE ~ LO02
+    )
   ) %>%
-  left_join(y = comuni_codes) %>%
-  left_join(y = comuni_include) %>%
+  left_join(y = comuni_full) %>%
   mutate(
     birth_year = year(as_date(STARTED)) - DE01_01,
     generation = case_when(
@@ -130,11 +133,13 @@ polentometro <- ds %>%
   ) %>%
   ungroup() %>%
   mutate(
-    spaces_prop = spaces_n / (15 + 10 + 20 + 6)
-  ) |> 
-  left_join(
-    distinct(comuni_geo),
-    by = c("Denominazione in italiano" = "city")
+    spaces_prop = spaces_n / (15 + 10 + 20 + 6),
+    # hard code Val Mara
+    lat = ifelse(Comune == "Val Mara", 45.9274, lat),
+    long = ifelse(Comune == "Val Mara", 8.9867, long),
+    # hard code Rossa Piemonte
+    lat = ifelse(Comune == "Rossa (Piemonte)", 45.8333, lat),
+    long = ifelse(Comune == "Rossa (Piemonte)", 8.1262, long)
   )
 
 saveRDS(polentometro, "data/derived/polentometro.rds")
