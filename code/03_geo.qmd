@@ -14,18 +14,21 @@ source("code/scripts/packages.R")
 ```{r}
 #| label: polentometro
 polentometro <- readRDS("data/derived/polentometro.rds")
+
+polentometro_page8 <- polentometro |> 
+  filter(MAXPAGE > 7)
 ```
 
 ```{r}
 #| label: geo-counts
 
-geo_counts_comune <- polentometro |> 
+geo_counts_comune <- polentometro_page8 |> 
   count(Comune, lat, long, sort = TRUE)
 
-geo_counts_province <- polentometro %>%
+geo_counts_province <- polentometro_page8 %>%
   count(Region, Province, sort = TRUE)
 
-geo_counts_region <- polentometro %>%
+geo_counts_region <- polentometro_page8 %>%
   count(Region, sort = TRUE)
 ```
 
