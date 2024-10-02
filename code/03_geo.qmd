@@ -1,0 +1,79 @@
+---
+title: "Geographical analysis"
+author: "Stefano Coretta"
+---
+
+```{r}
+#| label: packages
+
+source("code/scripts/packages.R")
+```
+
+## Read data
+
+```{r}
+#| label: polentometro
+polentometro <- readRDS("data/derived/polentometro.rds")
+```
+
+```{r}
+#| label: geo-counts
+
+geo_counts_comune <- polentometro |> 
+  count(Comune, lat, long, sort = TRUE)
+
+geo_counts_province <- polentometro %>%
+  count(Region, Province, sort = TRUE)
+
+geo_counts_region <- polentometro %>%
+  count(Region, sort = TRUE)
+```
+
+```{r}
+#| label: italy-gis
+#| message: false
+
+italy <- ne_countries(continent = "Europe", scale = "large", returnclass = "sf")
+
+italy_adm1 <- st_read("data/italy-adm1/bb489fv3314.shp")
+italy_adm2 <- st_read("data/italy-adm2/mn871sp9778.shp")
+
+italy_adm2 <- left_join(italy_adm2, geo_counts_province, by = c("name_2" = "Province"))
+
+regions <- c("Valle d'Aosta", "Piemonte", "Liguria", "Lombardia", "Emilia-Romagna", "Veneto", "Friuli-Venezia Giulia", "Trentino-Alto Adige", "San Marino")
+```
+
+## Maps
+
+```{r}
+#| label: comuni-counts
+#| warning: false
+
+ggplot() +
+  geom_sf(data = italy) +
+  geom_sf(data = italy_adm1 %>% filter(name_1 %in% regions), aes(fill = name_1), alpha = 0.3) +
+  geom_sf(data = italy_adm2 %>% filter(name_1 %in% regions), fill = NA) +
+  coord_sf(c(6.5, 14), c(43.5, 47)) +
+  geom_point(data = geo_counts_comune, aes(long, lat, size = n), alpha = 0.5) +
+  labs(x = element_blank(), y = element_blank()) +
+  theme_light() +
+  theme(legend.position = "none")
+
+ggsave("img/comuni-counts.png", width = 7, height = 5)
+```
+
+```{r}
+#| label: provincie-counts
+
+ggplot() +
+  geom_sf(data = italy) +
+  geom_sf(data = italy_adm2 %>% filter(name_1 %in% regions), aes(fill = n)) +
+  geom_sf(data = italy_adm1 %>% filter(name_1 %in% regions), fill = NA, colour = "red") +
+  scale_fill_distiller(palette = "BuGn", direction = 1, limits = c(0, max(geo_counts_province$n, na.rm = TRUE))) +
+  coord_sf(c(6.5, 14), c(43.5, 47)) +
+  labs(x = element_blank(), y = element_blank()) +
+  theme_light()
+
+ggsave("img/provincie-counts.png", width = 7, height = 5)
+
+```
