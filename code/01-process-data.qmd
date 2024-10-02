@@ -66,6 +66,8 @@ if (file.exists(comuni_geo_path)) {
 ```
 
 ```{r}
+#| label: comuni_full
+
 comuni_full <- comuni |> 
   left_join(comuni_codes) |> 
   left_join(comuni_geo, by = c("Comune" = "city"))
