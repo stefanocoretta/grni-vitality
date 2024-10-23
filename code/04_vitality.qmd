@@ -1,0 +1,43 @@
+---
+title: "Vitality"
+author: "Stefano Coretta"
+format: html
+---
+
+```{r}
+#| label: setup
+
+library(tidyverse)
+```
+
+
+## Read data
+
+```{r}
+#| label: polentometro
+polentometro <- readRDS("data/derived/polentometro.rds")
+
+polentometro_page8 <- polentometro |> 
+  filter(MAXPAGE > 7) |> 
+  mutate(
+    LG13 = ifelse(is.na(LG13), as.character(LG06), as.character(LG13)),
+    LG13 = factor(LG13, levels = c("No, per niente", "Sì, ma molto poco", "Così così", "Sì, lo capisco", "Sì, lo capisco molto bene"))
+  )
+```
+
+```{r}
+polentometro_page8 |> 
+  drop_na(LG13) |> 
+  ggplot(aes(LG13)) +
+  geom_bar() +
+  coord_flip()
+
+polentometro_page8 |> 
+  drop_na(LG13) |> 
+  filter(Region != "Veneto") |> 
+  ggplot(aes(LG13)) +
+  geom_bar() +
+  coord_flip() +
+  facet_wrap(vars(Region))
+```
+
