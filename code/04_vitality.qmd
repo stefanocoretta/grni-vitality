@@ -10,7 +10,6 @@ format: html
 library(tidyverse)
 ```
 
-
 ## Read data
 
 ```{r}
@@ -21,7 +20,9 @@ polentometro_page8 <- polentometro |>
   filter(MAXPAGE > 7) |> 
   mutate(
     LG13 = ifelse(is.na(LG13), as.character(LG06), as.character(LG13)),
-    LG13 = factor(LG13, levels = c("No, per niente", "Sì, ma molto poco", "Così così", "Sì, lo capisco", "Sì, lo capisco molto bene"))
+    LG13 = factor(LG13, levels = c("No, per niente", "Sì, ma molto poco", "Così così", "Sì, lo capisco", "Sì, lo capisco molto bene")),
+    LG14 = ifelse(is.na(LG14), as.character(LG07), as.character(LG14)),
+    LG14 = factor(LG14, levels = c("No, per niente", "Sì, ma molto poco", "Così così", "Sì, lo parlo bene", "Sì, lo parlo molto bene"))
   )
 ```
 
@@ -41,3 +42,17 @@ polentometro_page8 |>
   facet_wrap(vars(Region))
 ```
 
+```{r}
+polentometro_page8 |> 
+  drop_na(LG14) |> 
+  ggplot(aes(LG14)) +
+  geom_bar() +
+  coord_flip() +
+  facet_wrap(vars(Region))
+
+polentometro_page8 |> 
+  drop_na(LG14) |> 
+  ggplot(aes(Region, fill = LG14)) +
+  geom_bar(position = "fill") +
+  coord_flip()
+```
