@@ -32,7 +32,11 @@ comuni_ch_include <- comuni_ch |>
   select(Comune = `Nome del Comune`, Region = Cantone, Province = `Nome del Distretto`) |> 
   mutate(Area = "Svizzera")
 
-comuni <- bind_rows(comuni_it_include, comuni_ch_include)
+comuni_sm_include <- tibble(
+  Comune = "Città di San Marino", Area = "Centro", Region = "San Marino", "San Marino"
+)
+
+comuni <- bind_rows(comuni_it_include, comuni_ch_include, comuni_sm_include)
 ```
 
 ```{r}

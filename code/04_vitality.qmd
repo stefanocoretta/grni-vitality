@@ -19,24 +19,24 @@ polentometro <- readRDS("data/derived/polentometro.rds")
 polentometro_page8 <- polentometro |> 
   filter(MAXPAGE > 7) |> 
   mutate(
-    LG13 = ifelse(is.na(LG13), as.character(LG06), as.character(LG13)),
-    LG13 = factor(LG13, levels = c("No, per niente", "Sì, ma molto poco", "Così così", "Sì, lo capisco", "Sì, lo capisco molto bene")),
-    LG14 = ifelse(is.na(LG14), as.character(LG07), as.character(LG14)),
-    LG14 = factor(LG14, levels = c("No, per niente", "Sì, ma molto poco", "Così così", "Sì, lo parlo bene", "Sì, lo parlo molto bene"))
+    understand_galloit_birth = ifelse(is.na(understand_galloit_birth), as.character(understand), as.character(understand_galloit_birth)),
+    understand_galloit_birth = factor(understand_galloit_birth, levels = c("No, per niente", "Sì, ma molto poco", "Così così", "Sì, lo capisco", "Sì, lo capisco molto bene")),
+    speak_galloit_birth = ifelse(is.na(speak_galloit_birth), as.character(speak), as.character(speak_galloit_birth)),
+    speak_galloit_birth = factor(speak_galloit_birth, levels = c("No, per niente", "Sì, ma molto poco", "Così così", "Sì, lo parlo bene", "Sì, lo parlo molto bene"))
   )
 ```
 
 ```{r}
 polentometro_page8 |> 
-  drop_na(LG13) |> 
-  ggplot(aes(LG13)) +
+  drop_na(understand_galloit_birth) |> 
+  ggplot(aes(understand_galloit_birth)) +
   geom_bar() +
   coord_flip()
 
 polentometro_page8 |> 
-  drop_na(LG13) |> 
+  drop_na(understand_galloit_birth) |> 
   filter(Region != "Veneto") |> 
-  ggplot(aes(LG13)) +
+  ggplot(aes(understand_galloit_birth)) +
   geom_bar() +
   coord_flip() +
   facet_wrap(vars(Region))
@@ -44,15 +44,23 @@ polentometro_page8 |>
 
 ```{r}
 polentometro_page8 |> 
-  drop_na(LG14) |> 
-  ggplot(aes(LG14)) +
+  drop_na(speak_galloit_birth) |> 
+  ggplot(aes(speak_galloit_birth)) +
   geom_bar() +
   coord_flip() +
   facet_wrap(vars(Region))
 
 polentometro_page8 |> 
-  drop_na(LG14) |> 
-  ggplot(aes(Region, fill = LG14)) +
+  drop_na(speak_galloit_birth) |> 
+  ggplot(aes(Region, fill = speak_galloit_birth)) +
   geom_bar(position = "fill") +
-  coord_flip()
+  coord_flip() +
+  scale_fill_brewer(type = "div")
+
+polentometro_page8 |> 
+  drop_na(speak_galloit_birth) |> 
+  ggplot(aes(Area, fill = speak_galloit_birth)) +
+  geom_bar(position = "fill") +
+  coord_flip() +
+  scale_fill_brewer(type = "div")
 ```

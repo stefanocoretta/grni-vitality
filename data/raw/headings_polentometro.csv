@@ -106,6 +106,7 @@ PL02,polentometro-agree
 PL03,dialettometro-agree
 RW01,read_write
 RW02,listen
+RW03,materials_tot
 RW03_01,materials_tv
 RW03_08,materials_newspapers
 RW03_07,materials_literature
@@ -115,11 +116,12 @@ RW03_02,materials_grammar
 RW03_09,materials_digital
 RW03_04,materials_learning
 RW03_05,materials_didactic
+RW04,rw_tot
 RW04_01,no_write
 RW04_02,personal_notes
-RW04_03,texts_write + whatsapp_write
-RW04_04,socialmedia_write + facebook_write
-RW04_05,email_write + other_print_write
+RW04_03,messaging_write
+RW04_04,socialmedia_write
+RW04_05,print_email_write
 RW04_06,literature_write
 XT01_01,translation_1
 XT01_02,translation_2
