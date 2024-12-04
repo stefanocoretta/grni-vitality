@@ -144,6 +144,15 @@ polentometro <- ds %>%
     long = ifelse(Comune == "Rossa (Piemonte)", 8.1262, long)
   )
 
+headings_polentometro <- read_csv("data/raw/headings_polentometro.csv") |> 
+  select(new, old) |> 
+  filter(old %in% colnames(polentometro)) |> 
+  drop_na() |> 
+  deframe()
+
+polentometro <- polentometro |> 
+  rename(headings_polentometro)
+
 saveRDS(polentometro, "data/derived/polentometro.rds")
 
 table(polentometro$generation)
@@ -156,19 +165,20 @@ table(polentometro$generation)
 
 #### Attitudes data for MCA ####
 polentometro_attitudes <- polentometro %>%
-  select(LA02_01:LA02_08) %>%
+  select(educated:urban) %>%
   drop_na() %>%
   # Make sure cols are odered factors! If numeric, MCA does not work
   mutate(across(everything(), as.ordered)) %>%
   rename(c("istruita" = 1, "raffinata" = 2, "amichevole" = 3, "gentile" = 4, "allamoda" = 5, "divertente" = 6, "ricca" = 7, "cittadina" = 8))
 
 polentometro_attitudes_cases <- polentometro %>%
-  select(CASE, LA02_01:LA02_08) %>%
-  drop_na(LA02_01:LA02_08) %>%
+  select(CASE, educated:urban) %>%
+  drop_na(educated:urban) %>%
   pull(CASE)
 
+# Select only responses between 2 and 7 on the scale
 polentometro_attitudes_27 <- polentometro %>%
-  select(LA02_01:LA02_08) %>%
+  select(educated:urban) %>%
   filter(!(if_any(everything(), ~ . %in% c(1)))) %>%
   drop_na() %>%
   # Make sure cols are odered factors! If numeric, MCA does not work
@@ -176,9 +186,9 @@ polentometro_attitudes_27 <- polentometro %>%
   rename(c("istruita" = 1, "raffinata" = 2, "amichevole" = 3, "gentile" = 4, "allamoda" = 5, "divertente" = 6, "ricca" = 7, "cittadina" = 8))
 
 polentometro_attitudes_cases_27 <- polentometro %>%
-  select(CASE, LA02_01:LA02_08) %>%
-    filter(!(if_any(LA02_01:LA02_08, ~ . %in% c(1)))) %>%
-  drop_na(LA02_01:LA02_08) %>%
+  select(CASE, educated:urban) %>%
+    filter(!(if_any(educated:urban, ~ . %in% c(1)))) %>%
+  drop_na(educated:urban) %>%
   pull(CASE)
 ```
 
@@ -189,17 +199,17 @@ attitudes_mca <- MCA(polentometro_attitudes, graph = FALSE)
 attitudes_dims <- attitudes_mca[["ind"]][["coord"]]
 fviz_mca_var(attitudes_mca, col.var = "black", shape.var = 15, repel = TRUE)
 
-attitudes_mca_27 <- MCA(polentometro_attitudes_27, graph = FALSE)
-attitudes_dims_27 <- attitudes_mca_27[["ind"]][["coord"]]
-fviz_mca_var(attitudes_mca_27, col.var = "black", shape.var = 15, repel = TRUE)
+# attitudes_mca_27 <- MCA(polentometro_attitudes_27, graph = FALSE)
+# attitudes_dims_27 <- attitudes_mca_27[["ind"]][["coord"]]
+# fviz_mca_var(attitudes_mca_27, col.var = "black", shape.var = 15, repel = TRUE)
 ```
 
 ```{r}
 #| label: polentometro-dim
 
 polentometro_dim <- polentometro %>%
-  left_join(y = bind_cols(CASE = polentometro_attitudes_cases, dim_1 = attitudes_dims[, 1], dim_2 = attitudes_dims[, 3])) %>%
-  left_join(y = bind_cols(CASE = polentometro_attitudes_cases_27, dim_1_27 = attitudes_dims_27[, 1], dim_2_27 = attitudes_dims_27[, 3]))
+  left_join(y = bind_cols(CASE = polentometro_attitudes_cases, dim_1 = attitudes_dims[, 1], dim_2 = attitudes_dims[, 3]))
+  # left_join(y = bind_cols(CASE = polentometro_attitudes_cases_27, dim_1_27 = attitudes_dims_27[, 1], dim_2_27 = attitudes_dims_27[, 3]))
 
 saveRDS(polentometro_dim, "data/derived/polentometro_dim.rds")
 ```
@@ -208,8 +218,8 @@ saveRDS(polentometro_dim, "data/derived/polentometro_dim.rds")
 
 ```{r}
 polentometro |> 
-  drop_na(PL01) |> 
-  ggplot(aes(PL01, fill = PL01)) +
+  drop_na(pol_offensive) |> 
+  ggplot(aes(pol_offensive, fill = pol_offensive)) +
   geom_bar() +
   scale_fill_brewer(type = "div") +
   theme_dark()
@@ -217,10 +227,10 @@ polentometro |>
 ggsave("img/likert-polentone.png", width = 7, height = 5)
 
 polentone_lik <- polentometro %>%
-  dplyr::select(PL01, generation) %>%
-  mutate(PL01 = as.numeric(PL01)) %>%
-  count(PL01, generation) %>%
-  pivot_wider(names_from = PL01, values_from = n) %>%
+  dplyr::select(pol_offensive, generation) %>%
+  mutate(pol_offensive = as.numeric(pol_offensive)) %>%
+  count(pol_offensive, generation) %>%
+  pivot_wider(names_from = pol_offensive, values_from = n) %>%
   mutate(across(`1`:`5`, ~ifelse(is.na(.x), 0, .x))) %>%
   dplyr::select(-`NA`) |> 
   drop_na(generation)
