@@ -19,8 +19,8 @@ LA03,loss
 LA04,taught_at_school
 LA05,granular_teaching
 LA06,variety_teaching
-LA07,why_not_taught_at_school_it
-LA08,why_taught_at_school_it
+LA07_01,why_not_taught_at_school_it
+LA08_01,why_taught_at_school_it
 LG01,languages_parents_likert
 LG02,first_langacq
 LG03,has_children
@@ -33,8 +33,8 @@ LG13,understand_galloit_birth
 LG07,speak
 LG14,speak_galloit_birth
 LG10,speak_frequency
-LG08,other_languages
-LG15,translation
+LG08_01,other_languages
+LG15_01,translation
 LO01,current_location
 LO02,current_comune
 LO02s,current_comune_s
@@ -51,6 +51,7 @@ LO10,italy_provs
 LO10s,italy_provs_s
 LO11,swiss_cants
 LO11s,swiss_cants_s
+LU01,with_tot
 LU01_01,with_family
 LU01_02,with_friends
 LU01_03,with_neighbours
@@ -66,6 +67,7 @@ LU01_12,with_doctor
 LU01_15,with_elderly
 LU01_13,with_children
 LU01_14,with_animals
+LU02,at_tot
 LU02_09,at_home
 LU02_10,on_street
 LU02_01,at_pub
@@ -76,6 +78,27 @@ LU02_05,at_uni
 LU02_06,at_work
 LU02_07,at_church
 LU02_08,in_publicbuilds
+LU03,about_tot
+LU03_01,about_greetings
+LU03_02,about_wishes
+LU03_03,about_counting
+LU03_04,abount_mentalcalc
+LU03_05,about_news
+LU03_06,about_storytell
+LU03_07,about_politics
+LU03_08,about_joking
+LU03_09,about_anger
+LU03_10,about_happiness
+LU03_11,about_swearing
+LU03_12,about_thinking
+LU03_13,about_praying
+LU03_14,about_givinginstr
+LU03_15,about_directions
+LU03_16,about_intimate
+LU03_17,about_science
+LU03_18,about_foreignnews
+LU03_19,about_distantpast
+LU03_20,about_arguments
 LU04,italian_in_emilian
 LU05,emilian_in_italian
 PL01,pol_offensive
@@ -98,7 +121,6 @@ RW04_03,texts_write + whatsapp_write
 RW04_04,socialmedia_write + facebook_write
 RW04_05,email_write + other_print_write
 RW04_06,literature_write
-,
 XT01_01,translation_1
 XT01_02,translation_2
 XT01_03,translation_3
