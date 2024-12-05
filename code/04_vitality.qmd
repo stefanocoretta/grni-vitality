@@ -74,3 +74,44 @@ polentometro_page8 |>
   geom_bar(position = "fill") +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
+
+```{r}
+polentometro_page8 |> 
+  pivot_longer(c(languages_parents, first_langacq, spoke_to_children, children_speak)) |> 
+  drop_na(value) |> 
+  filter(
+    !(value %in% c("No_minors", "No_adult_children", "Neither")),
+  ) |> 
+  mutate(
+    name = factor(name, levels = c("languages_parents", "first_langacq", "spoke_to_children", "children_speak")),
+    value = factor(value, levels = c("Mostly_GI", "Equally", "Mostly_IT"))
+  ) |> 
+  ggplot(aes(name, fill = value)) +
+  geom_bar(position = "fill") +
+  theme_dark() +
+  scale_fill_brewer(type = "div", palette = "RdBu") +
+  labs(
+    x = element_blank(), y = "Proportion", fill = "Languages spoken"
+  )
+```
+
+```{r}
+polentometro_page8 |> 
+  pivot_longer(c(languages_parents, first_langacq, spoke_to_children, children_speak)) |> 
+  drop_na(value, generation) |> 
+  filter(
+    !(value %in% c("No_minors", "No_adult_children", "Neither")),
+  ) |> 
+  mutate(
+    name = factor(name, levels = c("languages_parents", "first_langacq", "spoke_to_children", "children_speak")),
+    value = factor(value, levels = c("Mostly_GI", "Equally", "Mostly_IT"))
+  ) |> 
+  ggplot(aes(name, fill = value)) +
+  geom_bar(position = "fill") +
+  facet_wrap(~generation) +
+  theme_dark() +
+  scale_fill_brewer(type = "div", palette = "RdBu") +
+  labs(
+    x = element_blank(), y = "Proportion", fill = "Languages spoken"
+  )
+```
