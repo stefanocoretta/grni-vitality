@@ -162,6 +162,93 @@ saveRDS(polentometro, "data/derived/polentometro.rds")
 table(polentometro$generation)
 ```
 
+```{r}
+#| label: polentometro-en
+
+polentometro_en <- polentometro |> 
+  mutate(
+    gender = fct_recode(gender, "Woman" = "Donna", "Man" = "Uomo", "Other" = "Oppure specifichi"),
+    education = fct_recode(
+      education,
+      "No_school" = "Non ho avuto la possibilità di andare a scuola",
+      "Primary_school" = "Licenza elementare",
+      "Middle_school" = "Licenza di scuola media",
+      "High_school" = "Diploma di maturità/certificato professionale",
+      "Bachelor" = "Laurea triennale",
+      "Masters" = "Laurea specialistica/magistrale",
+      "PhD" = "Dottorato di ricerca"
+    ),
+    profession = fct_recode(
+      profession,
+      "Student" = "Studentessa/Studente",
+      "Employed" = "Lavoratrice/Lavoratore",
+      "Not_in_work" = "Disoccupata/Disoccupato",
+      "Retired" = "Pensionata/Pensionato"
+    ),
+    reaction = fct_recode(
+      reaction,
+      "Negative" = "Negativa", "Indifferent" = "Indifferente", "Positive" = "Positiva"
+    ),
+    loss = fct_recode(
+      loss,
+      "No" = "No", "Indifferent" = "Indifferente", "Yes" = "Sì"
+    ),
+    taught_at_school = fct_recode(
+      taught_at_school,
+      "No" = "No", "Indifferent" = "Indifferente", "Yes" = "Sì"
+    ),
+    languages_parents = fct_recode(
+      languages_parents,
+      "Mostly_in_Italian" = "Prevalentemente in italiano",
+      "Mostly_in_GI" = "Prevalentemente in dialetto",
+      "Equally" = "In italiano e in dialetto con la stessa frequenza",
+      "Neither" = "Né in italiano né in dialetto"
+    ),
+    first_langacq = fct_recode(
+      first_langacq,
+      "Mostly_in_Italian" = "Prevalentemente in italiano",
+      "Mostly_in_GI" = "Prevalentemente in dialetto",
+      "Equally" = "In italiano e in dialetto con la stessa frequenza",
+      "Neither" = "Né in italiano né in dialetto"
+    ),
+    has_children = fct_recode(
+      has_children, "No" = "No", "Yes" = "Sì"
+    ),
+    spoke_to_children = fct_recode(
+      spoke_to_children,
+      "Mostly_in_Italian" = "Prevalentemente in italiano",
+      "Mostly_in_GI" = "Prevalentemente in dialetto",
+      "Equally" = "In italiano e in dialetto con la stessa frequenza",
+      "Neither" = "Né in italiano né in dialetto"
+    ),
+    children_spoke = fct_recode(
+      children_spoke,
+      "Mostly_in_Italian" = "Prevalentemente in italiano",
+      "Mostly_in_GI" = "Prevalentemente in dialetto",
+      "Equally" = "In italiano e in dialetto in stessa misura",
+      "Neither" = "Né in italiano né in dialetto",
+      "No_minors" = "Non ho figli minorenni"
+    ),
+    children_speak = fct_recode(
+      children_speak,
+      "Mostly_in_Italian" = "Prevalentemente in italiano",
+      "Mostly_in_GI" = "Prevalentemente in dialetto",
+      "Equally" = "In italiano e in dialetto con la stessa frequenza",
+      "Neither" = "Né in italiano né in dialetto",
+      "No_adult_children" = "Non ho figli maggiorenni"
+    ),
+    would_teach_children = fct_recode(
+      would_teach_children,
+      "Mostly_in_Italian" = "Prevalentemente in italiano",
+      "Mostly_in_GI" = "Prevalentemente in dialetto",
+      "Equally" = "In italiano e in dialetto in stessa misura",
+      "Neither" = "Né in italiano né in dialetto"
+    ),
+  )
+
+saveRDS(polentometro_en, "data/derived/polentometro_en.rds")
+```
+
 ### Multiple correspondence analysis (MCA)
 
 ```{r}
@@ -221,6 +308,7 @@ saveRDS(polentometro_dim, "data/derived/polentometro_dim.rds")
 ## Polentone attitude
 
 ```{r}
+#| label: attitude
 polentometro |> 
   drop_na(pol_offensive) |> 
   ggplot(aes(pol_offensive, fill = pol_offensive)) +

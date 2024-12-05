@@ -14,9 +14,9 @@ library(tidyverse)
 
 ```{r}
 #| label: polentometro
-polentometro <- readRDS("data/derived/polentometro.rds")
+polentometro_en <- readRDS("data/derived/polentometro_en.rds")
 
-polentometro_page8 <- polentometro |> 
+polentometro_page8 <- polentometro_en |> 
   filter(MAXPAGE > 7) |> 
   mutate(
     understand_galloit_birth = ifelse(is.na(understand_galloit_birth), as.character(understand), as.character(understand_galloit_birth)),
@@ -63,4 +63,14 @@ polentometro_page8 |>
   geom_bar(position = "fill") +
   coord_flip() +
   scale_fill_brewer(type = "div")
+```
+
+```{r}
+polentometro_page8 |> 
+  pivot_longer(c(languages_parents, first_langacq, spoke_to_children, children_spoke, children_speak, would_teach_children)) |> 
+  drop_na(value) |> 
+  filter(!(value %in% c("No_minors", "No_adult_children"))) |> 
+  ggplot(aes(name, fill = value)) +
+  geom_bar(position = "fill") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
