@@ -4,13 +4,14 @@ author: "Stefano Coretta"
 format: html
 ---
 
+## Read data
+
 ```{r}
 #| label: setup
 
+library(HH)
 library(tidyverse)
 ```
-
-## Read data
 
 ```{r}
 #| label: polentometro
@@ -27,55 +28,7 @@ polentometro_page8 <- polentometro_en |>
 ```
 
 ```{r}
-polentometro_page8 |> 
-  drop_na(understand_galloit_birth) |> 
-  ggplot(aes(understand_galloit_birth)) +
-  geom_bar() +
-  coord_flip()
-
-polentometro_page8 |> 
-  drop_na(understand_galloit_birth) |> 
-  filter(Region != "Veneto") |> 
-  ggplot(aes(understand_galloit_birth)) +
-  geom_bar() +
-  coord_flip() +
-  facet_wrap(vars(Region))
-```
-
-```{r}
-polentometro_page8 |> 
-  drop_na(speak_galloit_birth) |> 
-  ggplot(aes(speak_galloit_birth)) +
-  geom_bar() +
-  coord_flip() +
-  facet_wrap(vars(Region))
-
-polentometro_page8 |> 
-  drop_na(speak_galloit_birth) |> 
-  ggplot(aes(Region, fill = speak_galloit_birth)) +
-  geom_bar(position = "fill") +
-  coord_flip() +
-  scale_fill_brewer(type = "div")
-
-polentometro_page8 |> 
-  drop_na(speak_galloit_birth) |> 
-  ggplot(aes(Area, fill = speak_galloit_birth)) +
-  geom_bar(position = "fill") +
-  coord_flip() +
-  scale_fill_brewer(type = "div")
-```
-
-```{r}
-polentometro_page8 |> 
-  pivot_longer(c(languages_parents, first_langacq, spoke_to_children, children_spoke, children_speak, would_teach_children)) |> 
-  drop_na(value) |> 
-  filter(!(value %in% c("No_minors", "No_adult_children"))) |> 
-  ggplot(aes(name, fill = value)) +
-  geom_bar(position = "fill") +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))
-```
-
-```{r}
+#| label: languages
 polentometro_page8 |> 
   pivot_longer(c(languages_parents, first_langacq, spoke_to_children, children_speak)) |> 
   drop_na(value) |> 
@@ -95,7 +48,72 @@ polentometro_page8 |>
   )
 ```
 
+## Generations
+
 ```{r}
+#| label: understand-generation
+polentometro_page8 |> 
+  drop_na(understand_galloit_birth, generation) |> 
+  ggplot(aes(generation, fill = understand_galloit_birth)) +
+  geom_bar(position = "fill") +
+  coord_flip() +
+  scale_fill_brewer(type = "div")
+```
+
+```{r}
+#| label: understand-generation-lik
+understand_generation_lik <- polentometro_page8 |> 
+  drop_na(understand_galloit_birth, generation) |> 
+  select(generation, understand_galloit_birth) |> 
+  count(generation, understand_galloit_birth) |> 
+  pivot_wider(names_from = understand_galloit_birth, values_from = n) |> 
+  mutate(
+    across(-generation, ~ifelse(is.na(.x), 0, .x)),
+    `Sì, lo capisco bene` = 0
+  ) |> 
+  relocate(`Sì, lo capisco molto bene`, .after = everything()) |> 
+  relocate(`No, per niente`, .after = generation)
+
+likert(
+  generation ~ . ,
+  understand_generation_lik,
+  as.percent = TRUE,
+  main = ""
+)
+```
+
+
+```{r}
+#| label: speak-generation
+
+polentometro_page8 |> 
+  drop_na(speak_galloit_birth, generation) |> 
+  ggplot(aes(generation, fill = speak_galloit_birth)) +
+  geom_bar(position = "fill") +
+  coord_flip() +
+  scale_fill_brewer(type = "div")
+```
+
+```{r}
+#| label: speak-generation-lik
+speak_generation_lik <- polentometro_page8 |> 
+  drop_na(speak_galloit_birth, generation) |> 
+  select(generation, speak_galloit_birth) |> 
+  count(generation, speak_galloit_birth) |> 
+  pivot_wider(names_from = speak_galloit_birth, values_from = n) |> 
+  mutate(across(-generation, ~ifelse(is.na(.x), 0, .x))) |> 
+  relocate(`Sì, lo parlo molto bene`, .after = everything())
+
+likert(
+  generation ~ . ,
+  speak_generation_lik,
+  as.percent = TRUE,
+  main = ""
+)
+```
+
+```{r}
+#| label: languages-generations
 polentometro_page8 |> 
   pivot_longer(c(languages_parents, first_langacq, spoke_to_children, children_speak)) |> 
   drop_na(value, generation) |> 
@@ -114,4 +132,49 @@ polentometro_page8 |>
   labs(
     x = element_blank(), y = "Proportion", fill = "Languages spoken"
   )
+```
+
+## Regions
+
+```{r}
+#| label: understand-regions
+polentometro_page8 |> 
+  drop_na(understand_galloit_birth) |> 
+  ggplot(aes(Region, fill = understand_galloit_birth)) +
+  geom_bar(position = "fill") +
+  coord_flip() +
+  scale_fill_brewer(type = "div")
+```
+
+```{r}
+#| label: speak-regions
+polentometro_page8 |> 
+  drop_na(speak_galloit_birth) |> 
+  ggplot(aes(Region, fill = speak_galloit_birth)) +
+  geom_bar(position = "fill") +
+  coord_flip() +
+  scale_fill_brewer(type = "div")
+```
+
+
+## Areas
+
+```{r}
+#| label: understand-areas
+polentometro_page8 |> 
+  drop_na(understand_galloit_birth) |> 
+  ggplot(aes(Area, fill = understand_galloit_birth)) +
+  geom_bar(position = "fill") +
+  coord_flip() +
+  scale_fill_brewer(type = "div")
+```
+
+```{r}
+#| label: speak-areas
+polentometro_page8 |> 
+  drop_na(speak_galloit_birth) |> 
+  ggplot(aes(Area, fill = speak_galloit_birth)) +
+  geom_bar(position = "fill") +
+  coord_flip() +
+  scale_fill_brewer(type = "div")
 ```
