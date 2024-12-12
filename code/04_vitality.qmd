@@ -22,7 +22,7 @@ polentometro_page8 <- polentometro_en |>
   filter(MAXPAGE > 7) |> 
   mutate(
     understand_galloit_birth = ifelse(is.na(understand_galloit_birth), as.character(understand), as.character(understand_galloit_birth)),
-    understand_galloit_birth = factor(understand_galloit_birth, levels = c("No, per niente", "Sì, ma molto poco", "Così così", "Sì, lo capisco", "Sì, lo capisco molto bene")),
+    understand_galloit_birth = factor(understand_galloit_birth, levels = c("No, per niente", "Sì, ma molto poco", "Così così", "Sì, lo capisco bene", "Sì, lo capisco molto bene")),
     speak_galloit_birth = ifelse(is.na(speak_galloit_birth), as.character(speak), as.character(speak_galloit_birth)),
     speak_galloit_birth = factor(speak_galloit_birth, levels = c("No, per niente", "Sì, ma molto poco", "Così così", "Sì, lo parlo bene", "Sì, lo parlo molto bene"))
   )
