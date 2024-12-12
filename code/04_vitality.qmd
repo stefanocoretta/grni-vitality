@@ -8,6 +8,7 @@ format: html
 
 ```{r}
 #| label: setup
+#| include: false
 
 library(HH)
 library(tidyverse)
@@ -27,34 +28,29 @@ polentometro_page8 <- polentometro_en |>
   )
 ```
 
-```{r}
-#| label: languages
-polentometro_page8 |> 
-  pivot_longer(c(languages_parents, first_langacq, spoke_to_children, children_speak)) |> 
-  drop_na(value) |> 
-  filter(
-    !(value %in% c("No_minors", "No_adult_children", "Neither")),
-  ) |> 
-  mutate(
-    name = factor(name, levels = c("languages_parents", "first_langacq", "spoke_to_children", "children_speak")),
-    value = factor(value, levels = c("Mostly_GI", "Equally", "Mostly_IT"))
-  ) |> 
-  ggplot(aes(name, fill = value)) +
-  geom_bar(position = "fill") +
-  theme_dark() +
-  scale_fill_brewer(type = "div", palette = "RdBu") +
-  labs(
-    x = element_blank(), y = "Proportion", fill = "Languages spoken"
-  )
-```
+## Factor 1: Intergenerational language transmission
 
-## Generations
+### Understand GI
 
 ```{r}
-#| label: understand-generation
+#| label: understand
 polentometro_page8 |> 
   drop_na(understand_galloit_birth, generation) |> 
   ggplot(aes(generation, fill = understand_galloit_birth)) +
+  geom_bar(position = "fill") +
+  coord_flip() +
+  scale_fill_brewer(type = "div")
+
+polentometro_page8 |> 
+  drop_na(understand_galloit_birth) |> 
+  ggplot(aes(Region, fill = understand_galloit_birth)) +
+  geom_bar(position = "fill") +
+  coord_flip() +
+  scale_fill_brewer(type = "div")
+
+polentometro_page8 |> 
+  drop_na(understand_galloit_birth) |> 
+  ggplot(aes(Area, fill = understand_galloit_birth)) +
   geom_bar(position = "fill") +
   coord_flip() +
   scale_fill_brewer(type = "div")
@@ -82,12 +78,28 @@ likert(
 )
 ```
 
+### Speak GI
+
 ```{r}
-#| label: speak-generation
+#| label: speak
 
 polentometro_page8 |> 
   drop_na(speak_galloit_birth, generation) |> 
   ggplot(aes(generation, fill = speak_galloit_birth)) +
+  geom_bar(position = "fill") +
+  coord_flip() +
+  scale_fill_brewer(type = "div")
+
+polentometro_page8 |> 
+  drop_na(speak_galloit_birth) |> 
+  ggplot(aes(Region, fill = speak_galloit_birth)) +
+  geom_bar(position = "fill") +
+  coord_flip() +
+  scale_fill_brewer(type = "div")
+
+polentometro_page8 |> 
+  drop_na(speak_galloit_birth) |> 
+  ggplot(aes(Area, fill = speak_galloit_birth)) +
   geom_bar(position = "fill") +
   coord_flip() +
   scale_fill_brewer(type = "div")
@@ -111,6 +123,30 @@ likert(
 )
 ```
 
+### Language acquisition
+
+```{r}
+#| label: languages
+polentometro_page8 |> 
+  pivot_longer(c(languages_parents, first_langacq, spoke_to_children, children_speak)) |> 
+  drop_na(value) |> 
+  filter(
+    !(value %in% c("No_minors", "No_adult_children", "Neither")),
+  ) |> 
+  mutate(
+    name = factor(name, levels = c("languages_parents", "first_langacq", "spoke_to_children", "children_speak")),
+    value = factor(value, levels = c("Mostly_GI", "Equally", "Mostly_IT"))
+  ) |> 
+  ggplot(aes(name, fill = value)) +
+  geom_bar(position = "fill") +
+  theme_dark() +
+  scale_fill_brewer(type = "div", palette = "RdBu") +
+  labs(
+    x = element_blank(), y = "Proportion", fill = "Languages spoken"
+  ) +
+  theme(legend.position = "bottom")
+```
+
 ```{r}
 #| label: languages-generations
 polentometro_page8 |> 
@@ -130,54 +166,11 @@ polentometro_page8 |>
   scale_fill_brewer(type = "div", palette = "RdBu") +
   labs(
     x = element_blank(), y = "Proportion", fill = "Languages spoken"
-  )
+  ) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
 
-## Regions
-
-```{r}
-#| label: understand-regions
-polentometro_page8 |> 
-  drop_na(understand_galloit_birth) |> 
-  ggplot(aes(Region, fill = understand_galloit_birth)) +
-  geom_bar(position = "fill") +
-  coord_flip() +
-  scale_fill_brewer(type = "div")
-```
-
-```{r}
-#| label: speak-regions
-polentometro_page8 |> 
-  drop_na(speak_galloit_birth) |> 
-  ggplot(aes(Region, fill = speak_galloit_birth)) +
-  geom_bar(position = "fill") +
-  coord_flip() +
-  scale_fill_brewer(type = "div")
-```
-
-## Areas
-
-```{r}
-#| label: understand-areas
-polentometro_page8 |> 
-  drop_na(understand_galloit_birth) |> 
-  ggplot(aes(Area, fill = understand_galloit_birth)) +
-  geom_bar(position = "fill") +
-  coord_flip() +
-  scale_fill_brewer(type = "div")
-```
-
-```{r}
-#| label: speak-areas
-polentometro_page8 |> 
-  drop_na(speak_galloit_birth) |> 
-  ggplot(aes(Area, fill = speak_galloit_birth)) +
-  geom_bar(position = "fill") +
-  coord_flip() +
-  scale_fill_brewer(type = "div")
-```
-
-## Shifts in domains of language use
+## Factor 4: Shifts in domains of language use
 
 ```{r}
 #| label: domains-use
@@ -266,4 +259,3 @@ domains_use_domains |>
   coord_flip() +
   facet_wrap(~Region)
 ```
-
