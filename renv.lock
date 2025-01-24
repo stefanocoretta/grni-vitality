@@ -2175,6 +2175,21 @@
       ],
       "Hash": "741166cab0fe76d8a5670d3ee459a2a4"
     },
+    "rnaturalearthhires": {
+      "Package": "rnaturalearthhires",
+      "Version": "1.0.0.9000",
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteUsername": "ropensci",
+      "RemoteRepo": "rnaturalearthhires",
+      "RemoteRef": "master",
+      "RemoteSha": "e02c28dab09c511cbe4b1da429ab69c001c2d70c",
+      "Requirements": [
+        "R"
+      ],
+      "Hash": "95b5a4152def0b415a438bce2b2cc41e"
+    },
     "rpart": {
       "Package": "rpart",
       "Version": "4.1.23",
@@ -2387,6 +2402,19 @@
         "R"
       ],
       "Hash": "5f5a7629f956619d519205ec475fe647"
+    },
+    "spatial": {
+      "Package": "spatial",
+      "Version": "7.3-17",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R",
+        "graphics",
+        "stats",
+        "utils"
+      ],
+      "Hash": "1229a01b4ec059e9f2396724f2ec9010"
     },
     "stringi": {
       "Package": "stringi",
