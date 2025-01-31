@@ -150,13 +150,13 @@ likert(
 ```{r}
 #| label: languages
 polentometro_page15 |> 
-  pivot_longer(c(languages_parents, first_langacq, spoke_to_children, would_teach_children, children_speak)) |> 
+  pivot_longer(c(languages_parents, first_langacq, spoke_to_children, would_speak_to_children, children_speak)) |> 
   drop_na(value) |> 
   filter(
     !(value %in% c("No_minors", "No_adult_children", "Neither")),
   ) |> 
   mutate(
-    name = factor(name, levels = c("languages_parents", "first_langacq", "spoke_to_children", "children_speak", "would_teach_children")),
+    name = factor(name, levels = c("languages_parents", "first_langacq", "spoke_to_children", "children_speak", "would_speak_to_children")),
     value = factor(value, levels = c("Mostly_GI", "Equally", "Mostly_IT"))
   ) |> 
   ggplot(aes(name, fill = value)) +
@@ -172,13 +172,13 @@ polentometro_page15 |>
 ```{r}
 #| label: languages-generations
 polentometro_page15 |> 
-  pivot_longer(c(languages_parents, first_langacq, spoke_to_children, would_teach_children, children_speak)) |> 
+  pivot_longer(c(languages_parents, first_langacq, spoke_to_children, would_speak_to_children, children_speak)) |> 
   drop_na(value, generation) |> 
   filter(
     !(value %in% c("No_minors", "No_adult_children", "Neither")),
   ) |> 
   mutate(
-    name = factor(name, levels = c("languages_parents", "first_langacq", "spoke_to_children", "children_speak", "would_teach_children")),
+    name = factor(name, levels = c("languages_parents", "first_langacq", "spoke_to_children", "children_speak", "would_speak_to_children")),
     value = factor(value, levels = c("Mostly_GI", "Equally", "Mostly_IT"))
   ) |> 
   ggplot(aes(name, fill = value)) +
