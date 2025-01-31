@@ -18,8 +18,8 @@ library(tidyverse)
 #| label: polentometro
 polentometro_en <- readRDS("data/derived/polentometro_en.rds")
 
-polentometro_page8 <- polentometro_en |> 
-  filter(MAXPAGE > 7) |> 
+polentometro_page15 <- polentometro_en |> 
+  filter(MAXPAGE >= 15) |> 
   mutate(
     understand_galloit_birth = ifelse(is.na(understand_galloit_birth), as.character(understand), as.character(understand_galloit_birth)),
     understand_galloit_birth = factor(understand_galloit_birth, levels = c("No, per niente", "Sì, ma molto poco", "Così così", "Sì, lo capisco bene", "Sì, lo capisco molto bene")),
@@ -34,22 +34,34 @@ polentometro_page8 <- polentometro_en |>
 
 ```{r}
 #| label: understand
-polentometro_page8 |> 
-  drop_na(understand_galloit_birth, generation) |> 
+polentometro_page15 |> 
   ggplot(aes(generation, fill = understand_galloit_birth)) +
   geom_bar(position = "fill") +
   coord_flip() +
   scale_fill_brewer(type = "div")
+```
 
-polentometro_page8 |> 
-  drop_na(understand_galloit_birth) |> 
-  ggplot(aes(Region, fill = understand_galloit_birth)) +
-  geom_bar(position = "fill") +
+```{r}
+#| label: understand-region
+understand_prop <- polentometro_page15 |> 
+  count(Region, understand_galloit_birth) |> 
+  group_by(Region) |> 
+  mutate(
+    prop = n / sum(n),
+    prop_max = ifelse(understand_galloit_birth == "Sì, lo capisco molto bene", prop, 0),
+    prop_max = sum(prop_max)
+  )
+
+understand_prop |> 
+  ggplot(aes(reorder(Region, prop_max), prop, fill = understand_galloit_birth)) +
+  geom_bar(stat = "identity") +
   coord_flip() +
   scale_fill_brewer(type = "div")
+```
 
-polentometro_page8 |> 
-  drop_na(understand_galloit_birth) |> 
+```{r}
+#| label: understand-area
+polentometro_page15 |> 
   ggplot(aes(Area, fill = understand_galloit_birth)) +
   geom_bar(position = "fill") +
   coord_flip() +
@@ -58,8 +70,7 @@ polentometro_page8 |>
 
 ```{r}
 #| label: understand-generation-lik
-understand_generation_lik <- polentometro_page8 |> 
-  drop_na(understand_galloit_birth, generation) |> 
+understand_generation_lik <- polentometro_page15 |> 
   select(generation, understand_galloit_birth) |> 
   count(generation, understand_galloit_birth) |> 
   pivot_wider(names_from = understand_galloit_birth, values_from = n) |> 
@@ -83,22 +94,34 @@ likert(
 ```{r}
 #| label: speak
 
-polentometro_page8 |> 
-  drop_na(speak_galloit_birth, generation) |> 
+polentometro_page15 |> 
   ggplot(aes(generation, fill = speak_galloit_birth)) +
   geom_bar(position = "fill") +
   coord_flip() +
   scale_fill_brewer(type = "div")
+```
 
-polentometro_page8 |> 
-  drop_na(speak_galloit_birth) |> 
-  ggplot(aes(Region, fill = speak_galloit_birth)) +
-  geom_bar(position = "fill") +
+```{r}
+#| label: speak-region
+speak_prop <- polentometro_page15 |> 
+  count(Region, speak_galloit_birth) |> 
+  group_by(Region) |> 
+  mutate(
+    prop = n / sum(n),
+    prop_max = ifelse(speak_galloit_birth == "Sì, lo parlo molto bene", prop, 0),
+    prop_max = sum(prop_max)
+  )
+
+speak_prop |> 
+  ggplot(aes(reorder(Region, prop_max), prop, fill = speak_galloit_birth)) +
+  geom_bar(stat = "identity") +
   coord_flip() +
   scale_fill_brewer(type = "div")
+```
 
-polentometro_page8 |> 
-  drop_na(speak_galloit_birth) |> 
+```{r}
+#| label: speak-area
+polentometro_page15 |> 
   ggplot(aes(Area, fill = speak_galloit_birth)) +
   geom_bar(position = "fill") +
   coord_flip() +
@@ -107,8 +130,7 @@ polentometro_page8 |>
 
 ```{r}
 #| label: speak-generation-lik
-speak_generation_lik <- polentometro_page8 |> 
-  drop_na(speak_galloit_birth, generation) |> 
+speak_generation_lik <- polentometro_page15 |> 
   select(generation, speak_galloit_birth) |> 
   count(generation, speak_galloit_birth) |> 
   pivot_wider(names_from = speak_galloit_birth, values_from = n) |> 
@@ -127,14 +149,14 @@ likert(
 
 ```{r}
 #| label: languages
-polentometro_page8 |> 
-  pivot_longer(c(languages_parents, first_langacq, spoke_to_children, children_speak)) |> 
+polentometro_page15 |> 
+  pivot_longer(c(languages_parents, first_langacq, spoke_to_children, would_teach_children, children_speak)) |> 
   drop_na(value) |> 
   filter(
     !(value %in% c("No_minors", "No_adult_children", "Neither")),
   ) |> 
   mutate(
-    name = factor(name, levels = c("languages_parents", "first_langacq", "spoke_to_children", "children_speak")),
+    name = factor(name, levels = c("languages_parents", "first_langacq", "spoke_to_children", "children_speak", "would_teach_children")),
     value = factor(value, levels = c("Mostly_GI", "Equally", "Mostly_IT"))
   ) |> 
   ggplot(aes(name, fill = value)) +
@@ -149,14 +171,14 @@ polentometro_page8 |>
 
 ```{r}
 #| label: languages-generations
-polentometro_page8 |> 
-  pivot_longer(c(languages_parents, first_langacq, spoke_to_children, children_speak)) |> 
+polentometro_page15 |> 
+  pivot_longer(c(languages_parents, first_langacq, spoke_to_children, would_teach_children, children_speak)) |> 
   drop_na(value, generation) |> 
   filter(
     !(value %in% c("No_minors", "No_adult_children", "Neither")),
   ) |> 
   mutate(
-    name = factor(name, levels = c("languages_parents", "first_langacq", "spoke_to_children", "children_speak")),
+    name = factor(name, levels = c("languages_parents", "first_langacq", "spoke_to_children", "children_speak", "would_teach_children")),
     value = factor(value, levels = c("Mostly_GI", "Equally", "Mostly_IT"))
   ) |> 
   ggplot(aes(name, fill = value)) +
@@ -174,18 +196,16 @@ polentometro_page8 |>
 
 ```{r}
 #| label: prop-speak-plot
-polentometro_page8 |> 
-  drop_na(speak_galloit_birth, generation) |> 
-  ggplot(aes(1, fill = speak_galloit_birth)) +
-  geom_bar(position = "fill") +
+polentometro_page15 |> 
+  ggplot(aes(speak_galloit_birth, fill = speak_galloit_birth)) +
+  geom_bar() +
   coord_flip() +
   scale_fill_brewer(type = "div")
 ```
 
 ```{r}
-polentometro_page8 |> 
-  # TODO: check why there are NAs
-  drop_na(speak_galloit_birth, generation) |> 
+#| label: prop-speak
+polentometro_page15 |> 
   add_count(name = "tot") |> 
   count(speak_galloit_birth, tot) |> 
   mutate(
@@ -198,7 +218,7 @@ polentometro_page8 |>
 ```{r}
 #| label: domains-use
 
-domains_use <- polentometro_page8 |> 
+domains_use <- polentometro_page15 |> 
   select(
     CASE, generation, Area, Region,
     starts_with("with_"), starts_with("at_"), starts_with("about_")
