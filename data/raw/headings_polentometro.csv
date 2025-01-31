@@ -27,7 +27,7 @@ LG03,has_children
 LG04,spoke_to_children
 LG11,children_spoke
 LG12,children_speak
-LG05,would_teach_children
+LG05,would_speak_to_children
 LG06,understand
 LG13,understand_galloit_birth
 LG07,speak

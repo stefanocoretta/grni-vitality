@@ -237,8 +237,8 @@ polentometro_en <- polentometro |>
       "Neither" = "Né in italiano né in dialetto",
       "No_adult_children" = "Non ho figli maggiorenni"
     ),
-    would_teach_children = fct_recode(
-      would_teach_children,
+    would_speak_to_children = fct_recode(
+      would_speak_to_children,
       "Mostly_IT" = "Prevalentemente in italiano",
       "Mostly_GI" = "Prevalentemente in dialetto",
       "Equally" = "In italiano e in dialetto in stessa misura",
