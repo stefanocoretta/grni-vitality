@@ -192,6 +192,26 @@ polentometro_page15 |>
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
 
+## Factor 2: Absolute number of speakers
+
+```{r}
+#| label: abs-speak
+
+pop_regions <- read_csv("data/raw/population-by-region.csv")
+pop_tot <- sum(pop_regions$pop)
+
+polentometro_page15 |> 
+  mutate(
+    speak_yn = ifelse(speak_galloit_birth %in% c("Sì, lo parlo molto bene", "Sì, lo parlo bene"), "yes", "no")
+  ) |> 
+  add_count(name = "tot") |> 
+  count(speak_yn, tot) |> 
+  mutate(
+    perc = n / tot
+  )
+
+```
+
 ## Factor 3: Proportion of speakers
 
 ```{r}
@@ -211,6 +231,38 @@ polentometro_page15 |>
   mutate(
     perc = round(n / tot, 2)
   )
+```
+
+```{r}
+#| label: speak-freq
+polentometro_page15 |> 
+  drop_na(speak_frequency) |> 
+  ggplot(aes(speak_frequency, fill = speak_frequency)) +
+  geom_bar() +
+  coord_flip() +
+  scale_fill_brewer(type = "div")
+```
+
+```{r}
+#| label: speak-freq-speak
+polentometro_page15 |> 
+  drop_na(speak_frequency) |> 
+  ggplot(aes(speak_frequency, fill = speak_galloit_birth)) +
+  geom_bar() +
+  coord_flip() +
+  scale_fill_brewer(type = "div")
+```
+
+```{r}
+#| label: speak-freq-speak-yes
+
+polentometro_page15 |> 
+  drop_na(speak_frequency) |> 
+  filter(speak_galloit_birth %in% c("Sì, lo parlo molto bene", "Sì, lo parlo bene")) |> 
+  ggplot(aes(speak_frequency, fill = speak_frequency)) +
+  geom_bar() +
+  coord_flip() +
+  scale_fill_brewer(type = "div")
 ```
 
 ## Factor 4: Shifts in domains of language use
@@ -302,3 +354,4 @@ domains_use_domains |>
   coord_flip() +
   facet_wrap(~Region)
 ```
+

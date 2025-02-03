@@ -1,0 +1,12 @@
+﻿region,pop,area,pop_density,comuni_n,provinces_n,source
+Lombardia,10012054,23862.87,420,1502,12,ISTAT 2024
+Veneto,4852216,18351.49,264,560,7,ISTAT 2024
+Emilia-Romagna,4451938,22501.82,198,330,9,ISTAT 2024
+Piemonte,4251623,25391.67,167,118,8,ISTAT 2024
+Liguria,1509140,5417.71,279,234,4,ISTAT 2024
+Friuli Venezia Giulia,1194616,7936.83,151,215,4,ISTAT 2024
+Trentino-Alto Adige,1082702,13605.97,80,282,2,ISTAT 2024
+Valle d'Aosta,122877,3258.61,38,74,1,ISTAT 2024
+San Marino ,33698,,,,,2022 https://www.sanmarino.it/popolazione-san-marino/
+Cantone Ticino ,354023,,,,,2022 https://www3.ti.ch/DFE/DR/USTAT/allegati/volume/schede_star_2023_popolazione_e_lavoro.pdf
+Cantone Grigioni,204888,,,,,2023 https://www.gr.ch/IT/cantone/Seiten/Bevoelkerung.aspx#:~:text=Con%20i%20suoi%20204%20888contava%20circa%20204%20888%20abitanti.
