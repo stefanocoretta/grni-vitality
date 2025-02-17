@@ -225,6 +225,36 @@ polentometro_page15 |>
     perc = n / tot
   )
 
+polentometro_page15 |> 
+  mutate(
+    speak_yn = ifelse(
+      speak_galloit_birth %in% c("Sì, lo parlo molto bene", "Sì, lo parlo bene", "Così così") &
+        !(speak_frequency %in% c("Non lo parlo mai", "Lo parlo raramente")),
+      "yes",
+      "no"
+    )
+  ) |> 
+  add_count(name = "tot") |> 
+  count(speak_yn, tot) |> 
+  mutate(
+    perc = n / tot
+  )
+
+tata <- polentometro_page15 |> 
+  mutate(
+    speak_yn = ifelse(
+      speak_galloit_birth %in% c("Sì, lo parlo molto bene", "Sì, lo parlo bene") &
+        !(speak_frequency %in% c("Non lo parlo mai", "Lo parlo raramente")),
+      "yes",
+      "no"
+    )
+  ) |> 
+  add_count(name = "tot") |> 
+  count(speak_yn, generation, tot) |> 
+  mutate(
+    perc = n / tot
+  )
+
 ```
 
 ## Factor 3: Proportion of speakers
