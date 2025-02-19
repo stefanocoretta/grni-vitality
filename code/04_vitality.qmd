@@ -1,7 +1,9 @@
 ---
 title: "Vitality"
 author: "Stefano Coretta"
-format: html
+format:
+  html:
+    toc: true
 ---
 
 ## Read data
@@ -19,7 +21,10 @@ library(tidyverse)
 polentometro_en <- readRDS("data/derived/polentometro_en.rds")
 
 polentometro_page15 <- polentometro_en |> 
-  filter(MAXPAGE >= 15) |> 
+  filter(
+    MAXPAGE >= 15,
+    generation != "Alpha"
+  ) |> 
   mutate(
     understand_galloit_birth = ifelse(is.na(understand_galloit_birth), as.character(understand), as.character(understand_galloit_birth)),
     understand_galloit_birth = factor(understand_galloit_birth, levels = c("No, per niente", "Sì, ma molto poco", "Così così", "Sì, lo capisco bene", "Sì, lo capisco molto bene")),
@@ -192,25 +197,36 @@ polentometro_page15 |>
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
 
-## Factor 2: Absolute number of speakers
+## Factor 2 and 3: Absolute number and proportion of speakers
 
 ```{r}
-#| label: abs-speak
+#| label: population
 
 pop_regions <- read_csv("data/raw/population-by-region.csv")
 pop_tot <- sum(pop_regions$pop)
+```
 
-polentometro_page15 |> 
+The following is an estimate of the proportion of speakers based only on responses of whether they know how to speak GI ("very well", "well").
+
+```{r}
+#| label: prop-speak-1
+prop_speak_1 <- polentometro_page15 |> 
   mutate(
     speak_yn = ifelse(speak_galloit_birth %in% c("Sì, lo parlo molto bene", "Sì, lo parlo bene"), "yes", "no")
   ) |> 
   add_count(name = "tot") |> 
   count(speak_yn, tot) |> 
   mutate(
-    perc = n / tot
+    prop = round(n / tot, 2)
   )
+prop_speak_1
+```
 
-polentometro_page15 |> 
+The following is an estimate of the proportion of speakers based on responses of whether they know how to speak GI ("very well", "well") and the frequency ("some times", "often", "always"). In absolute population, there are about `{r} round((pop_tot * prop_speak_1$prop[2]) / 1000000, 1)` million speakers and `{r} round((pop_tot * prop_speak_1$prop[1]) / 1000000, 1)` million non-speakers.
+
+```{r}
+#| label: prop-speak-2
+prop_speak_2 <- polentometro_page15 |> 
   mutate(
     speak_yn = ifelse(
       speak_galloit_birth %in% c("Sì, lo parlo molto bene", "Sì, lo parlo bene") &
@@ -222,10 +238,16 @@ polentometro_page15 |>
   add_count(name = "tot") |> 
   count(speak_yn, tot) |> 
   mutate(
-    perc = n / tot
+    prop = round(n / tot, 2)
   )
+prop_speak_2
+```
 
-polentometro_page15 |> 
+The following is an estimate of the proportion of speakers based on responses of whether they know how to speak GI ("so so", "very well", "well") and the frequency ("some times", "often", "always"). In absolute population, there are about `{r} round((pop_tot * prop_speak_2$prop[2]) / 1000000, 1)` million speakers and `{r} round((pop_tot * prop_speak_2$prop[1]) / 1000000, 1)` million non-speakers.
+
+```{r}
+#| label: prop-speak-3
+prop_speak_3 <- polentometro_page15 |> 
   mutate(
     speak_yn = ifelse(
       speak_galloit_birth %in% c("Sì, lo parlo molto bene", "Sì, lo parlo bene", "Così così") &
@@ -237,10 +259,16 @@ polentometro_page15 |>
   add_count(name = "tot") |> 
   count(speak_yn, tot) |> 
   mutate(
-    perc = n / tot
+    prop = round(n / tot, 2)
   )
+prop_speak_3
+```
 
-tata <- polentometro_page15 |> 
+The following is an estimate of the proportion of speakers based on responses of whether they know how to speak GI ("very well", "well") and the frequency ("some times", "often", "always") and generation. Proportions are given for speakers (as defined) and non-speakers separately. In absolute population, there are about `{r} round((pop_tot * prop_speak_3$prop[2]) / 1000000, 1)` million speakers and `{r} round((pop_tot * prop_speak_3$prop[1]) / 1000000, 1)` million non-speakers.
+
+```{r}
+#| label: prop-speak-gen
+polentometro_page15 |> 
   mutate(
     speak_yn = ifelse(
       speak_galloit_birth %in% c("Sì, lo parlo molto bene", "Sì, lo parlo bene") &
@@ -249,15 +277,15 @@ tata <- polentometro_page15 |>
       "no"
     )
   ) |> 
+  group_by(speak_yn) |> 
   add_count(name = "tot") |> 
   count(speak_yn, generation, tot) |> 
   mutate(
-    perc = n / tot
-  )
-
+    prop = round(n / tot, 2)
+  ) |> 
+  select(-tot, -n) |> 
+  pivot_wider(names_from = speak_yn, values_from = prop)
 ```
-
-## Factor 3: Proportion of speakers
 
 ```{r}
 #| label: count-speak-plot
