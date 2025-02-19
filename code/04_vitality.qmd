@@ -360,6 +360,36 @@ domains_use_tot <- domains_use |>
 ```
 
 ```{r}
+#| label: domains-use-speak-2
+
+domains_use_speak_2 <- polentometro_page15 |> 
+  mutate(
+    speak_yn = ifelse(
+      speak_galloit_birth %in% c("Sì, lo parlo molto bene", "Sì, lo parlo bene") &
+        !(speak_frequency %in% c("Non lo parlo mai", "Lo parlo raramente")),
+      "yes",
+      "no"
+    )
+  ) |> 
+  filter(speak_yn == "yes") |> 
+  select(
+    CASE, generation, Area, Region,
+    starts_with("with_"), starts_with("at_"), starts_with("about_")
+  ) |> 
+  drop_na(with_tot) |> 
+  pivot_longer(with_tot:about_arguments, names_to = "domain")
+
+domains_use_domains_speak_2 <- domains_use_speak_2 |> 
+  filter(!str_detect(domain, "tot")) |> 
+  mutate(value = as.logical(value))
+
+domains_use_tot_speak_2 <- domains_use_speak_2 |> 
+  filter(str_detect(domain, "tot"))
+```
+
+### With whom
+
+```{r}
 #| label: domains-with
 domains_use_domains |> 
   filter(str_detect(domain, "^with")) |> 
@@ -381,6 +411,19 @@ domains_use_domains |>
   coord_flip() +
   facet_wrap(~Region)
 ```
+
+```{r}
+#| label: domains-with-speak-2
+domains_use_domains_speak_2 |> 
+  filter(str_detect(domain, "^with")) |> 
+  ggplot(aes(generation, fill = value)) +
+  geom_bar(position = "fill") +
+  coord_flip() +
+  facet_wrap(~domain)
+```
+
+
+### Where
 
 ```{r}
 #| label: domains-at
@@ -406,6 +449,19 @@ domains_use_domains |>
 ```
 
 ```{r}
+#| label: domains-at-speak-2
+domains_use_domains_speak_2 |> 
+  filter(str_detect(domain, "^at")) |> 
+  ggplot(aes(generation, fill = value)) +
+  geom_bar(position = "fill") +
+  coord_flip() +
+  facet_wrap(~domain)
+```
+
+
+### About what
+
+```{r}
 #| label: domains-about
 domains_use_domains |> 
   filter(str_detect(domain, "^about")) |> 
@@ -427,3 +483,15 @@ domains_use_domains |>
   coord_flip() +
   facet_wrap(~Region)
 ```
+
+```{r}
+#| label: domains-about-speak-2
+
+domains_use_domains_speak_2 |> 
+  filter(str_detect(domain, "^about")) |> 
+  ggplot(aes(generation, fill = value)) +
+  geom_bar(position = "fill") +
+  coord_flip() +
+  facet_wrap(~domain)
+```
+
