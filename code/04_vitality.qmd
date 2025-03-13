@@ -35,6 +35,60 @@ polentometro_page15 <- polentometro_en |>
 
 ## Factor 1: Intergenerational language transmission
 
+### Language acquisition
+
+```{r}
+#| label: languages
+polentometro_page15 |> 
+  pivot_longer(c(languages_parents, first_langacq, spoke_to_children, would_speak_to_children, children_speak)) |> 
+  drop_na(value) |> 
+  filter(
+    !(value %in% c("No_minors", "No_adult_children", "Neither")),
+  ) |> 
+  mutate(
+    name = factor(name, levels = c("languages_parents", "first_langacq", "spoke_to_children", "children_speak", "would_speak_to_children")),
+    value = factor(value, levels = c("Mostly_GI", "Equally", "Mostly_IT"))
+  ) |> 
+  ggplot(aes(name, fill = value)) +
+  geom_bar(position = "fill") +
+  theme_dark() +
+  scale_x_discrete(labels = c("Parents'\nlanguage", "Acquired\nlanguage", "Spoke to\nchildren", "Children's\nlanguage", "(Would speak to\nchildren)")) +
+  scale_fill_brewer(type = "div", palette = "RdBu", labels = c("Mostly GI", "IT and GI\nequally", "Mostly IT")) +
+  labs(
+    x = element_blank(), y = "Proportion", fill = "Languages spoken"
+  ) +
+  theme(legend.position = "bottom")
+
+ggsave("img/lang-acq.png", width = 7, height = 5)
+```
+
+```{r}
+#| label: languages-generations
+#| fig-asp: 0.3
+polentometro_page15 |> 
+  pivot_longer(c(languages_parents, first_langacq, spoke_to_children, would_speak_to_children, children_speak)) |> 
+  drop_na(value, generation) |> 
+  filter(
+    !(value %in% c("No_minors", "No_adult_children", "Neither")),
+  ) |> 
+  mutate(
+    name = factor(name, levels = c("languages_parents", "first_langacq", "spoke_to_children", "children_speak", "would_speak_to_children")),
+    value = factor(value, levels = c("Mostly_GI", "Equally", "Mostly_IT"))
+  ) |> 
+  ggplot(aes(name, fill = value)) +
+  geom_bar(position = "fill") +
+  facet_grid(cols = vars(generation)) +
+  theme_dark() +
+  scale_x_discrete(labels = c("PL", "FL", "to-C", "by-C", "W")) +
+  scale_fill_brewer(type = "div", palette = "RdBu", labels = c("Mostly GI", "IT and GI\nequally", "Mostly IT")) +
+  labs(
+    x = element_blank(), y = "Proportion", fill = "Languages spoken"
+  ) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1), legend.position = "bottom")
+
+ggsave("img/lang-acq-gens.png", width = 7, height = 2.5)
+```
+
 ### Understand GI
 
 ```{r}
@@ -42,8 +96,14 @@ polentometro_page15 <- polentometro_en |>
 polentometro_page15 |> 
   ggplot(aes(generation, fill = understand_galloit_birth)) +
   geom_bar(position = "fill") +
-  coord_flip() +
-  scale_fill_brewer(type = "div")
+  scale_fill_brewer(
+    type = "div",
+    labels = c("Not at all", "Only a little", "So and so", "Well", "Very well")
+  ) +
+  labs(
+    x = "Cohort generation", y = "Proportion", fill = "Understand GI"
+  )
+ggsave("img/understand-gens.png", width = 7, height = 5)
 ```
 
 ```{r}
@@ -102,8 +162,14 @@ likert(
 polentometro_page15 |> 
   ggplot(aes(generation, fill = speak_galloit_birth)) +
   geom_bar(position = "fill") +
-  coord_flip() +
-  scale_fill_brewer(type = "div")
+  scale_fill_brewer(
+    type = "div",
+    labels = c("Not at all", "Only a little", "So and so", "Well", "Very well")
+  ) +
+  labs(
+    x = "Cohort generation", y = "Proportion", fill = "Speak GI"
+  )
+ggsave("img/speak-gens.png", width = 7, height = 5)
 ```
 
 ```{r}
@@ -150,52 +216,6 @@ likert(
 )
 ```
 
-### Language acquisition
-
-```{r}
-#| label: languages
-polentometro_page15 |> 
-  pivot_longer(c(languages_parents, first_langacq, spoke_to_children, would_speak_to_children, children_speak)) |> 
-  drop_na(value) |> 
-  filter(
-    !(value %in% c("No_minors", "No_adult_children", "Neither")),
-  ) |> 
-  mutate(
-    name = factor(name, levels = c("languages_parents", "first_langacq", "spoke_to_children", "children_speak", "would_speak_to_children")),
-    value = factor(value, levels = c("Mostly_GI", "Equally", "Mostly_IT"))
-  ) |> 
-  ggplot(aes(name, fill = value)) +
-  geom_bar(position = "fill") +
-  theme_dark() +
-  scale_fill_brewer(type = "div", palette = "RdBu") +
-  labs(
-    x = element_blank(), y = "Proportion", fill = "Languages spoken"
-  ) +
-  theme(legend.position = "bottom")
-```
-
-```{r}
-#| label: languages-generations
-polentometro_page15 |> 
-  pivot_longer(c(languages_parents, first_langacq, spoke_to_children, would_speak_to_children, children_speak)) |> 
-  drop_na(value, generation) |> 
-  filter(
-    !(value %in% c("No_minors", "No_adult_children", "Neither")),
-  ) |> 
-  mutate(
-    name = factor(name, levels = c("languages_parents", "first_langacq", "spoke_to_children", "children_speak", "would_speak_to_children")),
-    value = factor(value, levels = c("Mostly_GI", "Equally", "Mostly_IT"))
-  ) |> 
-  ggplot(aes(name, fill = value)) +
-  geom_bar(position = "fill") +
-  facet_wrap(~generation) +
-  theme_dark() +
-  scale_fill_brewer(type = "div", palette = "RdBu") +
-  labs(
-    x = element_blank(), y = "Proportion", fill = "Languages spoken"
-  ) +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))
-```
 
 ## Factor 2 and 3: Absolute number and proportion of speakers
 
@@ -422,7 +442,6 @@ domains_use_domains_speak_2 |>
   facet_wrap(~domain)
 ```
 
-
 ### Where
 
 ```{r}
@@ -457,7 +476,6 @@ domains_use_domains_speak_2 |>
   coord_flip() +
   facet_wrap(~domain)
 ```
-
 
 ### About what
 
@@ -494,4 +512,3 @@ domains_use_domains_speak_2 |>
   coord_flip() +
   facet_wrap(~domain)
 ```
-
