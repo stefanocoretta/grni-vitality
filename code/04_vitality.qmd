@@ -216,7 +216,6 @@ likert(
 )
 ```
 
-
 ## Factor 2 and 3: Absolute number and proportion of speakers
 
 ```{r}
@@ -352,10 +351,46 @@ polentometro_page15 |>
 polentometro_page15 |> 
   drop_na(speak_frequency) |> 
   filter(speak_galloit_birth %in% c("Sì, lo parlo molto bene", "Sì, lo parlo bene")) |> 
-  ggplot(aes(speak_frequency, fill = speak_frequency)) +
-  geom_bar() +
-  coord_flip() +
-  scale_fill_brewer(type = "div")
+  add_count(name = "tot") |> 
+  count(speak_frequency, tot) |> 
+  mutate(
+    Proportion =  round(n / tot, 2)
+  ) |> 
+  ggplot(aes(speak_frequency, Proportion, fill = speak_frequency)) +
+  geom_bar(stat = "identity") +
+  scale_fill_brewer(type = "div") +
+  scale_x_discrete(labels = c("Never", "Rarely", "Some times", "Often", "Always")) +
+  labs(
+    x = "Speaking frequency"
+  ) +
+  theme_dark() +
+  theme(legend.position = "none")
+
+ggsave("img/speak-freq.png", width = 6, height = 5)
+```
+
+```{r}
+#| label: speak-freq-speak-yes-gen
+polentometro_page15 |> 
+  drop_na(speak_frequency) |> 
+  filter(speak_galloit_birth %in% c("Sì, lo parlo molto bene", "Sì, lo parlo bene")) |> 
+  add_count(generation, name = "tot") |> 
+  count(generation, speak_frequency, tot) |> 
+  mutate(
+    Proportion =  round(n / tot, 2)
+  ) |> 
+  ggplot(aes(speak_frequency, Proportion, fill = speak_frequency)) +
+  geom_bar(stat = "identity") +
+  scale_fill_brewer(type = "div") +
+  scale_x_discrete(labels = c("N", "R", "ST", "O", "A")) +
+  facet_grid(cols = vars(generation)) +
+  labs(
+    x = "Speaking frequency"
+  ) +
+  theme_dark() +
+  theme(legend.position = "none")
+
+ggsave("img/speak-freq-gens.png", width = 7, height = 2)
 ```
 
 ## Factor 4: Shifts in domains of language use
