@@ -538,12 +538,78 @@ domains_use_domains |>
 ```
 
 ```{r}
-#| label: domains-about-speak-2
+#| label: domains-about-gen
 
-domains_use_domains_speak_2 |> 
+domains_use_domains |> 
   filter(str_detect(domain, "^about")) |> 
+  mutate(
+    domain = case_when(
+      domain == "about_anger" ~ "Anger",
+      domain == "about_arguments" ~ "Disagreements",
+      domain == "about_counting" ~ "Counting",
+      domain == "about_directions" ~ "Giving directions",
+      domain == "about_distantpast" ~ "Distant past",
+      domain == "about_foreignnews" ~ "Foreign news",
+      domain == "about_givinginstr" ~ "Giving instructions",
+      domain == "about_greetings" ~ "Greetings",
+      domain == "about_happiness" ~ "Happiness",
+      domain == "about_intimate" ~ "Intimacy",
+      domain == "about_joking" ~ "Joking",
+      domain == "about_news" ~ "News",
+      domain == "about_politics" ~ "Politics",
+      domain == "about_praying" ~ "Praying",
+      domain == "about_science" ~ "Science",
+      domain == "about_storytell" ~ "Story telling",
+      domain == "about_swearing" ~ "Swearing",
+      domain == "about_thinking" ~ "Thinking",
+      domain == "about_wishes" ~ "Wishes"
+    )
+  ) |> 
   ggplot(aes(generation, fill = value)) +
   geom_bar(position = "fill") +
-  coord_flip() +
-  facet_wrap(~domain)
+  facet_wrap(~domain) +
+  scale_x_discrete(labels = c("S", "B", "X", "M", "Z")) +
+  scale_fill_brewer(type = "qual", direction = -1) +
+  labs(
+    x = "Cohort generation", y = "Proportion"
+  )
 ```
+
+```{r}
+#| label: domains-about-gen-speak-2
+
+domains_use_domains_speak_2 |> 
+  filter(str_detect(domain, "^about")) |>
+  mutate(
+    domain = case_when(
+      domain == "about_anger" ~ "Anger",
+      domain == "about_arguments" ~ "Disagreements",
+      domain == "about_counting" ~ "Counting",
+      domain == "about_directions" ~ "Giving directions",
+      domain == "about_distantpast" ~ "Distant past",
+      domain == "about_foreignnews" ~ "Foreign news",
+      domain == "about_givinginstr" ~ "Giving instructions",
+      domain == "about_greetings" ~ "Greetings",
+      domain == "about_happiness" ~ "Happiness",
+      domain == "about_intimate" ~ "Intimacy",
+      domain == "about_joking" ~ "Joking",
+      domain == "about_news" ~ "News",
+      domain == "about_politics" ~ "Politics",
+      domain == "about_praying" ~ "Praying",
+      domain == "about_science" ~ "Science",
+      domain == "about_storytell" ~ "Story telling",
+      domain == "about_swearing" ~ "Swearing",
+      domain == "about_thinking" ~ "Thinking",
+      domain == "about_wishes" ~ "Wishes"
+    )
+  ) |> 
+  ggplot(aes(generation, fill = value)) +
+  geom_bar(position = "fill") +
+  facet_wrap(~domain) +
+  scale_x_discrete(labels = c("S", "B", "X", "M", "Z")) +
+  scale_fill_brewer(type = "qual", direction = -1) +
+  labs(
+    x = "Cohort generation", y = "Proportion"
+  )
+```
+
