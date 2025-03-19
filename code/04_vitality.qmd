@@ -468,12 +468,48 @@ domains_use_domains |>
 ```
 
 ```{r}
-#| label: domains-with-speak-2
+#| label: domains-with-gen
+
+domains_use_domains |> 
+  filter(str_detect(domain, "^with")) |> 
+  mutate(
+    domain = case_when(
+      domain == "with_acquantainces" ~ "Acquantainces",
+      domain == "with_animals" ~ "Animals",
+      domain == "with_children" ~ "Children",
+      domain == "with_colleagues" ~ "Colleagues",
+      domain == "with_doctor" ~ "Doctors",
+      domain == "with_elderly" ~ "Elderly",
+      domain == "with_family" ~ "Relatives",
+      domain == "with_friends" ~ "Friends",
+      domain == "with_neighbours" ~ "Neighbours",
+      domain == "with_notknown" ~ "Strangers",
+      domain == "with_priest" ~ "Ministers",
+      domain == "with_schoolmates" ~ "Schoolmates",
+      domain == "with_teachers" ~ "Teachers",
+      domain == "with_unimates" ~ "Uni classmates",
+      domain == "with_uniprofs" ~ "Uni professors"
+    )
+  ) |> 
+  ggplot(aes(generation, fill = value)) +
+  geom_bar(position = "fill") +
+  facet_wrap(~domain, ncol = 8) +
+  scale_x_discrete(labels = c("S", "B", "X", "M", "Z")) +
+  scale_fill_brewer(type = "qual", direction = -1) +
+  labs(
+    x = "Cohort generation", y = "Proportion"
+  )
+
+ggsave("img/dom-with-gen.png", width = 10, height = 2.5)
+```
+
+```{r}
+#| label: domains-with-gen-speak-2
+
 domains_use_domains_speak_2 |> 
   filter(str_detect(domain, "^with")) |> 
   ggplot(aes(generation, fill = value)) +
   geom_bar(position = "fill") +
-  coord_flip() +
   facet_wrap(~domain)
 ```
 
@@ -503,12 +539,39 @@ domains_use_domains |>
 ```
 
 ```{r}
-#| label: domains-at-speak-2
+#| label: domains-at-gen
+domains_use_domains |> 
+  filter(str_detect(domain, "^at")) |> 
+  mutate(
+    domain = case_when(
+      domain == "at_church" ~ "Church",
+      domain == "at_home" ~ "At home",
+      domain == "at_market" ~ "Market",
+      domain == "at_pub" ~ "Pub",
+      domain == "at_school" ~ "School",
+      domain == "at_shop" ~ "Shops",
+      domain == "at_uni" ~ "University",
+      domain == "at_work" ~ "Workplace"
+    )
+  ) |> 
+  ggplot(aes(generation, fill = value)) +
+  geom_bar(position = "fill") +
+  facet_wrap(~domain, ncol = 8) +
+  scale_x_discrete(labels = c("S", "B", "X", "M", "Z")) +
+  scale_fill_brewer(type = "qual", direction = -1) +
+  labs(
+    x = "Cohort generation", y = "Proportion"
+  )
+
+ggsave("img/dom-at-gen.png", width = 10, height = 1.5)
+```
+
+```{r}
+#| label: domains-at-gen-speak-2
 domains_use_domains_speak_2 |> 
   filter(str_detect(domain, "^at")) |> 
   ggplot(aes(generation, fill = value)) +
   geom_bar(position = "fill") +
-  coord_flip() +
   facet_wrap(~domain)
 ```
 
@@ -545,12 +608,12 @@ domains_use_domains |>
   mutate(
     domain = case_when(
       domain == "about_anger" ~ "Anger",
-      domain == "about_arguments" ~ "Disagreements",
+      domain == "about_arguments" ~ "Arguments",
       domain == "about_counting" ~ "Counting",
-      domain == "about_directions" ~ "Giving directions",
+      domain == "about_directions" ~ "Giving\ndirections",
       domain == "about_distantpast" ~ "Distant past",
       domain == "about_foreignnews" ~ "Foreign news",
-      domain == "about_givinginstr" ~ "Giving instructions",
+      domain == "about_givinginstr" ~ "Giving\ninstructions",
       domain == "about_greetings" ~ "Greetings",
       domain == "about_happiness" ~ "Happiness",
       domain == "about_intimate" ~ "Intimacy",
@@ -567,12 +630,14 @@ domains_use_domains |>
   ) |> 
   ggplot(aes(generation, fill = value)) +
   geom_bar(position = "fill") +
-  facet_wrap(~domain) +
+  facet_wrap(~domain, ncol = 10) +
   scale_x_discrete(labels = c("S", "B", "X", "M", "Z")) +
   scale_fill_brewer(type = "qual", direction = -1) +
   labs(
     x = "Cohort generation", y = "Proportion"
   )
+
+ggsave("img/dom-about-gen.png", width = 10, height = 3)
 ```
 
 ```{r}
@@ -612,4 +677,3 @@ domains_use_domains_speak_2 |>
     x = "Cohort generation", y = "Proportion"
   )
 ```
-
