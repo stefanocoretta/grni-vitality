@@ -1025,6 +1025,24 @@
       ],
       "Hash": "15e9634c0fcd294799e9b2e929ed1b86"
     },
+    "ggh4x": {
+      "Package": "ggh4x",
+      "Version": "0.3.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "cli",
+        "ggplot2",
+        "grid",
+        "gtable",
+        "lifecycle",
+        "rlang",
+        "scales",
+        "stats",
+        "vctrs"
+      ],
+      "Hash": "8e0e5e8db2bda5c3bdc48268afa5afea"
+    },
     "ggmosaic": {
       "Package": "ggmosaic",
       "Version": "0.3.3",

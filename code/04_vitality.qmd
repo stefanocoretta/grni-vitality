@@ -14,6 +14,7 @@ format:
 
 library(HH)
 library(tidyverse)
+library(ggh4x)
 ```
 
 ```{r}
@@ -676,4 +677,55 @@ domains_use_domains_speak_2 |>
   labs(
     x = "Cohort generation", y = "Proportion"
   )
+```
+
+## Factor 5: Response to New Domains and Media
+
+```{r}
+#| label: new-doms
+
+new_domains_use <- polentometro_page15 |> 
+  select(
+    CASE, generation, Area, Region,
+    ends_with("_write"), personal_notes, materials_tv, listen
+  ) |> 
+  drop_na(no_write) |> 
+  pivot_longer(c(ends_with("_write"), personal_notes, materials_tv, listen), names_to = "domain")
+
+new_domains_use_domains <- new_domains_use |>
+  mutate(value = as.logical(value))
+```
+
+```{r}
+#| label: new-doms-plot
+
+new_domains_use_domains |>
+  mutate(
+    domain = case_when(
+      domain == "literature_write" ~ "Literature",
+      domain == "messaging_write" ~ "Messaging",
+      domain == "read_write" ~ "Read and write",
+      domain == "no_write" ~ "Doesn't write",
+      domain == "personal_notes" ~ "Note taking",
+      domain == "print_email_write" ~ "Emails/letters",
+      domain == "socialmedia_write" ~ "Social Media",
+      domain == "materials_tv" ~ "TV/radio prog",
+      domain == "listen" ~ "TV/radio"
+    ),
+    question = case_when(
+      domain %in% c("Literature", "Messaging", "Doesn't write", "Note taking", "Emails/letters", "Social Media", "TV/radio") ~ "Do you read/write/listen to?",
+      domain == "Read and write" ~ "Can you?",
+      domain == "TV/radio prog" ~ "Know of?"
+    )
+  ) |> 
+  ggplot(aes(generation, fill = value)) +
+  geom_bar(position = "fill") +
+  facet_nested_wrap(~question + domain, ncol = 10) +
+  scale_x_discrete(labels = c("S", "B", "X", "M", "Z")) +
+  scale_fill_brewer(type = "qual", direction = -1) +
+  labs(
+    x = "Cohort generation", y = "Proportion"
+  )
+
+ggsave("img/new-doms.png", width = 10, height = 2.5)
 ```
