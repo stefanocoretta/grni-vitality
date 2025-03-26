@@ -713,7 +713,7 @@ new_domains_use_domains |>
       domain == "listen" ~ "TV/radio"
     ),
     question = case_when(
-      domain %in% c("Literature", "Messaging", "Doesn't write", "Note taking", "Emails/letters", "Social Media", "TV/radio") ~ "Do you read/write/listen to?",
+      domain %in% c("Literature", "Messaging", "Doesn't write", "Note taking", "Emails/letters", "Social Media", "TV/radio") ~ "Do you write/listen to?",
       domain == "Read and write" ~ "Can you?",
       domain == "TV/radio prog" ~ "Know of?"
     )
@@ -727,5 +727,79 @@ new_domains_use_domains |>
     x = "Cohort generation", y = "Proportion"
   )
 
-ggsave("img/new-doms.png", width = 10, height = 2.5)
+ggsave("img/new-doms.png", width = 10, height = 2)
+```
+
+## Factor 6: Availability of Materials for Language Education and Literacy
+
+```{r}
+#| label: materials
+
+materials <- polentometro_page15 |> 
+  select(
+    CASE, generation, Area, Region,
+    starts_with("materials_")
+  ) |> 
+  drop_na(materials_tot) |> 
+  pivot_longer(starts_with("materials_"), names_to = "materials")
+
+materials <- materials |>
+  filter(materials != "materials_tot") |> 
+  mutate(value = as.logical(value))
+
+materials_tot <- materials |> 
+  filter(materials == "materials_tot")
+```
+
+```{r}
+#| label: materials-plot
+
+materials |>
+  ggplot(aes(generation, fill = value)) +
+  geom_bar(position = "fill") +
+  facet_wrap(~materials, ncol = 10) +
+  scale_x_discrete(labels = c("S", "B", "X", "M", "Z")) +
+  scale_fill_brewer(type = "qual", direction = -1) +
+  labs(
+    x = "Cohort generation", y = "Proportion"
+  )
+
+ggsave("img/materials.png", width = 10, height = 2)
+```
+
+## Factor 8: Community Members’ Attitudes towards Their Own Language
+
+```{r}
+#| label: attitudes
+
+attitudes <- polentometro_page15 |> 
+  select(
+    CASE, generation, Area, Region, reaction, loss, taught_at_school
+  ) |> 
+  drop_na(reaction) |> 
+  pivot_longer(c(reaction, loss, taught_at_school), names_to = "attitude") |> 
+  mutate(
+    value = case_when(
+      value %in% c("Yes", "Positive") ~ "Yes/Positive",
+      value %in% c("No", "Negative") ~ "No/Negative",
+      TRUE ~ value
+    ),
+    value = factor(value, levels = c("Yes/Positive", "Indifferent", "No/Negative"))
+  )
+```
+
+```{r}
+#| label: attitudes-plot
+
+attitudes |> 
+  ggplot(aes(attitude, fill = value)) +
+  geom_bar(position = "fill") +
+  scale_fill_brewer(type = "div") +
+  scale_x_discrete(labels = c("Loss", "Reaction", "Taught at school")) +
+  theme_dark() +
+  labs(
+    x = element_blank(), y = "Proportion"
+  )
+
+ggsave("img/attitudes.png", width = 7, height = 5)
 ```
