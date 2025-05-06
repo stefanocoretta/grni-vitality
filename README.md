@@ -1,3 +1,3 @@
-# Assessing the vitality of Gallo-Italian (Romance)
+# Assessing the vitality of Gallo-Romance of Northern Italy
 
 Welcome!
