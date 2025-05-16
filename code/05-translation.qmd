@@ -1,0 +1,26 @@
+---
+title: "Untitled"
+format: html
+---
+
+```{r}
+#| label: setup
+
+library(tidyverse)
+```
+
+```{r}
+#| label: read-data
+
+polentometro_en <- readRDS("data/derived/polentometro_en.rds")
+```
+
+
+```{r}
+translation <- polentometro_en |> 
+  select(translation, Region, Province, Comune) |> 
+  drop_na(translation) |> 
+  arrange(Region, Province, Comune)
+
+write_csv(translation, "data/derived/translation.csv")
+```
