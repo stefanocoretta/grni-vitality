@@ -24,3 +24,15 @@ translation <- polentometro_en |>
 
 write_csv(translation, "data/derived/translation.csv")
 ```
+
+```{r}
+translation_boom <- polentometro_en |> 
+  filter(
+    speak_frequency == "Lo parlo sempre",
+    generation %in% c("Boomers", "Silent")
+  ) |> 
+  select(translation, Region, Province, Comune) |> 
+  drop_na(translation) |> 
+  arrange(Region, Province, Comune)
+```
+
