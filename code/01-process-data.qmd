@@ -155,7 +155,15 @@ headings_polentometro <- read_csv("data/raw/headings_polentometro.csv") |>
   deframe()
 
 polentometro <- polentometro |> 
-  rename(headings_polentometro)
+  rename(headings_polentometro) |> 
+  mutate(
+    is_speaker = ifelse(
+      speak_galloit_birth %in% c("Sì, lo parlo molto bene", "Sì, lo parlo bene") &
+        !(speak_frequency %in% c("Non lo parlo mai", "Lo parlo raramente")),
+      "yes",
+      "no"
+    )
+  )
 
 saveRDS(polentometro, "data/derived/polentometro.rds")
 
