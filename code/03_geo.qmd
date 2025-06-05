@@ -33,23 +33,51 @@ geo_counts_province <- polentometro_page15 %>%
 
 geo_counts_region <- polentometro_page15 %>%
   count(Region, sort = TRUE)
+
+speak_counts_province <- polentometro_page15 %>%
+  count(is_speaker, Region, Province, sort = TRUE) |> 
+  pivot_wider(names_from = is_speaker, values_from = n, values_fill = 0) |> 
+  mutate(
+    tot = `TRUE` + `FALSE`,
+    prop = `TRUE` / tot
+  )
 ```
+
+## Geo data
 
 ```{r}
 #| label: italy-gis
 #| message: false
 
+regions <- c("Valle d'Aosta", "Piemonte", "Liguria", "Lombardia", "Emilia-Romagna", "Veneto", "Friuli-Venezia Giulia", "Trentino-Alto Adige", "San Marino", "Grigioni", "Ticino")
+
 italy <- ne_countries(continent = "Europe", scale = "large", returnclass = "sf")
 
-italy_adm1 <- st_read("data/italy-adm1/bb489fv3314.shp")
-italy_adm2 <- st_read("data/italy-adm2/mn871sp9778.shp")
+italy_adm1 <- st_read("data/italy-adm1/bb489fv3314.shp") |> 
+  filter(name_1 %in% regions)
+italy_adm2 <- st_read("data/italy-adm2/mn871sp9778.shp") |> 
+  filter(name_1 %in% regions) |> 
+  mutate(
+    name_2 = case_when(
+      name_2 == "Padua" ~ "Padova",
+      name_2 == "Forli' - Cesena" ~ "Forlì-Cesena",
+      name_2 == "Reggio Nell'Emilia" ~ "Reggio nell'Emilia",
+      name_2 == "Aosta" ~ "Valle d'Aosta/Vallée d'Aoste",
+      name_2 == "Monza and Brianza" ~ "Monza e della Brianza",
+      name_2 == "Mantua" ~ "Mantova",
+      name_2 == "Bolzano" ~ "Bolzano/Bozen",
+      TRUE ~ name_2
+    )
+  )
 
-italy_adm2 <- left_join(italy_adm2, geo_counts_province, by = c("name_2" = "Province"))
-
-regions <- c("Valle d'Aosta", "Piemonte", "Liguria", "Lombardia", "Emilia-Romagna", "Veneto", "Friuli-Venezia Giulia", "Trentino-Alto Adige", "San Marino")
+responses_provinces <- left_join(italy_adm2, geo_counts_province, by = c("name_2" = "Province"))
+speakers_provinces <- left_join(italy_adm2, speak_counts_province, by = c("name_2" = "Province"))
 ```
 
+
 ## Maps
+
+### Number of responses
 
 ```{r}
 #| label: comuni-counts
@@ -57,13 +85,17 @@ regions <- c("Valle d'Aosta", "Piemonte", "Liguria", "Lombardia", "Emilia-Romagn
 
 ggplot() +
   geom_sf(data = italy) +
-  geom_sf(data = italy_adm1 %>% filter(name_1 %in% regions), aes(fill = name_1), alpha = 0.3) +
-  geom_sf(data = italy_adm2 %>% filter(name_1 %in% regions), fill = NA) +
+  geom_sf(data = italy_adm1, aes(fill = name_1), alpha = 0.3) +
+  geom_sf(data = responses_provinces, fill = NA) +
   coord_sf(c(6.5, 14), c(43.5, 47)) +
   geom_point(data = geo_counts_comune, aes(long, lat, size = n), alpha = 0.5) +
   labs(x = element_blank(), y = element_blank()) +
   theme_light() +
-  theme(legend.position = "none")
+  labs(
+    title = "Number of respondents per comune",
+    size = "Number"
+  ) +
+  guides(fill = "none")
 
 ggsave("img/comuni-counts.png", width = 7, height = 5)
 ```
@@ -73,13 +105,53 @@ ggsave("img/comuni-counts.png", width = 7, height = 5)
 
 ggplot() +
   geom_sf(data = italy) +
-  geom_sf(data = italy_adm2 %>% filter(name_1 %in% regions), aes(fill = n)) +
-  geom_sf(data = italy_adm1 %>% filter(name_1 %in% regions), fill = NA, colour = "red") +
-  scale_fill_distiller(palette = "BuGn", direction = 1, limits = c(0, max(geo_counts_province$n, na.rm = TRUE))) +
+  geom_sf(data = responses_provinces, aes(fill = n)) +
+  geom_sf(data = italy_adm1, fill = NA, colour = "red") +
+  scale_fill_distiller(palette = "YlGnBu", direction = 1, limits = c(0, max(geo_counts_province$n, na.rm = TRUE))) +
+  coord_sf(c(6.5, 14), c(43.5, 47)) +
+  labs(x = element_blank(), y = element_blank()) +
+  theme_light() +
+  labs(
+    title = "Number of respondents per province",
+    fill = "Number"
+  )
+
+ggsave("img/provincie-counts.png", width = 7, height = 5)
+```
+
+### Number of speakers
+
+```{r}
+#| label: speaker-hex
+#| warning: false
+
+ggplot(italy) +
+  geom_sf(fill = "#FBEAC8", colour = "#aa7733", size = 0.5) +
+  stat_summary_hex(
+    data = polentometro_page15,
+    aes(long, lat, z = as.numeric(is_speaker)),
+    colour = "grey7",
+    binwidth = 0.3
+  ) +
+  coord_sf(c(6.5, 14), c(43.5, 47)) +
+  scale_fill_distiller(direction = 1)
+
+ggsave("img/speaker-hex.png", width = 7, height = 5)
+```
+
+
+```{r}
+#| label: speaker-province
+
+ggplot() +
+  geom_sf(data = italy) +
+  geom_sf(data = speakers_provinces, aes(fill = prop)) +
+  geom_sf(data = italy_adm1, fill = NA, colour = "red") +
+  scale_fill_distiller(palette = "YlGnBu", direction = 1, limits = c(0, 1)) +
   coord_sf(c(6.5, 14), c(43.5, 47)) +
   labs(x = element_blank(), y = element_blank()) +
   theme_light()
 
-ggsave("img/provincie-counts.png", width = 7, height = 5)
-
+ggsave("img/speaker-province.png", width = 7, height = 5)
 ```
+
