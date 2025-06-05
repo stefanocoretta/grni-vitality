@@ -79,7 +79,7 @@ comuni_full <- comuni |>
 
 ## Read data
 
-### GI questionnaire
+### GR questionnaire
 
 We can read the data from SosciSurvey using the SosciSurvey API, which has been enabled for this project. No credentials are necessary.
 
@@ -208,14 +208,14 @@ polentometro_en <- polentometro |>
     languages_parents = fct_recode(
       languages_parents,
       "Mostly_IT" = "Prevalentemente in italiano",
-      "Mostly_GI" = "Prevalentemente in dialetto",
+      "Mostly_GR" = "Prevalentemente in dialetto",
       "Equally" = "In italiano e in dialetto con la stessa frequenza",
       "Neither" = "Né in italiano né in dialetto"
     ),
     first_langacq = fct_recode(
       first_langacq,
       "Mostly_IT" = "Prevalentemente in italiano",
-      "Mostly_GI" = "Prevalentemente in dialetto",
+      "Mostly_GR" = "Prevalentemente in dialetto",
       "Equally" = "In italiano e in dialetto con la stessa frequenza",
       "Neither" = "Né in italiano né in dialetto"
     ),
@@ -225,14 +225,14 @@ polentometro_en <- polentometro |>
     spoke_to_children = fct_recode(
       spoke_to_children,
       "Mostly_IT" = "Prevalentemente in italiano",
-      "Mostly_GI" = "Prevalentemente in dialetto",
+      "Mostly_GR" = "Prevalentemente in dialetto",
       "Equally" = "In italiano e in dialetto con la stessa frequenza",
       "Neither" = "Né in italiano né in dialetto"
     ),
     children_spoke = fct_recode(
       children_spoke,
       "Mostly_IT" = "Prevalentemente in italiano",
-      "Mostly_GI" = "Prevalentemente in dialetto",
+      "Mostly_GR" = "Prevalentemente in dialetto",
       "Equally" = "In italiano e in dialetto in stessa misura",
       "Neither" = "Né in italiano né in dialetto",
       "No_minors" = "Non ho figli minorenni"
@@ -240,7 +240,7 @@ polentometro_en <- polentometro |>
     children_speak = fct_recode(
       children_speak,
       "Mostly_IT" = "Prevalentemente in italiano",
-      "Mostly_GI" = "Prevalentemente in dialetto",
+      "Mostly_GR" = "Prevalentemente in dialetto",
       "Equally" = "In italiano e in dialetto con la stessa frequenza",
       "Neither" = "Né in italiano né in dialetto",
       "No_adult_children" = "Non ho figli maggiorenni"
@@ -248,7 +248,7 @@ polentometro_en <- polentometro |>
     would_speak_to_children = fct_recode(
       would_speak_to_children,
       "Mostly_IT" = "Prevalentemente in italiano",
-      "Mostly_GI" = "Prevalentemente in dialetto",
+      "Mostly_GR" = "Prevalentemente in dialetto",
       "Equally" = "In italiano e in dialetto in stessa misura",
       "Neither" = "Né in italiano né in dialetto"
     ),

@@ -48,13 +48,13 @@ polentometro_page15 |>
   ) |> 
   mutate(
     name = factor(name, levels = c("languages_parents", "first_langacq", "spoke_to_children", "children_speak", "would_speak_to_children")),
-    value = factor(value, levels = c("Mostly_GI", "Equally", "Mostly_IT"))
+    value = factor(value, levels = c("Mostly_GR", "Equally", "Mostly_IT"))
   ) |> 
   ggplot(aes(name, fill = value)) +
   geom_bar(position = "fill") +
   theme_dark() +
   scale_x_discrete(labels = c("Parents'\nlanguage", "Acquired\nlanguage", "Spoke to\nchildren", "Children's\nlanguage", "(Would speak to\nchildren)")) +
-  scale_fill_brewer(type = "div", palette = "RdBu", labels = c("Mostly GI", "IT and GI\nequally", "Mostly IT")) +
+  scale_fill_brewer(type = "div", palette = "RdBu", labels = c("Mostly GR", "IT and GR\nequally", "Mostly IT")) +
   labs(
     x = element_blank(), y = "Proportion", fill = "Languages spoken"
   ) +
@@ -74,14 +74,14 @@ polentometro_page15 |>
   ) |> 
   mutate(
     name = factor(name, levels = c("languages_parents", "first_langacq", "spoke_to_children", "children_speak", "would_speak_to_children")),
-    value = factor(value, levels = c("Mostly_GI", "Equally", "Mostly_IT"))
+    value = factor(value, levels = c("Mostly_GR", "Equally", "Mostly_IT"))
   ) |> 
   ggplot(aes(name, fill = value)) +
   geom_bar(position = "fill") +
   facet_grid(cols = vars(generation)) +
   theme_dark() +
   scale_x_discrete(labels = c("PL", "FL", "to-C", "by-C", "W")) +
-  scale_fill_brewer(type = "div", palette = "RdBu", labels = c("Mostly GI", "IT and GI\nequally", "Mostly IT")) +
+  scale_fill_brewer(type = "div", palette = "RdBu", labels = c("Mostly GR", "IT and GR\nequally", "Mostly IT")) +
   labs(
     x = element_blank(), y = "Proportion", fill = "Languages spoken"
   ) +
@@ -90,7 +90,7 @@ polentometro_page15 |>
 ggsave("img/lang-acq-gens.png", width = 7, height = 2.5)
 ```
 
-### Understand GI
+### Understand GR
 
 ```{r}
 #| label: understand
@@ -102,7 +102,7 @@ polentometro_page15 |>
     labels = c("Not at all", "Only a little", "So and so", "Well", "Very well")
   ) +
   labs(
-    x = "Cohort generation", y = "Proportion", fill = "Understand GI"
+    x = "Cohort generation", y = "Proportion", fill = "Understand GR"
   )
 ggsave("img/understand-gens.png", width = 7, height = 5)
 ```
@@ -155,7 +155,7 @@ likert(
 )
 ```
 
-### Speak GI
+### Speak GR
 
 ```{r}
 #| label: speak
@@ -168,7 +168,7 @@ polentometro_page15 |>
     labels = c("Not at all", "Only a little", "So and so", "Well", "Very well")
   ) +
   labs(
-    x = "Cohort generation", y = "Proportion", fill = "Speak GI"
+    x = "Cohort generation", y = "Proportion", fill = "Speak GR"
   )
 ggsave("img/speak-gens.png", width = 7, height = 5)
 ```
@@ -226,7 +226,7 @@ pop_regions <- read_csv("data/raw/population-by-region.csv")
 pop_tot <- sum(pop_regions$pop)
 ```
 
-The following is an estimate of the proportion of speakers based only on responses of whether they know how to speak GI ("very well", "well").
+The following is an estimate of the proportion of speakers based only on responses of whether they know how to speak GR ("very well", "well").
 
 ```{r}
 #| label: prop-speak-1
@@ -242,7 +242,7 @@ prop_speak_1 <- polentometro_page15 |>
 prop_speak_1
 ```
 
-The following is an estimate of the proportion of speakers based on responses of whether they know how to speak GI ("very well", "well") and the frequency ("some times", "often", "always"). In absolute population, there are about `{r} round((pop_tot * prop_speak_1$prop[2]) / 1000000, 1)` million speakers and `{r} round((pop_tot * prop_speak_1$prop[1]) / 1000000, 1)` million non-speakers.
+The following is an estimate of the proportion of speakers based on responses of whether they know how to speak GR ("very well", "well") and the frequency ("some times", "often", "always"). In absolute population, there are about `{r} round((pop_tot * prop_speak_1$prop[2]) / 1000000, 1)` million speakers and `{r} round((pop_tot * prop_speak_1$prop[1]) / 1000000, 1)` million non-speakers.
 
 ```{r}
 #| label: prop-speak-2
@@ -263,7 +263,7 @@ prop_speak_2 <- polentometro_page15 |>
 prop_speak_2
 ```
 
-The following is an estimate of the proportion of speakers based on responses of whether they know how to speak GI ("so so", "very well", "well") and the frequency ("some times", "often", "always"). In absolute population, there are about `{r} round((pop_tot * prop_speak_2$prop[2]) / 1000000, 1)` million speakers and `{r} round((pop_tot * prop_speak_2$prop[1]) / 1000000, 1)` million non-speakers.
+The following is an estimate of the proportion of speakers based on responses of whether they know how to speak GR ("so so", "very well", "well") and the frequency ("some times", "often", "always"). In absolute population, there are about `{r} round((pop_tot * prop_speak_2$prop[2]) / 1000000, 1)` million speakers and `{r} round((pop_tot * prop_speak_2$prop[1]) / 1000000, 1)` million non-speakers.
 
 ```{r}
 #| label: prop-speak-3
@@ -284,7 +284,7 @@ prop_speak_3 <- polentometro_page15 |>
 prop_speak_3
 ```
 
-The following is an estimate of the proportion of speakers based on responses of whether they know how to speak GI ("very well", "well") and the frequency ("some times", "often", "always") and generation. Proportions are given for speakers (as defined) and non-speakers separately. In absolute population, there are about `{r} round((pop_tot * prop_speak_3$prop[2]) / 1000000, 1)` million speakers and `{r} round((pop_tot * prop_speak_3$prop[1]) / 1000000, 1)` million non-speakers.
+The following is an estimate of the proportion of speakers based on responses of whether they know how to speak GR ("very well", "well") and the frequency ("some times", "often", "always") and generation. Proportions are given for speakers (as defined) and non-speakers separately. In absolute population, there are about `{r} round((pop_tot * prop_speak_3$prop[2]) / 1000000, 1)` million speakers and `{r} round((pop_tot * prop_speak_3$prop[1]) / 1000000, 1)` million non-speakers.
 
 ```{r}
 #| label: prop-speak-gen
