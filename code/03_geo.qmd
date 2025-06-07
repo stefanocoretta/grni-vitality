@@ -15,21 +15,30 @@ source("code/scripts/packages.R")
 ```{r}
 #| label: polentometro
 polentometro_en_include <- readRDS("data/derived/polentometro_en_include.rds")
+
+# adm1 to include
+regions <- c("Valle d'Aosta", "Piemonte", "Liguria", "Lombardia", "Emilia-Romagna", "Veneto", "Friuli-Venezia Giulia", "Trentino-Alto Adige", "San Marino", "Graubünden", "Ticino")
+```
+
+## Counts by administrative
+
+```{r}
+#| label: responses-by-adm
+
+responses_by_region <- polentometro_en_include |>
+  count(Region, sort = TRUE)
+
+responses_by_province <- polentometro_en_include |>
+  count(Region, Province, sort = TRUE)
+
+responses_by_comune <- polentometro_en_include |> 
+  count(Region, Province, Comune, lat, long, sort = TRUE)
 ```
 
 ```{r}
-#| label: geo-counts
+#| label: speakers-by-adm
 
-geo_counts_comune <- polentometro_en_include |> 
-  count(Region, Province, Comune, lat, long, sort = TRUE)
-
-geo_counts_province <- polentometro_en_include |>
-  count(Region, Province, sort = TRUE)
-
-geo_counts_region <- polentometro_en_include |>
-  count(Region, sort = TRUE)
-
-speak_counts_region <- polentometro_en_include |>
+speakers_by_region <- polentometro_en_include |>
   count(is_speaker, Region) |> 
   pivot_wider(names_from = is_speaker, values_from = n, values_fill = 0) |> 
   mutate(
@@ -38,7 +47,7 @@ speak_counts_region <- polentometro_en_include |>
   ) |> 
   arrange(-tot)
 
-speak_counts_province <- polentometro_en_include |>
+speakers_by_province <- polentometro_en_include |>
   count(is_speaker, Region, Province) |> 
   pivot_wider(names_from = is_speaker, values_from = n, values_fill = 0) |> 
   mutate(
@@ -47,7 +56,7 @@ speak_counts_province <- polentometro_en_include |>
   ) |> 
   arrange(-tot)
 
-speak_counts_comune <- polentometro_en_include |> 
+speakers_by_comune <- polentometro_en_include |> 
   count(is_speaker, Region, Province, Comune) |> 
   pivot_wider(names_from = is_speaker, values_from = n, values_fill = 0) |> 
   mutate(
@@ -57,13 +66,11 @@ speak_counts_comune <- polentometro_en_include |>
   arrange(-tot)
 ```
 
-## Geo data
+## GIS data
 
 ```{r}
 #| label: gis
 #| message: false
-
-regions <- c("Valle d'Aosta", "Piemonte", "Liguria", "Lombardia", "Emilia-Romagna", "Veneto", "Friuli-Venezia Giulia", "Trentino-Alto Adige", "San Marino", "Graubünden", "Ticino")
 
 it <- st_read("data/gis/ITA_adm/ITA_adm0.shp")
 aut <- st_read("data/gis/AUT_adm/AUT_adm0.shp")
@@ -88,6 +95,11 @@ it_adm1 <- st_read("data/gis/ITA_adm/ITA_adm1.shp") |>
 it_adm2 <- st_read("data/gis/ITA_adm/ITA_adm2.shp") |> 
   filter(NAME_1 %in% regions) |> 
   mutate(
+    NAME_1 = case_when(
+      NAME_1 == "Trentino-Alto Adige" ~ "Trentino-Alto Adige/Südtirol",
+      NAME_1 == "Valle d'Aosta" ~ "Valle d'Aosta/Vallée d'Aoste",
+      TRUE ~ NAME_1
+    ),
     NAME_2 = case_when(
       NAME_2 == "Padua" ~ "Padova",
       NAME_2 == "Forli' - Cesena" ~ "Forlì-Cesena",
@@ -102,6 +114,11 @@ it_adm2 <- st_read("data/gis/ITA_adm/ITA_adm2.shp") |>
 it_adm3 <- st_read("data/gis/ITA_adm/ITA_adm3.shp") |> 
   filter(NAME_1 %in% regions) |> 
   mutate(
+    NAME_1 = case_when(
+      NAME_1 == "Trentino-Alto Adige" ~ "Trentino-Alto Adige/Südtirol",
+      NAME_1 == "Valle d'Aosta" ~ "Valle d'Aosta/Vallée d'Aoste",
+      TRUE ~ NAME_1
+    ),
     NAME_2 = case_when(
       NAME_2 == "Padua" ~ "Padova",
       NAME_2 == "Forli' - Cesena" ~ "Forlì-Cesena",
@@ -162,13 +179,17 @@ ch_adm3 <- st_read("data/gis/CHE_adm/CHE_adm3.shp") |>
 adm1 <- bind_rows(it_adm1, ch_adm1)
 adm2 <- bind_rows(it_adm2, ch_adm2)
 adm3 <- bind_rows(it_adm3, ch_adm3)
+```
 
-responses_provinces <- left_join(adm2, geo_counts_province, by = c("NAME_2" = "Province"))
-responses_comuni <- left_join(adm3, geo_counts_comune, by = c("NAME_2" = "Province", "NAME_3" = "Comune"))
+```{r}
+#| label: merge-counts-gis
 
-speakers_regions <- left_join(adm1, speak_counts_region, by = c("NAME_1" = "Region"))
-speakers_provinces <- left_join(adm2, speak_counts_province, by = c("NAME_2" = "Province"))
-speakers_comuni <- left_join(adm3, speak_counts_comune, by = c("NAME_2" = "Province", "NAME_3" = "Comune"))
+responses_geo_provinces <- left_join(adm2, responses_by_province, by = c("NAME_1" = "Region", "NAME_2" = "Province"))
+responses_geo_comuni <- left_join(adm3, responses_by_comune, by = c("NAME_1" = "Region", "NAME_2" = "Province", "NAME_3" = "Comune"))
+
+speakers_geo_regions <- left_join(adm1, speakers_by_region, by = c("NAME_1" = "Region"))
+speakers_geo_provinces <- left_join(adm2, speakers_by_province, by = c("NAME_1" = "Region", "NAME_2" = "Province"))
+speakers_geo_comuni <- left_join(adm3, speakers_by_comune, by = c("NAME_1" = "Region", "NAME_2" = "Province", "NAME_3" = "Comune"))
 ```
 
 
@@ -183,9 +204,9 @@ speakers_comuni <- left_join(adm3, speak_counts_comune, by = c("NAME_2" = "Provi
 ggplot() +
   geom_sf(data = adm0) +
   geom_sf(data = adm1, aes(fill = NAME_1), alpha = 0.3) +
-  geom_sf(data = responses_provinces, fill = NA) +
+  geom_sf(data = responses_geo_provinces, fill = NA) +
   coord_sf(c(6.5, 14), c(43.5, 47)) +
-  geom_point(data = geo_counts_comune, aes(long, lat, size = n), alpha = 0.5) +
+  geom_point(data = responses_by_comune, aes(long, lat, size = n), alpha = 0.5) +
   labs(x = element_blank(), y = element_blank()) +
   theme_light() +
   labs(
@@ -202,9 +223,9 @@ ggsave("img/comuni-counts.png", width = 7, height = 5)
 
 ggplot() +
   geom_sf(data = adm0) +
-  geom_sf(data = responses_provinces, aes(fill = n)) +
+  geom_sf(data = responses_geo_provinces, aes(fill = n)) +
   geom_sf(data = adm1, fill = NA, colour = "red") +
-  scale_fill_distiller(palette = "YlGnBu", direction = 1, limits = c(0, max(geo_counts_province$n, na.rm = TRUE))) +
+  scale_fill_distiller(palette = "YlGnBu", direction = 1, limits = c(0, max(responses_by_province$n, na.rm = TRUE))) +
   coord_sf(c(6.5, 14), c(43.5, 47)) +
   labs(x = element_blank(), y = element_blank()) +
   theme_light() +
@@ -221,7 +242,7 @@ ggsave("img/provincie-counts.png", width = 7, height = 5)
 
 ggplot() +
   geom_sf(data = adm0) +
-  geom_sf(data = responses_comuni, aes(fill = n)) +
+  geom_sf(data = responses_geo_comuni, aes(fill = n)) +
   geom_sf(data = adm1, fill = NA, colour = "red") +
   scale_fill_distiller(palette = "YlGnBu", direction = 1) +
   coord_sf(c(6.5, 14), c(43.5, 47)) +
@@ -261,7 +282,7 @@ ggsave("img/speaker-hex.png", width = 7, height = 5)
 
 ggplot() +
   geom_sf(data = adm0) +
-  geom_sf(data = speakers_regions, aes(fill = prop)) +
+  geom_sf(data = speakers_geo_regions, aes(fill = prop)) +
   geom_sf(data = adm1, fill = NA, colour = "red") +
   scale_fill_distiller(palette = "BuGn", direction = 1, limits = c(0, 1)) +
   coord_sf(c(6.5, 14), c(43.5, 47)) +
@@ -278,7 +299,7 @@ ggsave("img/speaker-region.png", width = 7, height = 5)
 
 ggplot() +
   geom_sf(data = adm0) +
-  geom_sf(data = speakers_provinces, aes(fill = prop)) +
+  geom_sf(data = speakers_geo_provinces, aes(fill = prop)) +
   geom_sf(data = adm1, fill = NA, colour = "red") +
   scale_fill_distiller(palette = "YlGnBu", direction = 1, limits = c(0, 1)) +
   coord_sf(c(6.5, 14), c(43.5, 47)) +
@@ -293,7 +314,7 @@ ggsave("img/speaker-province.png", width = 7, height = 5)
 
 ggplot() +
   geom_sf(data = adm0) +
-  geom_sf(data = speakers_comuni, aes(fill = prop)) +
+  geom_sf(data = speakers_geo_comuni, aes(fill = prop)) +
   geom_sf(data = adm1, fill = NA, colour = "red") +
   scale_fill_distiller(palette = "YlGnBu", direction = 1, limits = c(0, 1)) +
   coord_sf(c(6.5, 14), c(43.5, 47)) +
@@ -311,7 +332,7 @@ ggsave("img/speaker-comune.png", width = 7, height = 5)
 
 ggplot() +
   geom_sf(data = adm0) +
-  geom_sf(data = speakers_comuni |> filter(NAME_3 %in% c("Torino", "Milano", "Verona", "Genova", "Bologna")), aes(fill = prop)) +
+  geom_sf(data = speakers_geo_comuni |> filter(NAME_3 %in% c("Torino", "Milano", "Verona", "Genova", "Bologna")), aes(fill = prop)) +
   geom_sf(data = adm1, fill = NA, colour = "red") +
   scale_fill_distiller(palette = "YlGnBu", direction = 1, limits = c(0, 1)) +
   coord_sf(c(6.5, 14), c(43.5, 47)) +
