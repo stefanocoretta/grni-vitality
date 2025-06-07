@@ -14,28 +14,22 @@ source("code/scripts/packages.R")
 
 ```{r}
 #| label: polentometro
-polentometro_en <- readRDS("data/derived/polentometro_en.rds")
-
-polentometro_page15 <- polentometro_en |> 
-  filter(
-    MAXPAGE >= 15,
-    generation != "Alpha"
-  )
+polentometro_en_include <- readRDS("data/derived/polentometro_en_include.rds")
 ```
 
 ```{r}
 #| label: geo-counts
 
-geo_counts_comune <- polentometro_page15 |> 
+geo_counts_comune <- polentometro_en_include |> 
   count(Comune, lat, long, sort = TRUE)
 
-geo_counts_province <- polentometro_page15 |>
+geo_counts_province <- polentometro_en_include |>
   count(Region, Province, sort = TRUE)
 
-geo_counts_region <- polentometro_page15 |>
+geo_counts_region <- polentometro_en_include |>
   count(Region, sort = TRUE)
 
-speak_counts_province <- polentometro_page15 |>
+speak_counts_province <- polentometro_en_include |>
   count(is_speaker, Region, Province) |> 
   pivot_wider(names_from = is_speaker, values_from = n, values_fill = 0) |> 
   mutate(
@@ -44,7 +38,7 @@ speak_counts_province <- polentometro_page15 |>
   ) |> 
   arrange(-tot)
 
-speak_counts_comune <- polentometro_page15 |> 
+speak_counts_comune <- polentometro_en_include |> 
   count(is_speaker, Region, Province, Comune) |> 
   pivot_wider(names_from = is_speaker, values_from = n, values_fill = 0) |> 
   mutate(
@@ -212,7 +206,7 @@ ggsave("img/provincie-counts.png", width = 7, height = 5)
 ggplot(adm0) +
   geom_sf(fill = "#FBEAC8", colour = "#aa7733", size = 0.5) +
   stat_summary_hex(
-    data = polentometro_page15,
+    data = polentometro_en_include,
     aes(long, lat, z = as.numeric(is_speaker)),
     colour = "grey7",
     binwidth = 0.3

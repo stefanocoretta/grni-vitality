@@ -19,13 +19,9 @@ library(ggh4x)
 
 ```{r}
 #| label: polentometro
-polentometro_en <- readRDS("data/derived/polentometro_en.rds")
+polentometro_en_include <- readRDS("data/derived/polentometro_en_include.rds")
 
-polentometro_page15 <- polentometro_en |> 
-  filter(
-    MAXPAGE >= 15,
-    generation != "Alpha"
-  ) |> 
+polentometro_en_include <- polentometro_en_include |> 
   mutate(
     understand_galloit_birth = ifelse(is.na(understand_galloit_birth), as.character(understand), as.character(understand_galloit_birth)),
     understand_galloit_birth = factor(understand_galloit_birth, levels = c("No, per niente", "Sì, ma molto poco", "Così così", "Sì, lo capisco bene", "Sì, lo capisco molto bene")),
@@ -40,7 +36,7 @@ polentometro_page15 <- polentometro_en |>
 
 ```{r}
 #| label: languages
-polentometro_page15 |> 
+polentometro_en_include |> 
   pivot_longer(c(languages_parents, first_langacq, spoke_to_children, would_speak_to_children, children_speak)) |> 
   drop_na(value) |> 
   filter(
@@ -66,7 +62,7 @@ ggsave("img/lang-acq.png", width = 7, height = 5)
 ```{r}
 #| label: languages-generations
 #| fig-asp: 0.3
-polentometro_page15 |> 
+polentometro_en_include |> 
   pivot_longer(c(languages_parents, first_langacq, spoke_to_children, would_speak_to_children, children_speak)) |> 
   drop_na(value, generation) |> 
   filter(
@@ -94,7 +90,7 @@ ggsave("img/lang-acq-gens.png", width = 7, height = 2.5)
 
 ```{r}
 #| label: understand
-polentometro_page15 |> 
+polentometro_en_include |> 
   ggplot(aes(generation, fill = understand_galloit_birth)) +
   geom_bar(position = "fill") +
   scale_fill_brewer(
@@ -109,7 +105,7 @@ ggsave("img/understand-gens.png", width = 7, height = 5)
 
 ```{r}
 #| label: understand-region
-understand_prop <- polentometro_page15 |> 
+understand_prop <- polentometro_en_include |> 
   count(Region, understand_galloit_birth) |> 
   group_by(Region) |> 
   mutate(
@@ -127,7 +123,7 @@ understand_prop |>
 
 ```{r}
 #| label: understand-area
-polentometro_page15 |> 
+polentometro_en_include |> 
   ggplot(aes(Area, fill = understand_galloit_birth)) +
   geom_bar(position = "fill") +
   coord_flip() +
@@ -136,7 +132,7 @@ polentometro_page15 |>
 
 ```{r}
 #| label: understand-generation-lik
-understand_generation_lik <- polentometro_page15 |> 
+understand_generation_lik <- polentometro_en_include |> 
   select(generation, understand_galloit_birth) |> 
   count(generation, understand_galloit_birth) |> 
   pivot_wider(names_from = understand_galloit_birth, values_from = n) |> 
@@ -160,7 +156,7 @@ likert(
 ```{r}
 #| label: speak
 
-polentometro_page15 |> 
+polentometro_en_include |> 
   ggplot(aes(generation, fill = speak_galloit_birth)) +
   geom_bar(position = "fill") +
   scale_fill_brewer(
@@ -175,7 +171,7 @@ ggsave("img/speak-gens.png", width = 7, height = 5)
 
 ```{r}
 #| label: speak-region
-speak_prop <- polentometro_page15 |> 
+speak_prop <- polentometro_en_include |> 
   count(Region, speak_galloit_birth) |> 
   group_by(Region) |> 
   mutate(
@@ -193,7 +189,7 @@ speak_prop |>
 
 ```{r}
 #| label: speak-area
-polentometro_page15 |> 
+polentometro_en_include |> 
   ggplot(aes(Area, fill = speak_galloit_birth)) +
   geom_bar(position = "fill") +
   coord_flip() +
@@ -202,7 +198,7 @@ polentometro_page15 |>
 
 ```{r}
 #| label: speak-generation-lik
-speak_generation_lik <- polentometro_page15 |> 
+speak_generation_lik <- polentometro_en_include |> 
   select(generation, speak_galloit_birth) |> 
   count(generation, speak_galloit_birth) |> 
   pivot_wider(names_from = speak_galloit_birth, values_from = n) |> 
@@ -230,7 +226,7 @@ The following is an estimate of the proportion of speakers based only on respons
 
 ```{r}
 #| label: prop-speak-1
-prop_speak_1 <- polentometro_page15 |> 
+prop_speak_1 <- polentometro_en_include |> 
   mutate(
     speak_yn = ifelse(speak_galloit_birth %in% c("Sì, lo parlo molto bene", "Sì, lo parlo bene"), "yes", "no")
   ) |> 
@@ -246,7 +242,7 @@ The following is an estimate of the proportion of speakers based on responses of
 
 ```{r}
 #| label: prop-speak-2
-prop_speak_2 <- polentometro_page15 |> 
+prop_speak_2 <- polentometro_en_include |> 
   mutate(
     speak_yn = ifelse(
       speak_galloit_birth %in% c("Sì, lo parlo molto bene", "Sì, lo parlo bene") &
@@ -267,7 +263,7 @@ The following is an estimate of the proportion of speakers based on responses of
 
 ```{r}
 #| label: prop-speak-3
-prop_speak_3 <- polentometro_page15 |> 
+prop_speak_3 <- polentometro_en_include |> 
   mutate(
     speak_yn = ifelse(
       speak_galloit_birth %in% c("Sì, lo parlo molto bene", "Sì, lo parlo bene", "Così così") &
@@ -288,7 +284,7 @@ The following is an estimate of the proportion of speakers based on responses of
 
 ```{r}
 #| label: prop-speak-gen
-polentometro_page15 |> 
+polentometro_en_include |> 
   mutate(
     speak_yn = ifelse(
       speak_galloit_birth %in% c("Sì, lo parlo molto bene", "Sì, lo parlo bene") &
@@ -309,7 +305,7 @@ polentometro_page15 |>
 
 ```{r}
 #| label: count-speak-plot
-polentometro_page15 |> 
+polentometro_en_include |> 
   ggplot(aes(speak_galloit_birth, fill = speak_galloit_birth)) +
   geom_bar() +
   coord_flip() +
@@ -318,7 +314,7 @@ polentometro_page15 |>
 
 ```{r}
 #| label: prop-speak
-polentometro_page15 |> 
+polentometro_en_include |> 
   add_count(name = "tot") |> 
   count(speak_galloit_birth, tot) |> 
   mutate(
@@ -328,7 +324,7 @@ polentometro_page15 |>
 
 ```{r}
 #| label: speak-freq
-polentometro_page15 |> 
+polentometro_en_include |> 
   drop_na(speak_frequency) |> 
   ggplot(aes(speak_frequency, fill = speak_frequency)) +
   geom_bar() +
@@ -338,7 +334,7 @@ polentometro_page15 |>
 
 ```{r}
 #| label: speak-freq-speak
-polentometro_page15 |> 
+polentometro_en_include |> 
   drop_na(speak_frequency) |> 
   ggplot(aes(speak_frequency, fill = speak_galloit_birth)) +
   geom_bar() +
@@ -349,7 +345,7 @@ polentometro_page15 |>
 ```{r}
 #| label: speak-freq-speak-yes
 
-polentometro_page15 |> 
+polentometro_en_include |> 
   drop_na(speak_frequency) |> 
   filter(speak_galloit_birth %in% c("Sì, lo parlo molto bene", "Sì, lo parlo bene")) |> 
   add_count(name = "tot") |> 
@@ -372,7 +368,7 @@ ggsave("img/speak-freq.png", width = 6, height = 5)
 
 ```{r}
 #| label: speak-freq-speak-yes-gen
-polentometro_page15 |> 
+polentometro_en_include |> 
   drop_na(speak_frequency) |> 
   filter(speak_galloit_birth %in% c("Sì, lo parlo molto bene", "Sì, lo parlo bene")) |> 
   add_count(generation, name = "tot") |> 
@@ -399,7 +395,7 @@ ggsave("img/speak-freq-gens.png", width = 7, height = 2)
 ```{r}
 #| label: domains-use
 
-domains_use <- polentometro_page15 |> 
+domains_use <- polentometro_en_include |> 
   select(
     CASE, generation, Area, Region,
     starts_with("with_"), starts_with("at_"), starts_with("about_")
@@ -418,7 +414,7 @@ domains_use_tot <- domains_use |>
 ```{r}
 #| label: domains-use-speak-2
 
-domains_use_speak_2 <- polentometro_page15 |> 
+domains_use_speak_2 <- polentometro_en_include |> 
   mutate(
     speak_yn = ifelse(
       speak_galloit_birth %in% c("Sì, lo parlo molto bene", "Sì, lo parlo bene") &
@@ -684,7 +680,7 @@ domains_use_domains_speak_2 |>
 ```{r}
 #| label: new-doms
 
-new_domains_use <- polentometro_page15 |> 
+new_domains_use <- polentometro_en_include |> 
   select(
     CASE, generation, Area, Region,
     ends_with("_write"), personal_notes, materials_tv, listen
@@ -735,7 +731,7 @@ ggsave("img/new-doms.png", width = 10, height = 2)
 ```{r}
 #| label: materials
 
-materials <- polentometro_page15 |> 
+materials <- polentometro_en_include |> 
   select(
     CASE, generation, Area, Region,
     starts_with("materials_")
@@ -772,7 +768,7 @@ ggsave("img/materials.png", width = 10, height = 2)
 ```{r}
 #| label: attitudes
 
-attitudes <- polentometro_page15 |> 
+attitudes <- polentometro_en_include |> 
   select(
     CASE, generation, Area, Region, reaction, loss, taught_at_school
   ) |> 

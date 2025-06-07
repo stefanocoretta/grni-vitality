@@ -86,7 +86,12 @@ We can read the data from SosciSurvey using the SosciSurvey API, which has been 
 ```{r}
 #| label: read-data
 
-eval(parse("https://www.soscisurvey.de/galloitalico/?act=TsKqDg58DRP7vnswve4I8fK5&vQuality&rScript", encoding = "UTF-8"))
+source("code/scripts/import_gi_vitality.R")
+
+gi_vital_raw <- ds |> 
+  mutate(
+    project = "gi_vitality"
+  )
 
 gi_vital <- ds %>%
   mutate(
@@ -105,7 +110,12 @@ write_csv(gi_vital, "data/raw/gi_vital.csv")
 
 source("code/scripts/import_polentometro.R")
 
-polentometro <- ds %>%
+ds <- ds  |> 
+  mutate(
+    project = "polentometro"
+  )
+
+polentometro <- bind_rows(ds, gi_vital_raw) %>%
   mutate(
     LO02 = as.numeric(LO02),
     LO02 = ifelse(is.na(LO02), LO07, LO02),
@@ -255,6 +265,19 @@ polentometro_en <- polentometro |>
   )
 
 saveRDS(polentometro_en, "data/derived/polentometro_en.rds")
+```
+
+```{r}
+polentometro_en_include <- polentometro_en |> 
+  filter(
+    case_when(
+      project == "gi_vitality" ~ MAXPAGE >= 18,
+      project == "polentometro" ~ MAXPAGE >= 15
+    ),
+    generation != "Alpha"
+  )
+
+saveRDS(polentometro_en_include, "data/derived/polentometro_en_include.rds")
 ```
 
 ### Multiple correspondence analysis (MCA)

@@ -132,19 +132,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="read-data" class="level2">
 <h2 class="anchored" data-anchor-id="read-data">Read data</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>polentometro_en <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"data/derived/polentometro_en.rds"</span>)</span>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>polentometro_en_include <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"data/derived/polentometro_en_include.rds"</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>polentometro_page15 <span class="ot">&lt;-</span> polentometro_en <span class="sc">|&gt;</span> </span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    MAXPAGE <span class="sc">&gt;=</span> <span class="dv">15</span>,</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    generation <span class="sc">!=</span> <span class="st">"Alpha"</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">understand_galloit_birth =</span> <span class="fu">ifelse</span>(<span class="fu">is.na</span>(understand_galloit_birth), <span class="fu">as.character</span>(understand), <span class="fu">as.character</span>(understand_galloit_birth)),</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">understand_galloit_birth =</span> <span class="fu">factor</span>(understand_galloit_birth, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"No, per niente"</span>, <span class="st">"Sì, ma molto poco"</span>, <span class="st">"Così così"</span>, <span class="st">"Sì, lo capisco bene"</span>, <span class="st">"Sì, lo capisco molto bene"</span>)),</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">speak_galloit_birth =</span> <span class="fu">ifelse</span>(<span class="fu">is.na</span>(speak_galloit_birth), <span class="fu">as.character</span>(speak), <span class="fu">as.character</span>(speak_galloit_birth)),</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">speak_galloit_birth =</span> <span class="fu">factor</span>(speak_galloit_birth, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"No, per niente"</span>, <span class="st">"Sì, ma molto poco"</span>, <span class="st">"Così così"</span>, <span class="st">"Sì, lo parlo bene"</span>, <span class="st">"Sì, lo parlo molto bene"</span>))</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>polentometro_en_include <span class="ot">&lt;-</span> polentometro_en_include <span class="sc">|&gt;</span> </span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">understand_galloit_birth =</span> <span class="fu">ifelse</span>(<span class="fu">is.na</span>(understand_galloit_birth), <span class="fu">as.character</span>(understand), <span class="fu">as.character</span>(understand_galloit_birth)),</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">understand_galloit_birth =</span> <span class="fu">factor</span>(understand_galloit_birth, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"No, per niente"</span>, <span class="st">"Sì, ma molto poco"</span>, <span class="st">"Così così"</span>, <span class="st">"Sì, lo capisco bene"</span>, <span class="st">"Sì, lo capisco molto bene"</span>)),</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">speak_galloit_birth =</span> <span class="fu">ifelse</span>(<span class="fu">is.na</span>(speak_galloit_birth), <span class="fu">as.character</span>(speak), <span class="fu">as.character</span>(speak_galloit_birth)),</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">speak_galloit_birth =</span> <span class="fu">factor</span>(speak_galloit_birth, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"No, per niente"</span>, <span class="st">"Sì, ma molto poco"</span>, <span class="st">"Così così"</span>, <span class="st">"Sì, lo parlo bene"</span>, <span class="st">"Sì, lo parlo molto bene"</span>))</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="factor-1-intergenerational-language-transmission" class="level2">
@@ -152,7 +148,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="language-acquisition" class="level3">
 <h3 class="anchored" data-anchor-id="language-acquisition">Language acquisition</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>polentometro_page15 <span class="sc">|&gt;</span> </span>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>polentometro_en_include <span class="sc">|&gt;</span> </span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="fu">c</span>(languages_parents, first_langacq, spoke_to_children, would_speak_to_children, children_speak)) <span class="sc">|&gt;</span> </span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>(value) <span class="sc">|&gt;</span> </span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(</span>
@@ -181,7 +177,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"img/lang-acq.png"</span>, <span class="at">width =</span> <span class="dv">7</span>, <span class="at">height =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>polentometro_page15 <span class="sc">|&gt;</span> </span>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>polentometro_en_include <span class="sc">|&gt;</span> </span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="fu">c</span>(languages_parents, first_langacq, spoke_to_children, would_speak_to_children, children_speak)) <span class="sc">|&gt;</span> </span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>(value, generation) <span class="sc">|&gt;</span> </span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(</span>
@@ -214,7 +210,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="understand-gr" class="level3">
 <h3 class="anchored" data-anchor-id="understand-gr">Understand GR</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>polentometro_page15 <span class="sc">|&gt;</span> </span>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>polentometro_en_include <span class="sc">|&gt;</span> </span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(generation, <span class="at">fill =</span> understand_galloit_birth)) <span class="sc">+</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"fill"</span>) <span class="sc">+</span></span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(</span>
@@ -234,7 +230,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"img/understand-gens.png"</span>, <span class="at">width =</span> <span class="dv">7</span>, <span class="at">height =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>understand_prop <span class="ot">&lt;-</span> polentometro_page15 <span class="sc">|&gt;</span> </span>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>understand_prop <span class="ot">&lt;-</span> polentometro_en_include <span class="sc">|&gt;</span> </span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(Region, understand_galloit_birth) <span class="sc">|&gt;</span> </span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Region) <span class="sc">|&gt;</span> </span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
@@ -257,7 +253,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>polentometro_page15 <span class="sc">|&gt;</span> </span>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>polentometro_en_include <span class="sc">|&gt;</span> </span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(Area, <span class="at">fill =</span> understand_galloit_birth)) <span class="sc">+</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"fill"</span>) <span class="sc">+</span></span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
@@ -271,7 +267,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>understand_generation_lik <span class="ot">&lt;-</span> polentometro_page15 <span class="sc">|&gt;</span> </span>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>understand_generation_lik <span class="ot">&lt;-</span> polentometro_en_include <span class="sc">|&gt;</span> </span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(generation, understand_galloit_birth) <span class="sc">|&gt;</span> </span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(generation, understand_galloit_birth) <span class="sc">|&gt;</span> </span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> understand_galloit_birth, <span class="at">values_from =</span> n) <span class="sc">|&gt;</span> </span>
@@ -300,7 +296,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="speak-gr" class="level3">
 <h3 class="anchored" data-anchor-id="speak-gr">Speak GR</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>polentometro_page15 <span class="sc">|&gt;</span> </span>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>polentometro_en_include <span class="sc">|&gt;</span> </span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(generation, <span class="at">fill =</span> speak_galloit_birth)) <span class="sc">+</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"fill"</span>) <span class="sc">+</span></span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(</span>
@@ -320,7 +316,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"img/speak-gens.png"</span>, <span class="at">width =</span> <span class="dv">7</span>, <span class="at">height =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>speak_prop <span class="ot">&lt;-</span> polentometro_page15 <span class="sc">|&gt;</span> </span>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>speak_prop <span class="ot">&lt;-</span> polentometro_en_include <span class="sc">|&gt;</span> </span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(Region, speak_galloit_birth) <span class="sc">|&gt;</span> </span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Region) <span class="sc">|&gt;</span> </span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
@@ -343,7 +339,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>polentometro_page15 <span class="sc">|&gt;</span> </span>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>polentometro_en_include <span class="sc">|&gt;</span> </span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(Area, <span class="at">fill =</span> speak_galloit_birth)) <span class="sc">+</span></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"fill"</span>) <span class="sc">+</span></span>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
@@ -357,7 +353,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>speak_generation_lik <span class="ot">&lt;-</span> polentometro_page15 <span class="sc">|&gt;</span> </span>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>speak_generation_lik <span class="ot">&lt;-</span> polentometro_en_include <span class="sc">|&gt;</span> </span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(generation, speak_galloit_birth) <span class="sc">|&gt;</span> </span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(generation, speak_galloit_birth) <span class="sc">|&gt;</span> </span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> speak_galloit_birth, <span class="at">values_from =</span> n) <span class="sc">|&gt;</span> </span>
@@ -398,7 +394,7 @@ dbl (5): pop, area, pop_density, comuni_n, provinces_n
 </div>
 <p>The following is an estimate of the proportion of speakers based only on responses of whether they know how to speak GR (“very well”, “well”).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>prop_speak_1 <span class="ot">&lt;-</span> polentometro_page15 <span class="sc">|&gt;</span> </span>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>prop_speak_1 <span class="ot">&lt;-</span> polentometro_en_include <span class="sc">|&gt;</span> </span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">speak_yn =</span> <span class="fu">ifelse</span>(speak_galloit_birth <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Sì, lo parlo molto bene"</span>, <span class="st">"Sì, lo parlo bene"</span>), <span class="st">"yes"</span>, <span class="st">"no"</span>)</span>
 <span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
@@ -412,13 +408,13 @@ dbl (5): pop, area, pop_density, comuni_n, provinces_n
 <pre><code># A tibble: 2 × 4
   speak_yn   tot     n  prop
   &lt;chr&gt;    &lt;int&gt; &lt;int&gt; &lt;dbl&gt;
-1 no        2141  1114  0.52
-2 yes       2141  1027  0.48</code></pre>
+1 no        2205  1155  0.52
+2 yes       2205  1050  0.48</code></pre>
 </div>
 </div>
 <p>The following is an estimate of the proportion of speakers based on responses of whether they know how to speak GR (“very well”, “well”) and the frequency (“some times”, “often”, “always”). In absolute population, there are about 13.5 million speakers and 14.6 million non-speakers.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>prop_speak_2 <span class="ot">&lt;-</span> polentometro_page15 <span class="sc">|&gt;</span> </span>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>prop_speak_2 <span class="ot">&lt;-</span> polentometro_en_include <span class="sc">|&gt;</span> </span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">speak_yn =</span> <span class="fu">ifelse</span>(</span>
 <span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>      speak_galloit_birth <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Sì, lo parlo molto bene"</span>, <span class="st">"Sì, lo parlo bene"</span>) <span class="sc">&amp;</span></span>
@@ -437,13 +433,13 @@ dbl (5): pop, area, pop_density, comuni_n, provinces_n
 <pre><code># A tibble: 2 × 4
   speak_yn   tot     n  prop
   &lt;chr&gt;    &lt;int&gt; &lt;int&gt; &lt;dbl&gt;
-1 no        2141  1214  0.57
-2 yes       2141   927  0.43</code></pre>
+1 no        2205  1258  0.57
+2 yes       2205   947  0.43</code></pre>
 </div>
 </div>
 <p>The following is an estimate of the proportion of speakers based on responses of whether they know how to speak GR (“so so”, “very well”, “well”) and the frequency (“some times”, “often”, “always”). In absolute population, there are about 12.1 million speakers and 16 million non-speakers.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>prop_speak_3 <span class="ot">&lt;-</span> polentometro_page15 <span class="sc">|&gt;</span> </span>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>prop_speak_3 <span class="ot">&lt;-</span> polentometro_en_include <span class="sc">|&gt;</span> </span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">speak_yn =</span> <span class="fu">ifelse</span>(</span>
 <span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>      speak_galloit_birth <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Sì, lo parlo molto bene"</span>, <span class="st">"Sì, lo parlo bene"</span>, <span class="st">"Così così"</span>) <span class="sc">&amp;</span></span>
@@ -462,13 +458,13 @@ dbl (5): pop, area, pop_density, comuni_n, provinces_n
 <pre><code># A tibble: 2 × 4
   speak_yn   tot     n  prop
   &lt;chr&gt;    &lt;int&gt; &lt;int&gt; &lt;dbl&gt;
-1 no        2141   989  0.46
-2 yes       2141  1152  0.54</code></pre>
+1 no        2205  1027  0.47
+2 yes       2205  1178  0.53</code></pre>
 </div>
 </div>
-<p>The following is an estimate of the proportion of speakers based on responses of whether they know how to speak GR (“very well”, “well”) and the frequency (“some times”, “often”, “always”) and generation. Proportions are given for speakers (as defined) and non-speakers separately. In absolute population, there are about 15.2 million speakers and 12.9 million non-speakers.</p>
+<p>The following is an estimate of the proportion of speakers based on responses of whether they know how to speak GR (“very well”, “well”) and the frequency (“some times”, “often”, “always”) and generation. Proportions are given for speakers (as defined) and non-speakers separately. In absolute population, there are about 14.9 million speakers and 13.2 million non-speakers.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>polentometro_page15 <span class="sc">|&gt;</span> </span>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>polentometro_en_include <span class="sc">|&gt;</span> </span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">speak_yn =</span> <span class="fu">ifelse</span>(</span>
 <span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>      speak_galloit_birth <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Sì, lo parlo molto bene"</span>, <span class="st">"Sì, lo parlo bene"</span>) <span class="sc">&amp;</span></span>
@@ -490,14 +486,14 @@ dbl (5): pop, area, pop_density, comuni_n, provinces_n
   generation     no   yes
   &lt;fct&gt;       &lt;dbl&gt; &lt;dbl&gt;
 1 Silent       0     0.01
-2 Boomers      0.04  0.07
-3 X            0.08  0.12
-4 Millennials  0.19  0.19
-5 Z            0.7   0.61</code></pre>
+2 Boomers      0.04  0.08
+3 X            0.09  0.12
+4 Millennials  0.2   0.19
+5 Z            0.67  0.59</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>polentometro_page15 <span class="sc">|&gt;</span> </span>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>polentometro_en_include <span class="sc">|&gt;</span> </span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(speak_galloit_birth, <span class="at">fill =</span> speak_galloit_birth)) <span class="sc">+</span></span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
 <span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
@@ -511,7 +507,7 @@ dbl (5): pop, area, pop_density, comuni_n, provinces_n
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>polentometro_page15 <span class="sc">|&gt;</span> </span>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>polentometro_en_include <span class="sc">|&gt;</span> </span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_count</span>(<span class="at">name =</span> <span class="st">"tot"</span>) <span class="sc">|&gt;</span> </span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(speak_galloit_birth, tot) <span class="sc">|&gt;</span> </span>
 <span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
@@ -521,15 +517,15 @@ dbl (5): pop, area, pop_density, comuni_n, provinces_n
 <pre><code># A tibble: 5 × 4
   speak_galloit_birth       tot     n  perc
   &lt;fct&gt;                   &lt;int&gt; &lt;int&gt; &lt;dbl&gt;
-1 No, per niente           2141   347  0.16
-2 Sì, ma molto poco        2141   313  0.15
-3 Così così                2141   454  0.21
-4 Sì, lo parlo bene        2141   510  0.24
-5 Sì, lo parlo molto bene  2141   517  0.24</code></pre>
+1 No, per niente           2205   355  0.16
+2 Sì, ma molto poco        2205   330  0.15
+3 Così così                2205   470  0.21
+4 Sì, lo parlo bene        2205   525  0.24
+5 Sì, lo parlo molto bene  2205   525  0.24</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>polentometro_page15 <span class="sc">|&gt;</span> </span>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>polentometro_en_include <span class="sc">|&gt;</span> </span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>(speak_frequency) <span class="sc">|&gt;</span> </span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(speak_frequency, <span class="at">fill =</span> speak_frequency)) <span class="sc">+</span></span>
 <span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
@@ -544,7 +540,7 @@ dbl (5): pop, area, pop_density, comuni_n, provinces_n
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>polentometro_page15 <span class="sc">|&gt;</span> </span>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>polentometro_en_include <span class="sc">|&gt;</span> </span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>(speak_frequency) <span class="sc">|&gt;</span> </span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(speak_frequency, <span class="at">fill =</span> speak_galloit_birth)) <span class="sc">+</span></span>
 <span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
@@ -559,7 +555,7 @@ dbl (5): pop, area, pop_density, comuni_n, provinces_n
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>polentometro_page15 <span class="sc">|&gt;</span> </span>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>polentometro_en_include <span class="sc">|&gt;</span> </span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>(speak_frequency) <span class="sc">|&gt;</span> </span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(speak_galloit_birth <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Sì, lo parlo molto bene"</span>, <span class="st">"Sì, lo parlo bene"</span>)) <span class="sc">|&gt;</span> </span>
 <span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_count</span>(<span class="at">name =</span> <span class="st">"tot"</span>) <span class="sc">|&gt;</span> </span>
@@ -586,7 +582,7 @@ dbl (5): pop, area, pop_density, comuni_n, provinces_n
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"img/speak-freq.png"</span>, <span class="at">width =</span> <span class="dv">6</span>, <span class="at">height =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>polentometro_page15 <span class="sc">|&gt;</span> </span>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>polentometro_en_include <span class="sc">|&gt;</span> </span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>(speak_frequency) <span class="sc">|&gt;</span> </span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(speak_galloit_birth <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Sì, lo parlo molto bene"</span>, <span class="st">"Sì, lo parlo bene"</span>)) <span class="sc">|&gt;</span> </span>
 <span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_count</span>(generation, <span class="at">name =</span> <span class="st">"tot"</span>) <span class="sc">|&gt;</span> </span>
@@ -617,7 +613,7 @@ dbl (5): pop, area, pop_density, comuni_n, provinces_n
 <section id="factor-4-shifts-in-domains-of-language-use" class="level2">
 <h2 class="anchored" data-anchor-id="factor-4-shifts-in-domains-of-language-use">Factor 4: Shifts in domains of language use</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>domains_use <span class="ot">&lt;-</span> polentometro_page15 <span class="sc">|&gt;</span> </span>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>domains_use <span class="ot">&lt;-</span> polentometro_en_include <span class="sc">|&gt;</span> </span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(</span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>    CASE, generation, Area, Region,</span>
 <span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">starts_with</span>(<span class="st">"with_"</span>), <span class="fu">starts_with</span>(<span class="st">"at_"</span>), <span class="fu">starts_with</span>(<span class="st">"about_"</span>)</span>
@@ -633,7 +629,7 @@ dbl (5): pop, area, pop_density, comuni_n, provinces_n
 <span id="cb36-14"><a href="#cb36-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(domain, <span class="st">"tot"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>domains_use_speak_2 <span class="ot">&lt;-</span> polentometro_page15 <span class="sc">|&gt;</span> </span>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>domains_use_speak_2 <span class="ot">&lt;-</span> polentometro_en_include <span class="sc">|&gt;</span> </span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">speak_yn =</span> <span class="fu">ifelse</span>(</span>
 <span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>      speak_galloit_birth <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Sì, lo parlo molto bene"</span>, <span class="st">"Sì, lo parlo bene"</span>) <span class="sc">&amp;</span></span>
@@ -974,7 +970,7 @@ dbl (5): pop, area, pop_density, comuni_n, provinces_n
 <section id="factor-5-response-to-new-domains-and-media" class="level2">
 <h2 class="anchored" data-anchor-id="factor-5-response-to-new-domains-and-media">Factor 5: Response to New Domains and Media</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>new_domains_use <span class="ot">&lt;-</span> polentometro_page15 <span class="sc">|&gt;</span> </span>
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>new_domains_use <span class="ot">&lt;-</span> polentometro_en_include <span class="sc">|&gt;</span> </span>
 <span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(</span>
 <span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>    CASE, generation, Area, Region,</span>
 <span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ends_with</span>(<span class="st">"_write"</span>), personal_notes, materials_tv, listen</span>
@@ -1026,7 +1022,7 @@ dbl (5): pop, area, pop_density, comuni_n, provinces_n
 <section id="factor-6-availability-of-materials-for-language-education-and-literacy" class="level2">
 <h2 class="anchored" data-anchor-id="factor-6-availability-of-materials-for-language-education-and-literacy">Factor 6: Availability of Materials for Language Education and Literacy</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>materials <span class="ot">&lt;-</span> polentometro_page15 <span class="sc">|&gt;</span> </span>
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>materials <span class="ot">&lt;-</span> polentometro_en_include <span class="sc">|&gt;</span> </span>
 <span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(</span>
 <span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a>    CASE, generation, Area, Region,</span>
 <span id="cb59-4"><a href="#cb59-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">starts_with</span>(<span class="st">"materials_"</span>)</span>
@@ -1064,7 +1060,7 @@ dbl (5): pop, area, pop_density, comuni_n, provinces_n
 <section id="factor-8-community-members-attitudes-towards-their-own-language" class="level2">
 <h2 class="anchored" data-anchor-id="factor-8-community-members-attitudes-towards-their-own-language">Factor 8: Community Members’ Attitudes towards Their Own Language</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>attitudes <span class="ot">&lt;-</span> polentometro_page15 <span class="sc">|&gt;</span> </span>
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>attitudes <span class="ot">&lt;-</span> polentometro_en_include <span class="sc">|&gt;</span> </span>
 <span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(</span>
 <span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a>    CASE, generation, Area, Region, reaction, loss, taught_at_school</span>
 <span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
