@@ -1,0 +1,63 @@
+---
+title: "Acceptability judgements"
+format: html
+editor: visual
+---
+
+```{r}
+#| label: packages
+#| message: false
+
+source("code/scripts/packages.R")
+```
+
+## Read data
+
+```{r}
+#| label: polentometro
+acceptability <- readRDS("data/derived/polentometro_en_include.rds") |> 
+  filter(
+    str_detect(XT02, "Sì")
+  )
+```
+
+```{r}
+acceptability_lik <- acceptability |>
+  dplyr::select(translation_1:translation_15) |>
+  pivot_longer(everything(), names_to = "sentence") |> 
+  count(sentence, value) |>
+  drop_na(value) |> 
+  pivot_wider(names_from = value, values_from = n) |>
+  mutate(across(`1`:`5`, ~ifelse(is.na(.x), 0, .x))) |> 
+  mutate(
+    sentence = case_when(
+      sentence == "translation_1" ~ "Non potevo credere che era morto.",
+      sentence == "translation_2" ~ "Da quando gli ho detto come stavano le cose, Gianni non mi parla più.",
+      sentence == "translation_3" ~ "Il nostro ristorante serve diversi piatti a base di carne, piuttosto che verdure di stagione, piuttosto che pesce.",
+      sentence == "translation_4" ~ "Nel 2005 è morto Papa Giovanni Paolo II.",
+      sentence == "translation_5" ~ "Non sapeva che si era trasferito a Roma.",
+      sentence == "translation_6" ~ "Ho parlato con Mario e gli ho dato una notizia che non si aspettava.",
+      sentence == "translation_7" ~ "Se l’avrei saputo, ti avrei chiamato.",
+      sentence == "translation_8" ~ "Nel 2001, l’anno in cui sono crollate le torri gemelle, avevo 10 anni.",
+      sentence == "translation_9" ~ "Non l’avrei mai detto che ti piaceva la pesca.",
+      sentence == "translation_10" ~ "Abbiamo questo giaccone in tre colori: nero, grigio piuttosto che marrone.",
+      sentence == "translation_11" ~ "Se avrei saputo che era da solo il giorno di Natale, lo avrei invitato a casa mia.",
+      sentence == "translation_12" ~ "La colonia romana di Aquileia è stata fondata nel 181 avanti Cristo.",
+      sentence == "translation_13" ~ "Telefona a tuo zio, gli ho promesso che l’avresti chiamato.",
+      sentence == "translation_14" ~ "Il modulo può essere compilato in italiano, in tedesco, piuttosto che in inglese.",
+      sentence == "translation_15" ~ "Se ti avrebbero visto, ti avrebbero sicuramente salutato."
+    )
+  )
+```
+
+```{r}
+png("./img/likert-acceptability.png", width = 14, height = 10, units = "in", res = 600)
+likert(
+  sentence ~ . ,
+  acceptability_lik,
+  as.percent = TRUE,
+  main = ""
+)
+dev.off()
+```
+
