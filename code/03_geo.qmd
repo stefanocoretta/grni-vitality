@@ -5,6 +5,7 @@ author: "Stefano Coretta"
 
 ```{r}
 #| label: packages
+#| message: false
 
 source("code/scripts/packages.R")
 ```
@@ -100,7 +101,19 @@ it_adm3 <- st_read("data/gis/ITA_adm/ITA_adm3.shp") |>
       NAME_2 == "Mantua" ~ "Mantova",
       NAME_2 == "Bolzano" ~ "Bolzano/Bozen",
       TRUE ~ NAME_2
-    )
+    ),
+    NAME_3 = str_replace_all(NAME_3, "d' ", "d'"),
+    NAME_3 = str_replace_all(NAME_3, "dell' ", "dell'"),
+    NAME_3 = str_replace_all(NAME_3, "Sant' ", "Sant'"),
+    NAME_3 = str_replace_all(NAME_3, "Castell' ", "Castell'"),
+    NAME_3 = str_replace_all(NAME_3, "sull' ", "sull'"),
+    NAME_3 = str_replace_all(NAME_3, "Di", "di"),
+    NAME_3 = str_replace_all(NAME_3, "Per", "per"),
+    NAME_3 = str_replace_all(NAME_3, "Del", "del"),
+    NAME_3 = str_replace_all(NAME_3, "Dei", "dei"),
+    NAME_3 = str_replace_all(NAME_3, "In", "in"),
+    NAME_3 = str_replace_all(NAME_3, "Sul", "sul")
+    
   )
 
 ch_adm1 <- st_read("data/gis/CHE_adm/CHE_adm1.shp") |> 
@@ -117,6 +130,10 @@ ch_adm2 <- st_read("data/gis/CHE_adm/CHE_adm2.shp") |>
     NAME_1 = case_when(
       NAME_1 == "Graubünden" ~ "Grigioni",
       TRUE ~ NAME_1
+    ),
+    NAME_2 = case_when(
+      NAME_2 == "Moësa" ~ "Moesa",
+      TRUE ~ NAME_2
     )
   )
 ch_adm3 <- st_read("data/gis/CHE_adm/CHE_adm3.shp") |> 
@@ -125,6 +142,10 @@ ch_adm3 <- st_read("data/gis/CHE_adm/CHE_adm3.shp") |>
     NAME_1 = case_when(
       NAME_1 == "Graubünden" ~ "Grigioni",
       TRUE ~ NAME_1
+    ),
+    NAME_2 = case_when(
+      NAME_2 == "Moësa" ~ "Moesa",
+      TRUE ~ NAME_2
     )
   )
 
@@ -228,6 +249,11 @@ ggplot() +
   scale_fill_distiller(palette = "YlGnBu", direction = 1, limits = c(0, 1)) +
   coord_sf(c(6.5, 14), c(43.5, 47)) +
   labs(x = element_blank(), y = element_blank()) +
-  theme_light()
+  theme_light() +
+  labs(
+    "Proportion of speakers by comune"
+  )
+
+ggsave("img/speaker-comune.png", width = 7, height = 5)
 ```
 
