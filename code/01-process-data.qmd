@@ -130,11 +130,11 @@ polentometro <- bind_rows(ds, gi_vital_raw) %>%
     birth_year = year(as_date(STARTED)) - DE01_01,
     generation = case_when(
       birth_year >= 2013 ~ "Alpha",
-      birth_year >= 1997 ~ "Z",
-      birth_year >= 1981 ~ "Millennials",
+      birth_year >= 1995 ~ "Z",
+      birth_year >= 1980 ~ "Millennials",
       birth_year >= 1965 ~ "X",
       birth_year >= 1946 ~ "Boomers",
-      birth_year >= 1928 ~ "Silent"
+      birth_year >= 1925 ~ "Silent"
     ),
     generation = factor(generation, levels = c("Silent", "Boomers", "X", "Millennials", "Z", "Alpha")),
     # Need this because the script adds classes to some columns and when they have different classes they can't be combined
