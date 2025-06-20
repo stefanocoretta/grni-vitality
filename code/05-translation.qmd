@@ -26,13 +26,24 @@ write_csv(translation, "data/derived/translation.csv")
 ```
 
 ```{r}
-translation_boom <- polentometro_en |> 
+translation_boom_sempre <- polentometro_en |> 
   filter(
     speak_frequency == "Lo parlo sempre",
     generation %in% c("Boomers", "Silent")
   ) |> 
-  select(translation, Region, Province, Comune) |> 
+  select(translation, Region, Province, Comune, speak_galloit_birth) |> 
   drop_na(translation) |> 
-  arrange(Region, Province, Comune)
+  arrange(Region, Province, speak_galloit_birth, Comune)
+
+translation_boom_molto_bene <- polentometro_en |> 
+  filter(
+    speak_galloit_birth == "Sì, lo parlo molto bene",
+    generation %in% c("Boomers", "Silent")
+  ) |> 
+  select(translation, Region, Province, Comune, speak_galloit_birth) |> 
+  drop_na(translation) |> 
+  arrange(Region, Province, speak_galloit_birth, Comune)
+
+write_csv(translation_boom_molto_bene, "data/derived/translation_boom_molto_bene.csv")
 ```
 
