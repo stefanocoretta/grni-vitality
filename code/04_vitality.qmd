@@ -30,6 +30,15 @@ polentometro_en_include <- polentometro_en_include |>
   )
 ```
 
+```{r}
+province_counts <- polentometro_en_include |> 
+  count(Region, Province) |> 
+  arrange(Region, Province, n)
+
+write_csv(province_counts, "data/derived/province-counts.csv")
+```
+
+
 ## Factor 1: Intergenerational language transmission
 
 ### Language acquisition
@@ -751,6 +760,7 @@ materials_tot <- materials |>
 #| label: materials-plot
 
 materials |>
+  mutate(materials = str_remove(materials, "materials_")) |> 
   ggplot(aes(generation, fill = value)) +
   geom_bar(position = "fill") +
   facet_wrap(~materials, ncol = 10) +
