@@ -249,7 +249,6 @@ ggplot() +
   labs(x = element_blank(), y = element_blank()) +
   theme_light() +
   labs(
-    title = "Number of respondents per comune",
     size = "Number"
   ) +
   guides(fill = "none")
