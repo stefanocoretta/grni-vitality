@@ -1,5 +1,7 @@
 # Assessing the vitality of Gallo-Romance of Northern Italy
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15715939.svg)](https://doi.org/10.5281/zenodo.15715939)
+
 Welcome! This is the GitHub repository of the project *Vitality assessment of Gallo-Romance of Northern Italy*.
 
 The data, code, figures and other materials in this repo are distributed with a [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) licence, unless otherwise stated.
