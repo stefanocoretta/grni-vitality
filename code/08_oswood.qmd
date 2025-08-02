@@ -1,0 +1,48 @@
+---
+title: "08_oswood"
+author: "Stefano Coretta"
+format: html
+---
+
+```{r}
+#| label: setup
+
+library(tidyverse)
+library(blavaan)
+library(lavaan)
+```
+
+```{r}
+polentometro_dim <- readRDS("data/derived/polentometro_dim.rds")
+
+semdiff <- polentometro_dim |> 
+  dplyr::select(CASE, educated:urban) |> 
+  drop_na() %>%
+  mutate(across(educated:urban, as.ordered))
+
+semdiff_lik <- semdiff |> 
+  select(-CASE)
+```
+
+```{r}
+EPA_model <- '
+  Evaluation =~ refined + friendly + kind
+  Potency    =~ educated + rich + urban
+  Activity   =~ modern + funny
+'
+
+fit_EPA <- sem(EPA_model, data = as.data.frame(semdiff), ordered = colnames(semdiff_lik))
+
+summary(fit_EPA)
+```
+
+```{r}
+factor_scores <- lavPredict(fit_EPA)
+```
+
+```{r}
+factor_scores |> 
+  ggplot(aes(Attitude)) +
+  geom_density()
+```
+
