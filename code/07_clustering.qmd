@@ -1,0 +1,46 @@
+---
+title: "07_clustering"
+author: "Stefano Coretta"
+format: html
+---
+
+```{r}
+#| label: setup
+
+library(tidyverse)
+library(cluster)
+library(factoextra)
+
+```
+
+```{r}
+polentometro_dim <- readRDS("data/derived/polentometro_dim.rds")
+
+semdiff <- polentometro_dim |> 
+  dplyr::select(CASE, educated:urban) |> 
+  drop_na() %>%
+  mutate(across(educated:urban, as.ordered))
+
+semdiff_lik <- semdiff |> 
+  select(-CASE)
+```
+
+```{r}
+gower_dist <- daisy(semdiff_lik, metric = "gower")
+
+hc <- hclust(gower_dist, method = "average")
+```
+
+```{r}
+plot(hc, labels = FALSE, main = "Hierarchical Clustering Dendrogram (Average Linkage)")
+```
+
+```{r}
+k <- 20
+clusters <- cutree(hc, k = k)
+
+# Add cluster assignment to data
+semdiff$cluster <- factor(clusters)
+
+table(semdiff$cluster)
+```
