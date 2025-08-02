@@ -1,0 +1,93 @@
+---
+title: "07_attitude"
+author: "Stefano Coretta"
+format: html
+---
+
+```{r}
+#| label: setup
+
+library(HH)
+library(tidyverse)
+library(brms)
+
+```
+
+```{r}
+job_sectors <- read_csv("data/raw/job-sectors.csv")
+
+polentometro_job <- readRDS("data/derived/polentometro.rds") |> 
+  drop_na(educated, job_sector) |> 
+  left_join(y = job_sectors) |> 
+  select(CASE, educated:urban, job_5) |> 
+  mutate(
+    across(educated:urban, as.ordered),
+    job_5_num = as.integer(factor(job_5, 
+                                              levels = c("Primary", "Secondary", "Tertiary", "Quaternary", "Quinary")))
+  )
+```
+
+```{r}
+job_lik <- polentometro_job |> 
+  select(job_5, educated:urban) |> 
+  pivot_longer(educated:urban) |> 
+  count(job_5, name, value) |> 
+  group_by(job_5, name) |> 
+  pivot_wider(names_from = value, values_from = n) |> 
+  mutate(
+    across(everything(), ~ifelse(is.na(.x), 0, .x))
+  ) |> 
+  relocate(`1`, `2`, .before = `3`) |> 
+  select(-`NA`)
+
+likert(
+  name ~ . ,
+  job_lik |> filter(job_5 == "Primary"),
+  as.percent = TRUE,
+  main = ""
+)
+likert(
+  name ~ . ,
+  job_lik |> filter(job_5 == "Secondary"),
+  as.percent = TRUE,
+  main = ""
+)
+likert(
+  name ~ . ,
+  job_lik |> filter(job_5 == "Tertiary"),
+  as.percent = TRUE,
+  main = ""
+)
+likert(
+  name ~ . ,
+  job_lik |> filter(job_5 == "Quaternary"),
+  as.percent = TRUE,
+  main = ""
+)
+likert(
+  name ~ . ,
+  job_lik |> filter(job_5 == "Quinary"),
+  as.percent = TRUE,
+  main = ""
+)
+```
+
+```{r}
+job_bm <- brm(
+  mvbind(educated, friendly, funny, kind, modern, refined, rich, urban) ~ mo(job_5_num),
+  data = polentometro_job,
+  family = cumulative(link = "probit"),
+  cores = 4,
+  seed = 9123,
+  file = "data/cache/job_bm"
+)
+```
+
+```{r}
+summary(job_bm)
+```
+
+```{r}
+plot(conditional_effects(job_bm, categorical = TRUE), ask = FALSE)
+```
+
