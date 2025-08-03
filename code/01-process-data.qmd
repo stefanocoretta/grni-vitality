@@ -106,6 +106,14 @@ write_csv(gi_vital, "data/raw/gi_vital.csv")
 ### Polentometro
 
 ```{r}
+#| label: read-annotations
+
+job_sectors <- read_csv("data/raw/job-sectors.csv")
+study_subjects <- read_csv("data/raw/study-subjects.csv")
+```
+
+
+```{r}
 #| label: read-polentometro
 
 source("code/scripts/import_polentometro.R")
@@ -165,7 +173,7 @@ headings_polentometro <- read_csv("data/raw/headings_polentometro.csv") |>
   deframe()
 
 polentometro <- polentometro |> 
-  rename(headings_polentometro) |> 
+  rename(all_of(headings_polentometro)) |> 
   mutate(
     is_speaker = ifelse(
       speak_galloit_birth %in% c("Sì, lo parlo molto bene", "Sì, lo parlo bene") &
@@ -173,7 +181,9 @@ polentometro <- polentometro |>
       TRUE,
       FALSE
     )
-  )
+  ) %>%
+  left_join(y = job_sectors) %>%
+  left_join(y = study_subjects)
 
 saveRDS(polentometro, "data/derived/polentometro.rds")
 
