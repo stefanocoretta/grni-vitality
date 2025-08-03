@@ -24,7 +24,8 @@ polentometro_job <- readRDS("data/derived/polentometro.rds") |>
   select(CASE, educated:urban, job_5) |> 
   mutate(
     across(educated:urban, as.ordered),
-    job_5_num = as.integer(factor(job_5, levels = c("Primary", "Secondary", "Tertiary", "Quaternary", "Quinary")))
+    job_5 = factor(job_5, levels = c("Primary", "Secondary", "Tertiary", "Quaternary", "Quinary")),
+    job_5_num = as.integer(job_5)
   )
 ```
 
@@ -43,15 +44,29 @@ job_lik <- polentometro_job |>
 ```
 
 ```{r}
-for (sector in unique(job_lik$job_5)) {
+for (sector in levels(job_lik$job_5)) {
   plot(likert(
     name ~ . ,
     job_lik |> filter(job_5 == sector),
     as.percent = TRUE,
-    main = sector
+    main = sector,
+    xlimEqualLeftRight = TRUE
   ))
 }
 ```
+
+```{r}
+for (sector in levels(job_lik$job_5)) {
+  plot(likert(
+    name ~ . ,
+    job_lik |> filter(job_5 == sector) |> select(-`4`),
+    as.percent = TRUE,
+    main = sector,
+    xlimEqualLeftRight = TRUE
+  ))
+}
+```
+
 
 ```{r}
 job_bm <- brm(
@@ -99,7 +114,21 @@ for (subject in unique(study_lik$study_subject)) {
     name ~ . ,
     study_lik |> filter(study_subject == subject),
     as.percent = TRUE,
-    main = subject
+    main = subject,
+    xlimEqualLeftRight = TRUE
   ))
 }
 ```
+
+```{r}
+for (subject in unique(study_lik$study_subject)) {
+  plot(likert(
+    name ~ . ,
+    study_lik |> filter(study_subject == subject) |> select(-`4`),
+    as.percent = TRUE,
+    main = subject,
+    xlimEqualLeftRight = TRUE
+  ))
+}
+```
+
