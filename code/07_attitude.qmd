@@ -92,7 +92,10 @@ plot(conditional_effects(job_bm, categorical = TRUE), ask = FALSE)
 ```{r}
 polentometro_study <- readRDS("data/derived/polentometro.rds") |> 
   drop_na(educated, study_sector) |> 
-  select(CASE, educated:urban, study_sector, study_subject)
+  select(CASE, educated:urban, study_sector, study_subject) |> 
+  mutate(
+    study_subject2 = str_remove(word(study_subject), ",")
+  )
 ```
 
 ```{r}
@@ -130,5 +133,31 @@ for (subject in unique(study_lik$study_subject)) {
     xlimEqualLeftRight = TRUE
   ))
 }
+```
+
+```{r}
+study_bm <- brm(
+  mvbind(educated, friendly, funny, kind, modern, refined, rich, urban) ~ study_subject2,
+  data = polentometro_study,
+  family = cumulative(link = "probit"),
+  cores = 4,
+  seed = 9123,
+  file = "data/cache/study_bm"
+)
+```
+
+```{r}
+summary(study_bm)
+```
+
+```{r}
+plot(conditional_effects(study_bm, categorical = TRUE), ask = FALSE)
+```
+
+```{r}
+fixef(study_bm) |> 
+  as_tibble(rownames = "coef") |> 
+  filter(!str_detect(coef, "Intercept")) |> 
+  arrange(Estimate)
 ```
 
