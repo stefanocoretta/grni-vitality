@@ -4,8 +4,11 @@ author: "Stefano Coretta"
 format: html
 ---
 
+## Setup
+
 ```{r}
 #| label: setup
+#| include: false
 
 library(HH)
 library(tidyverse)
@@ -13,17 +16,15 @@ library(brms)
 
 ```
 
-```{r}
-job_sectors <- read_csv("data/raw/job-sectors.csv")
+## Job sector
 
+```{r}
 polentometro_job <- readRDS("data/derived/polentometro.rds") |> 
   drop_na(educated, job_sector) |> 
-  left_join(y = job_sectors) |> 
   select(CASE, educated:urban, job_5) |> 
   mutate(
     across(educated:urban, as.ordered),
-    job_5_num = as.integer(factor(job_5, 
-                                              levels = c("Primary", "Secondary", "Tertiary", "Quaternary", "Quinary")))
+    job_5_num = as.integer(factor(job_5, levels = c("Primary", "Secondary", "Tertiary", "Quaternary", "Quinary")))
   )
 ```
 
@@ -39,37 +40,17 @@ job_lik <- polentometro_job |>
   ) |> 
   relocate(`1`, `2`, .before = `3`) |> 
   select(-`NA`)
+```
 
-likert(
-  name ~ . ,
-  job_lik |> filter(job_5 == "Primary"),
-  as.percent = TRUE,
-  main = ""
-)
-likert(
-  name ~ . ,
-  job_lik |> filter(job_5 == "Secondary"),
-  as.percent = TRUE,
-  main = ""
-)
-likert(
-  name ~ . ,
-  job_lik |> filter(job_5 == "Tertiary"),
-  as.percent = TRUE,
-  main = ""
-)
-likert(
-  name ~ . ,
-  job_lik |> filter(job_5 == "Quaternary"),
-  as.percent = TRUE,
-  main = ""
-)
-likert(
-  name ~ . ,
-  job_lik |> filter(job_5 == "Quinary"),
-  as.percent = TRUE,
-  main = ""
-)
+```{r}
+for (sector in unique(job_lik$job_5)) {
+  plot(likert(
+    name ~ . ,
+    job_lik |> filter(job_5 == sector),
+    as.percent = TRUE,
+    main = sector
+  ))
+}
 ```
 
 ```{r}
@@ -91,3 +72,34 @@ summary(job_bm)
 plot(conditional_effects(job_bm, categorical = TRUE), ask = FALSE)
 ```
 
+## Study subject
+
+```{r}
+polentometro_study <- readRDS("data/derived/polentometro.rds") |> 
+  drop_na(educated, study_sector) |> 
+  select(CASE, educated:urban, study_sector, study_subject)
+```
+
+```{r}
+study_lik <- polentometro_study |> 
+  select(study_subject, educated:urban) |> 
+  pivot_longer(educated:urban) |> 
+  count(study_subject, name, value) |> 
+  group_by(study_subject, name) |> 
+  pivot_wider(names_from = value, values_from = n) |> 
+  mutate(
+    across(everything(), ~ifelse(is.na(.x), 0, .x))
+  ) |> 
+  relocate(`1`, `2`, .before = `3`)
+```
+
+```{r}
+for (subject in unique(study_lik$study_subject)) {
+  plot(likert(
+    name ~ . ,
+    study_lik |> filter(study_subject == subject),
+    as.percent = TRUE,
+    main = subject
+  ))
+}
+```
