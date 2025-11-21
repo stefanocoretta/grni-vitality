@@ -354,3 +354,5 @@ po/*~
 # End of https://www.toptal.com/developers/gitignore/api/r,latex
 
 /.quarto/
+
+**/*.quarto_ipynb
