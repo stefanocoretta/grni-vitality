@@ -3,6 +3,8 @@ title: "A vitality assessment of Gallo-Romance of Northern Italy"
 format: docx
 csl: apa.csl
 bibliography: references.bib
+abstract: |
+  This study offers a comprehensive vitality assessment of the Gallo-Romance glossolect spoken in Northern Italy (including parts of southern Switzerland and San Marino). The study situates Gallo-Romance within the broader discourse on language endangerment and minoritisation, framing linguistic loss as both a cultural and socio-political phenomenon. Employing UNESCO’s vitality assessment framework, we analyse data from 2,218 respondents across the area to evaluate intergenerational transmission, speaker numbers, domains of use, institutional support, community attitudes, and documentation. Despite a relatively large speaker base, the findings reveal severely limited intergenerational transmission, domain restriction, and minimal institutional or governmental support. While Friulian benefits from legal recognition, most other glossolects, such as Piedmontese, Ligurian, and Emilian, lack standardisation and formal educational resources. Community-led initiatives are active but fragmented, and internal variation across the glossolectal continuum complicates revitalisation efforts. Based on the survey responses, we assign an overall status of "severely endangered" to Gallo-Romance of Northern Italy and call for targeted documentation and description, increased institutional engagement, and support for grass-roots movements to preserve this linguistically and historically significant repertoire. This research contributes to the understanding of language shift in contested linguistic ecologies and provides a replicable model for assessing vitality in similarly complex language areas.
 ---
 
 # Introduction
